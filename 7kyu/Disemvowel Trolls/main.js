@@ -15,3 +15,14 @@ Note: for this kata y isn't considered a vowel.
 */
 
 //solution
+
+function disemvowel(str) {
+  return str.replace(/[aeiou]/gi, "");
+}
+
+console.log(disemvowel("Past Solutions"));
+console.log(
+  disemvowel(
+    "For me, a regular expression is best, but keep it in a closure so you don't build it every time:"
+  )
+);
