@@ -13,4 +13,12 @@ should return :
 
 //solution
 
-function explode(s) {}
+function explode(s) {
+  let newStr = "";
+  for (let i = 0; i < s.length; i++) {
+    newStr += s[i].repeat(Number(s[i]));
+  }
+  return newStr;
+}
+
+console.log(explode("321"));
