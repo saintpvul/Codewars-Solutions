@@ -11,3 +11,27 @@ Example: (Input --> Output)
 */
 
 // solution
+
+function isIsogram(str) {
+  if (str.length <= 1) {
+    return true;
+  }
+  let splitStr = str.toLowerCase().replace(/\s/gi, "").split("");
+  let newArr = [];
+  for (let i = 0; i < splitStr.length; i++) {
+    if (!newArr.includes(splitStr[i])) newArr.push(splitStr[i]);
+  }
+  if (newArr.join("") === splitStr.join("")) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+let check = "isogram",
+  check2 = "Ass   ume",
+  check3 = "";
+
+console.log(isIsogram(check));
+console.log(isIsogram(check2));
+console.log(isIsogram(check3));
