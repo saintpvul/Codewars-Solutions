@@ -20,4 +20,31 @@ Note that both input and output should use upper case for characters A, B, C, D,
 
 // solution
 
-function brightest(colors) {}
+function brightest(colors) {
+  let colorIndex = 0,
+    maxValue = 0;
+
+  for (let i = 0; i < colors.length; i++) {
+    let color = colors[i],
+      r = parseInt(color.slice(1, 3), 16),
+      g = parseInt(color.slice(3, 5), 16),
+      b = parseInt(color.slice(5, 7), 16),
+      value = Math.max(r, g, b);
+    if (value > maxValue) {
+      maxValue = value;
+      colorIndex = i;
+    }
+  }
+  return colors[colorIndex];
+}
+
+const brightest = (colors) =>
+  colors.reduce(
+    ([a, b], curr, index) =>
+      (index = Math.max(
+        ...curr.match(/[^#]{2}/g).map((el) => parseInt(el, 16))
+      )) > b
+        ? [curr, index]
+        : [a, b],
+    [0, -1]
+  )[0];
