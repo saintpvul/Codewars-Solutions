@@ -14,3 +14,16 @@ Examples
 */
 
 // solution
+
+function myLanguages(results) {
+  let res = Object.keys(results);
+  return res
+    .filter((value) => results[value] >= 60)
+    .sort((a, b) => results[b] - results[a]);
+}
+
+let check = { Java: 10, Ruby: 80, Python: 65 }; // -->  ["Ruby", "Python"]
+let check2 = { Hindi: 60, Dutch: 93, Greek: 71 }; //-->  ["Dutch", "Greek", "Hindi"]
+let check3 = { "C++": 50, ASM: 10, Haskell: 20 }; // -->  []
+
+console.log(myLanguages(check));
