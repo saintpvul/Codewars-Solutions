@@ -22,6 +22,11 @@ function myLanguages(results) {
     .sort((a, b) => results[b] - results[a]);
 }
 
+const myLanguages = (res) =>
+  Object.keys(res)
+    .filter((v) => res[v] >= 60)
+    .sort((a, b) => res[b] - res[a]);
+
 let check = { Java: 10, Ruby: 80, Python: 65 }; // -->  ["Ruby", "Python"]
 let check2 = { Hindi: 60, Dutch: 93, Greek: 71 }; //-->  ["Dutch", "Greek", "Hindi"]
 let check3 = { "C++": 50, ASM: 10, Haskell: 20 }; // -->  []
