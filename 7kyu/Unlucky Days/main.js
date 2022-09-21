@@ -16,3 +16,11 @@ unluckyDays(1986) == 1
 */
 
 // solution
+
+const unluckyDays = (year) => {
+  let unlucky = 0;
+  for (let x = 0; x < 12; x++) {
+    unlucky += new Date(year, x, 13).getDay() === 5;
+  }
+  return unlucky;
+};
