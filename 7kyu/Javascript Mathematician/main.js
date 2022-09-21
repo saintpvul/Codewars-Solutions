@@ -12,3 +12,9 @@ calculate(2,4)(3,7,1) // should return 17
 */
 
 //solution
+
+const calculate =
+  (...x) =>
+  (...y) => {
+    return [].concat(x, y).reduce((a, b) => a + b, 0);
+  };
