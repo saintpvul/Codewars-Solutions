@@ -16,3 +16,24 @@ checkCoupon("123", "123", "July 9, 2015", "July 2, 2015") === false
 */
 
 //solution
+
+function checkCoupon(enteredCode, correctCode, currentDate, expirationDate) {
+  if (enteredCode === correctCode) {
+    if (Date.parse(expirationDate) >= Date.parse(currentDate)) {
+      return false;
+    } else {
+      return true;
+    }
+  } else {
+    return false;
+  }
+}
+
+//or
+
+function checkCoupon(enteredCode, correctCode, currentDate, expirationDate) {
+  return (
+    enteredCode === correctCode &&
+    Date.parse(expirationDate) >= Date.parse(currentDate)
+  );
+}
