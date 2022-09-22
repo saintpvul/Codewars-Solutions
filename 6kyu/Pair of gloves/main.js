@@ -15,7 +15,6 @@ result = 3 (3 red pairs)
 */
 
 // solution
-
 function numberOfPairs(gloves) {
   var glovesObj = gloves.reduce((acc, el) => {
     acc[el] = (acc[el] || 0) + 1;
@@ -26,7 +25,6 @@ function numberOfPairs(gloves) {
 
   for (color in glovesObj) {
     r += Math.floor(glovesObj[color] / 2);
-    u;
   }
 
   return r;
