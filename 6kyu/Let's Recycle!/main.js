@@ -29,3 +29,12 @@ output = [
 */
 
 // solution
+
+function recycle(array) {
+  const material = ["paper", "glass", "organic", "plastic"];
+  return material.map((item) =>
+    array
+      .filter((el) => el.material === item || el.secondMaterial === item)
+      .map((el) => el.type)
+  );
+}
