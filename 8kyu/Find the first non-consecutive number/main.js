@@ -13,3 +13,12 @@ The array will always have at least 2 elements1 and all elements will be numbers
 */
 
 //solution
+
+function firstNonConsecutive(arr) {
+  let findIndex = arr.find((num, index) => num !== index + arr[0]);
+  return Number.isInteger(findIndex) ? findIndex : null;
+}
+
+let a = [1, 2, 3, 4, 6, 7, 8];
+
+console.log(firstNonConsecutive(a));
