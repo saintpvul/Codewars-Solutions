@@ -15,3 +15,19 @@ result = 3 (3 red pairs)
 */
 
 // solution
+
+function numberOfPairs(gloves) {
+  let object = {};
+  for (let i = 0; i < gloves.length; i++) {
+    object[gloves[i]] ? object[gloves[i]]++ : (object[gloves[i]] = 1);
+  }
+  let pairs = 0;
+  for (key in object) {
+    if (object[key] % 2 === 0) pairs += object[key] / 2;
+  }
+  return pairs;
+}
+
+let glov = ["red", "green", "red", "blue", "blue"];
+
+console.log(numberOfPairs(glov));
