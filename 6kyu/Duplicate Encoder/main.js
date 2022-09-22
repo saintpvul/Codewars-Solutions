@@ -14,3 +14,13 @@ Assertion messages may be unclear about what they display in some languages. If 
 */
 
 // solution
+
+function duplicateEncode(word) {
+  return word
+    .toLowerCase()
+    .split("")
+    .map(function (v, i, arr) {
+      return arr.indexOf(v) == arr.lastIndexOf(v) ? "(" : ")";
+    })
+    .join("");
+}
