@@ -11,3 +11,8 @@ Help Johnny by writing a function, that takes the amount of handshakes and retur
 */
 
 // solution
+
+function getParticipants(handshakes) {
+  for (var i = 0, k = 0; i < handshakes; i += k++);
+  return k;
+}
