@@ -16,4 +16,13 @@ The input will always be an array.
 
 */
 
-//
+// solution
+
+function deepCount(a) {
+  return a.reduce(
+    (c, e) => c + (Array.isArray(e) ? deepCount(e) : 0),
+    a.length
+  );
+}
+
+console.log(deepCount([1, 2, [2], [12, [3]]]));
