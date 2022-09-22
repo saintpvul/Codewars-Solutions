@@ -10,3 +10,11 @@ It should look like this:
 */
 
 // solution
+
+function abbrevName(name) {
+  let split = name.toUpperCase().split(" ");
+  return `${split[0].charAt()}.${split[1].charAt()}`;
+}
+
+let f = "Sam Harris";
+console.log(abbrevName(f));
