@@ -9,3 +9,12 @@ Assume that beast and dish are always lowercase strings, and that each has at le
 */
 
 // solution
+
+function feast(beast, dish) {
+  return (
+    beast.charAt(0) == dish.charAt(0) &&
+    beast.charAt(beast.length - 1) == dish.charAt(dish.length - 1)
+  );
+}
+
+console.log(feast("great blue heron", "garlic naan"));
