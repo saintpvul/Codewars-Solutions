@@ -11,3 +11,11 @@ Your goal in this kata is to create complete the mouth_size method this method t
 */
 
 //solution
+
+function mouthSize(animal) {
+  if (animal.toLowerCase() == "alligator") {
+    return "small";
+  } else {
+    return "wide";
+  }
+}
