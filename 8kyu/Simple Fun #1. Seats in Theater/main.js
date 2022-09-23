@@ -15,3 +15,7 @@ seatsInTheater(nCols, nRows, col, row) === 96
 */
 
 // solution
+
+function seatsInTheater(nCols, nRows, col, row) {
+  return (nCols - (col - 1)) * (nRows - row);
+}
