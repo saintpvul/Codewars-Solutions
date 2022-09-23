@@ -9,3 +9,7 @@ The order of the sequence has to stay the same.
 */
 
 // solution
+
+function distinct(a) {
+  return [...new Set(a)];
+}
