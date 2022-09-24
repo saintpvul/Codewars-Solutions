@@ -10,3 +10,14 @@ setSecret() which sets the secret
 */
 
 //solution
+
+function createSecretHolder(secret) {
+  return {
+    getSecret: function () {
+      return secret;
+    },
+    setSecret: function (v) {
+      secret = v;
+    },
+  };
+}
