@@ -18,3 +18,11 @@ Your task is override the native Function.prototype.bind method by a new one tha
 */
 
 // solution
+
+Function.prototype.bind = function (ctx) {
+  const func = this;
+  return function (...args) {
+    const rightCtx = this === global ? ctx : this;
+    return func.apply(rightCtx, args);
+  };
+};
