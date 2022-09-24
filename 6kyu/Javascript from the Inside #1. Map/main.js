@@ -39,3 +39,11 @@ console.log(mapped_array); // [3, 4, 5, 6, 7]
 */
 
 //solution
+
+let check = [1, 2, 3];
+
+Array.prototype.map = function (fn, nThis) {
+  var newArr = this.slice();
+  this.forEach((v, i, arr) => (newArr[i] = fn.apply(nThis, [v, i, arr])));
+  return newArr;
+};
