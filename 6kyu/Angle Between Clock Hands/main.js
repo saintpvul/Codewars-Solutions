@@ -16,3 +16,11 @@ at 9:00 the angle is: π/2 (90 degrees)
 */
 
 // solution
+
+const handAngle = (time) => {
+  const hour = time.getHours() % 12;
+  const minute = time.getMinutes();
+  const hourAngle = 2 * Math.PI * (hour / 12 + minute / 60 / 12);
+  const minuteAngle = 2 * Math.PI * (minute / 60);
+  return Math.PI - Math.abs(Math.abs(hourAngle - minuteAngle) - Math.PI);
+};
