@@ -14,3 +14,9 @@ Also this method should handle invalid paths. If we have an object { user: { nam
 */
 
 // solution
+
+function find(object, path) {
+  return path.split(".").reduce(function (acc, pathName) {
+    return acc && acc.hasOwnProperty(pathName) ? acc[pathName] : undefined;
+  }, object);
+}
