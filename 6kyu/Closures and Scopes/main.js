@@ -13,3 +13,15 @@ We already implemented that function, but when we actually run the code, the res
 */
 
 // solution
+
+function createFunctions(n) {
+  var callbacks = [];
+
+  for (let i = 0; i < n; i++) {
+    callbacks.push(function () {
+      return i;
+    });
+  }
+
+  return callbacks;
+}
