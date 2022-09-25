@@ -14,3 +14,12 @@ The input array will always contain only positive numbers, and will never be emp
 */
 
 // solution
+
+const toSquare = (num) => Number.isInteger(Math.sqrt(num));
+
+const squareOrSquareRoot = (array) =>
+  array.map((num) => (toSquare(num) ? Math.sqrt(num) : num ** 2));
+
+let check = [4, 3, 9, 7, 2, 1];
+
+console.log(squareOrSquareRoot(check));
