@@ -11,3 +11,7 @@ Return the total figure the individual will receive as a string prefixed with "�
 */
 
 // solution
+
+function bonusTime(salary, bonus) {
+  return bonus ? "£" + salary * 10 : "£" + salary;
+}
