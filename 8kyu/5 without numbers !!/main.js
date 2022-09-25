@@ -9,3 +9,8 @@ Good luck :)
 */
 
 // solution
+
+function unusualFive() {
+  let five = "fiveC";
+  return five.length;
+}
