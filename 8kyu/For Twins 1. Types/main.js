@@ -9,3 +9,7 @@ Write a function that will accept two parameters: variable and type and check if
 */
 
 // solution
+
+function typeValidation(variable, type) {
+  return typeof variable === type ? true : false;
+}
