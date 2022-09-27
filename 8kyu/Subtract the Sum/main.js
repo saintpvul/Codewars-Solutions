@@ -22,4 +22,8 @@ There is no preloaded code to help you. This is not about coding skills; think b
 
 */
 
-//
+// solution
+
+function SubtractSum(n) {
+  return "apple";
+}
