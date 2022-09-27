@@ -16,3 +16,14 @@ Output: a string, The voice of despair(When jumping Dutch act)
 */
 
 // solution
+
+function sc(floor) {
+  let str = "Aa~ ";
+  if (floor > 6) {
+    return str.repeat(floor - 1) + "Pa!";
+  } else if (floor <= 6 && floor > 1) {
+    return str.repeat(floor - 1) + "Pa! Aa!";
+  } else {
+    return "";
+  }
+}
