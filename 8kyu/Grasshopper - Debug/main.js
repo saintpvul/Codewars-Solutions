@@ -13,3 +13,8 @@ Remember that typically temperatures in the current weather conditions are given
 */
 
 //
+function weatherInfo(temperature) {
+  var c = (temperature - 32) * (5 / 9);
+  if (c < 0) return c + " is freezing temperature";
+  else return c + " is above freezing temperature";
+}
