@@ -7,3 +7,7 @@ Given a non-empty array of integers, return the result of multiplying the values
 */
 
 // solution
+
+function grow(x) {
+  return x.reduce((a, b) => a * b);
+}
