@@ -9,3 +9,8 @@ current age of his son (years)
 */
 
 // solution
+
+const twiceAsOld = (dadYearsOld, sonYearsOld) =>
+  dadYearsOld - sonYearsOld * 2 >= 0
+    ? dadYearsOld - sonYearsOld * 2
+    : (dadYearsOld - sonYearsOld * 2) * -1;
