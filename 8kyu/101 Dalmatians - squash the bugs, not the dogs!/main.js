@@ -9,3 +9,9 @@ The number of dogs will always be a number and there will always be at least 1 d
 */
 
 // solution
+function howManyDalmatians(number) {
+  if (number <= 10) return "Hardly any";
+  if (number <= 50) return "More than a handful!";
+  if (number <= 100) return "Woah that's a lot of dogs!";
+  if ((number = 101)) return "101 DALMATIANS!!!";
+}
