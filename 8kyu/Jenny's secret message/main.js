@@ -7,3 +7,7 @@ Can you help her?
 */
 
 // solution
+
+function greet(name) {
+  return name === "Johnny" ? "Hello, my love!" : "Hello, " + name + "!";
+}
