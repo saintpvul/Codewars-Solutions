@@ -13,3 +13,7 @@ Remember, the roots can be written like (x-x1) * (x-x2) = 0
 */
 
 // solution
+
+function quadratic(x1, x2) {
+  return [1, -(x2 + x1), x1 * x2];
+}
