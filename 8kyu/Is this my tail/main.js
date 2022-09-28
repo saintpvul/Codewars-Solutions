@@ -9,3 +9,13 @@ The arguments will always be non empty strings, and normal letters.
 */
 
 // solution
+
+function correctTail(body, tail) {
+  sub = body.substr(body.length - tail.length);
+
+  if (sub === tail) {
+    return true;
+  } else {
+    return false;
+  }
+}
