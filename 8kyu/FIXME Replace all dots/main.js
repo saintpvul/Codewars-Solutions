@@ -13,3 +13,7 @@ String str will never be null.
 */
 
 // solution
+
+var replaceDots = function (str) {
+  return str.replace(/[.]/g, "-");
+};
