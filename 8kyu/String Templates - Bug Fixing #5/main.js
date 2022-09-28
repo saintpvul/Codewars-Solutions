@@ -5,3 +5,6 @@ Oh no! Timmy hasn't followed instructions very carefully and forgot how to use t
 */
 
 // solution
+function buildString(...template) {
+  return `I like ${template.join(", ")}!`;
+}
