@@ -9,3 +9,8 @@ There are some columns of toy cubes in the box arranged in a line. The i-th colu
 */
 
 // solution
+
+const flip = (d, a) => {
+  if (d === "R") return a.sort((a, b) => a - b);
+  if (d === "L") return a.sort((a, b) => b - a);
+};
