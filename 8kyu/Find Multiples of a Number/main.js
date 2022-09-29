@@ -9,3 +9,11 @@ If you can, try writing it in only one line of code.
 */
 
 // solution
+
+function findMultiples(int, lim) {
+  let arr = [];
+  for (let i = int; i <= lim; i += int) {
+    arr.push(i);
+  }
+  return arr;
+}
