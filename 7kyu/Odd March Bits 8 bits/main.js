@@ -29,3 +29,27 @@ n = 7
 */
 
 // solution
+
+function bitMarch(n) {
+  let arr = [0, 0, 0, 0, 0, 0, 0, 0];
+  let newArr = [];
+  if (n > 0 && n < 8) {
+    for (let i = 0; i < n; i++) {
+      arr.push(1);
+      arr.shift();
+    }
+    do {
+      newArr.push(Array(...arr));
+      arr.shift();
+      arr.push(0);
+    } while (arr[0] !== 1);
+    newArr.push(Array(...arr));
+    return newArr;
+  } else if (n === 0) {
+    return [];
+  } else {
+    newArr.push([1, 1, 1, 1, 1, 1, 1, 1]);
+    return newArr;
+  }
+}
+console.log(bitMarch(2));
