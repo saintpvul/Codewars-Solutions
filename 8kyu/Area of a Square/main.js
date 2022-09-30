@@ -8,3 +8,7 @@ Note: use the π value provided in your language (Math::PI, M_PI, math.pi, etc)
 */
 
 // solution
+
+function squareArea(A) {
+  return Number(Math.pow((2 * A) / Math.PI, 2).toFixed(2));
+}
