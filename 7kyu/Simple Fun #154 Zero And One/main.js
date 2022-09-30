@@ -23,3 +23,10 @@ The minimum length of the string that may remain after applying the described op
 */
 
 // solution
+
+function zeroAndOne(s) {
+  return s.replace(/10/g, "").replace(/01/g, "").length;
+}
+console.log(
+  zeroAndOne("000111101110001010111111111100011110110101111111111000000000")
+);
