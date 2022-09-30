@@ -14,3 +14,7 @@ The input string can be of arbitrary length - in particular, it may be empty. Al
 */
 
 // solution
+
+function DNAtoRNA(dna) {
+  return dna.replace(/T/gi, "U");
+}
