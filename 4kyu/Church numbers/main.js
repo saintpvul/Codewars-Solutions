@@ -31,3 +31,9 @@ function head(l) { return l(true) }  // functions must use fat arrow notation
 */
 
 // solution
+
+const add = (n) => (m) => (f) => (z) => n(f)(m(f)(z));
+
+const mul = (n) => (m) => (f) => (z) => n(m(f))(z);
+
+const pow = (n) => (m) => m(n);
