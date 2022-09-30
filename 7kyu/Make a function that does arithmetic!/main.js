@@ -11,3 +11,22 @@ A few examples:(Input1, Input2, Input3 --> Output)
 */
 
 // solution
+
+function arithmetic(a, b, operator) {
+  let res = 0;
+  switch (operator) {
+    case "add":
+      res = a + b;
+      break;
+    case "subtract":
+      res = a - b;
+      break;
+    case "multiply":
+      res = a * b;
+      break;
+    case "divide":
+      res = a / b;
+      break;
+  }
+  return res;
+}
