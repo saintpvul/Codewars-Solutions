@@ -5,3 +5,5 @@ There is an object/class already created called MrFreeze. Mark this object as fr
 */
 
 // solution
+
+Object.freeze(MrFreeze);
