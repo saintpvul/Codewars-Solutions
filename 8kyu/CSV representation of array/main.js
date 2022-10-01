@@ -20,3 +20,7 @@ Array's length > 2.
 */
 
 // solution
+
+function toCsvText(array) {
+  return array.join("\n");
+}
