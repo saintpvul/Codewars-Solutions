@@ -9,3 +9,25 @@ You should not remove or add elements from/to the array.
 */
 
 //solution
+
+function twoSort(s) {
+  let newS = s.sort();
+  return newS[0].split("").join("***");
+}
+
+console.log(
+  twoSort([
+    "turns",
+    "out",
+    "random",
+    "test",
+    "cases",
+    "are",
+    "easier",
+    "than",
+    "writing",
+    "out",
+    "basic",
+    "ones",
+  ])
+);
