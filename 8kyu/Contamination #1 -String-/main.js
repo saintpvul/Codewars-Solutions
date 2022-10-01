@@ -18,3 +18,9 @@ text after  = "zzz"
 */
 
 // solution
+
+function contamination(text, char) {
+  return text.replace(/\w/g, char).replace(/\W/g, char);
+}
+
+console.log(contamination("abc", "z"));
