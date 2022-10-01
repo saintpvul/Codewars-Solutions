@@ -22,5 +22,8 @@ text after  = "zzz"
 function contamination(text, char) {
   return text.replace(/\w/g, char).replace(/\W/g, char);
 }
+function contamination(text, char) {
+  return text.replace(/./g, char);
+}
 
 console.log(contamination("abc", "z"));
