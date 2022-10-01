@@ -23,3 +23,14 @@ You cannot swap the operands. For instance, in the given example you cannot get 
 */
 
 // solution
+
+function expressionMatter(a, b, c) {
+  let max = 0;
+  if (a + b + c > max) max = a + b + c;
+  if (a + b * c > max) max = a + b * c;
+  if (a * b + c > max) max = a * b + c;
+  if ((a + b) * c > max) max = (a + b) * c;
+  if (a * (b + c) > max) max = a * (b + c);
+  if (a * b * c > max) max = a * b * c;
+  return max;
+}
