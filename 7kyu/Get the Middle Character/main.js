@@ -22,3 +22,11 @@ The middle character(s) of the word represented as a string.
 */
 
 // solution
+
+function getMiddle(s) {
+  return s.length % 2 === 0
+    ? s[s.length / 2 - 1] + s[s.length / 2]
+    : s[parseInt(s.length / 2)];
+}
+console.log(getMiddle("test"));
+console.log(getMiddle("testing"));
