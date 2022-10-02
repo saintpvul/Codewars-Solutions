@@ -9,3 +9,14 @@ Note: The function accepts an integer and returns an integer
 */
 
 // solution
+
+function squareDigits(num) {
+  let split = num.toString().split("");
+  let newArr = [];
+  for (let i = 0; i < split.length; i++) {
+    newArr.push(split[i] ** 2);
+  }
+  return Number(newArr.join(""));
+}
+
+console.log(squareDigits(9119));
