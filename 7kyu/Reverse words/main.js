@@ -11,12 +11,7 @@ Examples
 // solution
 
 function reverseWords(str) {
-  let reverse = str.split("").reverse().join("").split(" ");
-  let newArr = [];
-  for (let i = reverse.length - 1; i >= 0; i--) {
-    newArr.push(reverse[i]);
-  }
-  return newArr.join(" ");
+  return str.split("").reverse().join("").split(" ").reverse().join(" ");
 }
 
 console.log(reverseWords("The quick brown fox jumps over the lazy dog."));
