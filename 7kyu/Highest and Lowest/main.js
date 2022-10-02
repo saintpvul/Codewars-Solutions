@@ -14,3 +14,10 @@ Output string must be two numbers separated by a single space, and highest numbe
 */
 
 // solution
+
+function highAndLow(numbers) {
+  let sort = numbers.split(" ").sort((a, b) => a - b);
+  return sort[sort.length - 1] + " " + sort[0];
+}
+
+console.log(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"));
