@@ -16,3 +16,36 @@ Example: (input --> output)
 */
 
 // solution
+function DNAStrand(dna) {
+  let newArr = [];
+  for (let i = 0; i < dna.length; i++) {
+    if (dna[i] === "A") {
+      newArr.push("T");
+    }
+    if (dna[i] === "T") {
+      newArr.push("A");
+    }
+    if (dna[i] === "G") {
+      newArr.push("C");
+    }
+    if (dna[i] === "C") {
+      newArr.push("G");
+    }
+  }
+  return newArr.join("");
+}
+
+function DNAStrand(dna) {
+  return dna.replace(/./g, function (c) {
+    return DNAStrand.pairs[c];
+  });
+}
+
+DNAStrand.pairs = {
+  A: "T",
+  T: "A",
+  C: "G",
+  G: "C",
+};
+
+console.log(DNAStrand("ATTGC"));
