@@ -18,3 +18,12 @@ For JavaScript: return true or false
 */
 
 // solution
+
+function isPythagoreanTriple(integers) {
+  let sort = integers.sort((a, b) => a - b);
+  return sort[0] ** 2 + sort[1] ** 2 === sort[2] ** 2;
+}
+
+console.log(isPythagoreanTriple([3, 4, 5]));
+
+console.log(isPythagoreanTriple([8, 15, 17]));
