@@ -21,4 +21,27 @@ and return the number of cars turned away, in other words cars that arrive when 
 
 // solution
 
-function turnAway(arrivals) {}
+function turnAway(arrivals) {
+  let result = 0,
+    newArray = [];
+  for (const el of arrivals) {
+    if (newArray.length < 3) {
+      newArray.push(el);
+    } else if (newArray[0][1] < el[0]) {
+      newArray = newArray.slice(1);
+      newArray.push(el);
+    } else {
+      result++;
+    }
+  }
+  return result;
+}
+
+console.log(
+  turnAway([
+    [48, 120],
+    [48, 120],
+    [48, 120],
+    [48, 120],
+  ])
+);
