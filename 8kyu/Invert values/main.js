@@ -24,3 +24,5 @@ function invert(array) {
   }
   return newArr;
 }
+
+console.log(invert([1, 2, 3, 4, 5]));
