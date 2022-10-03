@@ -15,3 +15,16 @@ Your goal in this kata is to determine which phrase the girls would say for a fl
 */
 
 // solution
+
+function howMuchILoveYou(nbPetals) {
+  const petals = [
+    "I love you",
+    "a little",
+    "a lot",
+    "passionately",
+    "madly",
+    "not at all",
+  ];
+  return petals[(nbPetals - 1) % 6];
+}
+console.log(howMuchILoveYou(356));
