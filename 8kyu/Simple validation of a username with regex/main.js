@@ -18,3 +18,7 @@ function validateUsr(username) {
     username.match(/[a-z]|_|\d/g).length === username.length
   );
 }
+
+function validateUsr(username) {
+  return /^[a-z0-9_]{4,16}$/.test(username);
+}
