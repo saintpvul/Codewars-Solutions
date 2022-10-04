@@ -13,3 +13,7 @@ For ASCII table, you can refer to http://www.asciitable.com/
 */
 
 // solution
+
+function getChar(c) {
+  return String.fromCharCode(c);
+}
