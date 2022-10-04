@@ -13,3 +13,5 @@ The input will not be 0.
 */
 
 // solution
+
+const nthEven = (n) => n * 2 - 2;
