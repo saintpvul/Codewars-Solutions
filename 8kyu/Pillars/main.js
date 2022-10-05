@@ -10,3 +10,9 @@ Calculate the distance between the first and the last pillar in centimeters (wit
 */
 
 // solution
+
+function pillars(numPill, dist, width) {
+  return numPill > 1
+    ? dist * 100 * (numPill - 1) + (width * numPill - width * 2)
+    : 0;
+}
