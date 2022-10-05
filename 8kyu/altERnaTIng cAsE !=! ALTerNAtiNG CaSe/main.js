@@ -16,3 +16,9 @@ As usual, your function/method should be pure, i.e. it should not mutate the ori
 */
 
 // solution
+
+String.prototype.toAlternatingCase = function () {
+  return this.split("")
+    .map((a) => (a === a.toUpperCase() ? a.toLowerCase() : a.toUpperCase()))
+    .join("");
+};
