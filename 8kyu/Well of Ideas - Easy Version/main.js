@@ -7,3 +7,15 @@ In this kata you need to check the provided array (x) for good ideas 'good' and 
 */
 
 // solution
+
+function well(x) {
+  let accum = 0;
+  for (let i = 0; i < x.length; i++) {
+    if (x[i] === "good") {
+      accum++;
+    }
+  }
+  if (accum > 0 && accum <= 2) return "Publish!";
+  if (accum > 2) return "I smell a series!";
+  else return "Fail!";
+}
