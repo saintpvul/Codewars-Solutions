@@ -16,3 +16,8 @@ We need to write a function that takes this collection and returns the number of
 */
 
 // solution
+
+const points = (games) =>
+  games.reduce((sum, curr) => {
+    return (sum += curr[0] > curr[2] ? 3 : curr[0] === curr[2] ? 1 : 0);
+  }, 0);
