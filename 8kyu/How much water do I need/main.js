@@ -13,3 +13,13 @@ The answer should be rounded to the nearest 2 decimal places.
 */
 
 // solution
+
+function howMuchWater(water, load, clothes) {
+  return clothes > load * 2
+    ? "Too much clothes"
+    : clothes < load
+    ? "Not enough clothes"
+    : +(water * 1.1 ** (clothes - load)).toFixed(2);
+}
+
+console.log(howMuchWater(10, 11, 20));
