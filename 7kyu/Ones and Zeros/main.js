@@ -19,3 +19,6 @@ However, the arrays can have varying lengths, not just limited to 4.
 */
 
 // solution
+const binaryArrayToNumber = (arr) => {
+  return parseInt(arr.join(""), 2);
+};
