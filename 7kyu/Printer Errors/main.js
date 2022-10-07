@@ -20,3 +20,7 @@ printer_error(s) => "8/22"
 */
 
 // solution
+
+function printerError(s) {
+  return `${s.replace(/[a-m]/gi, "").length}/${s.length}`;
+}
