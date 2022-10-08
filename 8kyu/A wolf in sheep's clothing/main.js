@@ -20,3 +20,16 @@ Output: "Pls go away and stop eating my sheep"
 */
 
 // solution
+
+function warnTheSheep(queue) {
+  let arr = queue.reverse();
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[0] === "wolf") {
+      return "Pls go away and stop eating my sheep";
+    } else {
+      return `Oi! Sheep number ${arr.indexOf(
+        "wolf"
+      )}! You are about to be eaten by a wolf!`;
+    }
+  }
+}
