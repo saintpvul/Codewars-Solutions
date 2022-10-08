@@ -26,3 +26,5 @@ elevator(0, 2, 1); // => "right"
 function elevator(left, right, call) {
   return Math.abs(call - right) > Math.abs(call - left) ? "left" : "right";
 }
+
+console.log(elevator(0, 1, 1));
