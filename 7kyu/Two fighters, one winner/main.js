@@ -19,3 +19,32 @@ Example:
 */
 
 // solution
+
+function Fighter(name, health, damagePerAttack) {
+  this.name = name;
+  this.health = health;
+  this.damagePerAttack = damagePerAttack;
+  this.toString = function () {
+    return this.name;
+  };
+}
+
+function declareWinner(fighter1, fighter2, firstAttacker) {
+  let f1 = Math.ceil(fighter1.health / fighter2.damagePerAttack);
+  let f2 = Math.ceil(fighter2.health / fighter1.damagePerAttack);
+  if (f1 < f2) {
+    return fighter2.name;
+  } else if (f1 > f2) {
+    return fighter1.name;
+  } else {
+    return firstAttacker;
+  }
+}
+
+console.log(
+  declareWinner(
+    new Fighter("Jerry", 30, 3),
+    new Fighter("Harald", 20, 5),
+    "Harald"
+  )
+);
