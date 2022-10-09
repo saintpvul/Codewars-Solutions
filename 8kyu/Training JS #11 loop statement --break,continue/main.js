@@ -16,3 +16,18 @@ If you forgot how to push an element to array, please refer to lesson 4.
 */
 
 // solution
+function grabDoll(dolls) {
+  let bag = [];
+  for (let i = 0; i < dolls.length; i++) {
+    if (dolls[i] !== "Hello Kitty" && dolls[i] !== "Barbie doll") {
+      continue;
+    }
+    bag.push(dolls[i]);
+    if (bag.length >= 3) {
+      break;
+    }
+  }
+  return bag;
+}
+
+console.log(grabDoll(["Mickey Mouse", "Hello Kitty", "Snow white"]));
