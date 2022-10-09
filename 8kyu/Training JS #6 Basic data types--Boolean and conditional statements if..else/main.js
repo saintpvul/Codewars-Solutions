@@ -10,3 +10,8 @@ In the end, click "Submit" to submit your code pass this kata.
 */
 
 // solution
+
+function trueOrFalse(val) {
+  if (val) return "true";
+  else return "false";
+}
