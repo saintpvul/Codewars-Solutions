@@ -22,3 +22,8 @@ In the end, click "Submit" to submit your code pass this kata.
 */
 
 // solution
+
+function helloWorld() {
+  let str = "Hello World!";
+  console.log(str);
+}
