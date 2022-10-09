@@ -13,3 +13,18 @@ Finally, return the padded string.
 */
 
 // solution
+
+function padIt(str, n) {
+  let res = str,
+    i = 0;
+  while (i < n) {
+    if (i % 2 === 0) {
+      res = `*${res}`;
+    } else {
+      res = `${res}*`;
+    }
+    i++;
+  }
+  return res;
+}
+console.log(padIt("a", 1));
