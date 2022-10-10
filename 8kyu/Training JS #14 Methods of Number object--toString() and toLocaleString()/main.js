@@ -17,3 +17,12 @@ That's all of your work. My work is print your color code on your screen.
 */
 
 // solution
+
+function hex(c) {
+  let getHex = c.toString(16);
+  return getHex.length === 1 ? `0` + getHex : getHex;
+}
+
+function colorOf(r, g, b) {
+  return "#" + hex(r) + hex(g) + hex(b);
+}
