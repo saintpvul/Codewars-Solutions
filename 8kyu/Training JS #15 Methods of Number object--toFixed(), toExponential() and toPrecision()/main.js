@@ -14,3 +14,9 @@ howManySmaller([1.234,1.235,1.228],1.24) should return 2
 */
 
 // solution
+
+function howManySmaller(arr, n) {
+  return arr.filter((el) => +el.toFixed(2) < n).length;
+}
+
+console.log(howManySmaller([1.234, 1.235, 1.228], 1.24));
