@@ -10,3 +10,14 @@ The second mission: Traversing arr again, intercept all strings to the shortest 
 */
 
 // solution
+
+function cutIt(arr) {
+  let newArr = [];
+  let short = arr.reduce((a, b) => (a.length <= b.length ? a : b));
+  for (let i = 0; i < arr.length; i++) {
+    newArr.push(arr[i].slice(0, short.length));
+  }
+  return newArr;
+}
+
+console.log(cutIt(["codewars", "javascript", "java"]));
