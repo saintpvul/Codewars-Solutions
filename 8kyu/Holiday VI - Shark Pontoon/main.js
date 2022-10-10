@@ -25,3 +25,9 @@ If you make it, return "Alive!", if not, return "Shark Bait!".
 */
 
 // solution
+
+const shark = (pontoonDistance, sharkDistance, youSpeed, sharkSpeed, dolphin) =>
+  sharkDistance / (dolphin ? sharkSpeed / 2 : sharkSpeed) <
+  pontoonDistance / youSpeed
+    ? "Shark Bait!"
+    : "Alive!";
