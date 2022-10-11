@@ -9,3 +9,5 @@ Any solution is acceptable!
 */
 
 // solution
+
+const isReallyNaN = (val) => (val != val ? true : false);
