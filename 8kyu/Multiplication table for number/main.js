@@ -18,3 +18,13 @@ For example, a multiplication table (string) for number == 5 looks like below:
 */
 
 // solution
+
+function multiTable(number) {
+  let str = "";
+  for (let i = 1; i < 11; i++) {
+    str += `${i} * ${number} = ${i * number}\n`;
+  }
+  return str.slice(0, -1);
+}
+
+console.log(multiTable(5));
