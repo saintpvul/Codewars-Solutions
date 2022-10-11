@@ -11,3 +11,5 @@ Tests round answers to 6 decimal places.
 */
 
 // solution
+
+const distanceBetweenPoints = (a, b) => Math.hypot(b.x - a.x, b.y - a.y);
