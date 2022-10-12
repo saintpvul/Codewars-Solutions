@@ -19,8 +19,6 @@ class Cube {
     this.setSide(n);
   }
 
-  side = 0;
-
   getSide() {
     return this.side;
   }
