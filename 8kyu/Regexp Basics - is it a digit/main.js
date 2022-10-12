@@ -5,3 +5,7 @@ Implement String#digit? (in Java StringUtils.isDigit(String)), which should retu
 */
 
 // solution
+
+String.prototype.digit = function () {
+  return /^\d$/.test(this);
+};
