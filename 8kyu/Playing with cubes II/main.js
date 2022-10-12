@@ -11,3 +11,20 @@ The constructor taking no arguments should assign 0 to Cube's Side property.
 */
 
 // solution
+
+// This Cube class needs help
+// Implement the constructor so that it can take an integer for the side or no args
+class Cube {
+  constructor(n = 0) {
+    this.setSide(n);
+  }
+
+  side = 0;
+
+  getSide() {
+    return this.side;
+  }
+  setSide(n) {
+    this.side = Math.abs(n);
+  }
+}
