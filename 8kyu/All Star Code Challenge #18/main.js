@@ -19,3 +19,13 @@ The second string argument will always be of length 1
 */
 
 // solution
+
+function strCount(str, letter) {
+  let sum = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (str[i].toLowerCase() === letter.toLowerCase()) {
+      sum++;
+    }
+  }
+  return sum;
+}
