@@ -14,3 +14,14 @@ Example
 */
 
 // solution
+
+function sumArray(array) {
+  return array && array.length > 0
+    ? array
+        .sort((a, b) => a - b)
+        .slice(1, -1)
+        .reduce((acc, i) => (acc += i), 0)
+    : 0;
+}
+
+console.log(sumArray([6, 2, 1, 8, 10]));
