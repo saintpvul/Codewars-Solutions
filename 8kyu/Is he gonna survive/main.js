@@ -7,3 +7,5 @@ Return True if yes, False otherwise :)
 */
 
 // solution
+
+const hero = (bullets, dragons) => bullets >= dragons * 2;
