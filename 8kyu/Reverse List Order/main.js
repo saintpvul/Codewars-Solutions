@@ -9,3 +9,5 @@ Examples (Input -> Output)
 */
 
 // solution
+
+const reverseList = (list) => list.reverse();
