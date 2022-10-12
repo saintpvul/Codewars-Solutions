@@ -11,3 +11,5 @@ If there is enough space, return 0, and if there isn't, return the number of pas
 */
 
 // solution
+
+const enough = (cap, on, wait) => (on + wait <= cap ? 0 : on + wait - cap);
