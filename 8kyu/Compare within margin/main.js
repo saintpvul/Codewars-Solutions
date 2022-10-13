@@ -34,3 +34,7 @@ This is because the distance between a and b is greater than 0, and a is less th
 */
 
 // solution
+
+function closeCompare(a, b, margin) {
+  return margin >= Math.abs(a - b) || a === b ? 0 : a < b ? -1 : a > b ? 1 : 0;
+}
