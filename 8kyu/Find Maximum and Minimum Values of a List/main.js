@@ -5,3 +5,11 @@ Your task is to make two functions ( max and min, or maximum and minimum, etc., 
 */
 
 // solution
+
+var min = function (list) {
+  return list.sort((a, b) => a - b)[0];
+};
+
+var max = function (list) {
+  return list.sort((a, b) => a - b)[list.length - 1];
+};
