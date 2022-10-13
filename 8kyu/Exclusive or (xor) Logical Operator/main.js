@@ -8,9 +8,5 @@ Since we cannot define keywords in Javascript (well, at least I don't know how t
 // solution
 
 function xor(a, b) {
-  if ((a == true && b == false) || (a == false && b == true)) {
-    return true;
-  } else {
-    return false;
-  }
+  return a != b;
 }
