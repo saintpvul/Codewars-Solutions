@@ -11,5 +11,5 @@ var min = function (list) {
 };
 
 var max = function (list) {
-  return list.sort((a, b) => a - b)[list.length - 1];
+  return list.sort((a, b) => b - a)[0];
 };
