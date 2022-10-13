@@ -6,3 +6,7 @@ The starship Enterprise has run into some problem when creating a program to gre
 */
 
 // solution
+
+function sayHello(name) {
+  return `Hello, ${name}`;
+}
