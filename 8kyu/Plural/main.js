@@ -9,3 +9,5 @@ All values will be positive integers or floats, or zero.
 */
 
 // solution
+
+const plural = (n) => (n === 1 ? false : true);
