@@ -11,3 +11,19 @@ In this kata, the function will take a string as its argument, and return a stri
 */
 
 // solution
+
+function toFreud(string) {
+  if (string.length > 0) {
+    let a = string.split(" ");
+    for (let i = 0; i < a.length; i++) {
+      a[i] = "sex";
+    }
+    return a.join(" ");
+  } else return string;
+}
+
+console.log(toFreud("This is a test"));
+
+const toFreud2 = (str) => str.map((item) => (item = "sex"));
+
+console.log(toFreud2("This is a test"));
