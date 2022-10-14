@@ -15,3 +15,7 @@ Aspect ratio 4 3 example
 */
 
 // solution
+
+function aspectRatio(x, y) {
+  return [Math.ceil((16 * y) / 9), y];
+}
