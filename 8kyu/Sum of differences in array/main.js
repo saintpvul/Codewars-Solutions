@@ -15,16 +15,13 @@ If the array is empty or the array has only one element the result should be 0 (
 // solution
 
 function sumOfDifferences(arr) {
-  let sum = 0;
-  if (arr.length > 1) {
-    let sorted = arr.sort((a, b) => b - a);
-    let arrToSum = [];
-    for (let i = 0; i < sorted.length - 1; i++) {
-      arrToSum.push(sorted[i] - sorted[i + 1]);
-    }
-    sum = arrToSum.reduce((acc, item) => (acc += item));
-    return sum;
-  } else return sum;
+  let sorted = arr.sort((a, b) => b - a);
+  let arrToSum = [];
+  for (let i = 0; i < sorted.length - 1; i++) {
+    arrToSum.push(sorted[i] - sorted[i + 1]);
+  }
+  sum = arrToSum.reduce((acc, item) => (acc += item), 0);
+  return sum;
 }
 
 console.log(sumOfDifferences([5]));
