@@ -32,7 +32,7 @@ function magNumber(info) {
   let magazine = Object.values(weapon);
   let weaponName = Object.keys(weapon);
   let expectedIndex = weaponName.indexOf(info[0]);
-  return Math.round((info[1] * 3) / magazine[expectedIndex]);
+  return Math.ceil((info[1] * 3) / magazine[expectedIndex]);
 }
 
 console.log(magNumber(["PSG1", 6]));
