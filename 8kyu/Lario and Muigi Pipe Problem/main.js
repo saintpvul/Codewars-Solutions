@@ -16,3 +16,16 @@ Input:  1,3,5,6,7,8 Output: 1,2,3,4,5,6,7,8
 */
 
 // solution
+
+function pipeFix(numbers) {
+  let max = Math.max(...numbers);
+  let min = Math.min(...numbers);
+  let fullRange = [];
+  for (let i = min; i <= max; i++) {
+    fullRange.push(i);
+  }
+  return fullRange;
+}
+
+console.log(pipeFix([1, 2, 3, 5, 6, 7, 13]));
+console.log(pipeFix([-12, 2, 3, 5, 6, 7, 13]));
