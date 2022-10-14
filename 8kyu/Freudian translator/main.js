@@ -23,7 +23,3 @@ function toFreud(string) {
 }
 
 console.log(toFreud("This is a test"));
-
-const toFreud2 = (str) => str.map((item) => (item = "sex"));
-
-console.log(toFreud2("This is a test"));
