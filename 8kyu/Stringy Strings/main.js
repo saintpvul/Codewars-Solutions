@@ -15,3 +15,12 @@ The size will always be positive and will only use whole numbers.
 */
 
 // solution
+
+function stringy(size) {
+  let str = "";
+  return size % 2 === 0
+    ? (str + 10).repeat(size / 2)
+    : (str + 10).repeat(size / 2) + "1";
+}
+
+console.log(stringy(6));
