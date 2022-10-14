@@ -9,3 +9,8 @@ Assume the test input string is always a valid string. For example, the test inp
 */
 
 // solution
+
+const getAge = (inputString) =>
+  +inputString.split(" ").filter(Number).toString();
+
+console.log(getAge("4 years old"));
