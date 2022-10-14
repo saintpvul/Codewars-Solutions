@@ -21,3 +21,18 @@ The return Will always be an integer so as the params.
 */
 
 // solution
+let weapon = {
+  PT92: 17,
+  M4A1: 30,
+  M16A2: 30,
+  PSG1: 5,
+};
+
+function magNumber(info) {
+  let magazine = Object.values(weapon);
+  let weaponName = Object.keys(weapon);
+  let expectedIndex = weaponName.indexOf(info[0]);
+  return Math.round((info[1] * 3) / magazine[expectedIndex]);
+}
+
+console.log(magNumber(["PSG1", 6]));
