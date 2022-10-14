@@ -18,3 +18,7 @@ Results are automatically rounded to the nearest integer by the test cases.
 */
 
 // solution
+
+function dBScale(intensity) {
+  return 10 * Math.log10(intensity / Math.pow(10, -12));
+}
