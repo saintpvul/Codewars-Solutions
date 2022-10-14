@@ -24,3 +24,15 @@ Dog Years
 */
 
 // solution
+
+var humanYearsCatYearsDogYears = function (humanYears) {
+  return humanYears === 1
+    ? [humanYears, 15, 15]
+    : humanYears === 2
+    ? [humanYears, 15 + 9, 15 + 9]
+    : [
+        humanYears,
+        15 + 9 + (humanYears - 2) * 4,
+        15 + 9 + (humanYears - 2) * 5,
+      ];
+};
