@@ -11,3 +11,11 @@ If you can, try writing it in one line of code.
 */
 
 // solution
+
+const findDifference = (a, b) =>
+  Math.abs(
+    a.reduce((accum, item) => (accum *= item)) -
+      b.reduce((accum, item) => (accum *= item))
+  );
+
+console.log(findDifference([3, 2, 5], [1, 4, 4]));
