@@ -14,3 +14,10 @@ Examples:
 */
 
 // solution
+
+const hello = (name) =>
+  !name || name == ""
+    ? "Hello, World!"
+    : `Hello, ${name.charAt(0).toUpperCase()}${name
+        .toLowerCase()
+        .slice(1, name.length)}!`;
