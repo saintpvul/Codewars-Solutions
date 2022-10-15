@@ -8,3 +8,9 @@ Make sure that your function does not return a false positive by only checking t
 */
 
 // solution
+
+function isToday(date) {
+  return new Date().toDateString() === date.toDateString();
+}
+
+console.log(isToday());
