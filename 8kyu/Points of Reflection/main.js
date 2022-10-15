@@ -10,3 +10,11 @@ This kata was inspired by the Hackerrank challenge Find Point
 */
 
 // solution
+
+function symmetricPoint(a, b) {
+  return [b[0] * 2 - a[0], b[1] * 2 - a[1]];
+}
+
+console.log(symmetricPoint([0, 0], [1, 1]));
+
+console.log(symmetricPoint([2, 6], [-2, -6]));
