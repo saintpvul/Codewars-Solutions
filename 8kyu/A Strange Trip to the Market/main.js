@@ -11,3 +11,13 @@ Since Nessie is a master of disguise, the only way accurately tell is to look fo
 */
 
 // solution
+
+function isLockNessMonster(s) {
+  if (
+    s.includes("tree fiddy") ||
+    s.includes("3.50") ||
+    s.includes("three fifty")
+  ) {
+    return "Yo, I heard you were on the lookout for Nessie. Let me know if you need assistance.";
+  }
+}
