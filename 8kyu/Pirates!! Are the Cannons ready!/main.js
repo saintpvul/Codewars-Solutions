@@ -29,3 +29,12 @@ Also, check out the new Pirates!! Kata: https://www.codewars.com/kata/57e2d5f473
 */
 
 // solution
+
+const cannonsReady = (gunners) =>
+  Object.values(gunners).every((value) => value === "aye")
+    ? "Fire!"
+    : "Shiver me timbers!";
+
+console.log(
+  cannonsReady({ Mike: "aye", Joe: "aye", Johnson: "aye", Peter: "aye" })
+);
