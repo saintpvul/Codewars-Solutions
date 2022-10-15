@@ -15,3 +15,15 @@ sumMul(4, -7)  ==> "INVALID"
 */
 
 // solution
+
+function sumMul(n, m) {
+  let sum = 0;
+  if (n < m && n > 0) {
+    for (let i = n; i < m; i += n) {
+      sum += i;
+    }
+    return sum;
+  } else {
+    return "INVALID";
+  }
+}
