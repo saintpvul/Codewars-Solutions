@@ -7,3 +7,5 @@ If you need help, here's a reference:
 */
 
 // solution
+
+const take = (arr, n) => arr.slice(0, n);
