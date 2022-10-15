@@ -16,3 +16,7 @@ The elements in the returned array should be in the same order as in the initial
 */
 
 // solution
+
+let geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+
+const gooseFilter = (birds) => birds.filter((bird) => !geese.includes(bird));
