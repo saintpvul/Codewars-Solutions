@@ -13,3 +13,5 @@ result = 2 (remainder of `17 / 5`)
 */
 
 // solution
+
+const remainder = (n, m) => (n > m ? n % m : m % n);
