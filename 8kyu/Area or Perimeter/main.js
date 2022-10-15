@@ -14,3 +14,5 @@ Note: for the purposes of this kata you will assume that it is a square if its l
 */
 
 // solution
+
+const areaOrPerimeter = (l, w) => (l === w ? l * w : l * 2 + w * 2);
