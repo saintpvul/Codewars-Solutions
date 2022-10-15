@@ -18,3 +18,5 @@ Inputs and the expected output will never exceed the signed 32-bit integer limit
 */
 
 // solution
+
+const sumStr = (a, b) => (+a + +b).toString();
