@@ -37,3 +37,12 @@ Happy coding!
 */
 
 // solution
+
+const isInt = (animal) => animal >= 0 && Number.isInteger(animal);
+
+const animals = (heads, legs) => {
+  let cows = legs / 2 - heads;
+  let chicks = heads - cows;
+
+  return isInt(cows) && isInt(chicks) ? [chicks, cows] : "No solutions";
+};
