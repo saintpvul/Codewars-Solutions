@@ -9,3 +9,5 @@ a == !a
 */
 
 // solution
+
+const a = [];
