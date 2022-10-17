@@ -19,3 +19,5 @@ six_toast(12) == 6
 */
 
 // solution
+
+const sixToast = (num) => Math.abs(num - 6);
