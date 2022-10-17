@@ -14,3 +14,5 @@ y is not considered a vowel for this kata
 */
 
 // solution
+
+const shortcut = (string) => string.replace(/[aeiou]/g, "");
