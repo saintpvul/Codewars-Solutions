@@ -9,3 +9,12 @@ uniTotal("a") == 97 uniTotal("aaa") == 291
 */
 
 // solution
+
+function uniTotal(string) {
+  return string
+    .split("")
+    .reduce((accum, item) => (accum += item.charCodeAt()), 0);
+}
+
+console.log(uniTotal("a"));
+console.log(uniTotal("aaa"));
