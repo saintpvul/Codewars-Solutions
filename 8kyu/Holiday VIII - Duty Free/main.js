@@ -11,3 +11,10 @@ All inputs will be integers. Please return an integer. Round down.
 */
 
 // solution
+
+const dutyFree = (normPrice, discount, hol) =>
+  discount >= 10
+    ? Math.floor(hol / (normPrice * Number("0." + discount)))
+    : Math.floor(hol / (normPrice * Number("0.0" + discount)));
+
+console.log(dutyFree(12, 50, 1000));
