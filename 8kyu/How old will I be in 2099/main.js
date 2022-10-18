@@ -13,3 +13,18 @@ Good Luck!
 */
 
 // solution
+
+const calculateAge = (b, y) => {
+  let diff = y - b;
+  if (diff > 1) {
+    return `You are ${diff} years old.`;
+  } else if (diff === 1) {
+    return `You are 1 year old.`;
+  } else if (diff < -1) {
+    return `You will be born in ${Math.abs(diff)} years.`;
+  } else if (diff === -1) {
+    return `You will be born in 1 year.`;
+  } else {
+    return `You were born this very year!`;
+  }
+};
