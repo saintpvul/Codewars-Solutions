@@ -10,3 +10,8 @@ For example (Input --> Output)
 */
 
 // solution
+
+const ensureQuestion = (s) => s.replace(/[?]/gi, "") + "?";
+
+console.log(ensureQuestion(""));
+console.log(ensureQuestion("no?"));
