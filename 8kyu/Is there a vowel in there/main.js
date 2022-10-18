@@ -9,3 +9,29 @@ Return the resulting array.
 */
 
 // solution
+function isVow(a) {
+  let newArr = [];
+  for (let i = 0; i < a.length; i++) {
+    if ("a" === String.fromCharCode(a[i])) {
+      newArr.push("a");
+    } else if ("e" === String.fromCharCode(a[i])) {
+      newArr.push("e");
+    } else if ("o" === String.fromCharCode(a[i])) {
+      newArr.push("o");
+    } else if ("u" === String.fromCharCode(a[i])) {
+      newArr.push("u");
+    } else if ("i" === String.fromCharCode(a[i])) {
+      newArr.push("i");
+    } else {
+      newArr.push(a[i]);
+    }
+  }
+  return newArr;
+}
+
+console.log(
+  isVow([
+    118, 117, 120, 121, 117, 98, 122, 97, 120, 106, 104, 116, 113, 114, 113,
+    120, 106,
+  ])
+);
