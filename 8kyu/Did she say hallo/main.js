@@ -23,6 +23,8 @@ function should be case insensitive to pass the tests
 
 // solution
 
+const validateHallo = (g) => /h[ae]llo|ciao|salut|hola|ahoj|czesc/i.test(g);
+
 function validateHello(greetings) {
   let hello = ["hello", "ciao", "salut", "hallo", "hola", "ahoj", "czesc"];
   for (let i = 0; i < greetings.length; i++) {
