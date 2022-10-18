@@ -22,3 +22,15 @@ function should be case insensitive to pass the tests
 */
 
 // solution
+
+function validateHello(greetings) {
+  let hello = ["hello", "ciao", "salut", "hallo", "hola", "ahoj", "czesc"];
+  for (let i = 0; i < greetings.length; i++) {
+    for (let j = 0; j < hello.length; j++) {
+      if (greetings.toLowerCase().split(/\W/)[i] === hello[j]) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
