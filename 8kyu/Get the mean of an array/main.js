@@ -9,3 +9,6 @@ The array will never be empty.
 */
 
 // solution
+
+const getAverage = (marks) =>
+  Math.floor(marks.reduce((s, i) => (s += i), 0) / marks.length);
