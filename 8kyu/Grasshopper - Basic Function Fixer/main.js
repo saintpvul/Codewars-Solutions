@@ -8,3 +8,8 @@ Can you help me fix the function?
 */
 
 // solution
+
+const addFive = (num) => {
+  var total = num + 5;
+  return total;
+};
