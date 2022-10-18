@@ -17,3 +17,5 @@ time = 11.8--> litres = 5
 */
 
 // solution
+
+const litres = (time) => Math.floor(time * 0.5);
