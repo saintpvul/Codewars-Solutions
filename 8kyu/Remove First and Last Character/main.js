@@ -5,3 +5,5 @@ It's pretty straightforward. Your goal is to create a function that removes the 
 */
 
 // solution
+
+const removeChar = (str) => str.slice(1, str.length - 1);
