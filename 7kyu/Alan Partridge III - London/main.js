@@ -18,3 +18,12 @@ If all the stops appear in the given list / array, return Smell my cheese you mo
 */
 
 // solution
+
+function alan(x) {
+  return x.includes("Rejection") &&
+    x.includes("Disappointment") &&
+    x.includes("Backstabbing Central") &&
+    x.includes("Shattered Dreams Parkway")
+    ? "Smell my cheese you mother!"
+    : "No, seriously, run. You will miss it.";
+}
