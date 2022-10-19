@@ -17,3 +17,8 @@ isDigit("zero")
 */
 
 // solution
+
+const isDigit = (s) => s == parseFloat(s);
+
+var input = "5";
+console.log(isDigit(input));
