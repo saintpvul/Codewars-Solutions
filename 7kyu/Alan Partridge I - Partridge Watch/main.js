@@ -22,3 +22,17 @@ If you don't find any related terms, return Lynn, I've pierced my foot on a spik
 */
 
 // solution
+
+function part(x) {
+  let sum = 0;
+  for (let i = 0; i < x.length; i++) {
+    if (
+      x[i].match(/Partridge|PearTree|Chat|Dan|Toblerone|Lynn|AlphaPapa|Nomad/)
+    ) {
+      sum++;
+    }
+  }
+  return sum > 0
+    ? "Mine's a Pint" + "!".repeat(sum)
+    : "Lynn, I've pierced my foot on a spike!!";
+}
