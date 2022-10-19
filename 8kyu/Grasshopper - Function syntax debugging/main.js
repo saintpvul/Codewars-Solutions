@@ -6,3 +6,5 @@ A student was working on a function and made some syntax mistakes while coding. 
 */
 
 // solution
+
+const main = (verb, noun) => verb + noun;
