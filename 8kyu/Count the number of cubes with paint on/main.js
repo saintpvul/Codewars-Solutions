@@ -13,3 +13,5 @@ countSquares(4) --> 98
 */
 
 // solution
+
+const countSquares = (cuts) => (cuts ? 6 * (cuts * cuts) + 2 : 1);
