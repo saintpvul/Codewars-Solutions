@@ -8,3 +8,5 @@ Time to test your basic knowledge in functions! Return the odds from a list:
 */
 
 // solution
+
+const odds = (values) => values.filter((elem) => elem % 2 === 1);
