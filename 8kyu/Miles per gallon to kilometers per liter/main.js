@@ -13,3 +13,9 @@ Some useful associations relevant to this kata: 1 Imperial Gallon = 4.54609188 l
 */
 
 // solution
+
+function converter(mpg) {
+  let l = 4.54609188,
+    kl = 1.609344;
+  return +((mpg * kl) / l).toFixed(2);
+}
