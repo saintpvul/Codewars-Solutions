@@ -25,3 +25,11 @@ A Boolean value (True or False).
 */
 
 // solution
+
+const operation = {
+  AND: (a, b) => a && b,
+  OR: (a, b) => a || b,
+  XOR: (a, b) => a != b,
+};
+
+const logicalCalc = (array, op) => array.reduce(operation[op]);
