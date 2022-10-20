@@ -13,3 +13,9 @@ ball2.ballType     //=> "super"
 */
 
 // solution
+
+class Ball {
+  constructor(ballType = "regular") {
+    this.ballType = ballType;
+  }
+}
