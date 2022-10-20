@@ -13,3 +13,11 @@ Go on and code some pure awesomeness!
 */
 
 // solution
+
+function nextId(ids) {
+  let usedId = new Set(ids);
+
+  for (let i = 0; i <= ids.length; i++) {
+    if (!usedId.has(i)) return i;
+  }
+}
