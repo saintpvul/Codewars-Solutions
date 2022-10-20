@@ -5,3 +5,5 @@ This method, which is supposed to return the result of dividing its first argume
 */
 
 // solution
+
+const solve = (x, y) => x / y;
