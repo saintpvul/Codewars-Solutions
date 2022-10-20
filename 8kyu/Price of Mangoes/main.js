@@ -9,3 +9,7 @@ mango(9, 5) ==> 30   # 6 mangoes for 5 = 30;
 */
 
 // solution
+
+function mango(quantity, price) {
+  return (quantity - Math.floor(quantity / 3)) * price;
+}
