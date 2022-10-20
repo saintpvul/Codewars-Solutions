@@ -14,3 +14,7 @@ Reference: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/templa
 
 */
 // solution
+
+var TempleStrings = function (obj, feature) {
+  return obj + " are " + feature;
+};
