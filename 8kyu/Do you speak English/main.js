@@ -11,3 +11,6 @@ Return value as boolean values, true for the string to contains "English", false
 */
 
 // solution
+
+const spEng = (sentence) =>
+  sentence.toLowerCase().split("english").join("") != sentence.toLowerCase();
