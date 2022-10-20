@@ -15,3 +15,11 @@ the range does not HAVE to include max (depending on the step)
 */
 
 // solution
+
+function generateRange(min, max, step) {
+  let arr = [];
+  for (let i = min; i <= max; i += step) {
+    arr.push(i);
+  }
+  return arr;
+}
