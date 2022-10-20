@@ -7,3 +7,10 @@ Can you figure out what's wrong here?
 */
 
 // solution
+
+function swapValues() {
+  var args = Array.from(arguments);
+  var temp = args[0][0];
+  args[0][0] = args[0][1];
+  args[0][1] = temp;
+}
