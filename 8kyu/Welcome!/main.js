@@ -32,7 +32,8 @@ IP_ADDRESS_REQUIRED - no ip address was supplied
 */
 
 // solution
-const greet = {
+
+const greetings = {
   english: "Welcome",
   czech: "Vitejte",
   danish: "Velkomst",
@@ -51,3 +52,23 @@ const greet = {
   swedish: "Valkommen",
   welsh: "Croeso",
 };
+
+function greet(language) {
+  let getCountry = Object.keys(greetings),
+    getGreet = Object.values(greetings);
+
+  for (let i = 0; i < getCountry.length; i++) {
+    if (language === getCountry[i]) {
+      return getGreet[i];
+    }
+  }
+  return getGreet[0];
+}
+
+console.log(greet("duth"));
+
+console.log(greet("dutch"));
+
+console.log(greet("english"));
+
+console.log(greet(""));
