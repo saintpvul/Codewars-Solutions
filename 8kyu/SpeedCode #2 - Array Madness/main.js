@@ -12,3 +12,15 @@ Get your timer out. Are you ready? Ready, get set, GO!!!
 */
 
 // solution
+
+function arrayMadness(a, b) {
+  let aRes = 0,
+    bRes = 0;
+  for (let i = 0; i <= a.length; i++) {
+    aRes += a[i] ** 2;
+  }
+  for (let j = 0; j <= b.length; j++) {
+    bRes += b[j] ** 3;
+  }
+  return aRes > bRes;
+}
