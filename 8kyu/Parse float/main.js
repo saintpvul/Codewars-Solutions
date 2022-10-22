@@ -8,10 +8,8 @@ Write function parseF which takes an input and returns a number or null if conve
 
 // solution
 
-const parseF = (s) =>
-  parseFloat(s) >= 0 && typeof parseFloat(s) === "number"
-    ? +parseFloat(s)
-    : null;
+// const parseF = (s) =>
+parseFloat(s) >= 0 && typeof parseFloat(s) === "number" ? +parseFloat(s) : null;
 
 const parseF = (s) => (isNaN(parseFloat(s)) ? null : parseFloat(s));
 
