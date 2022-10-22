@@ -16,10 +16,10 @@ Get your timer out. Are you ready? Ready, get set, GO!!!
 function arrayMadness(a, b) {
   let aRes = 0,
     bRes = 0;
-  for (let i = 0; i <= a.length; i++) {
+  for (let i = 0; i < a.length; i++) {
     aRes += a[i] ** 2;
   }
-  for (let j = 0; j <= b.length; j++) {
+  for (let j = 0; j < b.length; j++) {
     bRes += b[j] ** 3;
   }
   return aRes > bRes;
