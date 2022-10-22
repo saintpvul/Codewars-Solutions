@@ -6,3 +6,24 @@ You are creating an "Escape the room" game. The first step is to create a hash t
 */
 
 // solution
+
+// Add rooms here
+var rooms = {
+  firstRoom: {
+    name: "red room",
+    description: "the room is white? no. it's red",
+    completed: true,
+  },
+
+  secondRoom: {
+    name: "blue room",
+    description: "the room is full of water",
+    completed: true,
+  },
+
+  thirdRoom: {
+    name: "black room",
+    description: "where am i? is anybody here?",
+    completed: false,
+  },
+};
