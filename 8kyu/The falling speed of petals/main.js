@@ -16,3 +16,5 @@ If the initial velocity is non-positive, the return value should be 0
 */
 
 // solution
+
+const sakuraFall = (v) => (v > 0 ? 400 / v : 0);
