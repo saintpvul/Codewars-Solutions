@@ -16,3 +16,5 @@ Good luck! Your team knows they can count on you!
 */
 
 // asolution
+
+const formatMoney = (amount) => `$${amount.toFixed(2)}`;
