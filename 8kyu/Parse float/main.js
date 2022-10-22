@@ -7,3 +7,11 @@ Write function parseF which takes an input and returns a number or null if conve
 */
 
 // solution
+
+const parseF = (s) =>
+  parseFloat(s) >= 0 && typeof parseFloat(s) === "number"
+    ? +parseFloat(s).toFixed(1)
+    : null;
+
+console.log(parseF("1"));
+console.log(parseF("asd"));
