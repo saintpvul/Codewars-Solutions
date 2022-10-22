@@ -10,8 +10,10 @@ Write function parseF which takes an input and returns a number or null if conve
 
 const parseF = (s) =>
   parseFloat(s) >= 0 && typeof parseFloat(s) === "number"
-    ? +parseFloat(s).toFixed(1)
+    ? +parseFloat(s)
     : null;
+
+const parseF = (s) => (isNaN(parseFloat(s)) ? null : parseFloat(s));
 
 console.log(parseF("1"));
 console.log(parseF("asd"));
