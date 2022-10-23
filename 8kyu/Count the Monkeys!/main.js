@@ -12,3 +12,13 @@ For example(Input --> Output):
 */
 
 // solution
+
+function monkeyCount(n) {
+  let result = [],
+    i = 1;
+  while (i <= n) {
+    result.push(i), i++;
+  }
+
+  return result;
+}
