@@ -11,3 +11,5 @@ Looking for more, loop-restrained fun? Check out the other kata in the series:
 */
 
 // solution
+
+const check = (a, x) => a.includes(x);
