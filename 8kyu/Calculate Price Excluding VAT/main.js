@@ -16,3 +16,6 @@ If null value given then return -1
 */
 
 // solution
+
+const excludingVatPrice = (price) =>
+  price === null ? -1 : +((price / 115) * 100).toFixed(2);
