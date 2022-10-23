@@ -7,3 +7,23 @@ You will be given an array of all the family members' ages, in any order. The ag
 */
 
 // solution
+
+function differenceInAges(ages) {
+  let youngest = ages.sort((a, b) => a - b)[0],
+    oldest = ages.sort((a, b) => a - b)[ages.length - 1],
+    diff = oldest - youngest;
+  return [youngest, oldest, diff];
+}
+
+function differenceInAges(ages) {
+  let youngest = Math.min(...ages),
+    oldest = Math.max(...ages),
+    diff = oldest - youngest;
+  return [youngest, oldest, diff];
+}
+
+const differenceInAges = (ages) => [
+  Math.min(...ages),
+  Math.max(...ages),
+  Math.max(...ages) - Math.min(...ages),
+];
