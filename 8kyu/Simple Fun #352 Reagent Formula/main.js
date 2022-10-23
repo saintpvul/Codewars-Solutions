@@ -36,3 +36,14 @@ Happy Coding ^_^
 */
 
 // solution
+
+function isValid(formula) {
+  let firstRule = !(formula.includes(1) && formula.includes(2)),
+    secondRule = !(formula.includes(3) && formula.includes(4)),
+    thirdRule = formula.includes(5) === formula.includes(6),
+    fifthRule = formula.includes(7) || formula.includes(8);
+
+  return firstRule && secondRule && thirdRule && fifthRule;
+}
+
+console.log(isValid([1, 3, 5]));
