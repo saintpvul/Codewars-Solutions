@@ -15,3 +15,9 @@ Zero alone is fine, don't worry about it. Poor guy anyway
 */
 
 // solution
+
+function noBoringZeros(n) {
+  return +n.toString().replace(/[0]*$/, "");
+}
+
+console.log(noBoringZeros(1200));
