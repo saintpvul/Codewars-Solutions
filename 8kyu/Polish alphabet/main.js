@@ -22,3 +22,35 @@ For example:
 */
 
 // solution
+
+const letters = {
+  ą: "a",
+  ć: "c",
+  ę: "e",
+  ł: "l",
+  ń: "n",
+  ó: "o",
+  ś: "s",
+  ź: "z",
+  ż: "z",
+};
+
+function correctPolishLetters(string) {
+  let polLet = Object.keys(letters),
+    regLet = Object.values(letters),
+    ndx = 0;
+
+  let str = "";
+  for (let i = 0; i < string.length; i++) {
+    if (polLet.indexOf(string[i]) != -1) {
+      ndx = polLet.indexOf(string[i]);
+      str += regLet[ndx];
+    } else {
+      str += string[i];
+    }
+  }
+  return str;
+}
+
+console.log(correctPolishLetters("Lech Wałęsa"));
+console.log(correctPolishLetters("Maria Skłodowska-Curie"));
