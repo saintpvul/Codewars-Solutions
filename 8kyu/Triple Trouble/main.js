@@ -9,3 +9,13 @@ Note: You can expect all of the inputs to be the same length.
 */
 
 // solution
+
+function tripleTrouble(one, two, three) {
+  let str = "";
+  for (let i = 0; i < one.length; i++) {
+    str += one[i];
+    str += two[i];
+    str += three[i];
+  }
+  return str;
+}
