@@ -26,11 +26,5 @@ Whatever you do, do not change what the function does. Good luck :)
 
 const describeAge = (age) =>
   `You're a(n) ${
-    age <= 12
-      ? "kid"
-      : age >= 13 && age <= 17
-      ? "teenager"
-      : age >= 18 && age <= 64
-      ? "adult"
-      : "elderly"
+    age < 13 ? "kid" : age < 18 ? "teenager" : age < 65 ? "adult" : "elderly"
   }`;
