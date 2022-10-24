@@ -18,3 +18,10 @@ The given name may varies in casing, eg., it can be "George Saint Pierre" or "ge
 */
 
 // solution
+
+var quote = (fighter) =>
+  fighter.toLowerCase() === "george saint pierre"
+    ? "I am not impressed by your performance."
+    : fighter.toLowerCase() === "conor mcgregor"
+    ? "I'd like to take this chance to apologize.. To absolutely NOBODY!"
+    : fighter;
