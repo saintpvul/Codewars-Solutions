@@ -11,3 +11,7 @@ http://www.rubycuts.com/enum-any
 */
 
 // solution
+
+function any(arr, fun) {
+  return arr.some(fun);
+}
