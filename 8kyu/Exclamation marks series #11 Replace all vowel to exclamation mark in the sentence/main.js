@@ -12,3 +12,5 @@ replace("ABCDE") === "!BCD!"
 */
 
 // solution
+
+const replace = (s) => s.replace(/[aeoui]/gi, "!");
