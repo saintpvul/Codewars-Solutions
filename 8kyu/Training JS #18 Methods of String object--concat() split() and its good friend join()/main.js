@@ -16,3 +16,12 @@ splitAndMerge("Hello World!", ",")     ==  "H,e,l,l,o W,o,r,l,d,!"
 */
 
 // solution
+
+function splitAndMerge(string, separator) {
+  let getWords = string.split(" "),
+    newString = [];
+  for (let i = 0; i < getWords.length; i++) {
+    newString.push(getWords[i].split("").join(separator));
+  }
+  return newString.join(" ");
+}
