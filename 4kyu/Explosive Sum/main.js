@@ -28,3 +28,23 @@ See here for more examples.
 */
 
 // solution
+
+const curr = [];
+
+function sum(n, m = n) {
+  if (n == 0) {
+    return 1;
+  }
+  if (n < 0 || m == 0) {
+    return 0;
+  }
+  if (curr[n] && curr[n][m]) {
+    return curr[n][m];
+  }
+  let total = sum(n, m - 1) + sum(n - m, m);
+  if (!curr[n]) {
+    curr[n] = [];
+  }
+  curr[n][m] = total;
+  return total;
+}
