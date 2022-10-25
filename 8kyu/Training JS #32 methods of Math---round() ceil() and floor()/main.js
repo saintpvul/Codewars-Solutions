@@ -16,3 +16,14 @@ roundIt(34.56) should return 35
 */
 
 // solution
+
+function roundIt(n) {
+  let [a, b] = n.toString().split(".");
+  return a.length > b.length
+    ? Math.floor(n)
+    : b.length > a.length
+    ? Math.ceil(n)
+    : Math.round(n);
+}
+
+console.log(roundIt(1.23));
