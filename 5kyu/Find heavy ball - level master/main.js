@@ -32,31 +32,17 @@ Still too easy ? Try this kata - ubermaster (made by by bellmyer)
 
 // solution
 
-function findBall(scales) {
-  var idx = -1;
-  var weight = scales.getWeight([0, 1, 2], [3, 4, 5]);
-  if (weight > 0) {
-    weight = scales.getWeight([3], [4]);
-    if (weight > 0) {
-      idx = 4;
-    } else if (weight < 0) {
-      idx = 3;
-    } else {
-      idx = 5;
-    }
-  } else if (weight < 0) {
-    weight = scales.getWeight([0], [1]);
-    if (weight > 0) {
-      idx = 1;
-    } else if (weight < 0) {
-      idx = 0;
-    } else {
-      idx = 2;
-    }
-  } else {
-    weight = scales.getWeight([6], [7]);
-    idx = weight > 0 ? 7 : 6;
+function findBall(scale, ballCount) {
+  let heavySet = [];
+  for (let i = 0; i < ballCount; i++) heavySet.push(i);
+  while (heavySet.length > 1) {
+    let firstRight = Math.ceil(heavySet.length / 3);
+    let left = heavySet.slice(0, firstRight);
+    let right = heavySet.slice(firstRight, Math.ceil(heavySet.length / 3) * 2);
+    let heavySide = scale.getWeight(left, right);
+    if (heavySide == -1) heavySet = left;
+    else if (heavySide == 1) heavySet = right;
+    else heavySet = heavySet.slice(left.length + right.length, heavySet.length);
   }
-
-  return idx;
+  return heavySet[0];
 }
