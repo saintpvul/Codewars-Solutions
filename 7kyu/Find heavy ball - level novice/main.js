@@ -29,3 +29,12 @@ master
 */
 
 // solution
+
+function findBall(scales, balls = [0, 1, 2, 3, 4, 5, 6, 7]) {
+  if (balls.length === 1) {
+    return balls[0];
+  }
+  let a = balls.slice(0, balls.length / 2),
+    b = balls.slice(a.length);
+  return findBall(scales, scales.getWeight(a, b) < 0 ? a : b);
+}
