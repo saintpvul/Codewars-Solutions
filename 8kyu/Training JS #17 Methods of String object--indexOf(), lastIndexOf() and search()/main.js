@@ -16,3 +16,6 @@ firstToLast("ababc","d") should return -1
 */
 
 // solution
+
+const firstToLast = (str, c) =>
+  str.indexOf(c) === -1 ? -1 : str.lastIndexOf(c) - str.indexOf(c);
