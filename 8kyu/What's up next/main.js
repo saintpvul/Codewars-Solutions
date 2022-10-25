@@ -10,3 +10,25 @@ nextItem("testing", "t") # "e"
 */
 
 // solution
+
+const nextItem = (xs, item) => {
+  let found = false;
+  let finalValue;
+
+  for (const i of xs) {
+    if (found) {
+      finalValue = i;
+      break;
+    }
+
+    if (i === item) found = true;
+  }
+
+  return finalValue;
+};
+
+console.log(nextItem([1, 2, 3, 4, 5], 1));
+
+console.log(nextItem("testing", "t"));
+
+console.log(nextItem(["a", "b", "c"], "d"));
