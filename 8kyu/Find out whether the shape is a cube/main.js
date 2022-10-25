@@ -17,3 +17,6 @@ Note: the sides must be integers
 */
 
 // solution
+
+const cubeChecker = (volume, side) =>
+  volume <= 0 || side <= 0 ? false : volume === side * side * side;
