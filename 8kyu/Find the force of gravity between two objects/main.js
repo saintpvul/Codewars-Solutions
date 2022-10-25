@@ -41,3 +41,25 @@ return value must be Newton for force (obviously)
 */
 
 // solution
+
+const G = 6.67e-11;
+
+const values = {
+  μg: 1e-9,
+  mg: 1e-6,
+  g: 1e-3,
+  lb: 0.453592,
+  kg: 1,
+  μm: 1e-6,
+  mm: 1e-3,
+  cm: 1e-2,
+  ft: 0.3048,
+  m: 1,
+};
+
+solution = (arr_val, arr_unit) => {
+  let m = arr_val[0] * values[arr_unit[0]] * arr_val[1] * values[arr_unit[1]];
+  let r = (arr_val[2] * values[arr_unit[2]]) ** 2;
+
+  return G * (m / r);
+};
