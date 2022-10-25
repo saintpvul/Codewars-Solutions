@@ -19,3 +19,18 @@ remove("!!!Hi !!hi!!! !hi",100) === "Hi hi hi"
 */
 
 // solution
+
+function remove(s, n) {
+  let check = s.split(""),
+    res = [],
+    count = 0;
+
+  for (let i = 0; i < check.length; i++) {
+    if (check[i] === "!" && count < n) {
+      count++;
+      check[i] = "";
+    }
+    res.push(check[i]);
+  }
+  return res.join("");
+}
