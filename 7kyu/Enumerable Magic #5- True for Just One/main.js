@@ -16,3 +16,7 @@ If you need help, here is a resource ( in Ruby ).
 */
 
 // solution
+
+function one(arr, fun) {
+  return arr.filter(fun).length === 1;
+}
