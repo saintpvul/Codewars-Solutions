@@ -28,3 +28,27 @@ master
 */
 
 // solution
+
+function findBall(scales) {
+  let weight = scales.getWeight([0, 1, 2, 3], [4, 5, 6, 7]);
+  if (weight < 0) {
+    weight = scales.getWeight([0, 1], [2, 3]);
+    if (weight < 0) {
+      weight = scales.getWeight([0], [1]);
+      return weight < 0 ? 0 : 1;
+    } else {
+      weight = scales.getWeight([2], [3]);
+      return weight < 0 ? 2 : 3;
+    }
+  } else {
+    weight = scales.getWeight([4, 5], [6, 7]);
+    if (weight < 0) {
+      weight = scales.getWeight([4], [5]);
+      return weight < 0 ? 4 : 5;
+    } else {
+      weight = scales.getWeight([6], [7]);
+      return weight < 0 ? 6 : 7;
+    }
+  }
+  return -1;
+}
