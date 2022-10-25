@@ -31,3 +31,32 @@ Still too easy ? Try this kata - ubermaster (made by by bellmyer)
 */
 
 // solution
+
+function findBall(scales) {
+  var idx = -1;
+  var weight = scales.getWeight([0, 1, 2], [3, 4, 5]);
+  if (weight > 0) {
+    weight = scales.getWeight([3], [4]);
+    if (weight > 0) {
+      idx = 4;
+    } else if (weight < 0) {
+      idx = 3;
+    } else {
+      idx = 5;
+    }
+  } else if (weight < 0) {
+    weight = scales.getWeight([0], [1]);
+    if (weight > 0) {
+      idx = 1;
+    } else if (weight < 0) {
+      idx = 0;
+    } else {
+      idx = 2;
+    }
+  } else {
+    weight = scales.getWeight([6], [7]);
+    idx = weight > 0 ? 7 : 6;
+  }
+
+  return idx;
+}
