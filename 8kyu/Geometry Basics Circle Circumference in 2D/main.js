@@ -11,3 +11,5 @@ Tests round answers to 6 decimal places.
 */
 
 // solution
+
+const circleCircumference = (circle) => circle.radius * 2 * Math.PI;
