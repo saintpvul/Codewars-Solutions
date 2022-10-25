@@ -5,3 +5,5 @@ Create a combat function that takes the player's current health and the amount o
 */
 
 // solution
+
+const combat = (health, damage) => (health - damage < 0 ? 0 : health - damage);
