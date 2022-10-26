@@ -7,3 +7,5 @@ So, you need to check if there is gold in the bucket, and if so, return True/tru
 */
 
 // solution
+
+const checkTheBucket = (bucket) => bucket.includes("gold");
