@@ -13,3 +13,5 @@ Great coding <3
 */
 
 // solution
+
+const power = (x, y) => x ** y;
