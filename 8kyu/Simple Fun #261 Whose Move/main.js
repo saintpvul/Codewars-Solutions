@@ -36,5 +36,5 @@ const whoseMove = (lastPlayer, win) =>
     ? "white"
     : "black";
 
-const whoseMove = (lastPlayer, win) =>
-  win ? lastPlayer : lastPlayer === "black" ? "white" : "black";
+// const whoseMove = (lastPlayer, win) =>
+// win ? lastPlayer : lastPlayer === "black" ? "white" : "black";
