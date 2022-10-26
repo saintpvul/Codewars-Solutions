@@ -37,3 +37,10 @@ You only need to choose one of the text as the answer to the question. That is t
 */
 
 // solution
+
+const topSecret = (str) =>
+  str.replace(/[a-z]/gi, (char) =>
+    String.fromCharCode(char.charCodeAt() + (/[abc]/i.test(char) ? 23 : -3))
+  );
+
+console.log(topSecret("tommy has"));
