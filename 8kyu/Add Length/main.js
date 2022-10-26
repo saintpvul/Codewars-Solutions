@@ -23,3 +23,5 @@ function addLength(str) {
   }
   return result;
 }
+
+const addLength = (str) => str.split(" ").map((i) => i + " " + i.length);
