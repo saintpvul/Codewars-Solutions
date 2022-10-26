@@ -17,3 +17,12 @@ A small hint: The first conversion of the entire string will make the code easie
 */
 
 // solution
+
+function alienLanguage(str) {
+  let strArr = str.toUpperCase().split(" ");
+  let resStr = [];
+  for (let i = 0; i < strArr.length; i++) {
+    resStr.push(strArr[i].replace(/\w$/g, (x) => x.toLowerCase()));
+  }
+  return resStr.join(" ");
+}
