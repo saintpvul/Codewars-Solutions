@@ -21,3 +21,14 @@ grader(0.6) should be "D"
 */
 
 // solution
+
+const grader = (score) =>
+  score > 0.9 && score < 0.6
+    ? "F"
+    : score === 0.6
+    ? "D"
+    : score === 0.7
+    ? "C"
+    : score === 0.8
+    ? "B"
+    : "A";
