@@ -14,3 +14,12 @@ Note: String will have at least one element; words will always be separated by a
 */
 
 // solution
+
+function addLength(str) {
+  let words = str.split(" "),
+    result = [];
+  for (let i = 0; i < words.length; i++) {
+    result.push(`${words[i]} ${words[i].length}`);
+  }
+  return result;
+}
