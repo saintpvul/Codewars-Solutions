@@ -11,3 +11,9 @@ Reference: JS, Ruby, Python.
 */
 
 // solution
+
+class Cat extends Animal {
+  speak() {
+    return `${this.name} meows.`;
+  }
+}
