@@ -9,3 +9,5 @@ SafeInteger(9007199254740992) //false
 */
 
 // solution
+
+const SafeInteger = (n) => Number.isSafeInteger(n);
