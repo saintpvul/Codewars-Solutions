@@ -26,3 +26,15 @@ For lastPlayer = "white" and win = true, the output should be "white".
 */
 
 // solution
+
+const whoseMove = (lastPlayer, win) =>
+  lastPlayer === "black" && win
+    ? "black"
+    : lastPlayer === "white" && win
+    ? "white"
+    : lastPlayer === "black" && !win
+    ? "white"
+    : "black";
+
+const whoseMove = (lastPlayer, win) =>
+  win ? lastPlayer : lastPlayer === "black" ? "white" : "black";
