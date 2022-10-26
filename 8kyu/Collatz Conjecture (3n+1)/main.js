@@ -30,3 +30,6 @@ Collatz conjecture wikipedia page: https://en.wikipedia.org/wiki/Collatz_conject
 */
 
 // solution
+
+const hotpo = (n, count = 0) =>
+  n <= 1 ? count : hotpo(n % 2 === 0 ? n / 2 : 3 * n + 1, count + 1);
