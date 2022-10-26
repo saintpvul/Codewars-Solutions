@@ -11,3 +11,6 @@ multiply(-3)==-15 // -3 * 5¹
 */
 
 // solution
+
+const multiply = (number) =>
+  number * Math.pow(5, Math.abs(number).toString().length);
