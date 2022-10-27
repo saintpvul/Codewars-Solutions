@@ -13,3 +13,5 @@ Assume shortenToDate's input will always be a string, e.g. "Friday May 2, 7pm". 
 */
 
 // solution
+
+const shortenToDate = (longDate) => longDate.split(/[,]+/)[0];
