@@ -5,3 +5,6 @@ You are trying to put a hash in ruby or an object in javascript or java into an 
 */
 
 // solution
+
+items = [];
+items.push({ a: "b", c: "d" });
