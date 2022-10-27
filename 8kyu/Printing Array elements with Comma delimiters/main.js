@@ -13,3 +13,5 @@ Note: if this seems too simple for you try the next level
 */
 
 // solution
+
+const printArray = (array) => array.join(",");
