@@ -32,3 +32,5 @@ https://developer.mozilla.org/en-US/docs/Glossary/Primitive
 */
 
 // solution
+
+const greaterThanLessThan = (a, b, c) => a < b < c;
