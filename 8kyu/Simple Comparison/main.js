@@ -7,3 +7,5 @@ To make this challange harder and to promp the challenger to read up about coerc
 */
 
 // solution
+
+const add = (a, b) => a == b;
