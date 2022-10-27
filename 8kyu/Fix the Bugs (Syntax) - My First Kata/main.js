@@ -22,3 +22,6 @@ Extension: Once you have fixed all the syntax errors present in the code (basic 
 */
 
 // solution
+
+const myFirstKata = (a, b) =>
+  typeof a != "number" || typeof b != "number" ? false : (a % b) + (b % a);
