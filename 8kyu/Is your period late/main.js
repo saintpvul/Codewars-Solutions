@@ -17,3 +17,6 @@ Return true if the number of days passed from last to today is greater than cycl
 */
 
 // solution
+
+const periodIsLate = (last, today, cycleLength) =>
+  (Date.parse(today) - Date.parse(last)) / 86400000 > cycleLength;
