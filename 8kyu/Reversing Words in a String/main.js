@@ -13,3 +13,5 @@ Happy coding!
 */
 
 // solution
+
+const reverse = (string) => string.split(" ").reverse().join(" ");
