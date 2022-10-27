@@ -10,3 +10,20 @@ Can you finish the game so all the rules are met?
 */
 
 // solution
+
+class Guesser {
+  constructor(number, lives) {
+    this.number = number;
+    this.lives = lives;
+  }
+
+  guess(n) {
+    if (!this.lives) throw new Error("You have no more life");
+    if (n != this.number && this.lives > 0) {
+      this.lives--;
+      return false;
+    } else {
+      return true;
+    }
+  }
+}
