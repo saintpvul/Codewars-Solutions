@@ -7,3 +7,5 @@ You can assume the input will always be a number.
 */
 
 // solution
+
+const validateCode = (code) => /^[123]/.test(code);
