@@ -5,3 +5,5 @@ Each number should be formatted that it is rounded to two decimal places. You do
 */
 
 // solution
+
+const twoDecimalPlaces = (n) => +n.toFixed(2);
