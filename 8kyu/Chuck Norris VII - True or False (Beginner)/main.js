@@ -11,3 +11,7 @@ Go show some truth who's boss!
 */
 
 // solution
+
+function ifChuckSaysSo() {
+  return 0 > 1;
+}
