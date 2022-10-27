@@ -20,3 +20,11 @@ bigToSmall([[1,1],[1],[1,1]]) should return "1>1>1>1>1"
 */
 
 // solution
+
+function bigToSmall(arr) {
+  return arr
+    .join(",")
+    .split(",")
+    .sort((a, b) => b - a)
+    .join(">");
+}
