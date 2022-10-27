@@ -13,3 +13,13 @@ Hint: Based on the two guidelines given above, you will want to account for the 
 */
 
 // solution
+
+function startingMark(bodyHeight) {
+  let m = (10.67 - 9.45) / (1.83 - 1.52);
+  return Math.round((10.67 + m * bodyHeight - m * 1.83) * 100) / 100;
+}
+
+const startingMark = (bodyHeight) =>
+  ((m) => +(m * bodyHeight + 9.45 - m * 1.52).toFixed(2))(
+    (10.67 - 9.45) / (1.83 - 1.52)
+  );
