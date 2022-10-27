@@ -14,3 +14,18 @@ Note
 */
 
 // solution
+
+const fuelPrice = (litres, pricePerLitre) =>
+  +(
+    litres > 9
+      ? litres * pricePerLitre - 0.25 * litres
+      : litres < 10 && litres > 7
+      ? litres * pricePerLitre - 0.2 * litres
+      : litres < 8 && litres > 5
+      ? litres * pricePerLitre - 0.15 * litres
+      : litres < 6 && litres > 3
+      ? litres * pricePerLitre - 0.1 * litres
+      : litres < 4 && litres > 1
+      ? litres * pricePerLitre - 0.05 * litres
+      : litres * pricePerLitre
+  ).toFixed(2);
