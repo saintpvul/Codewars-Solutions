@@ -9,3 +9,5 @@ You may need to think laterally!
 */
 
 // solution
+
+JSopenSesame();
