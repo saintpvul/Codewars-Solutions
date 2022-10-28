@@ -14,3 +14,8 @@ This is a modification on the Kata: Array2Binary addition hope you like it
 */
 
 // solution
+
+const arr2bin = (arr) =>
+  arr
+    .reduce((sum, item) => (typeof item === "number" ? sum + item : sum), 0)
+    .toString(2);
