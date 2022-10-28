@@ -18,3 +18,5 @@ lowercaseCount("abcdefghijklmnopqrstuvwxyz"); ===> 26
 */
 
 // solution
+
+const lowercaseCount = (str) => (str.match(/[a-z]/g) || []).length;
