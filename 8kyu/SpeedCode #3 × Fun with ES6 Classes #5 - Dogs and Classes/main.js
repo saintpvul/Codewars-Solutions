@@ -37,3 +37,9 @@ Quick, get your timer out and get ready to time yourself. Are you ready? Ready, 
 */
 
 // solution
+
+class Labrador extends Dog {
+  constructor(n, a, g, m) {
+    super(n, a, g, "Labrador", "Large", m, true);
+  }
+}
