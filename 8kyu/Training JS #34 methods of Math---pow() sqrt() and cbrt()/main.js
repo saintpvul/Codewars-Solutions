@@ -28,3 +28,11 @@ The two examples above seems to meet our requirements, but please note: a cube i
 */
 
 // solution
+
+const cutCube = (volume, n) =>
+  Number.isInteger(Math.cbrt(n)) && Number.isInteger(Math.cbrt(volume / n));
+
+console.log(cutCube(27, 27));
+console.log(cutCube(512, 8));
+console.log(cutCube(512, 64));
+console.log(cutCube(50000, 50));
