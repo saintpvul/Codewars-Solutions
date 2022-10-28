@@ -7,3 +7,6 @@ Provided is a function find which accepts two parameters in the following order:
 */
 
 // solution
+
+const find = (arr, el) =>
+  arr.indexOf(el) != -1 ? arr.indexOf(el) : "Not found";
