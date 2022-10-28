@@ -20,3 +20,12 @@ This is my first Kata, so please any feedback (especially on Test Cases) is welc
 */
 
 // solution
+
+const yourFutureCareer = () => {
+  let career = Math.random();
+  return career <= 0.35
+    ? "FrontEnd Developer"
+    : career <= 0.65
+    ? "BackEnd Developer"
+    : "Full-Stack Developer";
+};
