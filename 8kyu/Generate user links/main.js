@@ -14,3 +14,6 @@ use this as a reference encoding
 */
 
 // solution
+
+const generateLink = (user) =>
+  `http://www.codewars.com/users/${encodeURIComponent(user)}`;
