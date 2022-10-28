@@ -10,3 +10,14 @@ Of course, the existing Array.prototype.filter() function has been undefined for
 */
 
 // solution
+
+Array.prototype.filter = function (func) {
+  const filtered = [];
+
+  for (let i = 0; i < this.length; i++) {
+    if (func(this[i])) {
+      filtered.push(this[i]);
+    }
+  }
+  return filtered;
+};
