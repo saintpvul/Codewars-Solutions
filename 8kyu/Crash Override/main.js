@@ -22,3 +22,12 @@ Happy hacking!
 */
 
 // solution
+
+const firstChar = (str) => str[0].toUpperCase();
+
+const isValid = (name) => /[a-z]/gi.test(name[0]);
+
+const aliasGen = (fName, sName) =>
+  isValid(sName) && isValid(fName)
+    ? `${firstName[firstChar(fName)]} ${surname[firstChar(sName)]}`
+    : `Your name must start with a letter from A - Z.`;
