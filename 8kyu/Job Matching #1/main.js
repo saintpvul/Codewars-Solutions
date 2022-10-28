@@ -23,3 +23,8 @@ For a valid match, the candidate's minimum salary must be less than or equal to 
 */
 
 // solution
+
+const match = (candidate, job) => {
+  if (!candidate.minSalary || !job.maxSalary) throw new Error("");
+  return candidate.minSalary * 0.9 <= job.maxSalary;
+};
