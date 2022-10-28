@@ -17,3 +17,5 @@ But as you will see after clicking RUN or ATTEMPT this code has several bugs, pl
 */
 
 // solution
+
+const getStatus = (isBusy) => ({ status: isBusy ? "busy" : "available" });
