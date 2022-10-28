@@ -24,3 +24,11 @@ Enjoy it and happy coding!!
 */
 
 // solution
+
+function barTriang(p1, p2, p3) {
+  let x0 = (p1[0] + p2[0] + p3[0]) / 3,
+    y0 = (p1[1] + p2[1] + p3[1]) / 3;
+  return x0 != parseInt(x0) && y0 != parseInt(y0)
+    ? [+x0.toFixed(4), +y0.toFixed(4)]
+    : [x0, y0];
+}
