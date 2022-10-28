@@ -22,3 +22,5 @@ Doublecheck that words with chars like -, ', ` are counted right.
 */
 
 // solution
+
+const countWords = (str) => str.split(/\s/).filter((el) => el).length;
