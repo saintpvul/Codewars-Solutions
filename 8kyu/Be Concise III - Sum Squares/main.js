@@ -16,3 +16,6 @@ Good luck!
 */
 
 // solution
+
+const sumSquares = (array) =>
+  array.reduce((accum, elem) => (accum += elem ** 2), 0);
