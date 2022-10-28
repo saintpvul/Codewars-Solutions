@@ -6,3 +6,7 @@ In case you got lost, here's precisely what you have to do: define a method Numb
 */
 
 // solution
+
+Number.prototype.times = function (f) {
+  for (let i = 0; i < this; i++) f(i);
+};
