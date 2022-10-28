@@ -24,3 +24,6 @@ Unfortunately, in this Kata, any article I recommend to you would immediately gi
 */
 
 // solution
+
+let circular = { value: "Hello World" };
+circular.self = circular;
