@@ -19,3 +19,8 @@ For an example list of 1, 3, 5, 7
 */
 
 // solution
+
+var findAverage = function (nums) {
+  let sum = nums.reduce((acc, el) => (acc += el), 0);
+  return sum / nums.length;
+};
