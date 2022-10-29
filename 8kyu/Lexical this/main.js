@@ -9,3 +9,14 @@ Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Fun
 */
 
 // solution
+
+var Person = function () {
+  var person = {
+    _name: "Leroy",
+    _friends: [],
+    fillFriends(f) {
+      this._friends.push(...f);
+    },
+  };
+  return person;
+};
