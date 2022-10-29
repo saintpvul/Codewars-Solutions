@@ -14,3 +14,15 @@ Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Fun
 */
 
 // solution
+
+function anyArrows(arrows) {
+  let sum = 0;
+  for (let i = 0; i < arrows.length; i++) {
+    if (arrows[i].damaged === true) {
+      sum++;
+    }
+  }
+  return sum < arrows.length;
+}
+
+const anyArrows = (arrows) => arrows.some((arrow) => !arrow.damaged);
