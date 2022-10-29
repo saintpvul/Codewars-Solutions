@@ -5,3 +5,17 @@ Shouldn't the two functions getMax1 and getMax2 be equivalent and return the sam
 */
 
 // solution
+
+function getMax1() {
+  var max = {
+    name: "Max Headroom",
+  };
+  return max;
+}
+
+function getMax2() {
+  var max = {
+    name: "Max Headroom",
+  };
+  return max;
+}
