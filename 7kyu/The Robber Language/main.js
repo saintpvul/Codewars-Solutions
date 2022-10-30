@@ -25,3 +25,20 @@ The tests will challenge your function with sentences of length 0-255, ASCII cha
 */
 
 // solution
+
+function robberEncode(sentence) {
+  let cons = "BCDFGHJKLMNPQRSTVWXYZ";
+  let arr = [];
+  for (let i = 0; i < sentence.length; i++) {
+    if (cons.includes(sentence[i].toUpperCase())) {
+      arr.push(
+        sentence[i] == sentence[i].toUpperCase()
+          ? sentence[i] + "O" + sentence[i]
+          : sentence[i] + "o" + sentence[i]
+      );
+    } else {
+      arr.push(sentence[i]);
+    }
+  }
+  return arr.join("");
+}
