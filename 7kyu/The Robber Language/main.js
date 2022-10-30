@@ -42,3 +42,8 @@ function robberEncode(sentence) {
   }
   return arr.join("");
 }
+
+const robberEncode = (sentence) =>
+  sentence
+    .replace(/[bcdfghjklmnpqrstvwxyz]/g, "$&o$&")
+    .replace(/[BCDFGHJKLMNPQRSTVWXYZ]/g, "$&O$&");
