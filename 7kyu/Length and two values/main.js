@@ -10,3 +10,11 @@ Examples
 */
 
 // solution
+
+function alternate(n, firstValue, secondValue) {
+  let resultArray = [];
+  for (let i = 0; i < n; i++) {
+    resultArray.push(i % 2 === 0 ? firstValue : secondValue);
+  }
+  return resultArray;
+}
