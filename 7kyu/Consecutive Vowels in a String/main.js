@@ -24,3 +24,20 @@ const getTheVowels = (word, vowels = "aeiou") =>
   word
     .split("")
     .reduce((prev, curr) => prev + (curr == vowels[prev % vowels.length]), 0);
+
+function getTheVowels(word) {
+  let vowels = ["a", "e", "i", "o", "u"];
+  let vowelsIndex = 0;
+  let sum = 0;
+  for (let i = 0; i < word.length; i++) {
+    if (word[i] == vowels[vowelsIndex]) {
+      sum++;
+      if (vowelsIndex == 4) {
+        vowelsIndex = 0;
+      } else {
+        vowelsIndex++;
+      }
+    }
+  }
+  return sum;
+}
