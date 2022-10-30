@@ -18,3 +18,8 @@ function alternate(n, firstValue, secondValue) {
   }
   return resultArray;
 }
+
+const alternate = (n, firstValue, secondValue) =>
+  Array.from({ length: n }, (_, index) =>
+    index % 2 === 0 ? firstValue : secondValue
+  );
