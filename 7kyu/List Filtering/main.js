@@ -10,3 +10,5 @@ filter_list([1,2,'aasf','1','123',123]) == [1,2,123]
 */
 
 // solution
+
+const filter_list = (l) => l.filter((item) => typeof item === "number");
