@@ -37,3 +37,23 @@ Given a string representation, determine whether it represents a valid Chess960 
 */
 
 // solution
+
+function isValidChess960(pieces) {
+  let king = pieces.indexOf("K");
+  let left = false,
+    right = false,
+    leftIdx = 0,
+    rightIdx = 0,
+    curr = 0;
+  for (let i = 0; i < pieces.length; i++) {
+    let piece = pieces[i];
+    if (i < king && piece == "R") left = true;
+    if (i > king && piece == "R") right = true;
+    if (piece == "B" && !curr) {
+      curr++;
+      leftIdx = i;
+    }
+    if (piece == "B") rightIdx = i;
+  }
+  return left && right && leftIdx % 2 != rightIdx % 2;
+}
