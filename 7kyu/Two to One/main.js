@@ -15,8 +15,7 @@ longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"
 // solution
 
 function longest(s1, s2) {
-  let letters = s1.split("").concat(s2.split("")),
-    uniq = Array.from(new Set(letters)),
-    sorted = uniq.sort();
-  return sorted.join("");
+  return Array.from(new Set(s1 + s2))
+    .sort()
+    .join("");
 }
