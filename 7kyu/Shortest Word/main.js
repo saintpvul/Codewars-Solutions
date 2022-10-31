@@ -7,3 +7,10 @@ String will never be empty and you do not need to account for different data typ
 */
 
 // solution
+
+const findShort = (s) =>
+  s
+    .split(" ")
+    .reduce((shortest, current) =>
+      shortest.length < current.length ? shortest : current
+    ).length;
