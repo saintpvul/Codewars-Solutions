@@ -41,3 +41,8 @@ Special Thanks to the great Discord community for helping with the creation of t
 */
 
 // solution
+
+const barista = (coffees) =>
+  coffees
+    .sort((a, b) => a - b)
+    .reduce((prev, curr, i) => prev + curr * (coffees.length - i) + 2 * i, 0);
