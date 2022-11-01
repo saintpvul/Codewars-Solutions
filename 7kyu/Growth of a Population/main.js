@@ -36,3 +36,13 @@ const nbYear = (p0, percent, aug, p) =>
   p0 < p
     ? true + nbYear((p0 + (p0 * percent) / 100 + aug) | 0, percent, aug, p)
     : false;
+
+function nbYear(p0, percent, aug, p) {
+  let year = 0;
+
+  while (p0 < p) {
+    year++;
+    p0 = Math.floor(p0 + p0 * (percent / 100) + aug);
+  }
+  return year;
+}
