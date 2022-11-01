@@ -13,3 +13,5 @@ Examples:(Input1, Input2 --> Output (explanation)))
 */
 
 // solution
+
+const addBinary = (a, b) => (a + b).toString(2);
