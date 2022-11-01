@@ -14,3 +14,5 @@ Note: keep the original order of the names in the output.
 */
 
 // solution
+
+const friend = (friends) => friends.filter((friend) => friend.length === 4);
