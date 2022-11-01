@@ -18,3 +18,15 @@ output = ["Open", "Open", "Senior", "Open", "Open", "Senior"]
 */
 
 // solution
+
+function openOrSenior(data) {
+  let resultList = [];
+  for (let i = 0; i < data.length; i++) {
+    if (data[i][0] > 54 && data[i][1] > 7) {
+      resultList.push("Senior");
+    } else {
+      resultList.push("Open");
+    }
+  }
+  return resultList;
+}
