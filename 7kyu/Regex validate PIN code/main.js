@@ -16,4 +16,4 @@ Examples (Input --> Output)
 const validatePIN = (pin) =>
   /\d{4} || \d{6}/g.test(pin) ? false : pin.length === 4 || pin.length === 6;
 
-const validatePIN = (pin) => /^(\d{4}|\d{6})$/.test(pin);
+// const validatePIN = (pin) => /^(\d{4}|\d{6})$/.test(pin);
