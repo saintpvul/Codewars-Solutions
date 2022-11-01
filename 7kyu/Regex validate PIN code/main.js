@@ -12,3 +12,6 @@ Examples (Input --> Output)
 */
 
 // solution
+
+const validatePIN = (pin) =>
+  /\D/g.test(pin) ? false : pin.length === 4 || pin.length === 6;
