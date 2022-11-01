@@ -15,3 +15,8 @@ Examples:(Input --> Output)
 */
 
 // solution
+
+const findNextSquare = (sq) =>
+  Math.sqrt(sq) != Math.round(Math.sqrt(sq))
+    ? -1
+    : (Math.sqrt(sq) + 1) * (Math.sqrt(sq) + 1);
