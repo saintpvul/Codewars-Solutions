@@ -15,3 +15,16 @@ The second value in the first integer array is 0, since the bus is empty in the 
 */
 
 // solution
+
+function number(busStops) {
+  let peopleIn = 0,
+    peopleOut = 0;
+  for (let i = 0; i < busStops.length; i++) {
+    peopleIn += busStops[i][0];
+    peopleOut += busStops[i][1];
+  }
+  return peopleIn - peopleOut;
+}
+
+const number = (busStops) =>
+  busStops.reduce((rem, [on, off]) => (rem += on - off), 0);
