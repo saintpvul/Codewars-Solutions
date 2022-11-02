@@ -10,3 +10,12 @@ Example
 */
 
 // solution
+
+function getSumOfDigits(integer) {
+  let sum = 0,
+    num = integer.toString().split("");
+  for (let i = 0; i < num.length; i++) {
+    sum += +num[i];
+  }
+  return sum;
+}
