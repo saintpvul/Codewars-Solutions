@@ -11,3 +11,11 @@ Good luck!
 */
 
 // solution
+
+function solve(s) {
+  let uC = s.length - s.replace(/[A-Z]/g, "").length,
+    lC = s.length - s.replace(/[a-z]/g, "").length,
+    nC = s.length - s.replace(/[0-9]/g, "").length,
+    sC = s.length - s.replace(/\W|_/g, "").length;
+  return [uC, lC, nC, sC];
+}
