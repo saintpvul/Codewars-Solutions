@@ -14,3 +14,14 @@ Examples: (Input --> Output)
 */
 
 // solution
+
+function number(array) {
+  let resultArr = [];
+  for (let i = 0; i < array.length; i++) {
+    resultArr.push(`${i + 1}: ${array[i]}`);
+  }
+  return resultArr;
+}
+
+const number = (array) =>
+  array.map((item, ndx) => (item = `${ndx + 1}: ${item}`));
