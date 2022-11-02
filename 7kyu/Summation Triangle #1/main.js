@@ -38,3 +38,8 @@ Sums of powers
 */
 
 // solution
+
+function getSum(n) {
+  n++;
+  return (4n * n ** 3n + 3n * n ** 2n - n) / 6n;
+}
