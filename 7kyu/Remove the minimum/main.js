@@ -18,3 +18,17 @@ Examples
 */
 
 // solution
+
+function removeSmallest(numbers) {
+  let min = Math.min(...numbers),
+    checked = false,
+    resultNums = [];
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] === min && checked === false) {
+      checked = true;
+      continue;
+    }
+    resultNums.push(numbers[i]);
+  }
+  return resultNums;
+}
