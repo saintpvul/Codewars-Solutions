@@ -33,3 +33,9 @@ Players can actually play DUMB moves, especially Sam and Tom.
 */
 
 // solution
+
+const solution = (frank, sam, tom) =>
+  frank[2] > sam[0] &&
+  frank[2] > tom[0] &&
+  frank[3] > sam[1] &&
+  frank[3] > tom[1];
