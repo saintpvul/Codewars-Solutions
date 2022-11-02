@@ -10,3 +10,8 @@ If a and b have the same length treat a as the longer producing b+reverse(a)+b
 */
 
 // solution
+
+const shorter_reverse_longer = (a, b) =>
+  a.length > b.length || a.length === b.length
+    ? b + a.split("").reverse("").join("") + b
+    : a + b.split("").reverse("").join("") + a;
