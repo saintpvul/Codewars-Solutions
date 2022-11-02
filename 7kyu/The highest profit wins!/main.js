@@ -16,3 +16,5 @@ All arrays or lists will always have at least one element, so you don't need to 
 */
 
 // solution
+
+const minMax = (arr) => [Math.min(...arr), Math.max(...arr)];
