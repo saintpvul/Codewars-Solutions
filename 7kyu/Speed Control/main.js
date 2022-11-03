@@ -22,3 +22,15 @@ With floats it can happen that results depends on the operations order. To calcu
 */
 
 // solution
+
+function gps(s, x) {
+  let speedArr = [];
+
+  if (x.length <= 1) return 0;
+  else {
+    for (let i = 0, j = 1; i < x.length, j < x.length; i++, j++) {
+      speedArr.push((3600 * (x[j] - x[i])) / s);
+    }
+  }
+  return Math.max(...speedArr);
+}
