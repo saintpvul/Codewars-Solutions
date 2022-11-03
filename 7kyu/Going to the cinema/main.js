@@ -24,3 +24,14 @@ movie(100, 10, 0.95) should return 24
 */
 
 // solution
+
+function movie(card, ticket, perc) {
+  let ticketSum = (n = 0),
+    ticketCard = card;
+
+  while (Math.ceil(ticketCard) >= ticketSum) {
+    ticketSum += ticket;
+    ticketCard += ticket * Math.pow(perc, ++n);
+  }
+  return n;
+}
