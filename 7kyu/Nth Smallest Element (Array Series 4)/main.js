@@ -24,3 +24,11 @@ Enjoy Learning !!
 */
 
 // solution
+
+function nthSmallest(arr, pos) {
+  let sorted = arr.sort((a, b) => a - b);
+
+  return sorted[pos - 1];
+}
+
+const nthSmallest = (arr, pos) => arr.sort((s, l) => s - l)[pos - 1];
