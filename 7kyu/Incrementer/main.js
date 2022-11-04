@@ -17,3 +17,16 @@ Examples:
 */
 
 // solution
+
+const incrementer = (nums) => nums.map((i, ndx) => (i + ndx + 1) % 10);
+
+function incrementer(nums) {
+  let newNums = [];
+  for (let i = 0; i < nums.length; i++) {
+    newNums.push((nums[i] += i + 1));
+  }
+  for (let i = 0; i < newNums.length; i++) {
+    newNums[i] = +newNums[i].toString().slice(-1);
+  }
+  return newNums;
+}
