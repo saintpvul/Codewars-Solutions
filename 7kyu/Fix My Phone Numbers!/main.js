@@ -20,3 +20,14 @@ Given a string, you must decide whether or not it contains a valid phone number.
 */
 
 // solution
+
+function isItANum(str) {
+  let holder = "";
+
+  for (let i = 0; i < str.length; i++) {
+    if (/[0-9]/.test(str[i])) {
+      holder += str[i];
+    }
+  }
+  return holder.length === 11 && holder[0] == 0 ? holder : "Not a phone number";
+}
