@@ -7,3 +7,13 @@ The string may contain any of the 128 ASCII characters. Characters are case-sens
 */
 
 // solution
+
+function hasUniqueChars(str) {
+  let newStr = "";
+  for (let i = 0; i < str.length; i++) {
+    if (!newStr.includes(str[i])) newStr += str[i];
+  }
+  return str === newStr;
+}
+
+const hasUniqueChars = (str) => new Set(str).size === str.length;
