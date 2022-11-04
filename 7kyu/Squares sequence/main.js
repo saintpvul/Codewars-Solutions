@@ -9,3 +9,13 @@ Examples
 */
 
 // solution
+
+function squares(x, n) {
+  let squares = [],
+    square = x;
+  while (squares.length < n) {
+    squares.push(square);
+    square = square * square;
+  }
+  return squares;
+}
