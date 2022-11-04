@@ -31,3 +31,6 @@ function isItANum(str) {
   }
   return holder.length === 11 && holder[0] == 0 ? holder : "Not a phone number";
 }
+
+const isItANum = (str) =>
+  (str.replace(/[\D]/g, "").match(/^0\d{10}$/) || ["Not a phone number"])[0];
