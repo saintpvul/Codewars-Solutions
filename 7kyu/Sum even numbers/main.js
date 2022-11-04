@@ -13,3 +13,6 @@ Examples
 */
 
 // solution
+
+const sumEvenNumbers = (input) =>
+  input.reduce((sum, even) => (sum += even % 2 === 0 ? even : 0), 0);
