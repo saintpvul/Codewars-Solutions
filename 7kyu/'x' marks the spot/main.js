@@ -43,3 +43,18 @@ Return [4,6] for the example above => [4, 6]
 */
 
 // solution
+
+const xMarksTheSpot = (input) => {
+  let row = 0,
+    pos = 0,
+    amount = 0;
+  input.map((arr, index) => {
+    if (arr.includes("x")) {
+      arr.map((x, ndx) => (x === "x" ? (pos = ndx) : arr));
+      amount++;
+      row = index;
+    } else return arr;
+  });
+
+  return amount === 0 || amount > 1 ? [] : [row, pos];
+};
