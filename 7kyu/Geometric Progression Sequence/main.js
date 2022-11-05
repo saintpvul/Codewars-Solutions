@@ -11,3 +11,13 @@ More info: https://en.wikipedia.org/wiki/Geometric_progression
 */
 
 // solution
+
+function geometricSequenceElements(a, r, n) {
+  let sequence = [],
+    number = a;
+  for (let i = 0; i < n; i++) {
+    sequence.push(number);
+    number = number * r;
+  }
+  return sequence.join(", ");
+}
