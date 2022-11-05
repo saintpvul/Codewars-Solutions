@@ -32,3 +32,22 @@ function encode(s) {
 
   return encoded.join("");
 }
+
+function decode(s) {
+  let o = [],
+    e = [],
+    decoded = [];
+
+  for (let i = 0; i < s.length; i++) {
+    if (i % 2) {
+      e.push(s[i]);
+    } else {
+      o.push(s[i]);
+    }
+  }
+  e.reverse();
+  decoded.push(o.join(""));
+  decoded.push(e.join(""));
+
+  return decoded.join("");
+}
