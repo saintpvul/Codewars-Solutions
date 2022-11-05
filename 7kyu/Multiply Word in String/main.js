@@ -14,3 +14,8 @@ modifyMultiply ("This is a string",3,5)
 */
 
 // solution
+
+const modifyMultiply = (str, loc, num) =>
+  `${(str.split(" ")[loc] + "-").repeat(num).slice(0, -1)}`;
+
+console.log(modifyMultiply("This is a string", 3, 5));
