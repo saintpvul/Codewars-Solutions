@@ -14,3 +14,5 @@ Note that you can receive floats as well.
 */
 
 // solution
+
+const toNumberArray = (stringarray) => stringarray.map((item) => Number(item));
