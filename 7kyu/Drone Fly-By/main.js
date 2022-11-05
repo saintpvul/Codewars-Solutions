@@ -13,3 +13,15 @@ Return the resulting lamps string. See example tests for more clarity.
 */
 
 // solution
+
+function flyBy(lamps, drone) {
+  let pos = drone.indexOf("T"),
+    on = lamps.slice(0, pos + 1).replace(/x/g, "o"),
+    off = lamps.slice(pos + 1, lamps.length);
+
+  return on + off;
+}
+
+const flyBy = (lamps, drone) =>
+  lamps.slice(0, drone.indexOf("T") + 1).replace(/x/g, "o") +
+  lamps.slice(drone.indexOf("T") + 1, lamps.length);
