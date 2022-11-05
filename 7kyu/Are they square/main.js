@@ -22,3 +22,8 @@ is_square([]) --> None
 */
 
 // solution
+
+const isSquare = (arr) =>
+  arr.length > 0
+    ? arr.every((v) => Math.sqrt(v) * Math.sqrt(v) === v)
+    : undefined;
