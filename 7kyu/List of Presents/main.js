@@ -15,3 +15,16 @@ _ NOTE: All numbers will be integers >= 0, and the array will never be empty. _
 */
 
 // solution
+
+function howManyGifts(maxBudget, gifts) {
+  gifts = gifts.sort((a, b) => a - b);
+  let sum = 0,
+    amount = 0;
+
+  while (sum <= maxBudget) {
+    sum += gifts[amount];
+    amount++;
+  }
+
+  return amount - 1;
+}
