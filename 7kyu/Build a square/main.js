@@ -20,3 +20,6 @@ function generateShape(integer) {
   }
   return shape.join("\n");
 }
+
+const generateShape = (integer) =>
+  ("+".repeat(integer) + "\n").repeat(integer).trim();
