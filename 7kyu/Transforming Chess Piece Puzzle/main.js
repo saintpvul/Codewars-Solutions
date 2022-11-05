@@ -85,3 +85,20 @@ If you want a weirder and, more challenging, chess themed puzzle, check out Evil
 */
 
 // solution
+
+function transformingChess(piece, row, col) {
+  switch (piece) {
+    case "r":
+      return row % 2 && col % 2 ? "draw" : "win";
+    case "b":
+      return (row + col) & 1
+        ? "draw"
+        : row === col || row + col === 4
+        ? "win"
+        : "lose";
+    case "q":
+      return row && row < 4 && col && col < 4 && (row + col) & 1
+        ? "draw"
+        : "win";
+  }
+}
