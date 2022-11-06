@@ -18,3 +18,11 @@ N.B. If your solution passes all fixed tests but fails at the random tests, make
 */
 
 // solution
+
+function inAscOrder(arr) {
+  let order = true;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > arr[i + 1]) order = false;
+  }
+  return order;
+}
