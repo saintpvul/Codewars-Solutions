@@ -10,3 +10,5 @@ solution(null); // should return []
 */
 
 // solution
+
+const solution = (nums) => (nums ? nums.sort((a, b) => a - b) : []);
