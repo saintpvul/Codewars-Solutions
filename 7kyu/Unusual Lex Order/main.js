@@ -13,3 +13,8 @@ S: codefights.com
 */
 
 // solution
+
+const unusualLexOrder = (arr) =>
+  arr.sort((a, b) =>
+    a.split("").reverse().join("").localeCompare(b.split("").reverse().join(""))
+  );
