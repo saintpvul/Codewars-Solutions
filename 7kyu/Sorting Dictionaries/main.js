@@ -14,3 +14,14 @@ sortDict({1:2, 2:4, 3:6}) == [[3,6], [2,4], [1,2]]
 */
 
 // solution
+
+function sortDict(dict) {
+  return Object.keys(dict)
+    .map((e) => [isNaN(e) ? e : Number(e), dict[e]])
+    .sort((a, b) => b[1] - a[1]);
+}
+
+const sortDict = (dict) =>
+  Object.keys(dict)
+    .map((e) => [isNaN(e) ? e : Number(e), dict[e]])
+    .sort((a, b) => b[1] - a[1]);
