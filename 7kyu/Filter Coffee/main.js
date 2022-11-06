@@ -13,3 +13,18 @@ The search function should return a string of prices for the coffees beans you c
 */
 
 // solution
+
+function search(budget, prices) {
+  let canAfford = [];
+  prices.sort((a, b) => a - b);
+  for (let i = 0; i < prices.length; i++) {
+    prices[i] <= budget ? canAfford.push(prices[i]) : canAfford;
+  }
+  return canAfford.join(",");
+}
+
+const search = (budget, prices) =>
+  prices
+    .filter((p) => p <= budget)
+    .sort((a, b) => a - b)
+    .join(",");
