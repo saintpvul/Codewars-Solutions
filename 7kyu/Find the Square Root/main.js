@@ -13,3 +13,18 @@ squareRoot(39) // => 6.24500;
 */
 
 // solution
+
+function squareRoot(x) {
+  if (x < 0 || isNaN(x)) {
+    return NaN;
+  }
+
+  let square = x / 2,
+    temp = 0;
+
+  while (square != temp) {
+    temp = square;
+    square = (x / square + square) / 2;
+  }
+  return square === Math.round(square) ? square : +square.toFixed(5);
+}
