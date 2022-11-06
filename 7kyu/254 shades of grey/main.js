@@ -19,3 +19,14 @@ Have fun!
 */
 
 // solution
+
+function shadesOfGrey(n) {
+  const greyArray = [];
+  if (n > 0) {
+    for (let i = 1; i <= Math.min(n, 254); i++) {
+      const grey = ("0" + i.toString(16)).slice(-2);
+      greyArray.push("#" + grey + grey + grey);
+    }
+  }
+  return greyArray;
+}
