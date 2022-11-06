@@ -13,3 +13,6 @@ Coordinates can be integers or floating point numbers.
 */
 
 // solution
+
+const vectorLength = (vector) =>
+  Math.hypot(vector[1][0] - vector[0][0], vector[1][1] - vector[0][1]);
