@@ -10,3 +10,16 @@ You can assume the array will always be valid, and there will always be one corr
 */
 
 // solution
+
+function isSortedAndHow(array) {
+  let ascending = [...array].sort((a, b) => a - b),
+    descending = [...array].sort((a, b) => b - a);
+  if (!array) {
+    return false;
+  }
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === ascending[i]) return "yes, ascending";
+    if (array[i] === descending[i]) return "yes, descending";
+    else return "no";
+  }
+}
