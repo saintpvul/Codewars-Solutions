@@ -16,3 +16,15 @@ Examples
 */
 
 // solution
+
+function isFlush(cards) {
+  let suit = cards[0].slice(-1),
+    flush = true;
+
+  for (let i = 0; i < cards.length; i++) {
+    if (!cards[i].includes(suit)) {
+      flush = false;
+    }
+  }
+  return flush;
+}
