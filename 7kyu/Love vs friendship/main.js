@@ -26,3 +26,6 @@ function wordsToMarks(string) {
   }
   return sum;
 }
+
+const wordsToMarks = (str) =>
+  [...str].reduce((sum, char) => (sum += char.charCodeAt() - 96), 0);
