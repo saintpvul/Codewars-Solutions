@@ -26,3 +26,16 @@ You can see other examples for each language in "Your test cases"
 */
 
 // solution
+
+function partlist(arr) {
+  let newList = [];
+
+  for (let i = 1; i < arr.length; i++) {
+    newList.push([
+      arr.slice(0, i).join(" "),
+      arr.slice(i, arr.length).join(" "),
+    ]);
+  }
+
+  return newList;
+}
