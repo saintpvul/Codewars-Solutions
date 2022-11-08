@@ -19,3 +19,5 @@ Notes: To make things easier, the period of the leap years will always be a powe
 */
 
 // solution
+
+const isLeapYear = (duration, year) => (duration * year) % 1 === 0;
