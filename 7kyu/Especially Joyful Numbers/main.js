@@ -15,3 +15,13 @@ Complete the function which tests if a positive integer n is Harshad number, and
 */
 
 // solution
+
+function numberJoy(n) {
+  let digitSum = n
+      .toString()
+      .split("")
+      .map(Number)
+      .reduce((sum, digit) => (sum += digit)),
+    reversedSum = +digitSum.toString().split("").map(Number).reverse().join("");
+  return n === digitSum * reversedSum;
+}
