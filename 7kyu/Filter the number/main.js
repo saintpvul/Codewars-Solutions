@@ -12,3 +12,7 @@ You will be given a string of numbers and letters mixed up, you have to return a
 */
 
 // solution
+
+var filterString = function (value) {
+  return +value.replace(/\D/gi, "");
+};
