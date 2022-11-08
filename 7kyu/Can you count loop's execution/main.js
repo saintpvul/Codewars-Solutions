@@ -25,3 +25,13 @@ The range of upper boundary is as follows: 1 <= V <= 20
 */
 
 // solution
+
+function countLoopIterations(arr) {
+  let prod = 1n,
+    r;
+  return arr.map(
+    ([num, bool]) => (
+      (r = prod * (num + BigInt(bool)) + prod), (prod = r - prod), r
+    )
+  );
+}
