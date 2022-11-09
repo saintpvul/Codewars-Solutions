@@ -18,3 +18,12 @@ For example: (Input --> Output)
 */
 
 // solution
+
+// Return the nth triangular number
+function triangular(n) {
+  let t = 0;
+  for (let i = n; i > 0; i--) {
+    t += i;
+  }
+  return t;
+}
