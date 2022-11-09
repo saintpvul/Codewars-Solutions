@@ -37,3 +37,16 @@ Write function scale(strng, k, v) k and v will be positive integers. If strng ==
 */
 
 // solution
+
+const scale = (strng, k, n) =>
+  strng
+    .split("\n")
+    .map((value) =>
+      value
+        .split("")
+        .map((value) => value.repeat(k))
+        .join("")
+    )
+    .map((value) => (value + " ").repeat(n))
+    .map((value) => value.trim().replace(/ /g, "\n"))
+    .join("\n");
