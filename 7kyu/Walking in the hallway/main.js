@@ -17,3 +17,27 @@ in the case that no people come in contact return -1
 */
 
 // solution
+
+function contact(hallway) {
+  let steps = 0;
+  let s;
+  for (let i = 0; i < hallway.length; i++) {
+    steps++;
+    if (hallway.indexOf("><") >= 0 || hallway.indexOf(">-<") >= 0) return steps;
+    let s = hallway.split("");
+    for (let i = 0; i < s.length; i++) {
+      if (s[i] === "<") {
+        s[i] = "-";
+        if (i > 0) s[i - 1] = "<";
+      }
+    }
+    for (let i = s.length - 1; i > -1; i--) {
+      if (s[i] === ">") {
+        s[i] = "-";
+        if (i < s.length - 1) s[i + 1] = ">";
+      }
+    }
+    hallway = s.join("");
+  }
+  return -1;
+}
