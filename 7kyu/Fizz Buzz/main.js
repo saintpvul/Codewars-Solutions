@@ -16,3 +16,19 @@ fizzbuzz(3) -->  [1, 2, "Fizz"]
 */
 
 // solution
+
+function fizzbuzz(n) {
+  let fizzBuzz = [];
+  for (let i = 1; i <= n; i++) {
+    fizzBuzz.push(
+      i % 5 === 0 && i % 3 === 0
+        ? "FizzBuzz"
+        : i % 5 === 0
+        ? "Buzz"
+        : i % 3 === 0
+        ? "Fizz"
+        : i
+    );
+  }
+  return fizzBuzz;
+}
