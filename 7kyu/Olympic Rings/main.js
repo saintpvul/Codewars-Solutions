@@ -13,3 +13,24 @@ Dots over i's and any other letters don't count as rings.
 */
 
 // solution
+
+function olympicRing(a) {
+  let result = 0;
+
+  a.split("").map((v) =>
+    /[abdegopqADOPQR]/.test(v)
+      ? result++
+      : v === "B"
+      ? (result += 2)
+      : (result += 0)
+  );
+  result = Math.floor(result / 2);
+
+  return result === 2
+    ? "Bronze!"
+    : result === 3
+    ? "Silver!"
+    : result >= 4
+    ? "Gold!"
+    : "Not even a medal!";
+}
