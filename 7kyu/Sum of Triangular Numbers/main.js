@@ -17,3 +17,20 @@ Triangular Numbers cannot be negative so return 0 if a negative number is given.
 */
 
 // solution
+
+function sumTriangularNumbers(n) {
+  if (n < 0) return 0;
+
+  let sum = 0,
+    num = n,
+    t = [];
+  for (let i = n; i > 0; i--) {
+    sum = 0;
+    for (let j = num; j > 0; j--) {
+      sum += j;
+    }
+    num--;
+    t.push(sum);
+  }
+  return t.reduce((sum, triangular) => (sum += triangular));
+}
