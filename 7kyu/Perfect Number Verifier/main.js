@@ -18,3 +18,8 @@ n = 25 has the following divisors: 1, 5, 25
 */
 
 // solution
+
+const isPerfect = (n) =>
+  [
+    6, 28, 496, 8128, 33550336, 8589869056, 137438691328, 2305843008139952128,
+  ].includes(n);
