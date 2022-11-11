@@ -65,6 +65,4 @@ Good luck!
 
 // solution
 const getCurrentHand = (arr) =>
-  [...new Set(arr.slice(0, arr.length - 4))].filter(
-    (x) => !arr.slice(-4).includes(x)
-  );
+  [...new Set(arr.slice(0, -4))].filter((val) => !arr.slice(-4).includes(val));
