@@ -42,3 +42,11 @@ function findMaxProduct(arr) {
   }
   return Math.max(...product);
 }
+
+function findMaxProduct(arr) {
+  return Math.max(
+    ...arr.map((_, i) =>
+      arr.filter((_, j) => (j + 1) % (i + 1) === 0).reduce((a, b) => a * b, 1)
+    )
+  );
+}
