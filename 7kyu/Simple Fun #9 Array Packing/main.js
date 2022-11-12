@@ -30,3 +30,5 @@ Are you a One-Liner? Please try to complete the kata in one line(no test for it)
 */
 
 // solution
+
+const arrayPacking = (a) => a.reduceRight((a, b) => a * 256 + b);
