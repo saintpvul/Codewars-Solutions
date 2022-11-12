@@ -31,3 +31,7 @@ const zipvalidate = (postcode) =>
     postcode[0] == 3 ||
     postcode[0] == 4 ||
     postcode[0] == 6);
+
+function zipvalidate(postcode) {
+  return /^[12346]\d{5}$/.test(postcode);
+}
