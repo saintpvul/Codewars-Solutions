@@ -58,3 +58,16 @@ Tune Your Code , There are 200 Assertions , 60.000 element For Each .
 */
 
 // solution
+
+function pendulum(values) {
+  values = values.sort((a, b) => a - b);
+  let res = [];
+  for (let i = 0; i < values.length; i++) {
+    if (i % 2) {
+      res.push(values[i]);
+    } else {
+      res.unshift(values[i]);
+    }
+  }
+  return res;
+}
