@@ -20,3 +20,14 @@ function sortByArea(array) {
   );
   return array.sort((a, b) => a - b);
 }
+
+function sortByArea(array) {
+  let result = [];
+  for (let i = 0; i < array.length; i++)
+    if (Array.isArray(array[i])) {
+      result.push(+(array[i][0] * array[i][1]).toFixed(2));
+    } else {
+      result.push(+(Math.PI * array[i] * array[i]).toFixed(2));
+    }
+  return result.sort((a, b) => a - b);
+}
