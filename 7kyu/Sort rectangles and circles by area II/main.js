@@ -12,3 +12,14 @@ This kata inspired by Sort rectangles and circles by area.
 */
 
 // solution
+
+function sortByArea(array) {
+  function circ(a) {
+    if (Array.isArray(a)) {
+      return a.reduce((a, b) => a * b, 1);
+    }
+    return Math.PI * Math.pow(a, 2);
+  }
+  array = array.slice();
+  return array.sort((a, b) => circ(a) - circ(b));
+}
