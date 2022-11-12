@@ -13,3 +13,6 @@ Note: Y is not a vowel in this kata.
 */
 
 // solution
+
+const swap = (string) =>
+  string.replace(/[aeiou]/g, (match) => match.toUpperCase());
