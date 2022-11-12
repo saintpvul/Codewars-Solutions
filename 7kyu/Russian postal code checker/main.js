@@ -22,3 +22,12 @@ Invalid postcodes:
 */
 
 // solution
+
+const zipvalidate = (postcode) =>
+  postcode.length === 6 &&
+  /^\d+$/.test(postcode) &&
+  (postcode[0] == 1 ||
+    postcode[0] == 2 ||
+    postcode[0] == 3 ||
+    postcode[0] == 4 ||
+    postcode[0] == 6);
