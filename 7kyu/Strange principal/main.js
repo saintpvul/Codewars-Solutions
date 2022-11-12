@@ -11,3 +11,5 @@ The given input is always an integer greater than or equal to zero that is why t
 */
 
 // solution
+
+const numOfOpenLockers = (n) => Math.floor(Math.sqrt(n));
