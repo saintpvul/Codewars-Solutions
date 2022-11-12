@@ -56,3 +56,17 @@ The number of days that it will take for the plant to reach/pass desiredHeight (
 */
 
 // solution
+
+function growingPlant(upSpeed, downSpeed, desiredHeight) {
+  let days = 1,
+    growth = 0;
+  for (; ; days++) {
+    growth += upSpeed;
+    if (growth >= desiredHeight) {
+      break;
+    } else {
+      growth -= downSpeed;
+    }
+  }
+  return days;
+}
