@@ -11,3 +11,12 @@ sortByArea(array); // should return [ 4.31, 4.75, 27.2, 37.26 ]
 */
 
 // solution
+
+function sortByArea(array) {
+  array = array.map((v) =>
+    Array.isArray(v)
+      ? (v[0] * v[1]).toFixed(2) * 1
+      : (v * v * Math.PI).toFixed(2) * 1
+  );
+  return array.sort((a, b) => a - b);
+}
