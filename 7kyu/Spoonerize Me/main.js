@@ -15,3 +15,10 @@ Once you have completed this kata, a slightly more challenging take on the idea 
 */
 
 // solution
+
+function spoonerize(words) {
+  words = words.split(" ");
+  let firstWord = words[1][0] + words[0].slice(1, words[0].length),
+    secondWord = words[0][0] + words[1].slice(1, words[1].length);
+  return `${firstWord} ${secondWord}`;
+}
