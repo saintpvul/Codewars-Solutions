@@ -62,3 +62,21 @@ should return "The crow is dead."
 */
 
 // solution
+
+function drinkWater(
+  bottleHeight,
+  bottleRadius,
+  waterHeight,
+  crowMouth,
+  littleStones
+) {
+  let remain =
+    (bottleHeight - waterHeight - crowMouth) * Math.PI * bottleRadius ** 2;
+  let result = [];
+  for (let i = 0; i < littleStones.length; i++) {
+    if (remain <= 0) break;
+    result.push(littleStones[i]);
+    remain -= littleStones[i];
+  }
+  return remain > 0 ? "The crow is dead." : result;
+}
