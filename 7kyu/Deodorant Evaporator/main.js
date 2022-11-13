@@ -16,3 +16,13 @@ Content is in fact not necessary in the body of the function "evaporator", you c
 */
 
 // solution
+
+function evaporator(content, evap_per_day, threshold) {
+  let result = 0,
+    percent = 100;
+  while (percent > threshold) {
+    percent -= percent * (evap_per_day / 100);
+    result++;
+  }
+  return result;
+}
