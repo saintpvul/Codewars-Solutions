@@ -34,3 +34,12 @@ P.S. The situation in this kata can be likened to the more-computer-science-rela
 */
 
 // solution
+
+function queueTime(customers, n) {
+  let tills = Array(n).fill(0);
+  for (let till of customers) {
+    let index = tills.indexOf(Math.min(...tills));
+    tills[index] += till;
+  }
+  return Math.max(...tills);
+}
