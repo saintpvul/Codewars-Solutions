@@ -26,3 +26,7 @@ Given a number, return an array with the number of hands raised by each person a
 */
 
 // solution
+
+const getPositions = (s) => {
+  return [~~s % 3, ~~(s / 3) % 3, ~~(s / 9) % 3];
+};
