@@ -37,3 +37,13 @@ Generator Functions
 */
 
 // solution
+
+function* nextElementGenerator(array) {
+  let index = 0;
+  while (index < array.length) {
+    yield array[index++];
+    if (index >= array.length) {
+      index = 0;
+    }
+  }
+}
