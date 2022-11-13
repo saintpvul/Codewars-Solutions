@@ -23,3 +23,6 @@ Attention: If the number has leading zeros the amount of digits should be consid
 */
 
 // solution
+
+let incrementString = (str) =>
+  str.replace(/([0-8]|\d?9+)?$/, (n) => (n ? +n + 1 : 1));
