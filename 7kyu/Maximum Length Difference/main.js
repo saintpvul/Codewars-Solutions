@@ -17,3 +17,15 @@ output: number as a string
 */
 
 // solution
+
+function mxdiflg(a1, a2) {
+  if (a1.length < 1 || a2.length < 1) return -1;
+
+  let length1 = a1.map((elem) => elem.length),
+    length2 = a2.map((elem) => elem.length);
+
+  return Math.max(
+    Math.max(...length1) - Math.min(...length2),
+    Math.max(...length2) - Math.min(...length1)
+  );
+}
