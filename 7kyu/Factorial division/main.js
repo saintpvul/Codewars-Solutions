@@ -15,3 +15,11 @@ And your solution should be able to calculate n! / d!.
 */
 
 // solution
+
+const factorialDivision = (n, d) => {
+  let res = 1n;
+  for (let i = n; i > d; i--) {
+    res *= i;
+  }
+  return res;
+};
