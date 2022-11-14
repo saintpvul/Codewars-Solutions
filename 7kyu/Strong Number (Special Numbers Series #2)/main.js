@@ -27,3 +27,41 @@ Since the sum of its digits' factorial of 1! + 5! + 0! = 122 is not equal to num
 */
 
 // solution
+
+function strong(n) {
+  let arr = n.toString().split(""),
+    sum = 0;
+
+  function fact(fnNum) {
+    if (fnNum <= 1) {
+      return 1;
+    } else {
+      return fnNum * fact(fnNum - 1);
+    }
+  }
+
+  for (let i = 0; i < arr.length; i++) {
+    sum += fact(arr[i]);
+  }
+
+  return n == sum ? "STRONG!!!!" : "Not Strong !!";
+}
+
+function strong(n) {
+  let f = [],
+    nums = n.toString().split("");
+  for (let i = 0; i < nums.length; i++) {
+    f.push(fact(nums[i]));
+  }
+  return f.reduce((s, i) => (s += i)) === n ? "STRONG!!!!" : "Not Strong !!";
+}
+
+function fact(num) {
+  if (num === 0) {
+    return 1;
+  } else {
+    return num * fact(num - 1);
+  }
+}
+
+console.log(strong(12));
