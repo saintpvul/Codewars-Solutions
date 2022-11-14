@@ -37,3 +37,30 @@ sum of all digits to the right of the middle digit(s) -> 20
 */
 
 // solution
+
+function balancedNum(number) {
+  let num = number.toString();
+  if (num.length === 1 || num.length === 2) return "Balanced";
+  let mid = Math.floor(num.length / 2);
+  if (num.length % 2) {
+    let leftSum = num
+        .slice(0, mid)
+        .split("")
+        .reduce((s, v) => (s += +v), 0),
+      rightSum = num
+        .slice(mid + 1, num.length)
+        .split("")
+        .reduce((s, v) => (s += +v), 0);
+    return leftSum === rightSum ? "Balanced" : "Not Balanced";
+  } else {
+    let leftSum = num
+        .slice(0, mid - 1)
+        .split("")
+        .reduce((s, v) => (s += +v), 0),
+      rightSum = num
+        .slice(mid + 1, num.length)
+        .split("")
+        .reduce((s, v) => (s += +v), 0);
+    return leftSum === rightSum ? "Balanced" : "Not Balanced";
+  }
+}
