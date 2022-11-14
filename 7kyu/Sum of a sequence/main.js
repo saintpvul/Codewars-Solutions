@@ -26,11 +26,11 @@ const sequenceSum = (begin, end, step) => {
   return result;
 };
 
-const sequenceSum = (begin, end, step) => {
-  if (begin > end) return 0;
-  let result = [];
-  for (let i = begin; i <= end; i += step) {
-    result.push(i);
-  }
-  return result.reduce((s, v) => (s += v), 0);
-};
+// const sequenceSum = (begin, end, step) => {
+//   if (begin > end) return 0;
+//   let result = [];
+//   for (let i = begin; i <= end; i += step) {
+//     result.push(i);
+//   }
+//   return result.reduce((s, v) => (s += v), 0);
+// };
