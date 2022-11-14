@@ -19,3 +19,14 @@ I have also created other katas. Take a look if you enjoyed this kata!
 */
 
 // solution
+
+function dontGiveMeFive(start, end) {
+  let result = [];
+  for (let i = start; i <= end; i++) {
+    if (i.toString().includes(5)) {
+      continue;
+    }
+    result.push(i);
+  }
+  return result.length;
+}
