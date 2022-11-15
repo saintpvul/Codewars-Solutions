@@ -10,3 +10,54 @@ Words should be separated by only spaces and not hyphens. No need to validate pa
 */
 
 // solution
+
+function nameThatNumber(num) {
+  let baseNums = {
+      0: "zero",
+      1: "one",
+      2: "two",
+      3: "three",
+      4: "four",
+      5: "five",
+      6: "six",
+      7: "seven",
+      8: "eight",
+      9: "nine",
+      10: "ten",
+      11: "eleven",
+      12: "twelve",
+      13: "thirteen",
+      14: "fourteen",
+      15: "fifteen",
+      16: "sixteen",
+      17: "seventeen",
+      18: "eighteen",
+      19: "nineteen",
+      20: "twenty",
+      30: "thirty",
+      40: "forty",
+      50: "fifty",
+      60: "sixty",
+      70: "seventy",
+      80: "eighty",
+      90: "ninety",
+    },
+    getKey = Object.keys(baseNums),
+    getValue = Object.values(baseNums),
+    takeNum = num.toString().split(""),
+    currentNdx = 0,
+    result = "";
+  if (getKey.includes(num.toString())) {
+    currentNdx = getKey.indexOf(num.toString());
+    return getValue[currentNdx];
+  } else {
+    if (!getKey.includes(num.toString())) {
+      takeNum[0] += "0";
+    }
+    for (let i = 0; i < takeNum.length; i++) {
+      currentNdx = getKey.indexOf(takeNum[i]);
+      result += getValue[currentNdx] + " ";
+    }
+    return result.trim();
+  }
+}
