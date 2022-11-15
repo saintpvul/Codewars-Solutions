@@ -6,3 +6,26 @@ He can do ten kata in an hour, but when he makes a mistake, he must do pushups. 
 */
 
 // solution
+function alexMistakes(numberOfKata, timeLimit) {
+  let mistakes = 0,
+    mistakePrice = 5,
+    timeLeft = timeLimit - numberOfKata * 6;
+  while (timeLeft - mistakePrice >= 0) {
+    mistakes++;
+    timeLeft -= mistakePrice;
+    mistakePrice = mistakePrice * 2;
+  }
+  return mistakes;
+}
+
+function alexMistakes(numberOfKata, timeLimit) {
+  let solving = numberOfKata * 6,
+    mistakePrice = 5,
+    mistakes = 0;
+  while (solving <= timeLimit) {
+    mistakes++;
+    solving += mistakePrice;
+    mistakePrice = mistakePrice * 2;
+  }
+  return mistakes - 1;
+}
