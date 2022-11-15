@@ -13,3 +13,8 @@ The order of the roots is not important.
 */
 
 // solution
+
+const quadraticFormula = (a, b, c) => [
+  (-b + Math.sqrt(b * b - 4 * a * c)) / (2 * a),
+  (-b - Math.sqrt(b * b - 4 * a * c)) / (2 * a),
+];
