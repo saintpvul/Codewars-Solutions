@@ -12,3 +12,15 @@ hammingDistance('1010', '0101') == 4
 */
 
 // solution
+
+function hammingDistance(a, b) {
+  let dif = 0,
+    checkA = a.split(""),
+    checkB = b.split("");
+  for (let i = 0; i < checkA.length; i++) {
+    if (checkA[i] != checkB[i]) {
+      dif++;
+    }
+  }
+  return dif;
+}
