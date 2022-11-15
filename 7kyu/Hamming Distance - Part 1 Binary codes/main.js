@@ -24,3 +24,6 @@ function hammingDistance(a, b) {
   }
   return dif;
 }
+
+const hammingDistance = (a, b) =>
+  a.split("").filter((n, i) => n != b[i]).length;
