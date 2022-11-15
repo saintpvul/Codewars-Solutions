@@ -5,3 +5,7 @@ Just a simple sorting usage. Create a function that returns the elements of the 
 */
 
 // solution
+
+sortme = function (names) {
+  return names.sort();
+};
