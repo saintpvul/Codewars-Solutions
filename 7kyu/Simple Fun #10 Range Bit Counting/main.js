@@ -20,3 +20,11 @@ Constraints: a ≤ b ≤ 100.
 */
 
 // solution
+
+function rangeBitCount(a, b) {
+  let bin = "";
+  for (let i = a; i <= b; i++) {
+    bin += i.toString(2);
+  }
+  return bin.replace(/0/g, "").length;
+}
