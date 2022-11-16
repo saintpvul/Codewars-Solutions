@@ -78,3 +78,19 @@ This student should 'Pass' because there are no parallel octaves in this harmony
 */
 
 // solution
+
+function passOrFail(harmony) {
+  let c1, c2;
+  for (let i = 0; i < harmony.length - 1; i++) {
+    c1 = harmony[i].split(" ");
+    c2 = harmony[i + 1].split(" ");
+    for (let j = 0; j < 3; j++) {
+      for (let k = j + 1; k < 4; k++) {
+        if (c1[j] === c1[k] && c2[j] === c2[k] && c1[j] != c2[j]) {
+          return "Fail";
+        }
+      }
+    }
+  }
+  return "Pass";
+}
