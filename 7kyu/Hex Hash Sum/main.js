@@ -12,3 +12,17 @@ Examples
 */
 
 // solution
+
+function hexHash(code) {
+  let chars = code.split(""),
+    toCheck = [],
+    sum = 0;
+  for (let i = 0; i < chars.length; i++) {
+    toCheck.push(chars[i].charCodeAt().toString(16));
+  }
+  return toCheck
+    .join("")
+    .replace(/\D/g, "")
+    .split("")
+    .reduce((s, v) => (s += Number(v)), 0);
+}
