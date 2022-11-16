@@ -15,8 +15,7 @@ Examples
 
 function hexHash(code) {
   let chars = code.split(""),
-    toCheck = [],
-    sum = 0;
+    toCheck = [];
   for (let i = 0; i < chars.length; i++) {
     toCheck.push(chars[i].charCodeAt().toString(16));
   }
