@@ -12,3 +12,7 @@ sum(1, 2, 3, 4, 5) // => 15
 */
 
 // solution
+
+function sum(...args) {
+  return args.reduce((s, a) => (s += a), 0);
+}
