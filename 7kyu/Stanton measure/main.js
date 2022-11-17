@@ -14,3 +14,19 @@ The Stanton measure of [1, 4, 1, 2, 11, 2, 3, 1] is 1, because 1 occurs 3 times 
 */
 
 // solution
+
+function stantonMeasure(arr) {
+  let second = 0,
+    staton = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === 1) {
+      second++;
+    }
+  }
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === second) {
+      staton++;
+    }
+  }
+  return staton;
+}
