@@ -43,3 +43,17 @@ Please could you ask before translating?
 */
 
 // solution
+
+function crusoe(n, d, ang, distmult, angmult) {
+  let x = 0,
+    y = 0;
+  ang *= Math.PI / 180;
+  while (n > 0) {
+    x += d * Math.cos(ang);
+    y += d * Math.sin(ang);
+    ang *= angmult;
+    d *= distmult;
+    n--;
+  }
+  return [x, y];
+}
