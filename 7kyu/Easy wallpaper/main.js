@@ -33,7 +33,7 @@ For other languages it is not preloaded and you can instead copy the above list 
 // solution
 
 function wallpaper(l, w, h) {
-  let numbers = [
+  let n = [
     "zero",
     "one",
     "two",
@@ -56,4 +56,7 @@ function wallpaper(l, w, h) {
     "nineteen",
     "twenty",
   ];
+  return l * w * h === 0
+    ? n[0]
+    : n[Math.ceil(((l * h * 2 + w * h * 2) * 1.15) / 5.2)];
 }
