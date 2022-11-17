@@ -16,3 +16,13 @@ Return the result as a Boolean
 */
 
 // solution
+
+function tidyNumber(n) {
+  n = n.toString();
+  for (let i = 0; i < n.length; i++) {
+    if (n[i] > n[i + 1]) {
+      return false;
+    }
+  }
+  return true;
+}
