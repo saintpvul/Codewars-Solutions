@@ -33,3 +33,6 @@ function houseNumbersSum(inputArray) {
   }
   return sum;
 }
+
+const houseNumbersSum = (inputArray) =>
+  inputArray.slice(0, inputArray.indexOf(0)).reduce((s, n) => s + n, 0);
