@@ -26,3 +26,14 @@ Examples (Input => Output)
 */
 
 // solution
+
+function dotCalculator(equation) {
+  let [d1, o, d2] = equation.split(" "),
+    object = {
+      "+": (a, b) => a + b,
+      "-": (a, b) => a - b,
+      "//": (a, b) => a / b,
+      "*": (a, b) => a * b,
+    };
+  return ".".repeat(object[o](d1.length, d2.length));
+}
