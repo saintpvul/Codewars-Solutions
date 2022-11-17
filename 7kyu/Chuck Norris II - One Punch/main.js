@@ -15,3 +15,9 @@ Go, go go!!!
 */
 
 // solution
+
+const onePunch = (items) =>
+  typeof items === "string" && items.length > 0
+    ? items.split(" ").sort().join(" ").replace(/[ae]/gi, "")
+    : "Broken!";
+console.log(onePunch("Beard Knife Grenade Motorbike Hat"));
