@@ -26,3 +26,11 @@ The area of the n-interesting polygon.
 */
 
 // solution
+
+function shapeArea(n) {
+  let res = 1;
+  for (let i = 0; i < n; i++) {
+    res += i * 4;
+  }
+  return res;
+}
