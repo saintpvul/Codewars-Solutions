@@ -16,3 +16,25 @@ After 3 times it is asked, however, the audience member no longer will give an a
 */
 
 // solution
+
+function guessTheCard(audience) {
+  let array = [
+      [1, 2, 3, 4, 5, 6, 7],
+      [8, 9, 10, 11, 12, 13, 14],
+      [15, 16, 17, 18, 19, 20, 21],
+    ],
+    answer = array[audience.getInput(array)];
+  array = [
+    [1, 2, 17, 18, 12, 13, 14],
+    [3, 4, 10, 11, 19, 20, 21],
+    [8, 9, 15, 16, 5, 6, 7],
+  ];
+  answer = array[audience.getInput(array)].filter((n) => answer.includes(n));
+  array = [
+    [1, 4, 17, 11, 12, 20, 7],
+    [3, 9, 10, 16, 19, 13, 6],
+    [8, 2, 15, 18, 5, 21, 14],
+  ];
+  answer = array[audience.getInput(array)].filter((n) => answer.includes(n));
+  return answer[0];
+}
