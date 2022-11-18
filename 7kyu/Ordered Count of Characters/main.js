@@ -11,3 +11,23 @@ orderedCount("abracadabra") == [['a', 5], ['b', 2], ['r', 2], ['c', 1], ['d', 1]
 */
 
 // solution
+
+const orderedCount = (text) => {
+  text = text.split("");
+  let count = 0,
+    result = [],
+    temp = [];
+  for (let i = 0; i < text.length; i++) {
+    temp.push(text[i]);
+    for (let j = 0; j < text.length; j++) {
+      if (text[j] === text[i]) {
+        count++;
+      }
+    }
+    if (temp.indexOf(text[i]) === temp.lastIndexOf(text[i])) {
+      result.push([text[i], count]);
+    }
+    count = 0;
+  }
+  return result;
+};
