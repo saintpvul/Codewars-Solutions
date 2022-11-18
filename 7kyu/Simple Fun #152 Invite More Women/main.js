@@ -20,3 +20,5 @@ true if Arthur need to invite more women, false otherwise.
 */
 
 // solution
+
+const inviteMoreWomen = (L) => L.reduce((m, w) => m + w, 0) > 0;
