@@ -40,3 +40,20 @@ Hint: Use \n in string to jump to next line
 */
 
 // solution
+
+function pattern(n) {
+  var output = [];
+  for (let i = 1; i <= n; i++) {
+    output.push(i.toString().repeat(i));
+  }
+  return output.join("\n");
+}
+
+// function pattern(n){
+//   if(n < 1) return ''
+//  var output="1";
+//   for(let i = 2; i <= n; i++){
+//     output+= `\n${i.toString().repeat(i)}`
+//   }
+//  return output;
+// }
