@@ -16,3 +16,9 @@ Note: There will be at least two words in the given string!
 */
 
 // solution
+
+const toAcronym = (inp) =>
+  inp
+    .split(" ")
+    .map((item) => item[0].toUpperCase())
+    .join("");
