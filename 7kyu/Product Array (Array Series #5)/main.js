@@ -42,3 +42,6 @@ Finally ,The Fifth element 900 is the product of all array's elements except the
 */
 
 // solution
+
+const productArray = (numbers) =>
+  numbers.map((x) => numbers.reduce((a, b) => a * b) / x);
