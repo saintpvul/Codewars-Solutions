@@ -14,3 +14,12 @@ input;           // == [4, 3, 2, 1]  // items reordered in the original array
 */
 
 // solution
+
+Array.prototype.reverse = function () {
+  let array = this.splice(0);
+
+  while (array.length) {
+    this.push(array.pop());
+  }
+  return this;
+};
