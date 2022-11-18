@@ -10,3 +10,11 @@ Example:
 */
 
 // solution
+
+const switcheroo = (x) =>
+  x
+    .split("")
+    .map((item) =>
+      item === "a" ? (item = "b") : item === "b" ? (item = "a") : item
+    )
+    .join("");
