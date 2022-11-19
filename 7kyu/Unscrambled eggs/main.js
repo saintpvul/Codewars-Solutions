@@ -12,3 +12,5 @@ Kata is supposed to be for beginners to practice regular expressions, so comment
 */
 
 // solution
+
+const unscrambleEggs = (word) => word.replace(/egg/gi, "");
