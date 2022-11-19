@@ -31,3 +31,11 @@ Explanation:
 */
 
 // solution
+
+function maxMultiple(divisor, bound) {
+  let n = bound;
+  while (n % divisor) {
+    n--;
+  }
+  return n;
+}
