@@ -27,3 +27,22 @@ Adapted from the 2017 British Informatics Olympiad
 */
 
 // solution
+
+function triangle(row) {
+  let curr = "";
+  if (row.length == 1) {
+    curr = row;
+  }
+  for (let i = 0; i < row.length - 1; i++) {
+    if (row[i] == row[i + 1]) {
+      curr += row[i];
+    } else {
+      curr += "RGB".replace(row[i], "").replace(row[i + 1], "");
+    }
+  }
+  if (curr.length > 1) {
+    return triangle(curr);
+  } else {
+    return curr;
+  }
+}
