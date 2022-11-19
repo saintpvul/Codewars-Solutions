@@ -19,4 +19,15 @@ Confused? Roll your mouse/tap over here
 
 */
 
-// solution
+// // solution
+
+// function addLetters(...letters) {
+//   return String.fromCharCode(
+//     ((letters.reduce((a, b) => a + b.charCodeAt(0) - 96, 0) + 25) % 26) + 97
+//   );
+// }
+
+// function addLetters(...letters) {
+//   let letter=String.fromCharCode(letters.map(v=>v.charCodeAt()-96).reduce((a,b)=>a+b,0)%26+96)
+//   return letter==='`'?'z':letter
+// }
