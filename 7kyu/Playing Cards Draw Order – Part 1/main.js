@@ -51,3 +51,15 @@ After this one, jump to Part 2, where we will be ordering the deck to be drawn t
 */
 
 // solution
+
+const draw = (deck) => {
+  printDeck(deck, true); // Using unicode characters
+  printDeck(deck, false); // Using regular characters
+
+  const drawnCards = [];
+  while (deck.length > 1) {
+    drawnCards.push(deck.shift());
+    deck.push(deck.shift());
+  }
+  return drawnCards.concat(deck);
+};
