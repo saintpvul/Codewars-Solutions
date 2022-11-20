@@ -18,3 +18,13 @@ Some random tests might fail due to a bug in the JavaScript implementation. Simp
 */
 
 // solution
+
+function predictAge(age1, age2, age3, age4, age5, age6, age7, age8) {
+  return Math.floor(
+    Math.sqrt(
+      [...arguments].map((e) => (e *= e)).reduce((s, v) => (s += v), 0)
+    ) / 2
+  );
+}
+
+const predictAge = (...ages) => (Math.hypot(...ages) / 2) | 0;
