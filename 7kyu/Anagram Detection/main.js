@@ -16,3 +16,38 @@ Examples
 */
 
 // solution
+
+/* hashMap doesnt work on codewars
+
+function chars(str) {
+  let charObj = {};
+  str = str.toLowerCase().replace(/^\w/g);
+  for (let char of str) {
+    charObj[char] = charObj[char] + 1 || 1;
+  }
+  return charObj;
+}
+
+function isAnagram(test, original) {
+  const testChars = chars(test),
+    originalChars = chars(original);
+
+  if (Object.keys(testChars).length != Object.keys(originalChars).length) {
+    return false;
+  }
+  console.log(testChars);
+  console.log(originalChars);
+  for (let char of testChars) {
+    if (testChars[char] !== originalChars[char]) {
+      return false;
+    }
+  }
+  return true;
+}
+*/
+
+// low speed solution
+
+const isAnagram = (test, original) =>
+  test.toLowerCase().split("").sort().join("") ===
+  original.toLowerCase().split("").sort().join("");
