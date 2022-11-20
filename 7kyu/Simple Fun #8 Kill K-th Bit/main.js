@@ -30,3 +30,11 @@ Are you a One-Liner? Please try to complete the kata in one line(no test for it)
 */
 
 // solution
+
+function killKthBit(n, k) {
+  let nBin = n.toString(2).split(""),
+    nStr = "";
+  nBin[nBin.length - k] = "0";
+  nStr = nBin.join("");
+  return parseInt(nStr, 2);
+}
