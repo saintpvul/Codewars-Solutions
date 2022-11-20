@@ -17,3 +17,10 @@ A string consists of lowercase latin letters, digits and symbols.
 */
 
 // solution
+
+const reverseLetter = (str) =>
+  str
+    .replace(/[^a-z]/gi, "")
+    .split("")
+    .reverse()
+    .join("");
