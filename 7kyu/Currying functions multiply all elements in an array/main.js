@@ -14,3 +14,5 @@ Here's a nice Youtube video about currying, which might help you if this is new 
 */
 
 // solution
+
+const multiplyAll = (arr) => (multBy) => [...arr].map((el) => el * multBy);
