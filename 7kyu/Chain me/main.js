@@ -19,3 +19,5 @@ chain(2, [add, mult]);
 */
 
 // solution
+
+const chain = (input, fs) => fs.reduce((input, f) => f(input), input);
