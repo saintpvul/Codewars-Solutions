@@ -29,6 +29,9 @@ function chars(str) {
 }
 
 function isAnagram(test, original) {
+	if(test.length != original.length){
+		return false
+	}
   const testChars = chars(test),
     originalChars = chars(original);
 
