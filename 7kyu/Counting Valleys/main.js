@@ -23,3 +23,21 @@ So here we passed one valley
 */
 
 // solution
+
+function countingValleys(s) {
+  let l = 0,
+    v = 0;
+  for (let i of s) {
+    if (i === "U" && l === -1) {
+      v++;
+    }
+    if (i != "F") {
+      if (i === "U") {
+        l++;
+      } else {
+        l--;
+      }
+    }
+  }
+  return v;
+}
