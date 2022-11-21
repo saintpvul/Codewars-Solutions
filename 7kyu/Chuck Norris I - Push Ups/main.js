@@ -19,3 +19,16 @@ Feel the burn!!
 */
 
 // solution
+
+function chuckPushUps(string) {
+  if (typeof string != "string" || string.length === 0) {
+    return "FAIL!!";
+  }
+  string = string
+    .split(" ")
+    .map((e) => e.replace(/[^10]/gi))
+    .map((e) => parseInt(e, 2))
+    .filter((x) => !Number.isNaN(x));
+
+  return Math.max(...string);
+}
