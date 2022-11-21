@@ -21,14 +21,13 @@ Feel the burn!!
 // solution
 
 function chuckPushUps(string) {
-  if (typeof string != "string" || string.length === 0) {
-    return "FAIL!!";
-  }
-  string = string
-    .split(" ")
-    .map((e) => e.replace(/[^10]/gi))
-    .map((e) => parseInt(e, 2))
-    .filter((x) => !Number.isNaN(x));
-
-  return Math.max(...string);
+  if (typeof string !== "string" || string.length === 0) return "FAIL!!";
+  if (/[01]/.test(string))
+    return Math.max(
+      ...string.split` `
+        .map((v) => v.replace(/[^01]/g, ""))
+        .map((v) => parseInt(v, 2))
+        .filter((v) => !isNaN(v))
+    );
+  return "CHUCK SMASH!!";
 }
