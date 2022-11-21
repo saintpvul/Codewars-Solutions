@@ -24,3 +24,17 @@ Enjoy it !!
 */
 
 // solution
+
+function eqSumPowdig(hMax, exp) {
+  let result = [];
+  for (let i = 2; i <= hMax; i++) {
+    let sum = i
+      .toString()
+      .split("")
+      .reduce((a, v) => a + Math.pow(v, exp), 0);
+    if (sum == i) {
+      result.push(sum);
+    }
+  }
+  return result;
+}
