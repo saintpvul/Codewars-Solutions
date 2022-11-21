@@ -9,3 +9,8 @@ Examples
 */
 
 // solution
+
+const removeUrlAnchor = (url) =>
+  url.indexOf("#") != -1
+    ? url.split("").slice(0, url.lastIndexOf("#")).join("")
+    : url;
