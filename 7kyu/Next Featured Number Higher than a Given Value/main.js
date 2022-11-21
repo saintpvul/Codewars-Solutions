@@ -23,3 +23,17 @@ Enjoy the kata!!
 */
 
 // solution
+
+function nextNumb(val) {
+  let nextNumber = 0;
+  for (let i = val + 1; i < 9999999999; i++) {
+    let set = new Set(i.toString().split(""));
+    if (i % 2 && i % 3 === 0 && i.toString().split("").length == set.size) {
+      nextNumber = i;
+      break;
+    }
+  }
+  return nextNumber === 0
+    ? "There is no possible number that fulfills those requirements"
+    : nextNumber;
+}
