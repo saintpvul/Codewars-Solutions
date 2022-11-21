@@ -25,3 +25,5 @@ To solve this, you need to think of a way to do the kata without making massive 
 */
 
 // solution
+
+const overTheRoad = (address, n) => n * 2 - address + 1;
