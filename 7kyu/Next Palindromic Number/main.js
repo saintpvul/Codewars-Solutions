@@ -21,3 +21,14 @@ Enjoy it!!
 **/
 
 // solution
+
+function nextPal(val) {
+  let nextPalindrome = 0;
+  for (let i = val + 1; ; i++) {
+    if (i.toString() === i.toString().split("").reverse().join("")) {
+      nextPalindrome = i;
+      break;
+    }
+  }
+  return nextPalindrome;
+}
