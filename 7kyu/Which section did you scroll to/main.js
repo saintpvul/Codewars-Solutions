@@ -18,3 +18,18 @@ Given the scrollY integer (always non-negative) and an array of non-negative int
 */
 
 // solution
+
+// return an index of section or -1 if past last section
+// scrollY is a positive integer and sizes is an array of positive integers
+function getSectionIdFromScroll(scrollY, sizes) {
+  let sum = 0,
+    ndx = -1;
+  for (let i = 0; i < sizes.length; i++) {
+    sum += sizes[i];
+    if (sum > scrollY) {
+      ndx = i;
+      break;
+    }
+  }
+  return ndx;
+}
