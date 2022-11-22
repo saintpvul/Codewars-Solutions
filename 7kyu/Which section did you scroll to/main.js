@@ -33,3 +33,8 @@ function getSectionIdFromScroll(scrollY, sizes) {
   }
   return ndx;
 }
+
+const getSectionIdFromScroll = (y, s) => {
+  let t = 0;
+  return s.findIndex((e) => (t += e) > y);
+};
