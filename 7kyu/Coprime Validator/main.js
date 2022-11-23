@@ -21,3 +21,12 @@ Result: 12 and 39 are not coprimes
 */
 
 // solution
+
+function isCoprime(x, y) {
+  for (let i = 2; i <= Math.min(x, y); i++) {
+    if (x % i == 0 && y % i == 0) {
+      return false;
+    }
+  }
+  return true;
+}
