@@ -11,3 +11,13 @@ Enjoy it!!
 */
 
 // solution
+
+Array.prototype.remove_ = function (integer_list, values_list) {
+  let result = [];
+  for (let integer of integer_list) {
+    if (values_list.indexOf(integer) === -1) {
+      result.push(integer);
+    }
+  }
+  return result;
+};
