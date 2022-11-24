@@ -23,3 +23,16 @@ So, at the end we have the list [4, 5, 3], which is what you have to return. If 
 */
 
 // solution
+
+function fifo(n, l) {
+  let res = Array(n).fill(-1),
+    pos = 0;
+
+  for (let i of l) {
+    if (!res.includes(i)) {
+      res[pos] = i;
+      pos = (pos + 1) % n;
+    }
+  }
+  return res;
+}
