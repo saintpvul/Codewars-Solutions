@@ -24,3 +24,13 @@ splitTheBill(group) // returns {A: 5, B: 0, C: -5}
 */
 
 // solution
+
+function splitTheBill(x) {
+  let m =
+      Object.values(x).reduce((s, b) => (s += b), 0) / Object.values(x).length,
+    k = Object.keys(x),
+    p = Object.values(x).map((a) => a - m);
+  return Object.assign(
+    ...k.map((n, i) => ({ [n]: parseFloat(p[i].toFixed(2)) }))
+  );
+}
