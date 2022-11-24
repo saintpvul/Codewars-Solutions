@@ -22,3 +22,21 @@ Enjoy it!!
 */
 
 // solution
+
+function List() {
+  this.countSpecDigits = function (integersList, digitsList) {
+    integersList = integersList.toString().split("");
+    let res = [],
+      count = 0;
+    for (let i = 0; i < digitsList.length; i++) {
+      for (let j = 0; j < integersList.length; j++) {
+        if (integersList[j] == digitsList[i]) {
+          count++;
+        }
+      }
+      res.push([digitsList[i], count]);
+      count = 0;
+    }
+    return res;
+  };
+}
