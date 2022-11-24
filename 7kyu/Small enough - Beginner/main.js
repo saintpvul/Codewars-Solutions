@@ -13,3 +13,5 @@ function smallEnough(a, limit) {
   }
   return true;
 }
+
+const smallEnough = (a, l) => Math.max(...a) <= l;
