@@ -22,3 +22,11 @@ for a bigger challenge, check out the Performance Version of this kata by @Voile
 */
 
 // solution
+
+function spinningRings(innerMax, outerMax) {
+  let res = 0;
+  while (innerMax - ((res - 1) % (innerMax + 1)) != res % (outerMax + 1)) {
+    res++;
+  }
+  return res;
+}
