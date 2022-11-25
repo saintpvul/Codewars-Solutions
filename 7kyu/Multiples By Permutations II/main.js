@@ -35,3 +35,14 @@ Enjoy it!!
 */
 
 // solution
+
+function findLowestInt(k) {
+  let k2 = k + 1,
+    x = 1,
+    sort = (k, r) => [...String(k * r)].sort().join("");
+  while (1) {
+    if (sort(k, x) === sort(k2, x++)) {
+      return x - 1;
+    }
+  }
+}
