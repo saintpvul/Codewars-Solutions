@@ -11,3 +11,17 @@ For example (Input --> Output):
 */
 
 // solution
+
+function persistence(num) {
+  let output = 0,
+    current = num;
+  if (num.toString().length === 1) return 0;
+  do {
+    current = current
+      .toString()
+      .split("")
+      .reduce((s, v) => (s *= parseInt(v)), 1);
+    output++;
+  } while (current.toString().length > 1);
+  return output;
+}
