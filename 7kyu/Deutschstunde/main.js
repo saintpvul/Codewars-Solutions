@@ -12,3 +12,12 @@ Caution: Vowels are "a,e,i,o,u". Umlaute (ä ö ü) are also being counted!
 */
 
 // solution
+function derDieDas(wort) {
+  let count = 0;
+  for (let i = 0; i < wort.length; i++) {
+    if (/[aeiouöäü]/.test(wort[i].toLowerCase())) {
+      count++;
+    }
+  }
+  return count > 3 ? `der ${wort}` : count < 2 ? `das ${wort}` : `die ${wort}`;
+}
