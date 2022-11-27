@@ -16,3 +16,16 @@ expanded_from(0.04); // should return "4/100"
 */
 
 // solution
+
+function expandedForm(num) {
+  num = num.toString().split`.`;
+  let dig = num[0].split``
+    .reverse()
+    .map((val, i) => (val * 1 === 0 ? "" : val + "0".repeat(i)))
+    .filter((val) => val)
+    .reverse().join` + `;
+  let dec = num[1].split``
+    .map((val, i) => (val * 1 === 0 ? "" : val + "/" + "1" + "0".repeat(i + 1)))
+    .filter((val) => val).join` + `;
+  return [dig, dec].join` + `.replace(/^[^0-9]+/g, "");
+}
