@@ -27,8 +27,8 @@ And a tower with 6 floors looks like this:
 // solution
 
 function towerBuilder(nFloors) {
-  var tower = [];
-  for (var i = 0; i < nFloors; i++) {
+  let tower = [];
+  for (let i = 0; i < nFloors; i++) {
     tower.push(
       " ".repeat(nFloors - i - 1) +
         "*".repeat(i * 2 + 1) +
@@ -36,4 +36,11 @@ function towerBuilder(nFloors) {
     );
   }
   return tower;
+}
+
+function towerBuilder(n) {
+  return [...Array(n)].map(
+    (_, i) =>
+      " ".repeat(n - 1 - i) + "*".repeat(i * 2 + 1) + " ".repeat(n - 1 - i)
+  );
 }
