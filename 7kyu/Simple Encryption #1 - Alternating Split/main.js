@@ -28,3 +28,34 @@ Have fun coding it and please don't forget to vote and rank this kata! :-)
 */
 
 // solution
+
+function encrypt(text, n) {
+  if (!text || n < 1) return text;
+  while (n--) {
+    let res = "";
+    for (let i = 1; i < text.length; i += 2) {
+      res += text[i];
+    }
+    for (let i = 0; i < text.length; i += 2) {
+      res += text[i];
+    }
+    text = res;
+  }
+  return text;
+}
+
+function decrypt(encryptedText, n) {
+  if (!encryptedText || n <= 0) return encryptedText;
+  const res = new Array(encryptedText.length);
+  while (n--) {
+    let j = 0;
+    for (let i = 1; i < res.length; i += 2) {
+      res[i] = encryptedText[j++];
+    }
+    for (let i = 0; i < res.length; i += 2) {
+      res[i] = encryptedText[j++];
+    }
+    encryptedText = res.join("");
+  }
+  return encryptedText;
+}
