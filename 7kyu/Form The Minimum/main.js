@@ -9,3 +9,13 @@ Only positive integers will be passed to the function (> 0 ), no negatives or ze
 */
 
 // solution
+
+function minValue(values) {
+  let uniq = new Set(values.sort());
+  return +Array.from(uniq).reduce((s, v) => (s += v.toString()), 0);
+}
+
+// function minValue(values) {
+//   let uniq = Array.from(new Set(values.sort()));
+//   return parseInt(uniq.join(""));
+// }
