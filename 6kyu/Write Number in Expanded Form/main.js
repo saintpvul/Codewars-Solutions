@@ -13,3 +13,14 @@ If you liked this kata, check out part 2!!
 */
 
 // solution
+
+function expandedForm(num) {
+  return num
+    .toString()
+    .split("")
+    .reverse()
+    .map((s, i) => s * Math.pow(10, i))
+    .filter((e) => e > 0)
+    .reverse()
+    .join(" + ");
+}
