@@ -16,3 +16,13 @@ This is indexed from [1..n] (not zero indexed!)
 */
 
 // solution
+
+function vowelIndices(word) {
+  let res = [];
+  for (let i = 0; i < word.length; i++) {
+    if (word[i].match(/[aeiouy]/i)) {
+      res.push(i + 1);
+    }
+  }
+  return res;
+}
