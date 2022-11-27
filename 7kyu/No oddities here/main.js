@@ -7,3 +7,5 @@ All values in the array will be integers. Return the good values in the order th
 */
 
 // solution
+
+const noOdds = (values) => values.filter((i) => i % 2 === 0 || 0);
