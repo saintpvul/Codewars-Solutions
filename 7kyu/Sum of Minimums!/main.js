@@ -17,3 +17,6 @@ ENJOY CODING :)
 */
 
 // solution
+
+const sumOfMinimums = (arr) =>
+  arr.map((v) => Math.min(...v)).reduce((s, v) => s + v, 0);
