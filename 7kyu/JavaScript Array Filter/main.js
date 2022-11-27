@@ -9,3 +9,7 @@ getEvenNumbers([2,4,5,6]) // should == [2,4,6]
 */
 
 // solution
+
+function getEvenNumbers(numbersArray) {
+  return numbersArray.filter((e) => e % 2 === 0);
+}
