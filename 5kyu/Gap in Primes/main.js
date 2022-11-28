@@ -45,4 +45,25 @@ https://en.wikipedia.org/wiki/Prime_gap
 
 */
 
-//
+// solution
+
+const gap = (g, m, n) => {
+  for (m; m < n - g; m++) {
+    if (isPrime(m) && isPrime(m + g) && noPrimesBetween(m, m + g))
+      return [m, m + g];
+  }
+  return null;
+};
+const isPrime = (n) => {
+  for (let i = 2; i <= Math.sqrt(n); i++) {
+    if (n % i === 0) return 0;
+  }
+  return 1;
+};
+
+const noPrimesBetween = (i, j) => {
+  for (let k = i + 1; k < j - 1; k++) {
+    if (isPrime(k)) return 0;
+  }
+  return 1;
+};
