@@ -17,3 +17,17 @@ checkExam(["b", "c", "b", "a"], ["",  "a", "a", "c"]) → 0
 */
 
 // solution
+
+function checkExam(array1, array2) {
+  let grade = 0;
+  for (let i = 0; i < array1.length; i++) {
+    if (array2[i].length < 1) {
+      grade += 0;
+    } else if (array1[i] === array2[i]) {
+      grade += 4;
+    } else {
+      grade -= 1;
+    }
+  }
+  return grade > 0 ? grade : 0;
+}
