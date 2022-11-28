@@ -45,3 +45,18 @@ You can see examples for your language in "Sample Tests".
 */
 
 // solution
+
+function productFib(prod) {
+  let f = [0, 1];
+  for (let i = 0; f[i + 1] < prod; i++) {
+    f.push(f[i] + f[i + 1]);
+  }
+  for (let i = 0; i < f.length; i++) {
+    if (f[i] * f[i + 1] === prod) {
+      return [f[i], f[i + 1], true];
+    }
+    if (f[i] * f[i + 1] > prod) {
+      return [f[i], f[i + 1], false];
+    }
+  }
+}
