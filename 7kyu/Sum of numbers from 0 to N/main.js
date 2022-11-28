@@ -32,3 +32,19 @@ Suggest kata description edits
 */
 
 // solution
+
+var SequenceSum = (function () {
+  function SequenceSum() {}
+
+  SequenceSum.showSequence = function (count) {
+    if (count === 0) return "0=0";
+    if (count < 0) return `${count}<0`;
+    let sum = [];
+    for (let i = 0; i <= count; i++) {
+      sum.push(i);
+    }
+    return `${sum.join("+")} = ${sum.reduce((s, v) => (s += v), 0)}`;
+  };
+
+  return SequenceSum;
+})();
