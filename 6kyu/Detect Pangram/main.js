@@ -7,3 +7,13 @@ Given a string, detect whether or not it is a pangram. Return True if it is, Fal
 */
 
 // solution
+
+const isPangram = (string) =>
+  [
+    ...new Set(
+      string
+        .replace(/[\W\d]/g, "")
+        .toLowerCase()
+        .split("")
+    ),
+  ].length === 26;
