@@ -14,15 +14,3 @@ Examples
 */
 
 // solution
-
-function findOdd(A) {
-  let times = {};
-  for (let int of A) {
-    times[int] = times[int] + 1 || 1;
-  }
-  for (let [key, value] of Object.entries(times)) {
-    if (value % 2) {
-      return +key;
-    }
-  }
-}
