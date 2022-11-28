@@ -20,3 +20,12 @@ Test.describe("perfect powers", function(){
 */
 
 // solution
+
+const isPP = (n) => {
+  for (let curr = 2; curr * curr <= n; ++curr) {
+    for (let pow = 2; Math.pow(curr, pow) <= n; ++pow) {
+      if (Math.pow(curr, pow) === n) return [curr, pow];
+    }
+  }
+  return null;
+};
