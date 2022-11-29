@@ -21,3 +21,22 @@ If there is only one student, then that student has the most money
 */
 
 // solution
+
+function mostMoney(students) {
+  let student = [],
+    nom = [5, 10, 20];
+  students.map((v) =>
+    student.push([
+      ...Object.values(v)
+        .slice(0, 1)
+        .concat(
+          Object.values(v)
+            .slice(1)
+            .reduce((sum, val, ndx) => sum + val * nom[ndx], 0)
+        ),
+    ])
+  );
+  let most = Math.max(...student.map((c) => c[1]));
+  student = student.filter((c) => c[1] === most);
+  return student.length > 1 ? "all" : student[0][0];
+}
