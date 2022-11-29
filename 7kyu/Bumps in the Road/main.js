@@ -7,3 +7,5 @@ Unfortunately for you, your drive is very bumpy! Given a string showing either f
 */
 
 // solution
+
+const bump = (x) => (x.replace(/_/g, "").length > 15 ? "Car Dead" : "Woohoo!");
