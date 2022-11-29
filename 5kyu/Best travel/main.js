@@ -27,3 +27,23 @@ in some languages this "list" is in fact a string (see the Sample Tests).
 */
 
 // solution
+
+function chooseBestSum(t, k, ls) {
+  let count = 0;
+  let shuffle = function (towns, lastIndex) {
+    towns = towns || [];
+    if (towns.length === k) {
+      let dist = towns.reduce((a, b) => a + b);
+      if (dist <= t && dist > count) {
+        count = dist;
+      }
+      return;
+    }
+    for (let i = lastIndex + 1 || 0; i < ls.length; i++) {
+      shuffle(towns.concat(ls[i]), i);
+    }
+  };
+  shuffle();
+
+  return count || null;
+}
