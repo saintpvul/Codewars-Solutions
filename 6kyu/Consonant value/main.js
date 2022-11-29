@@ -24,3 +24,17 @@ Vowel-consonant lexicon
 */
 
 // solution
+
+function solve(s) {
+  let result = [],
+    currentValue = 0;
+  s = s.split(/[aeiou]/g);
+  for (let i = 0; i < s.length; i++) {
+    for (let j = 0; j < s[i].length; j++) {
+      currentValue += s[i].charCodeAt(j) - 96;
+    }
+    result.push(currentValue);
+    currentValue = 0;
+  }
+  return Math.max(...result);
+}
