@@ -38,3 +38,10 @@ function solve(s) {
   }
   return Math.max(...result);
 }
+
+const solve = (s) =>
+  Math.max(
+    ...s
+      .match(/[^aeiou]+/g)
+      .map((x) => [...x].reduce((s, v) => s + v.charCodeAt() - 96, 0))
+  );
