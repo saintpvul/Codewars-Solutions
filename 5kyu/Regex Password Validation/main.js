@@ -11,3 +11,6 @@ only contains alphanumeric characters (note that '_' is not alphanumeric)
 */
 
 // solution
+
+const REGEXP = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])[A-Za-z0-9]{6,}$/;
+const valid = (pass) => REGEXP.test(pass);
