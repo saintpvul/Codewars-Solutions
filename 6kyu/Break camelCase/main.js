@@ -21,3 +21,5 @@ function solution(string) {
   }
   return res.join("");
 }
+
+const solution = (string) => string.replace(/([A-Z])/g, " $1");
