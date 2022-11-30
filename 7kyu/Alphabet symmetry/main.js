@@ -20,3 +20,19 @@ Alternate capitalization
 */
 
 // solution
+
+function solve(arr){  
+  arr = arr.map(e=>e.toLowerCase())
+  let result = 0,
+      output = []
+  for(let i = 0; i < arr.length;i++){
+    for(let j = 0;j < arr[i].length; j++){
+      if(j+1 === arr[i].charCodeAt(j) - 96){
+        result++
+      }
+    }
+    output.push(result)
+    result = 0
+  }
+  return output
+};
