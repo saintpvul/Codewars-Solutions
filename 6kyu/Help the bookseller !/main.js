@@ -31,3 +31,22 @@ See "Samples Tests" for the return.
 */
 
 // solution
+
+function stockList(listOfArt, listOfCat) {
+  if (listOfArt.length === 0 || listOfCat.length === 0) return "";
+  const res = [];
+  let L = "";
+  let M = 0;
+  for (let i = 0; i < listOfCat.length; i++) {
+    L = listOfCat[i];
+    M = 0;
+    for (let j = 0; j < listOfArt.length; j++) {
+      if (listOfArt[j][0] === listOfCat[i]) {
+        M += listOfArt[j].match(/[\d]+/g) * 1;
+      }
+    }
+    let str = `(${L} : ${M})`;
+    res.push(str);
+  }
+  return res.join(" - ");
+}
