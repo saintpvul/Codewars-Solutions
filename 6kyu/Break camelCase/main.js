@@ -10,3 +10,14 @@ Example
 */
 
 // solution
+
+function solution(string) {
+  let res = [];
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] === string[i].toUpperCase()) {
+      res.push(" ");
+    }
+    res.push(string[i]);
+  }
+  return res.join("");
+}
