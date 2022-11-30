@@ -41,3 +41,11 @@ if you want to translate, please ask before translating.
 */
 
 // solution
+
+function dirReduc(arr) {
+  arr = arr.join("");
+  while (/NORTHSOUTH|EASTWEST|SOUTHNORTH|WESTEAST/.test(arr)) {
+    arr = arr.replace(/NORTHSOUTH|EASTWEST|SOUTHNORTH|WESTEAST/, "");
+  }
+  return arr.match(/(NORTH|SOUTH|EAST|WEST)/g) || [];
+}
