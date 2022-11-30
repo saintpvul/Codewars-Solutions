@@ -12,3 +12,8 @@ With list [20,37,20,21] and number 1, the result would be [20,37,21].
 */
 
 // solution
+
+function deleteNth(arr, n) {
+  let stash = {};
+  return arr.filter((e) => (stash[e] = (stash[e] || 0) + 1) <= n);
+}
