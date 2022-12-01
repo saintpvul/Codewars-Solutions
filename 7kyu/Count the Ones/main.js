@@ -13,3 +13,12 @@ The interesting part of this task is that you have to do it without string opera
 */
 
 // solution
+
+function hammingWeight(x) {
+  let i = 0;
+  while (x > 0) {
+    i += x & 1;
+    x >>= 1;
+  }
+  return i;
+}
