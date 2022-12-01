@@ -25,3 +25,10 @@ A speed of 1, and a roadmap of '___________' should return False because frictio
 */
 
 // solution
+
+function ballTest(s, r) {
+  let bowl = [...r.slice(0, s)].filter((e) => e == "x").length;
+  if (s <= 0) return false;
+  if (s >= r.length) return true;
+  return ballTest(s - 1 - bowl, r.slice(s));
+}
