@@ -39,3 +39,13 @@ Hints
 */
 
 // solution
+
+function findWaldo(crowd) {
+  const str = crowd.join(""),
+    entries = new Set([...str]),
+    waldo = [...entries].filter(
+      (c) => str.replace(new RegExp(c, "g"), "").length == str.length - 1
+    )[0],
+    y = crowd.findIndex((r) => r.includes(waldo));
+  return [y, crowd[y].indexOf(waldo)];
+}
