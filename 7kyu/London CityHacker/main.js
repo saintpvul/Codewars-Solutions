@@ -14,3 +14,18 @@ Your task is to calculate the total cost of the journey and return the cost roun
 */
 
 // solution
+
+function londonCityHacker(journey) {
+  let res = 0;
+  for (let i = 0; i < journey.length; i++) {
+    if (typeof journey[i] == "string") {
+      res += 2.4;
+    } else {
+      res += 1.5;
+      if (typeof journey[i + 1] == "number") {
+        i++;
+      }
+    }
+  }
+  return `£${res.toFixed(2)}`;
+}
