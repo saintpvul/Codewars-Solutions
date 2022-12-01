@@ -15,3 +15,5 @@ Any feedback would be much appreciated
 */
 
 // solution
+
+const score = (n) => (n === 0 ? 0 : 2 ** n.toString(2).length - 1);
