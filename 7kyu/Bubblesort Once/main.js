@@ -24,3 +24,16 @@ Given an array of integers, your function bubblesortOnce/bubblesort_once/Bubbles
 */
 
 // solution
+
+function bubblesortOnce(a) {
+  let sorting = [...a],
+    char = 0;
+  for (let i = 0; i < sorting.length; i++) {
+    if (sorting[i] > sorting[i + 1]) {
+      char = sorting[i + 1];
+      sorting[i + 1] = sorting[i];
+      sorting[i] = char;
+    }
+  }
+  return sorting;
+}
