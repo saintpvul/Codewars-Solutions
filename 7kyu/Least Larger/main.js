@@ -15,3 +15,7 @@ leastLarger( [4, 1, 3, 5, 6], 4 )  => -1
 */
 
 // solution
+function leastLarger(a, i) {
+  let sort = a.filter((v) => v > a[i]).sort((a, b) => a - b);
+  return a.lastIndexOf(sort[0]);
+}
