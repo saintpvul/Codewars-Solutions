@@ -19,3 +19,5 @@ function leastLarger(a, i) {
   let sort = a.filter((v) => v > a[i]).sort((a, b) => a - b);
   return a.lastIndexOf(sort[0]);
 }
+
+const leastLarger = (a, i) => a.indexOf(Math.min(...a.filter((e) => e > a[i])));
