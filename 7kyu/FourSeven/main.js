@@ -10,3 +10,5 @@ Good Luck!
 */
 
 // solution
+
+const fourSeven = (n) => ({ 7: 4, 4: 7 }[n] || 0);
