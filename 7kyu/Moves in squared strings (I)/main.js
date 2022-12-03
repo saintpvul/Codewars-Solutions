@@ -40,3 +40,24 @@ The input strings are separated by , instead of \n. The output strings should be
 */
 
 // solution
+
+function vertMirror(strng) {
+  return strng
+    .split("\n")
+    .map((e) => e.split("").reverse().join(""))
+    .join("\n");
+}
+function horMirror(strng) {
+  return strng.split("\n").reverse().join("\n");
+}
+function oper(fct, s) {
+  return fct(s);
+}
+
+const vertMirror = (strng) =>
+  strng
+    .split("\n")
+    .map((e) => e.split("").reverse().join(""))
+    .join("\n");
+const horMirror = (strng) => strng.split("\n").reverse().join("\n");
+const oper = (fct, s) => fct(s);
