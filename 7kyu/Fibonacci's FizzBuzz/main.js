@@ -36,3 +36,24 @@ Output:
 */
 
 // solution
+
+const fibsFizzBuzz = (n) => {
+  if (n <= 1) return [1];
+  let result = [1, 1];
+
+  for (let i = 0; i <= n - 3; i++) {
+    let curr = result[i] + result[i + 1];
+    result.push(curr);
+  }
+
+  for (let i = 0; i < result.length; i++) {
+    if (result[i] % 3 === 0 && result[i] % 5 === 0) {
+      result[i] = "FizzBuzz";
+    } else if (result[i] % 5 === 0) {
+      result[i] = "Buzz";
+    } else if (result[i] % 3 === 0) {
+      result[i] = "Fizz";
+    }
+  }
+  return result;
+};
