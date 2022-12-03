@@ -19,3 +19,21 @@ fib(1) = 1;
 */
 
 // solution
+
+let cache = {};
+
+const fib = (n) => {
+  if (n <= 1) {
+    return n;
+  }
+
+  if (cache[n]) {
+    return cache[n];
+  }
+
+  const result = fib(n - 1) + fib(n - 2);
+
+  cache[n] = result;
+
+  return result;
+};
