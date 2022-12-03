@@ -11,3 +11,5 @@ In languages that do not have an empty option, just return null
 */
 
 // solution
+
+const last = (xs) => (!xs.length ? null : xs[xs.length - 1]);
