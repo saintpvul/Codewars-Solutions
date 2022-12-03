@@ -12,3 +12,5 @@ Write a function which returns the area of the arrow.
 */
 
 // solution
+
+const arrowArea = (a, b) => (a * (b / 2)) / 2;
