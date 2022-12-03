@@ -34,3 +34,6 @@ Entering the above query into Googles search bar will give you a link to this ka
 */
 
 // solution
+
+const isValid = (query) =>
+  query.match(/\w+(?=:)/g).every((e) => FILTERS.includes(e));
