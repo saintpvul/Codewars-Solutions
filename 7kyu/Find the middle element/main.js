@@ -17,3 +17,6 @@ gimme([5, 10, 14]) => 1
 */
 
 // solution
+
+const gimme = (triplet) =>
+  [...triplet].indexOf(triplet.sort((a, b) => a - b)[1]);
