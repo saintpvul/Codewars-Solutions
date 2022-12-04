@@ -12,3 +12,19 @@ uniqueInOrder([1,2,2,3,3])       == [1,2,3]
 */
 
 // solution
+
+const uniqueInOrder = (iterable) => {
+  let res = [];
+  for (let i = 0; i < iterable.length; i++) {
+    if (iterable[i] === iterable[i - 1]) {
+      continue;
+    }
+    res.push(iterable[i]);
+  }
+  return res;
+};
+/*
+
+const uniqueInOrder = iterable => [...iterable].filter((e, i) => e != iterable[i-1])
+
+*/
