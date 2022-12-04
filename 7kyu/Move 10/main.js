@@ -20,3 +20,13 @@ function moveTen(s) {
   }
   return res;
 }
+
+const moveTen = (s) =>
+  s
+    .split("")
+    .map((e) =>
+      e.charCodeAt() > 112
+        ? String.fromCharCode(e.charCodeAt() - 16)
+        : String.fromCharCode(e.charCodeAt() + 10)
+    )
+    .join("");
