@@ -13,3 +13,5 @@ addThree(3); // 6
 */
 
 // solution
+
+const add = (n) => (m) => n + m;
