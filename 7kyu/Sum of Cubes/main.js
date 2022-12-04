@@ -13,3 +13,9 @@ Examples: (Input --> output)
 */
 
 // solution
+
+const sumCubes = (n) =>
+  Array.from(Array(n + 1).keys()).reduce(
+    (sum, num) => (sum += num * num * num),
+    0
+  );
