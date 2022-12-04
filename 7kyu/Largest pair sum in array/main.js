@@ -11,3 +11,11 @@ Input sequence contains minimum two elements and every element is an integer.
 */
 
 // solution
+
+function largestPairSum(numbers) {
+  let max = Math.max(...numbers),
+    noMax = [...numbers]
+      .slice(0, numbers.indexOf(max))
+      .concat([...numbers.slice(numbers.indexOf(max) + 1, numbers.length)]);
+  return [max, Math.max(...noMax)].reduce((s, v) => (s += v), 0);
+}
