@@ -11,3 +11,6 @@ The tests contain some very huge arrays, so think about performance.
 */
 
 // solution
+
+const findUniq = (arr) =>
+  Number(arr.filter((v) => arr.indexOf(v) === arr.lastIndexOf(v)));
