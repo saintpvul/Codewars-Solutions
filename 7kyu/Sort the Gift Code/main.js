@@ -17,3 +17,11 @@ Examples (Input -- => Output):
 */
 
 // solution
+
+const sortGiftCode = (code) =>
+  code
+    .split("")
+    .map((e) => e.charCodeAt())
+    .sort((a, b) => a - b)
+    .map((e) => String.fromCharCode(e))
+    .join("");
