@@ -11,3 +11,12 @@ Input will be a string with length > 0.
 */
 
 // solution
+
+function moveTen(s) {
+  let alph = "abcdefghijklmnopqrstuvwxyzabcdefghijk",
+    res = "";
+  for (let i = 0; i < s.length; i++) {
+    res += alph[alph.indexOf(s[i]) + 10];
+  }
+  return res;
+}
