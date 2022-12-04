@@ -9,3 +9,11 @@ Hint: If you're not sure where to start, read up on async/await.
 */
 
 // solution
+
+async function execute(action, nTimes) {
+  let res = [];
+  for (let i = 0; i < nTimes; i++) {
+    res.push(action(i));
+  }
+  await Promise.all(res);
+}
