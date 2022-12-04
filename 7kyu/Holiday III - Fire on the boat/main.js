@@ -10,3 +10,5 @@ Go to work!
 
 */
 // solution
+
+const fireFight = (s) => s.replace(/Fire/gi, "~~");
