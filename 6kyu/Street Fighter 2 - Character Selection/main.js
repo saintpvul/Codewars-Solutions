@@ -68,3 +68,40 @@ Result:
 */
 
 // solution
+
+function streetFighterSelection(fighters, position, moves) {
+  let res = [],
+    y = position[0],
+    x = position[1];
+  for (let i = 0; i < moves.length; i++) {
+    if (moves[i] === "left") {
+      x--;
+      if (x < 0) {
+        x = 5;
+      }
+      res.push(fighters[y][x]);
+    }
+    if (moves[i] === "right") {
+      x++;
+      if (x > 5) {
+        x = 0;
+      }
+      res.push(fighters[y][x]);
+    }
+    if (moves[i] === "up") {
+      y++;
+      if (y > 0) {
+        y = 0;
+      }
+      res.push(fighters[y][x]);
+    }
+    if (moves[i] === "down") {
+      y--;
+      if (y < 1) {
+        y = 1;
+      }
+      res.push(fighters[y][x]);
+    }
+  }
+  return res;
+}
