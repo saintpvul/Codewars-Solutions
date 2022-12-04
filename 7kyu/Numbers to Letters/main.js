@@ -7,3 +7,14 @@ All inputs will be valid.
 */
 
 // solution
+
+function switcher(x) {
+  let res = "";
+  for (let i = 0; i < x.length; i++) {
+    res += "zyxwvutsrqponmlkjihgfedcba!? "[+x[i] - 1];
+  }
+  return res;
+}
+
+const switcher = (x) =>
+  x.map((e) => (e = "zyxwvutsrqponmlkjihgfedcba!? "[+e - 1])).join("");
