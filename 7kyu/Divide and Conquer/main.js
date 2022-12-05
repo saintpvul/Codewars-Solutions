@@ -7,3 +7,17 @@ Return as a number.
 */
 
 // solution
+
+function divCon(x) {
+  let sSum = 0,
+    iSum = 0;
+
+  for (let i = 0; i < x.length; i++) {
+    if (typeof x[i] === "number") {
+      iSum += x[i];
+    } else {
+      sSum += +x[i];
+    }
+  }
+  return iSum - sSum;
+}
