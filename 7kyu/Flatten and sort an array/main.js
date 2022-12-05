@@ -17,3 +17,9 @@ http://stackoverflow.com/questions/6093874/why-doesnt-the-sort-function-of-javas
 */
 
 // solution
+
+"use strict";
+
+function flattenAndSort(array) {
+  return array.flat().sort((a, b) => a - b);
+}
