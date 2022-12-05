@@ -21,3 +21,6 @@ function divCon(x) {
   }
   return iSum - sSum;
 }
+
+const divCon = (x) =>
+  x.reduce((s, i) => (typeof i === "number" ? (s += i) : (s -= i)), 0);
