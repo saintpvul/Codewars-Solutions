@@ -12,3 +12,10 @@ Let's assume that all numbers in the input will be integer values.
 */
 
 // solution
+
+const sumDigits = (number) =>
+  Math.abs(number)
+    .toString()
+    .split("")
+    .map((e) => Number(e))
+    .reduce((s, n) => (s += n), 0);
