@@ -16,3 +16,15 @@ Good luck!
 */
 
 // solution
+
+function pairs(ar) {
+  let count = 0,
+    chunk = 2,
+    chunked = [];
+  for (let i = 0; i < ar.length; i += chunk) {
+    chunked.push(ar.slice(i, i + chunk));
+  }
+  return chunked
+    .map((e) => e[0] + 1 === e[1] || e[0] - 1 === e[1])
+    .filter((e) => e).length;
+}
