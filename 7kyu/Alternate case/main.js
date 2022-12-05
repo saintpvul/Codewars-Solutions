@@ -5,3 +5,9 @@ Write function alternateCase which switch every letter in string from upper to l
 */
 
 // solution
+
+const alternateCase = (s) =>
+  s
+    .split("")
+    .map((c) => (c === c.toUpperCase() ? c.toLowerCase() : c.toUpperCase()))
+    .join("");
