@@ -14,6 +14,8 @@ Examples
 */
 
 //solution
-
 const order = (words) =>
-  words.split(" ").sort((a, b) => a.match(/\d+/) - b.match(/\d+/));
+  words
+    .split(" ")
+    .sort((a, b) => a.match(/\d+/) - b.match(/\d+/))
+    .join(" ");
