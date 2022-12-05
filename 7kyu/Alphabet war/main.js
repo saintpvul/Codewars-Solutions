@@ -31,3 +31,33 @@ Alphabet war Collection
 */
 
 // solution
+
+function alphabetWar(f) {
+  let l = 0,
+    r = 0,
+    lS = {
+      w: 4,
+      p: 3,
+      b: 2,
+      s: 1,
+    },
+    rS = {
+      m: 4,
+      q: 3,
+      d: 2,
+      z: 1,
+    };
+
+  for (let i = 0; i < f.length; i++) {
+    if (Object.keys(lS).indexOf(f[i]) != -1) {
+      l += Object.values(lS)[Object.keys(lS).indexOf(f[i])];
+    } else if (Object.keys(rS).indexOf(f[i]) != -1) {
+      r += Object.values(rS)[Object.keys(rS).indexOf(f[i])];
+    }
+  }
+  return l > r
+    ? `Left side wins!`
+    : r > l
+    ? "Right side wins!"
+    : "Let's fight again!";
+}
