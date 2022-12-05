@@ -38,3 +38,16 @@ Since , (Duplications are not included when separating) , then you can see only 
 */
 
 // solution
+
+function menFromBoys(arr) {
+  let e = [],
+    o = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0 && e.indexOf(arr[i]) === -1) {
+      e.push(arr[i]);
+    } else if (arr[i] % 2 && o.indexOf(arr[i]) === -1) {
+      o.push(arr[i]);
+    }
+  }
+  return [...e.sort((a, b) => a - b), ...o.sort((a, b) => b - a)];
+}
