@@ -38,3 +38,12 @@ Good luck and enjoy!
 */
 
 // solution
+
+const driver = (data) =>
+  `${(data[2].toUpperCase() + "99999").slice(0, 5)}${
+    data[3].match(/\d(?=\d$)/)[0]
+  }${("0" + (new Date(data[3]).getMonth() + (data[4] === "M" ? 1 : 51))).slice(
+    -2
+  )}${data[3].slice(0, 2)}${data[3].slice(-1)}${
+    data[0][0] + (data[1] ? data[1][0] : 9)
+  }9AA`;
