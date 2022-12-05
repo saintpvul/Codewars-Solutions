@@ -20,3 +20,25 @@ You can see another examples in the "Sample tests".
 */
 
 // solution
+
+function meeting(s) {
+  s = s.split(";");
+  let sort = s
+      .map((e) => e.toUpperCase().split(":").reverse().join(", "))
+      .sort(),
+    result = "(";
+  for (let i = 0; i < sort.length; i++) {
+    result += sort[i] + ")(";
+  }
+  return result.slice(0, -1);
+}
+
+const meeting = (s) =>
+  "(" +
+  s
+    .toUpperCase()
+    .split(";")
+    .map((e) => e.split(":").reverse().join(", "))
+    .sort()
+    .join(")(") +
+  ")";
