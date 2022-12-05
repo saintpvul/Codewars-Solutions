@@ -5,3 +5,17 @@ Reverse every other word in a given string, then return the string. Throw away a
 */
 
 // solution
+
+function reverse(str) {
+  let res = [];
+  if (str.length <= 1) return "";
+  str = str.split(" ");
+  for (let i = 0; i < str.length; i++) {
+    if (i % 2) {
+      res.push(str[i].split("").reverse().join(""));
+    } else {
+      res.push(str[i]);
+    }
+  }
+  return res.join(" ").trim();
+}
