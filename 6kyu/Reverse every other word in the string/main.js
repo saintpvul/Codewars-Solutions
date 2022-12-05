@@ -19,3 +19,10 @@ function reverse(str) {
   }
   return res.join(" ").trim();
 }
+
+const reverse = (str) =>
+  str
+    .trim()
+    .split(" ")
+    .map((e, i) => (i % 2 ? e.split("").reverse().join("") : e))
+    .join(" ");
