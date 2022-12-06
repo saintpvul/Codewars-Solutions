@@ -24,3 +24,12 @@ Since , 51 + 62 + 43 = 105 != 564 , thus output is "Not !!"
 */
 
 // solution
+
+function disariumNumber(n) {
+  let res = [],
+    check = n.toString().split("");
+  for (let i = 0; i < check.length; i++) {
+    res.push(Math.pow(Number(check[i]), i + 1));
+  }
+  return res.reduce((s, p) => (s += p), 0) === n ? "Disarium !!" : "Not !!";
+}
