@@ -37,3 +37,14 @@ function wordValue(a) {
   }
   return output;
 }
+
+const wordValue = (a) =>
+  a.map(
+    (e, i) =>
+      e
+        .replace(/\s/g, "")
+        .split("")
+        .map((c) => c.charCodeAt() - 96)
+        .reduce((s, c) => (s += c), 0) *
+      (i + 1)
+  );
