@@ -9,3 +9,6 @@ solution(5) // should return "Value is 00005"
 */
 
 // solution
+
+const solution = (value) =>
+  `Value is ${("00000" + value.toString()).slice(-5)}`;
