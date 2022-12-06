@@ -23,3 +23,17 @@ Consonant value
 */
 
 // solution
+
+function wordValue(a) {
+  let alph = "abcdefghijklmnopqrstuvwxyz",
+    result = 0,
+    output = [];
+  for (let i = 0; i < a.length; i++) {
+    for (let j = 0; j < a[i].length; j++) {
+      result += alph.indexOf(a[i][j]) + 1;
+    }
+    output.push(result * (i + 1));
+    result = 0;
+  }
+  return output;
+}
