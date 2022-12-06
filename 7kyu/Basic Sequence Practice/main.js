@@ -17,4 +17,10 @@ Examples
 
 */
 
-// solutiom
+// solution
+
+const sumOfN = (n) =>
+  Array.from(
+    Array(Math.abs(n) + 1),
+    (e, i) => (((i + 1) * i) / 2) * (i > 0 ? Math.sign(n) : 1)
+  );
