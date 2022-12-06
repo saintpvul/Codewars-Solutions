@@ -20,3 +20,7 @@ Hence the difference between square of the sum of the first ten natural numbers 
 */
 
 // solution
+
+const differenceOfSquares = (n) =>
+  [...Array(n + 1).keys()].reduce((s, v) => (s += v), 0) ** 2 -
+  [...Array(n + 1).keys()].reduce((s, v) => (s += v ** 2), 0);
