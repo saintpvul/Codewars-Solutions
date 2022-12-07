@@ -15,3 +15,6 @@ Good luck! :-)
 */
 
 // solution
+
+const lostSheep = (friday, saturday, total) =>
+  Math.abs(friday.concat(saturday).reduce((c, s) => (c += s), 0) - total);
