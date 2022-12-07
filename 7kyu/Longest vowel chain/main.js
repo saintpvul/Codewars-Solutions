@@ -13,3 +13,5 @@ Vowel-consonant lexicon
 */
 
 // solution
+
+const solve = (v) => Math.max(...v.split(/[^aoeiu]/i).map((v) => v.length));
