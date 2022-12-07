@@ -13,3 +13,10 @@ Note that your boss is in the room (boss), their score is worth double it's face
 */
 
 // solution
+
+const outed = (meet, boss, key = Object.keys(meet)) =>
+  key.reduce((prev, curr) => prev + meet[curr] * (boss === curr ? 2 : 1), 0) /
+    key.length <=
+  5
+    ? "Get Out Now!"
+    : "Nice Work Champ!";
