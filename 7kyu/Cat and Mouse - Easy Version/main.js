@@ -11,3 +11,11 @@ C...m returns 'Caught!' <-- as there are three characters between the two, the c
 */
 
 // solution
+
+const catMouse = (x) =>
+  x
+    .toLowerCase()
+    .split("")
+    .slice(x.indexOf("c") + 1, x.indexOf("m") - 1).length > 3
+    ? "Escaped!"
+    : "Caught!";
