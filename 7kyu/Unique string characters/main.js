@@ -16,3 +16,13 @@ Good luck!
 */
 
 // solution
+
+const solve = (a, b) =>
+  a
+    .split("")
+    .filter((v) => !b.split("").includes(v))
+    .join("") +
+  b
+    .split("")
+    .filter((v) => !a.split("").includes(v))
+    .join("");
