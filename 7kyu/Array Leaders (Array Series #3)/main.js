@@ -53,3 +53,15 @@ Note : The last element 2 is greater than the sum of its right elements (abstrac
 */
 
 // solution
+
+function arrayLeaders(numbers) {
+  let res = [],
+    sum = 0;
+  for (let i = numbers.length - 1; i >= 0; i--) {
+    if (numbers[i] > sum) {
+      res.push(numbers[i]);
+    }
+    sum += numbers[i];
+  }
+  return res.reverse();
+}
