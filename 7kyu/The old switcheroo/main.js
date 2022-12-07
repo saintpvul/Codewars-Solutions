@@ -14,3 +14,9 @@ Your function should be case insensitive to the vowels.
 */
 
 // solution
+
+const vowel2index = (str) =>
+  str
+    .split("")
+    .map((e, i) => (/[aeiou]/i.test(e) ? i + 1 : e))
+    .join("");
