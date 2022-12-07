@@ -19,3 +19,12 @@ String array revisal
 */
 
 // solution
+
+function capitalize(s, arr) {
+  s = s.split("");
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > s.length) continue;
+    s[arr[i]] = s[arr[i]].toUpperCase();
+  }
+  return s.join("");
+}
