@@ -16,3 +16,6 @@ Try to avoid using the % (modulo) operator.
 */
 
 // solution
+
+const divisibleByThree = (str) =>
+  str.split("").reduce((sum, n) => (sum += +n), 0) % 3 === 0;
