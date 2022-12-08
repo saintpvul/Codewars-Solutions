@@ -11,3 +11,8 @@ The returned array should be in lowercase.
 */
 
 // solution
+
+const removeRotten = (bagOfFruits) =>
+  !bagOfFruits
+    ? []
+    : bagOfFruits.map((e) => e.replace(/rotten/, "").toLowerCase());
