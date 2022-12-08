@@ -18,3 +18,11 @@ To keep the things simple, we'll consider that any "numbered thing" in the strin
 */
 
 // solution
+
+function hydrate(s) {
+  let amount = s
+    .split(" ")
+    .map((e) => (isNaN(Number(e)) ? 0 : Number(e)))
+    .reduce((s, e) => (s += e), 0);
+  return `${amount} ${amount > 1 ? "glasses" : "glass"} of water`;
+}
