@@ -26,5 +26,5 @@ For example:
 function toTime(time) {
   let h = Math.floor(time / 3600);
   let m = Math.floor((time % 3600) / 60);
-  return `${h} hour(s) and ${sec} minute(s)`;
+  return `${h} hour(s) and ${m} minute(s)`;
 }
