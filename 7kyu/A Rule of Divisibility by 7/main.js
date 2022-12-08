@@ -29,3 +29,12 @@ seven(477557101) should return [28, 7]
 */
 
 // solution
+
+function seven(m) {
+  let count = 0;
+  while (m.toString().length > 2) {
+    count++;
+    m = Math.floor(m / 10) - (m % 10) * 2;
+  }
+  return [m, count];
+}
