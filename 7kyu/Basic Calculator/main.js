@@ -13,3 +13,14 @@ Keep in mind, you cannot divide by zero. If an attempt to divide by zero is made
 */
 
 // solution
+
+const calculate = (n1, operation, n2) =>
+  (operation != "+" &&
+    operation != "-" &&
+    operation != "/" &&
+    operation != "*") ||
+  (operation === "/" && n2 === 0)
+    ? null
+    : eval(`${n1}${operation}${n2}`) == -0
+    ? 0
+    : eval(`${n1}${operation}${n2}`);
