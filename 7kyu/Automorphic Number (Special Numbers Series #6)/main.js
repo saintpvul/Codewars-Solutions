@@ -44,3 +44,8 @@ Explanation:
 */
 
 // solution
+
+const automorphic = (n) =>
+  n.toString() === (n * n).toString().slice(-n.toString().length)
+    ? "Automorphic"
+    : "Not!!";
