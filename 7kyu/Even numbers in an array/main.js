@@ -11,3 +11,17 @@ For example:
 */
 
 // solution
+
+function evenNumbers(array, number) {
+  let res = [];
+  for (let i = array.length; i >= 0; i--) {
+    if (array[i] % 2 === 0 && number != 0) {
+      number--;
+      res.push(array[i]);
+    }
+  }
+  return res.reverse();
+}
+
+const evenNumbers = (array, number) =>
+  array.filter((e) => e % 2 === 0).slice(-number);
