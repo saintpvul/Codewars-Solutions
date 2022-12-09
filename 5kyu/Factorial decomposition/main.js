@@ -22,3 +22,38 @@ In Fortran - as in any other language - the returned string is not permitted to 
 */
 
 // solution
+
+const decomp = (number) => {
+  const subdecomp = (number, subdividers) => {
+    let remainder = number;
+
+    for (x = 2; x <= Math.sqrt(number); x++) {
+      if (remainder % x === 0) {
+        if (!subdividers[x]) subdividers[x] = 0;
+        while (remainder % x === 0) {
+          subdividers[x]++;
+          remainder = remainder / x;
+        }
+      }
+    }
+    if (remainder > 1) {
+      if (!subdividers[remainder]) subdividers[remainder] = 1;
+      else subdividers[remainder] += 1;
+    }
+    return subdividers;
+  };
+  let dividers = {};
+
+  for (let x = 2; x <= number; x++) dividers = subdecomp(x, dividers);
+
+  return Object.keys(dividers)
+    .reduce(
+      (acc, curr) =>
+        dividers[curr] === 1
+          ? `${acc} ${curr}` + " *"
+          : `${acc} ${curr}^${dividers[curr]}` + " *",
+      ``
+    )
+    .trim()
+    .slice(0, -2);
+};
