@@ -11,3 +11,32 @@ Place all people in alphabetical order where Mothers are followed by their child
 */
 
 // solution
+
+function findChildren(dancingBrigade) {
+  let parent = dancingBrigade
+      .split("")
+      .filter((e) => e === e.toUpperCase())
+      .sort(),
+    children = dancingBrigade
+      .split("")
+      .filter((e) => e === e.toLowerCase())
+      .sort(),
+    res = [];
+  for (let i = 0; i < parent.length; i++) {
+    res.push(parent[i]);
+    for (let j = 0; j < children.length; j++) {
+      if (parent[i] === children[j].toUpperCase()) {
+        res.push(children[j]);
+      }
+    }
+  }
+  return res.join("");
+}
+
+const findChildren = (str) =>
+  str
+    .toLowerCase()
+    .split("")
+    .sort()
+    .map((v, i, a) => (i === 0 || v !== a[i - 1] ? v.toUpperCase() : v))
+    .join("");
