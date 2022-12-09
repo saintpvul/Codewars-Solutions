@@ -39,3 +39,11 @@ specialNumber(709) ==> return "NOT!!"
 */
 
 // solution
+
+const specialNumber = (n) =>
+  n
+    .toString()
+    .split("")
+    .every((e) => /[123450]/g.test(e))
+    ? "Special!!"
+    : "NOT!!";
