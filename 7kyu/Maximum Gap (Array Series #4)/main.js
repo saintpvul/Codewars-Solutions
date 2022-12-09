@@ -41,3 +41,14 @@ Note : Regardless the sign of negativity .
 */
 
 // solution
+
+function maxGap(numbers) {
+  numbers = numbers.sort((a, b) => b - a);
+  let result = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] - numbers[i + 1] > result) {
+      result = numbers[i] - numbers[i + 1];
+    }
+  }
+  return result;
+}
