@@ -12,3 +12,17 @@ arr.numberOfOccurrences("a") === 0;
 */
 
 // solution
+
+Array.prototype.numberOfOccurrences = function (arg) {
+  let count = 0;
+  for (let i = 0; i < this.length; i++) {
+    if (arg === this[i]) {
+      count++;
+    }
+  }
+  return count;
+};
+
+Array.prototype.numberOfOccurrences = function (n) {
+  return this.reduce((s, e) => (e === n ? (s += 1) : (s += 0)), 0);
+};
