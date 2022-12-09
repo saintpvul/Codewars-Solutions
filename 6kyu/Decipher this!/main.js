@@ -17,3 +17,14 @@ decipherThis('82yade 115te 103o'); // 'Ready set go'
 */
 
 // solution
+
+const decipherThis = (str) =>
+  str
+    .split(" ")
+    .map((e) => e.replace(/\d+/g, (v) => String.fromCharCode(v * 1)))
+    .map((e) =>
+      e.length > 2
+        ? e.slice(0, 1) + e.slice(-1) + e.slice(2, -1) + e.slice(1, 2)
+        : e
+    )
+    .join(" ");
