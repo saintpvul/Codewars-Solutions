@@ -28,3 +28,5 @@ potatoes(99, 100, 98) --> 50
 */
 
 // solution
+
+const potatoes = (p0, w0, p1) => Math.floor((w0 * (100 - p0)) / (100 - p1));
