@@ -21,3 +21,11 @@ If you like this kata, check out the next one: Last Survivors Ep.2
 */
 
 // solution
+
+function lastSurvivor(letters, coords) {
+  const res = [...letters]
+  for(let i=0;i<coords.length;i++){
+    res.splice(coords[i],1)
+  }
+  return res.join(``)
+}
