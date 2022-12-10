@@ -28,3 +28,18 @@ max_rot(38458215) should return 85821534
 */
 
 // solution
+
+function maxRot(n) {
+  let listOfNums = [];
+  let array = Array.from(n.toString());
+  let num = 0;
+  while (num < array.length - 1) {
+    let number = array.splice(num, 1);
+    array.push(Number(number));
+    listOfNums.push(Number(array.join("")));
+    num++;
+  }
+  listOfNums.unshift(n);
+  listOfNums.sort((a, b) => b - a);
+  return listOfNums[0];
+}
