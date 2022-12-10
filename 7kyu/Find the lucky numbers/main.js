@@ -11,3 +11,5 @@ Don't worry about bad input, you will always receive a finite list of integers.
 */
 
 // solution
+
+const filterLucky = (x) => x.filter((n) => Number(n.toString().includes("7")));
