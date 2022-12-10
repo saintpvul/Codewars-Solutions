@@ -26,3 +26,10 @@ return --> 'Clean'
 */
 
 // solution
+
+function crap(x, bags, cap) {
+  x = x.flat();
+  if (x.indexOf("D") != -1) return "Dog!!";
+  x = x.filter((c) => c === "@");
+  return bags * cap < x.length ? "Cr@p" : "Clean";
+}
