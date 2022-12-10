@@ -10,3 +10,14 @@ Examples
 */
 
 // solution
+
+function checkThreeAndTwo(array) {
+  let count = {};
+  for (let value of array) {
+    count[value] = count[value] + 1 || 1;
+  }
+  let check = Object.values(count);
+  return (
+    (check[0] === 2 && check[1] === 3) || (check[0] === 3 && check[1] === 2)
+  );
+}
