@@ -5,3 +5,7 @@ Implement the function which should return true if given object is a vowel (mean
 */
 
 // solution
+
+String.prototype.vowel = function () {
+  return this.length === 1 ? /[aeiou]/i.test(this) : false;
+};
