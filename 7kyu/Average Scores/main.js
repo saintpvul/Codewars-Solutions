@@ -5,3 +5,6 @@ Create a function that returns the average of an array of numbers ("scores"), ro
 */
 
 // solution
+
+const average = (scores) =>
+  Math.round(scores.reduce((s, v) => (s += v), 0) / scores.length);
