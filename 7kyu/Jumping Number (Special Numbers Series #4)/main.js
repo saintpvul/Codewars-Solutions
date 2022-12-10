@@ -43,3 +43,10 @@ Adjacent digits differ by 1
 */
 
 // solution
+
+const jumpingNumber = (n) =>
+  String(n)
+    .split("")
+    .every((c, i, a) => !i || Math.abs(c - a[i - 1]) === 1)
+    ? "Jumping!!"
+    : "Not!!";
