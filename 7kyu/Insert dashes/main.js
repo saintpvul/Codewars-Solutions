@@ -7,3 +7,16 @@ Note that the number will always be non-negative (>= 0).
 */
 
 // solution
+
+function insertDash(num) {
+  num = num.toString().split('')
+  let res = []
+  for(let i = 0; i < num.length; i++){
+    if(num[i] % 2 && num[i+1] % 2){
+    res.push((num[i] + '-'))
+    }else{
+      res.push(num[i])
+    }
+  }
+  return res.join('')
+}
