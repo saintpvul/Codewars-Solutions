@@ -9,3 +9,6 @@ You can assume that the number is not negative.
 */
 
 // solution
+
+const reverseBits = (n) =>
+  parseInt(n.toString(2).split("").reverse().join(""), 2);
