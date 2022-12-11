@@ -13,3 +13,13 @@ Examples
 */
 
 // solution
+
+const initializeNames = (name) =>
+  name.split(" ").length > 2
+    ? name
+        .split(" ")
+        .map((e, i) =>
+          i > 0 && i < name.split(" ").length - 1 ? e.slice(0, 1) + "." : e
+        )
+        .join(" ")
+    : name;
