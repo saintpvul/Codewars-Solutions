@@ -15,5 +15,5 @@ const consecutive = (arr, a, b) =>
     : arr.indexOf(b) === arr.indexOf(a) - 1 ||
       arr.indexOf(b) === arr.indexOf(a) + 1;
 
-const consecutive = (arr, a, b) =>
-  Math.abs(arr.indexOf(a) - arr.indexOf(b)) === 1;
+// const consecutive = (arr, a, b) =>
+//   Math.abs(arr.indexOf(a) - arr.indexOf(b)) === 1;
