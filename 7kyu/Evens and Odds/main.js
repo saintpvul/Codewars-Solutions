@@ -9,3 +9,5 @@ Numbers will be positive. The hexadecimal string should be lowercased.
 */
 
 // solution
+
+const evensAndOdds = (num) => (num % 2 ? num.toString(16) : num.toString(2));
