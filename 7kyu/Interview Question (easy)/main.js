@@ -20,3 +20,19 @@ Have fun! ;)
 */
 
 // solution
+
+function getStrings(city) {
+  let output = "";
+  city = city.toLowerCase().split(" ").join("").split("");
+  let charsCount = {};
+  for (let char of city) {
+    charsCount[char] = charsCount[char] + 1 || 1;
+  }
+  let chars = Object.keys(charsCount),
+    charsAmount = Object.values(charsCount);
+  for (let i = 0; i < chars.length; i++) {
+    output += chars[i] + ":";
+    output += "*".repeat(charsAmount[i]) + ",";
+  }
+  return output.slice(0, -1);
+}
