@@ -12,3 +12,6 @@ Have fun!
 */
 
 // solution
+
+const maxDiff = (list) =>
+  list.length > 2 ? Math.max(...list) - Math.min(...list) : 0;
