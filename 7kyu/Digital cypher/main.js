@@ -42,3 +42,11 @@ Digital cypher vol 3 - missing key
 */
 
 // solution
+
+function encode(str, n) {
+  n = String(n);
+  return Array.from(
+    str,
+    (c, i) => c.charCodeAt(0) - 96 + Number(n[i % n.length])
+  );
+}
