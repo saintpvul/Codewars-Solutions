@@ -40,3 +40,32 @@ In C, the returned value will be free'd.
 */
 
 // solution
+
+var paintLetterboxes = function (start, end) {
+  let table = [],
+    map = {};
+  for (let i = start; i <= end; i++) {
+    table.push(
+      i
+        .toString()
+        .split("")
+        .map((e) => +e)
+    );
+  }
+  table = table.flat();
+  for (let sign of table) {
+    map[sign] = map[sign] + 1 || 1;
+  }
+  return [
+    map[0] || 0,
+    map[1] || 0,
+    map[2] || 0,
+    map[3] || 0,
+    map[4] || 0,
+    map[5] || 0,
+    map[6] || 0,
+    map[7] || 0,
+    map[8] || 0,
+    map[9] || 0,
+  ];
+};
