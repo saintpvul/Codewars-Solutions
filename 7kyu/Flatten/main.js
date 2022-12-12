@@ -9,3 +9,7 @@ flatten([[[1,2,3]]]) // => [[1,2,3]]
 */
 
 // solution
+
+var flatten = function (array) {
+  return array.flat();
+};
