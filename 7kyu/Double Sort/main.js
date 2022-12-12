@@ -9,3 +9,16 @@ Note that numbers written as strings are strings and must be sorted with the oth
 */
 
 // solution
+
+function dbSort(a) {
+  let strs = [],
+    nums = [];
+  for (let i = 0; i < a.length; i++) {
+    if (typeof a[i] === "number") {
+      nums.push(a[i]);
+    } else {
+      strs.push(a[i]);
+    }
+  }
+  return nums.sort((a, b) => a - b).concat(strs.sort());
+}
