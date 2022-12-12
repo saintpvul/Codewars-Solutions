@@ -27,3 +27,8 @@ Write a function named isNice/IsNice that returns true if its array argument is 
 */
 
 // solution
+
+function isNice(arr) {
+  if (!arr.length) return false;
+  return arr.every((n) => arr.includes(n + 1) || arr.includes(n - 1));
+}
