@@ -13,3 +13,7 @@ greet(null) === null; // Return null if input is null
 */
 
 // solution
+
+function greet(name) {
+  return !name ? null : `hello ${name}!`;
+}
