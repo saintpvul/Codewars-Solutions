@@ -21,3 +21,8 @@ Note - there will be no punctuation or digits in the input string, only letters.
 */
 
 // solution
+
+const validSpacing = (s) =>
+  s === ""
+    ? true
+    : s.split(" ").filter((e) => e != "").length === s.split(" ").length;
