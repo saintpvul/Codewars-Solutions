@@ -7,3 +7,21 @@ Each number corresponds to their alphabetical order letter (e.g. 1 = A. 2 = B, e
 */
 
 // solution
+
+function bingo(a) {
+  let alph = "_abcdefghijklmnopqrstuvwxyz",
+    bingo = {};
+  for (let i = 0; i < a.length; i++) {
+    let char = alph[a[i]];
+    if (
+      char === "b" ||
+      char === "i" ||
+      char === "n" ||
+      char === "g" ||
+      char === "o"
+    ) {
+      bingo[char] = 1;
+    }
+  }
+  return Object.keys(bingo).length === 5 ? "WIN" : "LOSE";
+}
