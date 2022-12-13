@@ -11,3 +11,11 @@ solution('Test', 8)           --> 'Test'
 */
 
 // solution
+
+const sumPairs = (ints, s) => {
+  let list = {};
+  for (let num of ints) {
+    if (list[s - num]) return [s - num, num];
+    list[num] = true;
+  }
+};
