@@ -12,10 +12,5 @@ solution('Test', 8)           --> 'Test'
 
 // solution
 
-const sumPairs = (ints, s) => {
-  let list = {};
-  for (let num of ints) {
-    if (list[s - num]) return [s - num, num];
-    list[num] = true;
-  }
-};
+const solution = (string, limit) =>
+  string.length <= limit ? string : string.slice(0, limit) + "...";
