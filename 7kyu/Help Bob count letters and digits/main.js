@@ -17,3 +17,7 @@ Example:
 */
 
 // solution
+
+function countLettersAndDigits(input) {
+  return input.split("").filter((c) => c.match(/[0-9a-zA-Z]/)).length;
+}
