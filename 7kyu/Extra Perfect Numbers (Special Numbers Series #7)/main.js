@@ -33,3 +33,13 @@ First and last bits as set bits.
 */
 
 // solution
+
+function extraPerfect(n) {
+  let res = [];
+  for (let i = 0; i <= n; i++) {
+    if (i % 2) {
+      res.push(i);
+    }
+  }
+  return res;
+}
