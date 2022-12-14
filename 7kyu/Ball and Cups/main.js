@@ -27,3 +27,10 @@ The ball is under cup number : 3
 */
 
 // solution
+
+function cupAndBalls(b, arr) {
+  return arr.reduce(
+    (ball, [a, b]) => (a == ball ? b : b == ball ? a : ball),
+    b
+  );
+}
