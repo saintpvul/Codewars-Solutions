@@ -14,3 +14,13 @@ Examples
 */
 
 // solution
+
+const prevMultOfThree = (n) => {
+  let str = String(n).split("").reverse("").join("");
+  for (let i = 0; i < str.length; i++) {
+    if (+str.slice(i).split("").reverse("").join("") % 3 === 0) {
+      return +str.slice(i).split("").reverse("").join("");
+    }
+  }
+  return null;
+};
