@@ -29,3 +29,20 @@ attackers=[ 1, 3, 5, 7 ]   defenders=[ 2, 4, 0, 8 ]
 */
 
 // solution
+
+function hasSurvived(attackers, defenders) {
+  let a = 0,
+    d = 0;
+
+  const sumArray = (array) => array.reduce((acc, val) => acc + val, 0);
+
+  for (let i = 0, j = 0; i > attackers.length, j < defenders.length; i++, j++) {
+    if (attackers[i] > defenders[j]) a++;
+    else if (attackers[i] === defenders[j]) {
+      a-- && d--;
+    } else d++;
+  }
+
+  if (d === a) return sumArray(defenders) >= sumArray(attackers);
+  else return d > a;
+}
