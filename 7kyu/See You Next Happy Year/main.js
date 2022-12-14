@@ -29,3 +29,14 @@ As the Next closest year with only distinct digits is 1023 .
 */
 
 // solution
+
+function nextHappyYear(year) {
+  let happyYear = 0;
+  for (let i = year + 1; ; i++) {
+    if (new Set(i.toString().split("")).size === 4) {
+      happyYear = i;
+      break;
+    }
+  }
+  return happyYear;
+}
