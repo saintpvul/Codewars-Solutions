@@ -28,3 +28,14 @@ If b = 0,return empty list.
 */
 
 // solution
+
+function solution(n, b) {
+  if (b === 0) return [];
+  let res = [];
+  let x = b;
+  while (x < 2 ** n) {
+    res.push(x);
+    x = (x + 1) | b;
+  }
+  return res;
+}
