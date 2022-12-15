@@ -26,3 +26,16 @@ There are no spaces to the right of the cube edges (same above and below the cub
 */
 
 // solution
+
+function cube(n) {
+  return [
+    ...Array.from(
+      { length: n },
+      (_, i) => " ".repeat(n - 1 - i) + "/\\".repeat(i + 1) + "_\\".repeat(n)
+    ),
+    ...Array.from(
+      { length: n },
+      (_, i) => " ".repeat(i) + "\\/".repeat(n - i) + "_/".repeat(n)
+    ),
+  ].join("\n");
+}
