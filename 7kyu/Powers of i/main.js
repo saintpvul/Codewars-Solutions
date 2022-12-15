@@ -8,3 +8,7 @@ Complete the function pofi that returns iii to the power of a given non-negative
 */
 
 // solution
+
+function pofi(n) {
+  return ["1", "i", "-1", "-i"][n % 4];
+}
