@@ -8,3 +8,15 @@ If arr contains [4, 8, 6] then the output should be 2 because two numbers need t
 */
 
 // solution
+
+function consecutive(arr) {
+  let count = 0,
+    min = Math.min(...arr),
+    max = Math.max(...arr);
+  for (let i = min; i <= max; i++) {
+    if (arr.indexOf(i) === -1) {
+      count++;
+    }
+  }
+  return count;
+}
