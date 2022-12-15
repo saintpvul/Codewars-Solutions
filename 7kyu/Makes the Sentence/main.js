@@ -23,3 +23,26 @@ Should return false because there is only 1 'd' in the passed in array and there
 */
 
 // solution
+
+function makesTheSentence(characterArray, sentenceString) {
+  let firstCheck = sentenceString.split(" ").join("").split("");
+  if (characterArray.length > firstCheck.length) return false;
+  for (let i = 0; i < firstCheck.length; i++) {
+    if (characterArray.indexOf(firstCheck[i]) === -1) {
+      return false;
+    } else {
+      characterArray.splice(characterArray.indexOf(firstCheck[i]), 1);
+    }
+  }
+  //   let toCheck = {},
+  //       currentSent = {}
+  //   sentenceString = sentenceString.replace(/\s/g, '').split('')
+  //   for(let char of sentenceString){
+  //     currentSent[char] = currentSent[char] + 1 || 1
+  //   }
+  //   for(let char of characterArray){
+  //     toCheck[char] =toCheck[char] + 1 || 1
+  //   }
+  //   return Object.keys(toCheck).length === Object.keys(currentSent).length && [...Object.values(toCheck)].reduce((s,v)=>s+=v,0) === [...Object.values(currentSent)].reduce((s,v)=>s+=v,0)
+  return true;
+}
