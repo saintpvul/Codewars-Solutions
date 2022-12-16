@@ -44,3 +44,15 @@ Expected Time Complexity O(n Log n)
 */
 
 // solution
+
+function minimumSteps(numbers, value) {
+  let res = 0;
+  numbers.sort((a, b) => a - b);
+  for (let i = 0; i < numbers.length; i++) {
+    if (value > 0) {
+      value -= numbers[i];
+      res++;
+    }
+  }
+  return res - 1;
+}
