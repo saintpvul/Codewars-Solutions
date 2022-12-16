@@ -11,3 +11,15 @@ Example:
 */
 
 // solution
+
+function longestWord(stringOfWords) {
+  stringOfWords = stringOfWords.split(" ");
+  let longest = [""];
+  for (let i = 0; i < stringOfWords.length; i++) {
+    if (longest[0].length <= stringOfWords[i].length) {
+      longest.pop();
+      longest.push(stringOfWords[i]);
+    }
+  }
+  return longest.join("");
+}
