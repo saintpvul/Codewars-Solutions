@@ -43,3 +43,24 @@ Finally, if you have no friends in your chat application, the input will be an e
 */
 
 // solution
+
+const whosOnline = (friends) => {
+  let status = {
+    online: [],
+    offline: [],
+    away: [],
+  };
+  for (let friend of friends) {
+    friend.status === "offline"
+      ? status.offline.push(friend.username)
+      : friend.lastActivity > 10 && friend.status === "online"
+      ? status.away.push(friend.username)
+      : status.online.push(friend.username);
+  }
+
+  for (let checked in status) {
+    if (status[checked].length === 0) delete status[checked];
+  }
+
+  return status;
+};
