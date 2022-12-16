@@ -11,3 +11,13 @@ arithmetic_sequence_elements(1, 2, 5) == "1, 3, 5, 7, 9"
 */
 
 // solution
+
+function arithmeticSequenceElements(a, d, n) {
+  let res = [];
+  while (n > 0) {
+    n--;
+    res.push(a);
+    a += d;
+  }
+  return res.join(", ");
+}
