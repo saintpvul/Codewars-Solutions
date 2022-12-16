@@ -17,3 +17,10 @@ Product("!????!!!?") == 20
 */
 
 // solution
+
+function product(string) {
+  string = string.split("");
+  let eMark = string.filter((e) => e === "!").length,
+    qMark = string.filter((e) => e === "?").length;
+  return eMark * qMark;
+}
