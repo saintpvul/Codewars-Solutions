@@ -15,3 +15,6 @@ Incorrect examples (e.g. if you round the numbers):
 */
 
 // solution
+
+const twoDecimalPlaces = (number) =>
+  +number.toString().slice(0, number.toString().indexOf(".") + 3);
