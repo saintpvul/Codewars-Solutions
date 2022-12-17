@@ -16,3 +16,6 @@ Advanced - experienced users should try to solve it in one line, without loops, 
 */
 
 // solution
+
+const f = (n) =>
+  !isNaN(n) && n === parseInt(n) && n > 0 ? (n * (n + 1)) / 2 : false;
