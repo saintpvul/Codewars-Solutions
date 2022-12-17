@@ -11,3 +11,14 @@ If the total of both even and odd numbers are identical return: "Even and Odd ar
 */
 
 // solution
+
+function evenOrOdd(str) {
+  str = str.split("");
+  return str.filter((e) => +e % 2).reduce((s, v) => (s += +v), 0) >
+    str.filter((e) => +e % 2 === 0).reduce((s, v) => (s += +v), 0)
+    ? "Odd is greater than Even"
+    : str.filter((e) => +e % 2).reduce((s, v) => (s += +v), 0) <
+      str.filter((e) => +e % 2 === 0).reduce((s, v) => (s += +v), 0)
+    ? "Even is greater than Odd"
+    : "Even and Odd are the same";
+}
