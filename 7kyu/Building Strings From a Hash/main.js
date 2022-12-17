@@ -11,3 +11,8 @@ solution({a: 1, b: '2'}) // should return "a = 1,b = 2"
 */
 
 // solution
+
+const solution = (pairs) =>
+  Object.keys(pairs)
+    .map((v) => v + " = " + pairs[v])
+    .join(",");
