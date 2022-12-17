@@ -32,3 +32,13 @@ This kata is part of the Coding Meetup series which includes a number of short a
 */
 
 // solution
+
+function findAdmin(list, lang) {
+  let res = [];
+  for (let devs of list) {
+    if (devs.language === lang && devs.githubAdmin === "yes") {
+      res.push(devs);
+    }
+  }
+  return res;
+}
