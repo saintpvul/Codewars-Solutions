@@ -7,3 +7,9 @@ Note: only positive integers will be tested.
 */
 
 // solution
+
+const sumOfIntegersInString = (s) =>
+  s
+    .replace(/\D/gi, " ")
+    .split(" ")
+    .reduce((s, v) => (s += +v), 0);
