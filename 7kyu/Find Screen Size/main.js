@@ -10,3 +10,8 @@ Note: The calculated height should be represented as an integer. If the height i
 */
 
 // solution
+
+function findScreenHeight(width, ratio) {
+  ratio = ratio.split(":");
+  return `${width}x${width / (ratio[0] / ratio[1])}`;
+}
