@@ -71,3 +71,16 @@ The plane is not aligned properly to the bottom-left edge
 */
 
 // solution
+
+function findCoordinates(plane) {
+  let res = {};
+  plane = plane.split("\n").reverse();
+  for (let i = 0; i < plane.length; i++) {
+    for (let j = 0; j < plane[i].length; j++) {
+      if (/\d/.test(plane[i][j])) {
+        res[plane[i][j]] = [i, (j - i - 1) / 2];
+      }
+    }
+  }
+  return Array.from({ ...res, length: Object.keys(res).length });
+}
