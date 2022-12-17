@@ -13,3 +13,13 @@ Complete the function that takes a noun as a string, and returns her preferred b
 */
 
 // solution
+
+function bandNameGenerator(str) {
+  return str[0] === str[str.length - 1]
+    ? `${
+        str[0].toUpperCase() +
+        str.slice(1, str.length) +
+        str.slice(1, str.length)
+      }`
+    : `The ${str[0].toUpperCase() + str.slice(1, str.length)}`;
+}
