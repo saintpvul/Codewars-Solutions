@@ -21,3 +21,16 @@ Examples
 */
 
 // solution
+
+function findMissingNumber(sequence) {
+  sequence = sequence.split(" ").map((e) => Number(e));
+  if (sequence.filter((e) => isNaN(e)).length > 0) return 1;
+  let max = Math.max(...sequence),
+    missing = [];
+  for (let i = 1; i < max; i++) {
+    if (sequence.indexOf(i) === -1) {
+      missing.push(i);
+    }
+  }
+  return missing.length === 0 ? 0 : Math.min(...missing);
+}
