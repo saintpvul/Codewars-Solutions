@@ -19,3 +19,13 @@ Note: The numbers will always be 0 or positive integers!
 */
 
 // solution
+
+function isVeryEvenNumber(n) {
+  let currentNum = n.toString().split("");
+  if (currentNum.length < 2 && +currentNum % 2 === 0) {
+    return true;
+  } else if (currentNum.length > 1) {
+    return isVeryEvenNumber(currentNum.reduce((s, v) => (s += +v), 0));
+  }
+  return false;
+}
