@@ -11,3 +11,13 @@ Obviously the words should be Caps, Every word should end with '!!!!', Any lette
 */
 
 // solution
+
+function gordon(a) {
+  return a
+    .replace(/[eiou]/gi, "*")
+    .replace(/[a]/gi, "@")
+    .toUpperCase()
+    .split(" ")
+    .map((e) => e + "!!!!")
+    .join(" ");
+}
