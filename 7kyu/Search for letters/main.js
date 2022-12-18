@@ -13,3 +13,17 @@ For instance:
 */
 
 // solution
+
+function change(string) {
+  string = string.toLowerCase();
+  let alph = "abcdefghijklmnopqrstuvwxyz",
+    res = "";
+  for (let i = 0; i < alph.length; i++) {
+    if (string.includes(alph[i])) {
+      res += "1";
+    } else {
+      res += "0";
+    }
+  }
+  return res;
+}
