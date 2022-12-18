@@ -14,3 +14,5 @@ if there are no "x"'s then return false
 */
 
 // solution
+
+const tripleX = (str) => /^[^x]*xxx/.test(str);
