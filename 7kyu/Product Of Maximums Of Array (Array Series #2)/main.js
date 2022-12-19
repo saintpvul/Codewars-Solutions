@@ -30,3 +30,9 @@ Since the size (k) equal 3 , then the subsequence of size 3 whose gives product 
 */
 
 // solution
+
+const maxProduct = (numbers, size) =>
+  numbers
+    .sort((a, b) => b - a)
+    .slice(0, size)
+    .reduce((s, v) => (s *= v), 1);
