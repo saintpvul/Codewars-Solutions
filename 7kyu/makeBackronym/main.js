@@ -20,3 +20,16 @@ Examples
 */
 
 // solution
+
+//preload variable: dict
+
+var makeBackronym = function (string) {
+  string = string.toUpperCase().split("");
+  let result = [],
+    key = Object.keys(dict),
+    val = Object.values(dict);
+  for (let i = 0; i < string.length; i++) {
+    result.push(val[key.indexOf(string[i])]);
+  }
+  return result.join(" ");
+};
