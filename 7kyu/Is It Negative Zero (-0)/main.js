@@ -11,3 +11,5 @@ In Python / Java / C / NASM / Haskell / the input will be a float.
 */
 
 // solution
+
+const isNegativeZero = (n) => Object.is(-0, n);
