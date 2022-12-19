@@ -25,3 +25,10 @@ When done, move on to Part 2.
 */
 
 // solution
+
+const fusc = (n) =>
+  n === 0 || n === 1
+    ? n
+    : n % 2 === 0
+    ? fusc(n / 2)
+    : fusc((n - 1) / 2) + fusc((n + 1) / 2);
