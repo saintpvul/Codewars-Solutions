@@ -19,3 +19,7 @@ https://github.com/denysdovhan/wtfjs
 */
 
 // solution
+
+function compareTrash(trash1, trash2) {
+  return trash1 == trash2 && typeof trash1 == typeof trash2;
+}
