@@ -11,3 +11,13 @@ Your task is to return the word pattern for a given word. All words provided wil
 */
 
 // solution
+
+function wordPattern(word) {
+  word = word.toLowerCase().split("");
+  let row = new Set(word);
+  let result = [];
+  for (let i = 0; i < word.length; i++) {
+    result.push(Array(...row).indexOf(word[i]));
+  }
+  return result.join(".");
+}
