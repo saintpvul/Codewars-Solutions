@@ -19,3 +19,15 @@ All inputs will be correct type and never empty.
 */
 
 // solution
+
+function duckShoot(ammo, aim, ducks) {
+  let bullet = Math.floor(ammo * aim);
+  return ducks.replace(/2/g, (v) => {
+    if (bullet > 0) {
+      bullet -= 1;
+      return "X";
+    } else {
+      return v;
+    }
+  });
+}
