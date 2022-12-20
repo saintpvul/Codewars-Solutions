@@ -18,3 +18,16 @@ garden = 'gravel gravel rock gravel gravel gravel gravel gravel gravel gravel'
 */
 
 // solution
+
+function rakeGarden(garden) {
+  garden = garden.split(" ");
+  let res = [];
+  for (let i = 0; i < garden.length; i++) {
+    if (garden[i] != "rock") {
+      res.push("gravel");
+    } else {
+      res.push("rock");
+    }
+  }
+  return res.join(" ");
+}
