@@ -31,3 +31,9 @@ function rakeGarden(garden) {
   }
   return res.join(" ");
 }
+
+const rakeGarden = (garden) =>
+  garden
+    .split(" ")
+    .map((e) => (e === "rock" ? "rock" : "gravel"))
+    .join(" ");
