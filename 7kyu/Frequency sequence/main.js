@@ -9,3 +9,16 @@ freq_seq("^^^**$", "x"); // => "3x3x3x2x2x1"
 */
 
 // solution
+
+function freqSeq(str, sep) {
+  str = str.split("");
+  let res = [],
+    counter = {};
+  for (let char of str) {
+    counter[char] = counter[char] + 1 || 1;
+  }
+  for (let i = 0; i < str.length; i++) {
+    res.push(counter[str[i]]);
+  }
+  return res.join(sep);
+}
