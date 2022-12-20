@@ -17,3 +17,19 @@ x == dog, return 'pass out from excitement y times' (where y is the value given 
 */
 
 // solution
+
+const present = (x, y) =>
+  x === "badpresent"
+    ? "Take this back!"
+    : x === "dog"
+    ? `pass out from excitement ${y} times`
+    : x === "crap"
+    ? "acpr"
+    : x === "empty"
+    ? "empty"
+    : x === "bang"
+    ? x.split("").reduce((a, b) => a + (b.charCodeAt() - y), 0)
+    : x
+        .split("")
+        .map((v) => String.fromCharCode(v.charCodeAt() + y))
+        .join("");
