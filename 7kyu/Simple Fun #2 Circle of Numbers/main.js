@@ -25,3 +25,5 @@ Constraints: 0 ≤ firstNumber ≤ n - 1
 */
 
 // solution
+
+const circleOfNumbers = (n, firstNumber) => (firstNumber + n / 2) % n;
