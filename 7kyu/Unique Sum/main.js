@@ -17,5 +17,4 @@ Good Luck!
 
 // solution
 
-const uniqueSum = (lst) =>
-  lst.length < 1 ? null : [...new Set(lst)].reduce((s, v) => (s += v), 0);
+const uniqueSum = (lst) => [...new Set(lst)].reduce((s, v) => (s += v), null);
