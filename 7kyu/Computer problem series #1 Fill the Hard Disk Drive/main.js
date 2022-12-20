@@ -17,3 +17,18 @@ Do not expect any negative or invalid inputs.
 */
 
 // solution
+
+function save(sizes, hd) {
+  let count = 0,
+    sum = 0;
+  for (let i = 0; i < sizes.length; i++) {
+    if (sum + sizes[i] > hd) {
+      return count;
+    }
+    if (hd > sum) {
+      sum += sizes[i];
+      count++;
+    }
+  }
+  return count;
+}
