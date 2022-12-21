@@ -13,3 +13,10 @@ Your task is to implement the dropWhile function. If you've got a span function 
 */
 
 // solution
+
+function dropWhile(arr, pred) {
+  while (arr.length && pred(arr[0])) {
+    arr.shift();
+  }
+  return arr;
+}
