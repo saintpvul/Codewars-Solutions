@@ -36,3 +36,5 @@ There is a very simple solution to this!
 */
 
 // solution
+
+const numberOfRectangles = (m, n) => ((m * m + m) / 2) * ((n * n + n) / 2);
