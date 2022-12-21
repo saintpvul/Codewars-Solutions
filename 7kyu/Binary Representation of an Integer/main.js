@@ -21,3 +21,6 @@ The function takes one argument (n) which is the integer to be converted to bina
 */
 
 // solution
+
+const showBits = (n) =>
+  [...(n >>> 0).toString(2).padStart(32, 0)].map((e) => +e);
