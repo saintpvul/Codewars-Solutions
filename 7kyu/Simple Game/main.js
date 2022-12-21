@@ -43,3 +43,5 @@ Examples:
 */
 
 // solution
+
+const game = (n, m) => (n % 2 && m != 2 ? "first" : "second");
