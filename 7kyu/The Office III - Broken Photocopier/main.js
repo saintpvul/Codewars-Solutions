@@ -9,3 +9,9 @@ Given a string of binary, return the version the photocopier gives you as a stri
 */
 
 // solution
+
+const broken = (x) =>
+  x
+    .split("")
+    .map((e) => (e === "0" ? (e = "1") : (e = "0")))
+    .join("");
