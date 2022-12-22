@@ -10,3 +10,9 @@ Strings will only contain letters and spaces, with exactly 1 space between words
 */
 
 // solution
+
+const makeString = (s) =>
+  s
+    .split(" ")
+    .map((e) => e[0])
+    .join("");
