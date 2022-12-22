@@ -25,3 +25,11 @@ Return a list of tuples with the count of each vegetable in descending order. If
 */
 
 // solution
+
+function countVegetables(string) {
+  var vegs = {},
+    arr = [];
+  string.match(/\w+/g).forEach((v) => (vegs[v] = (vegs[v] || 0) + 1));
+  for (let veg in vegs) if (veg != "chopsticks") arr.push([vegs[veg], veg]);
+  return arr.sort((a, b) => b[0] - a[0] || b[1].localeCompare(a[1]));
+}
