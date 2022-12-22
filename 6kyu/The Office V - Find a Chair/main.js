@@ -19,3 +19,15 @@ If you need no chairs, return "Game On". If there aren't enough spare chairs ava
 */
 
 // solution
+
+function meeting(rooms, need) {
+  if (!need) return "Game On";
+  let res = [];
+  for (const [{ length: chairs }, people] of rooms) {
+    let curr = Math.min(Math.max(people - chairs, 0), need);
+    res.push(curr);
+    need -= curr;
+    if (!need) return res;
+  }
+  return "Not enough!";
+}
