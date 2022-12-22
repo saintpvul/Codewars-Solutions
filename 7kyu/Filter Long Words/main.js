@@ -10,3 +10,5 @@ Example:
 */
 
 // solution
+
+const filterLongWords = (s, n) => s.split(/\s/).filter((e) => e.length > n);
