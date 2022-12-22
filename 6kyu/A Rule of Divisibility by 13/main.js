@@ -54,3 +54,11 @@ thirt(321) calculates 48, 48 and returns 48
 */
 
 // solution
+
+function thirt(n, divs = [1, 10, 9, 12, 3, 4]) {
+  let s = ("" + n)
+    .split("")
+    .reverse()
+    .reduce((acc, v, i) => (acc += v * divs[i % divs.length]), 0);
+  return s === n ? n : thirt(s);
+}
