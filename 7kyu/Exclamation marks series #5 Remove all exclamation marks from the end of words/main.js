@@ -13,3 +13,9 @@ remove("!!!Hi !!hi!!! !hi") === "!!!Hi !!hi !hi"
 */
 
 // solution
+
+const remove = (string) =>
+  string
+    .split(" ")
+    .map((e) => e.replace(/!+$/, ""))
+    .join(" ");
