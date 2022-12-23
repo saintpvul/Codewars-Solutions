@@ -34,3 +34,15 @@ This kata is part of the Coding Meetup series which includes a number of short a
 */
 
 // solution
+
+function orderFood(list) {
+  let meal = {};
+  for (let dev of list) {
+    if (meal[dev.meal]) {
+      meal[dev.meal]++;
+    } else {
+      meal[dev.meal] = 1;
+    }
+  }
+  return meal;
+}
