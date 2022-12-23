@@ -13,3 +13,8 @@ The solution should be case insensitive (ie good, GOOD and gOOd all count as a g
 */
 
 // solution
+
+function well(x) {
+  let good = x.toString().split(/good/gi).length - 1;
+  return good > 2 ? "I smell a series!" : good > 0 ? "Publish!" : "Fail!";
+}
