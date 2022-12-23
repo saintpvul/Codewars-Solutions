@@ -13,3 +13,8 @@ In C# and Java the mean return is a double.
 */
 
 // solution
+
+const mean = (lst) => [
+  lst.filter((e) => /\d/gi.test(e)).reduce((s, v) => (s += +v), 0) / 10,
+  lst.filter((e) => /[a-z]/gi.test(e)).join(""),
+];
