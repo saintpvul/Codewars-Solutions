@@ -19,3 +19,14 @@ null, ""    -> equal
 */
 
 // solution
+
+function compare(s1, s2) {
+  if (s1 == null || /[^a-zA-Z]/g.test(s1)) s1 = "";
+  if (s2 == null || /[^a-zA-Z]/g.test(s2)) s2 = "";
+  s1 = s1.toUpperCase();
+  s2 = s2.toUpperCase();
+  return (
+    [...s1].reduce((v, x) => v + x.charCodeAt(0), 0) ==
+    [...s2].reduce((v, x) => v + x.charCodeAt(0), 0)
+  );
+}
