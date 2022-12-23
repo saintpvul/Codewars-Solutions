@@ -11,3 +11,12 @@ Function will return true for lucky numbers and false for others.
 */
 
 // solution
+
+const isLucky = (
+  n,
+  luck = n
+    .toString()
+    .split("")
+    .map((e) => +e)
+    .reduce((s, v) => (s += v), 0)
+) => (luck === 0 || luck % 9 === 0 ? true : false);
