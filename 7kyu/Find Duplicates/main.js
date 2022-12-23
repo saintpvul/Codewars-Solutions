@@ -11,3 +11,16 @@ Examples
 */
 
 // solution
+
+function duplicates(arr) {
+  let uniq = [],
+    dup = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (uniq.indexOf(arr[i]) === -1) {
+      uniq.push(arr[i]);
+    } else if (uniq.indexOf(arr[i]) != -1 && dup.indexOf(arr[i]) === -1) {
+      dup.push(arr[i]);
+    }
+  }
+  return dup;
+}
