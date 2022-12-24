@@ -9,3 +9,8 @@ Either of the calculated ages come out to be negative
 */
 
 // solution
+
+const getAges = (s, diff) =>
+  s >= 0 && diff >= 0 && s >= diff
+    ? [s / 2 + diff / 2, s / 2 - diff / 2]
+    : null;
