@@ -21,3 +21,14 @@ result = [6, 3, 7, 5, 4, 7]
 */
 
 // solution
+
+const lastDigit = (n, d) =>
+  d <= 0
+    ? []
+    : n
+        .toString()
+        .split("")
+        .reverse()
+        .slice(0, d)
+        .reverse()
+        .map((e) => +e);
