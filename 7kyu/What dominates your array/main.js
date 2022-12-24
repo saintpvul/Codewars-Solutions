@@ -8,3 +8,12 @@ Write a function dominator(arr) that, given a zero-indexed array arr consisting 
 */
 
 // solution
+
+function dominator(arr) {
+  let times = {};
+  for (let num of arr) {
+    times[num] = times[num] + 1 || 1;
+    if (times[num] > arr.length / 2) return num;
+  }
+  return -1;
+}
