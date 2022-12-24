@@ -9,3 +9,6 @@ Sort the given array of strings in alphabetical order, case insensitive. For exa
 */
 
 // solution
+
+const sortme = (names) =>
+  names.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
