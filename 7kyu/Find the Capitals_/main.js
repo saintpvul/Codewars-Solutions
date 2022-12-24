@@ -18,3 +18,6 @@ capital(mixed_capitals)[1] // returns "The capital of Spain is Madrid"
 */
 
 // solution
+
+const capital = (capitals) =>
+  capitals.map((e) => `The capital of ${e.state || e.country} is ${e.capital}`);
