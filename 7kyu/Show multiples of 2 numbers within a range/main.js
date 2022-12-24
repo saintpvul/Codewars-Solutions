@@ -12,3 +12,13 @@ To find out if 3rd parameter (the upper limit) is inclusive or not, check the te
 */
 
 // solution
+
+function multiples(s1, s2, s3) {
+  let result = [];
+  for (let i = s1; i < s3; i += s1) {
+    if (i % s1 === 0 && i % s2 === 0) {
+      result.push(i);
+    }
+  }
+  return result;
+}
