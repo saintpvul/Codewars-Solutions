@@ -18,3 +18,11 @@ You will be given a list of numbers and their arithmetic mean. However, the list
 */
 
 // solution
+
+function geo_mean(nums, arith_mean) {
+  let lastNum =
+    arith_mean * (nums.length + 1) - nums.reduce((s, v) => (s += v), 0);
+  return (
+    (nums.reduce((s, v) => (s *= v), 1) * lastNum) ** (1 / (nums.length + 1))
+  );
+}
