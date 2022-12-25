@@ -29,3 +29,11 @@ Examples:
 */
 
 // solution
+
+const complete = (str) => {
+  for (let i = 1; i <= str.length; i++) {
+    if (str.slice(i).split("").reverse().join("") === str.slice(i)) {
+      return str + str.slice(0, i).split("").reverse().join("");
+    }
+  }
+};
