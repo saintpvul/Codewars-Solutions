@@ -82,3 +82,5 @@ xxx.      0                         xxx.
 */
 
 //solution
+
+const rotate = (rows) => rows.map((row) => row.indexOf("."));
