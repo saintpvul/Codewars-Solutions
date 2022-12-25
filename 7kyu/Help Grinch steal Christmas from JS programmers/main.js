@@ -7,3 +7,8 @@ However, Grinch does not know how to do that. Can you help him?
 */
 
 // solution
+
+Date.prototype.getDate = function getGrinchDate() {
+  let [y, m, d] = this.toString().split(" ");
+  return m === "Dec" && d === "25" ? (d = "26") : +d;
+};
