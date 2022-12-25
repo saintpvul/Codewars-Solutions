@@ -24,3 +24,15 @@ Examples of valid commands:
 */
 
 // solution
+
+function scheme(cmd) {
+  let schemes = {
+    "+": [(a, b) => a + b, 0],
+    "-": [(a, b) => a - b, 0],
+    "*": [(a, b) => a * b, 1],
+    "/": [(a, b) => a / b, 0],
+  };
+  let [op, ...ops] = cmd.match(/-?\d+|[+*/-]/g),
+    [o, iVal] = schemes[op];
+  return ops.length ? ops.map(Number).reduce(o) : iVal;
+}
