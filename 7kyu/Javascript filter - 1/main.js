@@ -15,3 +15,5 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 */
 
 // solution
+
+const searchNames = (logins) => logins.filter((e) => e[0].slice(-1) === "_");
