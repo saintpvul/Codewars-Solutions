@@ -17,3 +17,16 @@ Examples
 */
 
 // solution
+
+function duplicates(array) {
+  let digits = new Set(),
+    pairs = 0;
+  for (let digit of array) {
+    if (digits.delete(digit)) {
+      pairs++;
+    } else {
+      digits.add(digit);
+    }
+  }
+  return pairs;
+}
