@@ -7,3 +7,10 @@ Note: you will always receive a valid array containing a random assortment of di
 */
 
 // solution
+
+function isValidWalk(walk) {
+  let count = (char) => walk.filter((c) => c === char).length;
+  return (
+    walk.length === 10 && count("n") === count("s") && count("w") === count("e")
+  );
+}
