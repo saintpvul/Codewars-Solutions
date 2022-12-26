@@ -17,3 +17,6 @@ More examples in test cases. Good luck!
 */
 
 // solution
+
+const solve = (s) =>
+  "abcdefghijklmnopqrstuvwxyz".includes([...s].sort().join(""));
