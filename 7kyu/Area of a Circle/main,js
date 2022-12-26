@@ -13,3 +13,6 @@ circleArea("number");    //returns false
 */
 
 // solution
+
+var circleArea = (r) =>
+  r <= 0 || typeof r != "number" ? false : +(Math.PI * r ** 2).toFixed(2);
