@@ -12,3 +12,8 @@ If the string to search for is "me", and the array to search is ["home", "milk",
 */
 
 // solution
+
+const wordSearch = (query, seq) =>
+  seq.filter((e) => e.toLowerCase().includes(query.toLowerCase())).length > 0
+    ? seq.filter((e) => e.toLowerCase().includes(query.toLowerCase()))
+    : ["Empty"];
