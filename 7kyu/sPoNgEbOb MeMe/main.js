@@ -14,3 +14,9 @@ output: "StOp mAkInG SpOnGeBoB MeMeS!"
 */
 
 // solution
+
+const spongeMeme = (sentence) =>
+  sentence
+    .split("")
+    .map((e, i) => (i % 2 === 0 ? e.toUpperCase() : e.toLowerCase()))
+    .join("");
