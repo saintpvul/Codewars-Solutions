@@ -14,3 +14,12 @@ Note: Test cases contain valid input only - i.e. a string array or an empty arra
 */
 
 // solution
+
+const nthChar = (words) => {
+  if (!words) return "";
+  let res = [];
+  for (let i = 0; i < words.length; i++) {
+    res.push(words[i][i]);
+  }
+  return res.join("");
+};
