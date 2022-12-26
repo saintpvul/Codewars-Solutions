@@ -20,3 +20,6 @@ instructions = [1,2,4,3,5]
 */
 
 // solution
+
+const liftoff = (instructions) =>
+  `${instructions.sort((a, b) => b - a).join(" ")} liftoff!`;
