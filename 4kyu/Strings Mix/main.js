@@ -42,3 +42,28 @@ mix(s1, s2) --> "1:mmmmmm/E:nnnnnn/1:aaaa/1:hhh/2:yyy/2:dd/2:ff/2:ii/2:rr/E:ee/E
 */
 
 // solution
+
+function mix(s1, s2) {
+  let res = [],
+    count = (s) =>
+      s
+        .replace(/[^a-z]/g, "")
+        .split("")
+        .sort()
+        .reduce((c, v) => ((c[v] = c[v] + 1 || 1), c), {});
+  s1 = count(s1);
+  s2 = count(s2);
+
+  let keys = new Set(Object.keys(s1).concat(Object.keys(s2)));
+  for (let key of keys) {
+    let chars1 = s1[key] || 0,
+      chars2 = s2[key] || 0,
+      sum = Math.max(chars1, chars2);
+    if (sum > 1) {
+      let get = [1, "=", 2][Math.sign(chars2 - chars1) + 1],
+        str = [...Array(sum)].map((_) => key).join("");
+      res.push(`${get}:${str}`);
+    }
+  }
+  return res.sort((a, b) => b.length - a.length || (a < b ? -1 : 1)).join("/");
+}
