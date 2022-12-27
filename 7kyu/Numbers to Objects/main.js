@@ -13,3 +13,5 @@ All inputs will be arrays of numbers. All character codes are valid lower case l
 */
 
 // solution
+
+const numObj = (s) => s.map((code) => ({ [code]: String.fromCharCode(code) }));
