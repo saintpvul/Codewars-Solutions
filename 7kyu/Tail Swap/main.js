@@ -11,3 +11,11 @@ Examples
 */
 
 // solution
+
+function tailSwap(arr) {
+  arr = arr.map((e) => e.split(":"));
+  let temp = arr[1][1];
+  arr[1][1] = arr[0][1];
+  arr[0][1] = temp;
+  return arr.map((e) => e.join(":"));
+}
