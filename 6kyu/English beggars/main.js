@@ -15,3 +15,12 @@ Note 2: do not modify the input array.
 */
 
 // solution
+
+function beggars(values, n) {
+  let getVal = Array(n).fill(0);
+
+  for (let i = 0; i < values.length; i++) {
+    getVal[i % n] += values[i];
+  }
+  return getVal;
+}
