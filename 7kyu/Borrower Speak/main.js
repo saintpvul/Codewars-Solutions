@@ -11,3 +11,5 @@ Change the input text s to new borrower speak. Help save the next generation!
 */
 
 // solution
+
+const borrow = (s) => s.toLowerCase().replace(/\W/g, "");
