@@ -10,8 +10,14 @@ isDivisible(100,5,4,10,25,20)--> true
 isDivisible(12,7)--> false because 12 is not divisible by 7
 This kata is following kata: http://www.codewars.com/kata/is-n-divisible-by-x-and-y
 
-
-
 */
 
 // solution
+
+function isDivisible() {
+  let nums = [...arguments];
+  for (let i = 1; i < nums.length; i++) {
+    if (nums[0] % nums[i] != 0) return false;
+  }
+  return true;
+}
