@@ -17,3 +17,10 @@ Create a function that can receive two 'fangs' and determine if the product of t
 */
 
 // solution
+
+var vampire_test = function (a, b) {
+  return (
+    ("" + a + b).split("").sort().join("") ==
+    (a * b + "").split("").sort().join("")
+  );
+};
