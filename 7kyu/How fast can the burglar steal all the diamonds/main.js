@@ -38,8 +38,10 @@ From top:
 4th row - needs 3 repetitions
 So, the burglar needs a minimum of 13 repetitions to steal all the diamonds.
 
-
-
 */
 
 // solution
+
+function diamondBurglar(locker) {
+  return locker.join(".").match(/\*{1,2}/g).length;
+}
