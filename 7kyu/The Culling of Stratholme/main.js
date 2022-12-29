@@ -22,3 +22,9 @@ Good luck and for the Alliance!
 */
 
 // solution
+
+const purifyTheStratholme = (s) =>
+  s
+    .replace(/\w?i+\w?/gi, "")
+    .replace(/\s+/g, " ")
+    .trim();
