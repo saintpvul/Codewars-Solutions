@@ -9,3 +9,8 @@ Given a salary and the array of bills, calculate your disposable income for a mo
 */
 
 // solution
+
+const getNewNotes = (salary, bills) => {
+  let res = Math.floor(bills.reduce((sum, bill) => sum - bill, salary) / 5);
+  return res >= 0 ? res : 0;
+};
