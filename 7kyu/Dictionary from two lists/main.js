@@ -17,3 +17,27 @@ createDict(keys, values) // returns {'a': 1, 'b': 2, 'c': 3}
 */
 
 // solution
+
+function createDict(keys, values) {
+  let dict = {},
+    nulled = [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+    ],
+    length = keys.length;
+  values = values.concat(nulled).slice(0, length);
+  for (let i = 0; i < keys.length; i++) {
+    dict[keys[i]] = values[i];
+  }
+  return dict;
+}
