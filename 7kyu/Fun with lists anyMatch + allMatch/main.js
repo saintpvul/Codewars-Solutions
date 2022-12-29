@@ -19,3 +19,13 @@ Good luck!
 */
 
 // solution
+
+function anyMatch(head, p) {
+  if (head) return p(head.data) || anyMatch(head.next, p);
+  return false;
+}
+
+function allMatch(head, p) {
+  if (head) return p(head.data) && allMatch(head.next, p);
+  return true;
+}
