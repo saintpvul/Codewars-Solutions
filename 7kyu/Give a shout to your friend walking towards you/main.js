@@ -30,3 +30,6 @@ All the inputs are valid.
 */
 
 // solution
+
+const madShout = (sidewalk) =>
+  `O${"i".repeat(sidewalk.match(/Y.*F/g)[0].length / 2)} F!`;
