@@ -10,3 +10,10 @@ return a boolean indicating whether it is possible to run past the walls without
 */
 
 // solution
+
+function canEscape(walls) {
+  for (let i = 0; i < walls.length; i++) {
+    if (Math.min(...walls[i]) - i < 2) return false;
+  }
+  return true;
+}
