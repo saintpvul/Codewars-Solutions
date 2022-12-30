@@ -19,3 +19,13 @@ For example the number 6 can be divided by 2 two times:
 */
 
 // solution
+
+const divisions = (n, divisor) => {
+  let number = n,
+    count = 0;
+  while (number > 0) {
+    number = Math.floor(number / divisor);
+    count++;
+  }
+  return count - 1;
+};
