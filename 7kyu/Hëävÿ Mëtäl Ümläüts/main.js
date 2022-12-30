@@ -1,0 +1,7 @@
+/*
+
+Hëävÿ Mëtäl Ümläüts
+
+*/
+
+// solution
