@@ -28,3 +28,7 @@ Handling of floating point error will not be tested
 */
 
 // solution
+
+function redistributeWealth(wealth) {
+  wealth = wealth.fill(wealth.reduce((a, b) => a + b, 0) / wealth.length);
+}
