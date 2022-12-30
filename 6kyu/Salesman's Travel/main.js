@@ -34,3 +34,10 @@ You can see a few addresses and zipcodes in the test cases.
 */
 
 // solution
+
+function travel(r, zipcode) {
+  let adresses = r.split(",").filter((str) => str.slice(-8) == zipcode);
+  return `${zipcode}:${adresses
+    .map((addr) => addr.split(" ").slice(1, -2).join(" "))
+    .join(",")}/${adresses.map((addr) => addr.split(" ")[0]).join(",")}`;
+}
