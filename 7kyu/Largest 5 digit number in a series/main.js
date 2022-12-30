@@ -17,3 +17,11 @@ Adapted from ProjectEuler.net
 */
 
 // solution
+
+function solution(digits) {
+  let result = [];
+  for (let i = 0; i < digits.length - 4; i++) {
+    result.push(digits.substr(i, 5));
+  }
+  return Math.max(...result);
+}
