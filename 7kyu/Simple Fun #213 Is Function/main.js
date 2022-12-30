@@ -21,3 +21,14 @@ The given set can't possibly define a function, since values y = 1 and y = 6 bot
 */
 
 // solution
+
+function isFunction(pairs) {
+  let set = {};
+  for (let [x, y] of pairs) {
+    if (set[x] && set[x] != y) {
+      return false;
+    }
+    set[x] = y;
+  }
+  return true;
+}
