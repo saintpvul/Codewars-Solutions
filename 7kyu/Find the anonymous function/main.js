@@ -11,3 +11,6 @@ Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Fun
 */
 
 // solution
+
+var FindFunction = (func, arr) =>
+  arr.filter(func.filter((f) => typeof f == "function")[0]);
