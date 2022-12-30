@@ -16,3 +16,5 @@ fives(myArray);               //returns [5, 10, 15];
 */
 
 // solution
+
+const factory = (x) => (f) => f.map((n) => n * x);
