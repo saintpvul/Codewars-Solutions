@@ -26,3 +26,21 @@ I have created other katas. Have a look if you like coding and challenges.
 */
 
 // solution
+
+function numbersWithDigitInside(x, d) {
+  let i = 1,
+    count = 0,
+    sum = 0,
+    m = 1;
+
+  while (i <= x) {
+    if (i.toString().includes(d)) {
+      count++;
+      sum += i;
+      m *= i;
+    }
+    i++;
+  }
+
+  return count ? [count, sum, m] : [0, 0, 0];
+}
