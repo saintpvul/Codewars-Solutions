@@ -17,3 +17,5 @@ Should return = 11, 12, 13
 */
 
 // solution
+
+const solution = (arr, options) => arr.map((n) => n + 2 * options.modifier);
