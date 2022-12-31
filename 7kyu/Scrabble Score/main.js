@@ -38,3 +38,9 @@ Empty string should return 0. The string can contain spaces and letters (upper a
 */
 
 // solution
+
+const scrabbleScore = (str) =>
+  str
+    .toUpperCase()
+    .split("")
+    .reduce((s, v) => s + ($dict[v] || 0), 0);
