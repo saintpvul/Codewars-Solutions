@@ -12,3 +12,8 @@ Note: This is an introductory Kata for a series... coming soon!
 */
 
 // solution
+
+function reduce(fraction) {
+  const nod = (n, d) => (d ? nod(d, n % d) : n);
+  return fraction.map((e) => e / nod(...fraction));
+}
