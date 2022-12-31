@@ -36,3 +36,5 @@ The person to guess his hat's color first, 1 for a, 2 for b, 3 for c and 4 for d
 */
 
 // solution
+
+const guessHatColor = (a, b, c, d) => (b === c ? 1 : 2);
