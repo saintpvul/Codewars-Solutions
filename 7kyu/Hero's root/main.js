@@ -30,3 +30,13 @@ Don't use the double bitwise NOT ~~ at each iteration if you want to have the sa
 */
 
 // solution
+
+function intRac(n, guess) {
+  let i = 0;
+  do {
+    x = Math.ceil(guess);
+    guess = (x + n / x) / 2;
+    i++;
+  } while (Math.abs(guess - x) > 1);
+  return i;
+}
