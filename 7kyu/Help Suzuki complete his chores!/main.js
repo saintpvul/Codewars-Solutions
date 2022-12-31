@@ -11,3 +11,12 @@ Output: array of workloads, in ascending order.
 */
 
 // solution
+
+function choreAssignment(chores) {
+  chores = chores.sort((a, b) => a - b);
+  let res = [];
+  while (chores.length) {
+    res.push(chores.pop() + chores.shift());
+  }
+  return res.sort((a, b) => a - b);
+}
