@@ -25,3 +25,19 @@ Dog Years
 */
 
 // solution
+
+var ownedCatAndDog = function (catYears, dogYears) {
+  let cat =
+      catYears < 15
+        ? 0
+        : catYears < 24
+        ? 1
+        : 2 + Math.trunc((catYears - 24) / 4),
+    dog =
+      dogYears < 15
+        ? 0
+        : dogYears < 24
+        ? 1
+        : 2 + Math.trunc((dogYears - 24) / 5);
+  return [cat, dog];
+};
