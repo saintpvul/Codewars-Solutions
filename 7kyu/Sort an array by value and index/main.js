@@ -28,3 +28,14 @@ I have also created other katas. Take a look if you enjoyed this kata!
 */
 
 // solution
+
+function sortByValueAndIndex(array) {
+  let map = [];
+  for (let i = 0; i < array.length; i++) {
+    map.push([array[i], array[i] * (i + 1)]);
+  }
+  return map
+    .sort((a, b) => a[1] - b[1])
+    .flat()
+    .filter((e, i) => i % 2 === 0);
+}
