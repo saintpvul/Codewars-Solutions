@@ -25,3 +25,22 @@ As you can see in the example: The first changed is the 2nd 'a'. So the start is
 */
 
 // solution
+
+function replaceNth(text, n, oldValue, newValue) {
+  let count = 0,
+    res = [];
+  for (let i = 0; i < text.length; i++) {
+    if (text[i] === oldValue) {
+      count++;
+      if (count - n === 0) {
+        res.push(newValue);
+        count = 0;
+      } else {
+        res.push(oldValue);
+      }
+    } else {
+      res.push(text[i]);
+    }
+  }
+  return res.join("");
+}
