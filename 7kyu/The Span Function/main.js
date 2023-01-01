@@ -20,3 +20,11 @@ Hint/Challenge: If you have completed the takeWhile function and the dropWhile f
 */
 
 // solution
+
+function span(arr, predicate) {
+  let i;
+  for (i = 0; i < arr.length; i++) {
+    if (!predicate(arr[i])) break;
+  }
+  return [arr.slice(0, i), arr.slice(i)];
+}
