@@ -11,3 +11,18 @@ If you've completed this one and you feel like testing your performance tuning o
 */
 
 // solution
+
+function smaller(nums) {
+  let count = 0,
+    res = [];
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = i + 1; j < nums.length; j++) {
+      if (nums[i] > nums[j]) {
+        count++;
+      }
+    }
+    res.push(count);
+    count = 0;
+  }
+  return res;
+}
