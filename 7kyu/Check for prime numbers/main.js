@@ -16,3 +16,17 @@ Examples(input --> output)
 */
 
 //
+
+function isPrime(n) {
+  let prime = true;
+  if (n === 1 || n === 0) return false;
+  if (n > 1) {
+    for (let i = 2; i < n; i++) {
+      if (n % i === 0) {
+        prime = false;
+        break;
+      }
+    }
+  }
+  return prime;
+}
