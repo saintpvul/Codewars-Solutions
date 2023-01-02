@@ -30,3 +30,5 @@ function solve(s, g) {
 
   return !nums.length ? -1 : nums;
 }
+
+const solve = (s, g) => (s % g ? -1 : [g, s - g]);
