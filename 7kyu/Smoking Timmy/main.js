@@ -13,3 +13,5 @@ Please note that Timothy never starts smoking cigarettes that aren't "full size"
 */
 
 // solution
+
+const startSmoking = (bars, boxes) => (22.5 * (10 * bars + boxes) - 0.5) | 0;
