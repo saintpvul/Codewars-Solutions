@@ -14,8 +14,19 @@ More examples in test cases.
 
 Good luck!
 
-
-
 */
 
 // solution
+
+function solve(s, g) {
+  let nums = [];
+  for (let i = s - 1; i > 0; i--) {
+    if (i + (s - i) === s && !(i % g) && !((s - i) % g)) {
+      nums.push(s - i);
+      nums.push(i);
+      break;
+    }
+  }
+
+  return !nums.length ? -1 : nums;
+}
