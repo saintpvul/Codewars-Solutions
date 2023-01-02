@@ -36,3 +36,20 @@ Good Luck!
 */
 
 // solution
+function babySharkLyrics() {
+  let hunters = [
+    "Baby shark",
+    "Mommy shark",
+    "Daddy shark",
+    "Grandma shark",
+    "Grandpa shark",
+    "Let's go hunt",
+  ];
+  return (
+    hunters
+      .map(
+        (hunter) => `${hunter},${" doo".repeat(6)}\n`.repeat(3) + `${hunter}!\n`
+      )
+      .join("") + "Run away,…"
+  );
+}
