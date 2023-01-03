@@ -11,3 +11,5 @@ console.log(output); // --> ['word', 'word']
 */
 
 // solution
+
+const filterEvenLengthWords = (words) => words.filter((e) => !(e.length % 2));
