@@ -20,3 +20,17 @@ FUNDAMENTALSSTRINGS
 */
 
 // solution
+
+function caffeineBuzz(n) {
+  let res = "";
+  if (!(n % 4) && !(n % 3)) {
+    res += "Coffee";
+  } else if (!(n % 3)) {
+    res += "Java";
+  }
+  return !(n % 2) && res
+    ? res + "Script"
+    : res.length > 0
+    ? res
+    : "mocha_missing!";
+}
