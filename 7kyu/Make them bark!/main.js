@@ -30,3 +30,5 @@ Hint: A friend of yours just told you about how javascript handles classes difer
 */
 
 // solution
+
+Dog.prototype.bark = () => "Woof!";
