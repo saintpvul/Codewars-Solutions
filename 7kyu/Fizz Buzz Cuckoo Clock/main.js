@@ -30,3 +30,30 @@ Have fun!
 */
 
 // solution
+
+function fizzBuzzCuckooClock(time) {
+  const [hours, minutes] = time.split(":").map(Number);
+
+  if (minutes === 0 || minutes === 30) {
+    let times = minutes === 30 ? 1 : Math.abs(hours - 12);
+    times = times > 0 ? times : 12;
+    return "Cuckoo ".repeat(times).slice(0, -1);
+  }
+
+  const isFizz = minutes % 3 === 0;
+  const isBuzz = minutes % 5 === 0;
+
+  if (isFizz && isBuzz) {
+    return "Fizz Buzz";
+  }
+
+  if (isFizz) {
+    return "Fizz";
+  }
+
+  if (isBuzz) {
+    return "Buzz";
+  }
+
+  return "tick";
+}
