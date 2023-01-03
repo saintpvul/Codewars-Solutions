@@ -14,3 +14,11 @@ remove("Hi! !Hi! Hi!") === "!Hi!"
 */
 
 // solution
+
+const remove = (string) =>
+  string
+    .split(" ")
+    .filter(
+      (e) => e.indexOf("!") != e.lastIndexOf("!") || e.indexOf("!") === -1
+    )
+    .join(" ");
