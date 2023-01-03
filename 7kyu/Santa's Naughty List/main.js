@@ -7,3 +7,10 @@ Comparison should be case sensitive and the returned list should contain only on
 */
 
 // solution
+
+function findChildren(santasList, children) {
+  let set = new Set(children);
+  return Array.from(set)
+    .filter((child) => santasList.indexOf(child) !== -1)
+    .sort();
+}
