@@ -25,3 +25,15 @@ counterEffect("0000") // [[0],[0],[0],[0]]
 */
 
 // solution
+
+function counterEffect(hitCount) {
+  let res = [];
+  for (let i = 0; i < hitCount.length; i++) {
+    let temp = [];
+    for (let j = 0; j <= +hitCount[i]; j++) {
+      temp.push(j);
+    }
+    res.push(temp);
+  }
+  return res;
+}
