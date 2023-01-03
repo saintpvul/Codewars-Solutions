@@ -17,3 +17,5 @@ Sum is 2021.
 */
 
 // solution
+
+const sumFromString = (str) => str.split(/\D/).reduce((s, v) => (s += +v), 0);
