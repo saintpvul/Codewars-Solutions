@@ -20,3 +20,11 @@ Good luck!
 */
 
 // solution
+
+function scrollingText(text) {
+  let res = [];
+  for (let i = 0; i < text.length; i++) {
+    res.push((text.slice(i) + text.slice(0, i)).toUpperCase());
+  }
+  return res;
+}
