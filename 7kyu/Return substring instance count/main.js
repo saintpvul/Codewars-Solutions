@@ -10,3 +10,6 @@ solution('aaabbbcccc', 'bbb') # should return 1
 */
 
 // solution
+
+const solution = (fullText, searchText) =>
+  fullText.split(searchText).length - 1;
