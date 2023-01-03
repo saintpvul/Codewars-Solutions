@@ -12,3 +12,15 @@ replaceAll(replaceAll(array: [1,2,2], old: 1, new: 2) // [2,2,2]
 */
 
 // solution
+
+function replaceAll(seq, find, replace) {
+  let res = [];
+  for (let i = 0; i < seq.length; i++) {
+    if (seq[i] === find) {
+      res.push(replace);
+    } else {
+      res.push(seq[i]);
+    }
+  }
+  return typeof res[0] === "string" ? res.join("") : res;
+}
