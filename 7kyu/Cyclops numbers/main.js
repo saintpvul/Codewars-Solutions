@@ -31,3 +31,10 @@ n will always be > 0.
 */
 
 // solution
+
+const cyclops = (n, bin = n.toString(2)) =>
+  bin.length % 2 &&
+  bin.indexOf("0") === bin.lastIndexOf("0") &&
+  bin[Math.floor(bin.length / 2)] === "0"
+    ? true
+    : false;
