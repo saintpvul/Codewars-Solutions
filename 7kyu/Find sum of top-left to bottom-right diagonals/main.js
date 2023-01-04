@@ -17,3 +17,5 @@ diagonal sum: 5 + 7 + 1 + 2 = 15
 */
 
 // solution
+
+const diagonalSum = (matrix) => matrix.reduce((s, v, i) => (s += v[i]), 0);
