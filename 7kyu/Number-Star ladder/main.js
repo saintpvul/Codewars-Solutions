@@ -27,3 +27,12 @@ pattern(10): should return the following:
 */
 
 // solution
+
+function pattern(n) {
+  var res = "1";
+  if (n < 1) return "";
+  for (let i = 2; i <= n; i++) {
+    res += `\n1${Array(i).join("*") + i}`;
+  }
+  return res;
+}
