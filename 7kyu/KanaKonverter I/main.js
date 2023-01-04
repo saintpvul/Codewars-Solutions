@@ -32,3 +32,22 @@ Expected output: "AeiOu"
 */
 
 // solution
+
+const dict = {
+  romaji: "aeiou",
+  romajiDictUp: "AEIOU",
+  hiragana: "あえいおう",
+  katakana: "アエイオウ",
+};
+
+function vowels(input, output) {
+  if (!input) return "";
+  let d = dict[output],
+    i = (v) =>
+      Object.values(dict)
+        .find((d) => d.includes(v))
+        .indexOf(v);
+  return input.replace(/./g, (c) =>
+    d.includes(c.toLowerCase()) ? c : d[i(c)]
+  );
+}
