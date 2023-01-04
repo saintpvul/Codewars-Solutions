@@ -20,3 +20,12 @@ Any character can be censored.
 */
 
 // solution
+
+function uncensor(infected, discovered) {
+  if (!discovered) return infected;
+  infected = infected.split("");
+  for (let i = 0; i < discovered.length; i++) {
+    infected[infected.indexOf("*")] = discovered[i];
+  }
+  return infected.join("");
+}
