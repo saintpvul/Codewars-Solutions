@@ -20,3 +20,18 @@ inputs        outputs
 */
 
 // solution
+
+function completeSeries(arr) {
+  arr = arr.sort((a, b) => a - b);
+
+  let res = [];
+
+  for (let i = 0; i <= Math.max(...arr); i++) {
+    if (arr.indexOf(i) != arr.lastIndexOf(i)) {
+      return [0];
+    } else {
+      res.push(i);
+    }
+  }
+  return res;
+}
