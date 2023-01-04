@@ -21,3 +21,6 @@ Translations are welcome!
 */
 
 // solution
+
+const womensAge = (n) =>
+  `${n}? That's just ${20 + (n % 2)}, in base ${Math.floor(n / 2)}!`;
