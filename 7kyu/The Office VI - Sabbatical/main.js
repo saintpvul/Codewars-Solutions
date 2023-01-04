@@ -19,3 +19,8 @@ If the sum of the three parameters (as described above) is > 22, return 'Sabbati
 */
 
 // solution
+
+const sabb = (s, val, happiness) =>
+  val + happiness + (s.match(/[sabticl]/gi) || []).length > 22
+    ? "Sabbatical! Boom!"
+    : "Back to your desk, boy.";
