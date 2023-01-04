@@ -22,3 +22,36 @@ BOOKKEEPER = 10743
 */
 
 // solution
+
+function listPosition(word) {
+  let storage = {},
+    counter = [];
+
+  let countLetters = 0;
+  word
+    .split("")
+    .sort()
+    .forEach((x) => {
+      if (!storage[x]) {
+        storage[x] = countLetters;
+        counter[countLetters] = 0;
+        countLetters++;
+      }
+    });
+
+  let temp = 1,
+    sum = temp;
+  word
+    .split("")
+    .reverse()
+    .forEach((x, i) => {
+      let step = i + 1,
+        idx = storage[x];
+      counter[idx]++;
+      temp /= counter[idx];
+      for (let j = 0; j < idx; ++j)
+        if (counter[j] != 0) sum += temp * counter[j];
+      temp *= step;
+    });
+  return sum;
+}
