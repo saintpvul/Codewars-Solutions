@@ -14,4 +14,17 @@ Examples:
 */
 
 // solution
-f;
+
+const makePassword = (phrase) =>
+  phrase
+    .split(" ")
+    .map((w) =>
+      w[0].toLowerCase() === "o"
+        ? 0
+        : w[0].toLowerCase() === "i"
+        ? 1
+        : w[0].toLowerCase() === "s"
+        ? 5
+        : w[0]
+    )
+    .join("");
