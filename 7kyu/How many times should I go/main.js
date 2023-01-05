@@ -9,3 +9,6 @@ In this kata you should complete a function in order to know after how many visi
 */
 
 // solution
+
+const howManyTimes = (annualPrice, individualPrice) =>
+  Math.ceil(annualPrice / individualPrice);
