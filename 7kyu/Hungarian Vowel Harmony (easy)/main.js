@@ -22,3 +22,5 @@ There are no grammatical exceptions in the tests.
 */
 
 // solution
+
+const dative = (word) => (/[aáoóuú]/.test(word) ? word + "nak" : word + "nek");
