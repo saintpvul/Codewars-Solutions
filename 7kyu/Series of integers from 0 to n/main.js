@@ -9,3 +9,11 @@ n/$n can be any integer greater than or equal to 0.
 */
 
 // solution
+
+function generateIntegers(n) {
+  let res = [];
+  for (let i = 0; i <= n; i++) {
+    res.push(i);
+  }
+  return res;
+}
