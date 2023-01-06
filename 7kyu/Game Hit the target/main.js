@@ -33,3 +33,8 @@ Happy hacking as they say!
 */
 
 // solution
+
+const solution = (mtrx) => {
+  mtrx = mtrx.filter((a) => a.includes(">") && a.includes("x"))[0] || [];
+  return mtrx.indexOf(">") < mtrx.indexOf("x");
+};
