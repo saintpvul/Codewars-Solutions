@@ -14,3 +14,5 @@ remove("Hi") == "Hi"
 */
 
 // solution
+
+const remove = (string) => string.replace(/!+(?!!*$)/g, "");
