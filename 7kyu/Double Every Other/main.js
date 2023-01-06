@@ -14,3 +14,5 @@ the function should return :
 */
 
 // solution
+
+const doubleEveryOther = (a) => a.map((v, i) => (!(i % 2) ? v : v * 2));
