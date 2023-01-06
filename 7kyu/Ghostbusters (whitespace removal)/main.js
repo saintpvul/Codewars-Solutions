@@ -19,3 +19,8 @@ If the building contains no ghosts, return the string:
 */
 
 // solution
+
+const ghostBusters = (building) =>
+  /\u0020/.test(building)
+    ? building.replace(/\u0020+/g, "")
+    : "You just wanted my autograph didn't you?";
