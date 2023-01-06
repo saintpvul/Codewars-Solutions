@@ -12,3 +12,7 @@ Style Points (JS/CoffeeScript only): This kata only tests for data that uses obj
 */
 
 // solution
+
+function keysAndValues(data) {
+  return [Array.from(Object.keys(data)), Array.from(Object.values(data))];
+}
