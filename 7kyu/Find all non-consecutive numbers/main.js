@@ -25,3 +25,13 @@ If you like this kata, maybe try this one next: https://www.codewars.com/kata/re
 */
 
 // solution
+
+function allNonConsecutive(arr) {
+  let nonConsecutive = [];
+  for (let j = 1; j < arr.length; j++) {
+    if (arr[j] - 1 != arr[j - 1]) {
+      nonConsecutive.push({ i: j, n: arr[j] });
+    }
+  }
+  return nonConsecutive;
+}
