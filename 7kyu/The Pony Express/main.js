@@ -29,3 +29,10 @@ The Pony Express (missing rider)
 */
 
 // solution
+
+const riders = (stations, rider = 1) => {
+  stations = stations.reduce((miles, station) =>
+    miles + station > 100 ? (rider++, station) : miles + station
+  );
+  return rider;
+};
