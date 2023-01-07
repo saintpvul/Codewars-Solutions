@@ -7,3 +7,6 @@ After the password is transformed, it is then called a password hash. Whenever y
 */
 
 // solution
+
+const passHash = (str) =>
+  require("crypto").createHash("md5").update(str).digest("hex");
