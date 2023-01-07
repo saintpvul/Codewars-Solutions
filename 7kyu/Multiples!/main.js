@@ -7,3 +7,12 @@ Ex: Input: 105 --> Output: "BangBoom" Ex: Input: 9 --> Output: "Bang" Ex:Input: 
 */
 
 // solution
+
+const multiple = (x) =>
+  !(x % 5) && !(x % 3)
+    ? "BangBoom"
+    : !(x % 5)
+    ? "Boom"
+    : !(x % 3)
+    ? "Bang"
+    : "Miss";
