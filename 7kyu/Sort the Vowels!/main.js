@@ -29,3 +29,16 @@ Invalid input ( undefined / null / integer ) should return an empty string
 */
 
 // solution
+
+function sortVowels(s) {
+  if (!s) return "";
+  let res = [];
+  for (let i = 0; i < s.length; i++) {
+    if (/[aeiou]/.test(s[i].toLowerCase())) {
+      res.push(`|${s[i]}`);
+    } else {
+      res.push(`${s[i]}|`);
+    }
+  }
+  return res.join("\n");
+}
