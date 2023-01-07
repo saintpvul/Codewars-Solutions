@@ -16,3 +16,5 @@ const multiple = (x) =>
     : !(x % 3)
     ? "Bang"
     : "Miss";
+
+//fizzbuzz clone
