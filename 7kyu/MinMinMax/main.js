@@ -19,3 +19,11 @@ minMinMax([2, -4, 8, -5, 9, 7]); //[-5, -3,9]
 */
 
 // solution
+
+function minMinMax(array) {
+  let min = Math.min(...array),
+    max = Math.max(...array);
+  for (let i = min; i < max; i++) {
+    if (array.indexOf(i) === -1) return [min, i, max];
+  }
+}
