@@ -15,3 +15,12 @@ Show some love ;) Rank and Upvote!
 */
 
 // solution
+
+const time = (distance, boatSpeed, stream) =>
+  Math.round(
+    (100 * distance) /
+      (boatSpeed +
+        (stream.split(" ")[0] === "Downstream"
+          ? +stream.split(" ")[1]
+          : -stream.split(" ")[1]))
+  ) / 100;
