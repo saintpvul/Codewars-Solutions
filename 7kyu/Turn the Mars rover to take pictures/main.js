@@ -19,3 +19,7 @@ mars rover
 */
 
 // solution
+
+function turn(current, target) {
+  return "NWSEN".includes(target + current) ? "right" : "left";
+}
