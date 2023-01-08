@@ -13,3 +13,13 @@ Range: (1 ≤ n ≤ 15) and (0 ≤ k ≤ n2)
 */
 
 // solution
+
+function rooks(n, k) {
+  let result = 1n;
+  for (let i = 0n; i < k; i++) {
+    result *= n * n;
+    n -= 1n;
+    result /= i + 1n;
+  }
+  return result;
+}
