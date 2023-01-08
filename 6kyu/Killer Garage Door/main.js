@@ -28,3 +28,18 @@ Example
 */
 
 // solution
+
+function door(events) {
+  let pos = 0,
+    mov = 0,
+    dir = 1,
+    res = "";
+  for (let action of events) {
+    if (action == "O") dir *= -1;
+    else if (action == "P") mov = 1 - mov;
+    pos += mov ? dir : 0;
+    res += pos;
+    if (mov && (pos == 5 || pos == 0)) (mov = 0), (dir *= -1);
+  }
+  return res;
+}
