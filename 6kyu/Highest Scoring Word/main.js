@@ -16,3 +16,19 @@ All letters will be lowercase and all inputs will be valid.
 */
 
 // solution
+
+function high(x) {
+  let alph = "_abcdefghijklmnopqrstuvwxyz",
+    scores = {},
+    score = 0;
+  x = x.split(" ");
+  for (let word of x) {
+    for (let i = 0; i < word.length; i++) {
+      score += alph.indexOf(word[i]);
+    }
+    scores[word] = score;
+    score = 0;
+  }
+  let idx = Object.values(scores).indexOf(Math.max(...Object.values(scores)));
+  return Object.keys(scores)[idx];
+}
