@@ -7,3 +7,6 @@ Consonants are all letters used to write English excluding the vowels a, e, i, o
 */
 
 // solution
+
+const consonantCount = (str) =>
+  str.split("").filter((c) => c.match(/[BCDFGHJKLMNPQRSTVWXYZ]/i)).length;
