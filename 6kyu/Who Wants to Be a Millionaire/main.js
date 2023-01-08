@@ -31,3 +31,23 @@ return an array of 2 integers, the first integer being the total cash prize the 
 */
 
 // solution
+
+function getTotalCashPrize(prizeFund, correctAnswers, playerActions) {
+  let a = 0,
+    s = 0;
+  for (let g of playerActions) {
+    s += g.length - 1;
+    let r = g.slice(-1);
+    if (r === "W") break;
+    if (r === "X") {
+      a -= a % 5;
+      break;
+    }
+    if (correctAnswers[a] != r) {
+      a = 0;
+      break;
+    }
+    a++;
+  }
+  return [prizeFund.slice(0, a).reduce((t, n) => t + n, 0), s];
+}
