@@ -14,3 +14,12 @@ More examples in test cases.
 */
 
 // solution
+
+function moonRating(rating) {
+  rating = Math.round(rating);
+  let full = ~~(rating / 2),
+    crescent = rating % 2;
+  return (
+    "o".repeat(full) + (crescent ? "c" : "") + "x".repeat(5 - full - crescent)
+  );
+}
