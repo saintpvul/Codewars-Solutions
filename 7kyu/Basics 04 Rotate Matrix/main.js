@@ -20,3 +20,7 @@ Hope you have fun:-)!
 */
 
 // solution
+
+var rotateMatrix = (arr) => {
+  return arr[0].map((_, i) => arr.map((r) => r[i])).reverse();
+};
