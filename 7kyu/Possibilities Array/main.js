@@ -11,3 +11,6 @@ a includes [0,3] ,hence the function should return true
 */
 
 // solution
+
+const isAllPossibilities = (x) =>
+  x.length ? x.every((_, i) => x.includes(i)) : false;
