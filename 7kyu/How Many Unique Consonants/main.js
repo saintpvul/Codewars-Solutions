@@ -19,3 +19,6 @@ Examples
 */
 
 // solution
+
+const countConsonants = (str) =>
+  new Set(str.replace(/[^a-z]|[aeiou]/gi, "").toLowerCase()).size;
