@@ -20,3 +20,15 @@ If one string is longer than the other, there should be a space where the charac
 */
 
 // solution
+
+function transposeTwoStrings(arr) {
+  let result = [],
+    maxLength = Math.max(arr[0].length, arr[1].length);
+
+  for (let i = 0; i < maxLength; i++) {
+    let column = (arr[0][i] || " ") + " " + (arr[1][i] || " ");
+    result.push(column);
+  }
+
+  return result.join("\n");
+}
