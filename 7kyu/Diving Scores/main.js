@@ -20,3 +20,11 @@ scoreOfDive( [ 7, 7.5, 8, 7.5, 6, 7, 7 ], 3 )  =>  '64.50'
 */
 
 // solution
+
+const scoreOfDive = (scores, tariff) =>
+  (
+    [...scores]
+      .sort((a, b) => a - b)
+      .slice(2, -2)
+      .reduce((s, n) => s + n, 0) * tariff
+  ).toFixed(2);
