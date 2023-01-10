@@ -42,3 +42,9 @@ Digital cypher vol 3 - missing key
 */
 
 // solution
+
+function decode(code, n) {
+  n = n.toString();
+  let alph = "_abcdefghijklmnopqrstuvwxyz";
+  return code.reduce((acc, i, a) => acc + alph[i - n[a % n.length]], "");
+}
