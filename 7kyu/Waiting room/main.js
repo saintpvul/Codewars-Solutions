@@ -21,3 +21,5 @@ Have fun :)
 */
 
 // solution
+
+const lastChair = (N) => N - 1;
