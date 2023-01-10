@@ -44,3 +44,7 @@ sumsum(5000) --> 125025000000
 */
 
 // solution
+
+const sumin = (n) => n ** 3 / 3 + (n * n) / 2 + n / 6;
+const sumax = (n) => (2 * n ** 3) / 3 + (n * n) / 2 - n / 6;
+const sumsum = (n) => n ** 3 + n * n;
