@@ -13,3 +13,13 @@ result = [(2, 2), (2, 3), (2, 4), (3, 3), (3, 4), (4, 4)]
 */
 
 // solution
+
+function generatePairs(m, n) {
+  let res = [];
+  for (let i = m; i <= n; i++) {
+    for (let j = i; j <= n; j++) {
+      res.push([i, j]);
+    }
+  }
+  return res;
+}
