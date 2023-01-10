@@ -35,3 +35,17 @@ Note: require has been disabled.
 */
 
 // solution
+
+function toQueryString(obj) {
+  let res = [];
+  for (let i in obj) {
+    if (obj[i] instanceof Array) {
+      for (let k = 0; k < obj[i].length; k++) {
+        res.push(`${i}=${obj[i][k]}`);
+      }
+    } else {
+      res.push(`${i}=${obj[i]}`);
+    }
+  }
+  return res.join("&");
+}
