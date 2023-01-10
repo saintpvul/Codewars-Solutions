@@ -21,3 +21,20 @@ The provided input n is always going to be a positive number > 1.
 */
 
 // solution
+
+function isSmooth(n) {
+  let prime = {
+    2: "power of 2",
+    3: "3-smooth",
+    5: "Hamming number",
+    7: "humble number",
+  };
+  for (let key in prime) {
+    while (n % key === 0) {
+      if ((n /= key) === 1) {
+        return prime[key];
+      }
+    }
+  }
+  return "non-smooth";
+}
