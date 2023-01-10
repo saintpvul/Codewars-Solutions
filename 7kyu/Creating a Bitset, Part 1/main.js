@@ -29,3 +29,15 @@ set()
 */
 
 // solution
+
+function byteToSet(byte) {
+  byte = byte.toString(2).padStart(8, "0");
+
+  let result = new Set();
+  for (let i = 0; i <= byte.length; i++) {
+    if (byte[i] === "1") {
+      result.add(i);
+    }
+  }
+  return result;
+}
