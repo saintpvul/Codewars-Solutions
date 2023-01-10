@@ -29,3 +29,13 @@ This kata is part of the Coding Meetup series which includes a number of short a
 */
 
 // solution
+
+function countLanguages(list) {
+  let languages = {};
+
+  for (let item of list) {
+    languages[item.language] = languages[item.language] + 1 || 1;
+  }
+
+  return languages;
+}
