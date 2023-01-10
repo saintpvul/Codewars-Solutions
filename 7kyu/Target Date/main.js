@@ -19,3 +19,10 @@ You have: a0 > 0, p% > 0, a >= a0
 */
 
 // solution
+
+function dateNbDays(a0, a, p) {
+  let day = Math.ceil((Math.log(a) - Math.log(a0)) / Math.log(1 + p / 36000)),
+    date = new Date(2016, 0, 1 + day);
+
+  return date.toISOString().split("T")[0];
+}
