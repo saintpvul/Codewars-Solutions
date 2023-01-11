@@ -12,3 +12,9 @@ The input array has the sort method disabled, so you will have to solve it in an
 */
 
 // solution
+
+function diffBig2(arr) {
+  let firstMax = Math.max(...arr);
+  arr.splice(arr.indexOf(firstMax), 1);
+  return firstMax - Math.max(...arr);
+}
