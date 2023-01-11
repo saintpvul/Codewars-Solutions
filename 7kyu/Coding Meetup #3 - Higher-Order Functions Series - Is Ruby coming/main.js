@@ -27,3 +27,7 @@ This kata is part of the Coding Meetup series which includes a number of short a
 */
 
 // solution
+
+function isRubyComing(list) {
+  return list.some((a) => a.language === "Ruby");
+}
