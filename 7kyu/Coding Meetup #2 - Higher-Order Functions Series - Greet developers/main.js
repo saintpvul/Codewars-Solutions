@@ -39,3 +39,12 @@ This kata is part of the Coding Meetup series which includes a number of short a
 */
 
 // solution
+
+function greetDevelopers(list) {
+  let res = [];
+  for (let data of list) {
+    data.greeting = `Hi ${data.firstName}, what do you like the most about ${data.language}?`;
+    res.push(data);
+  }
+  return res;
+}
