@@ -19,3 +19,9 @@ No implicit type casting is allowed. A subarray [1, '2'] would be considered ill
 */
 
 // solution
+
+function filterHomogenous(arrays) {
+  return arrays.filter(
+    (a) => a.length > 0 && a.every((e) => typeof e === typeof a[0])
+  );
+}
