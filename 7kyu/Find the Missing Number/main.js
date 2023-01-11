@@ -9,3 +9,11 @@ You are given an unsorted array containing all the integers from 0 to 100 inclus
 */
 
 // solution
+
+function missingNo(nums) {
+  for (let i = 0; i <= 100; i++) {
+    if (nums.indexOf(i) === -1) {
+      return i;
+    }
+  }
+}
