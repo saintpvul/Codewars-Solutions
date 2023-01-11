@@ -28,3 +28,7 @@ function countWins(winnerList, country) {
   }
   return winner;
 }
+
+function countWins(winnerList, country) {
+  return winnerList.filter((season) => season.country === country).length;
+}
