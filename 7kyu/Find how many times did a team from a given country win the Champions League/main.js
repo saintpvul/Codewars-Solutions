@@ -18,3 +18,13 @@ countWins(winnerList1, 'Sportland') => should return 0
 */
 
 // solution
+
+function countWins(winnerList, country) {
+  let winner = 0;
+  for (let season of winnerList) {
+    if (season.country === country) {
+      winner++;
+    }
+  }
+  return winner;
+}
