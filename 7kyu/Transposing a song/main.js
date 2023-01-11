@@ -32,3 +32,28 @@ Examples
 */
 
 // solution
+
+function transpose(song, interval) {
+  const sharp = [
+      "A",
+      "A#",
+      "B",
+      "C",
+      "C#",
+      "D",
+      "D#",
+      "E",
+      "F",
+      "F#",
+      "G",
+      "G#",
+    ],
+    flat = ["A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab"];
+
+  return song.map(
+    (note) =>
+      sharp[
+        (Math.max(flat.indexOf(note), sharp.indexOf(note)) + interval + 12) % 12
+      ]
+  );
+}
