@@ -61,3 +61,6 @@ Example:
 */
 
 // solution
+
+const sc = (width, length, gaps) =>
+  (width = ((width + length - 2) * 2) / ++gaps) % 1 ? 0 : width;
