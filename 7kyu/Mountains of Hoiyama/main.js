@@ -55,3 +55,6 @@ width = 17
 */
 
 // solution
+
+const mountainsOfHoiyama = (width) =>
+  ((width + 1) * (width ** 2 + 2 + width)) / 8;
