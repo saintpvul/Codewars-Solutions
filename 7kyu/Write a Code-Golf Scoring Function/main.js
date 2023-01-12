@@ -38,3 +38,5 @@ Note: in the test cases I am using ES6 template strings to pass the argument-str
 */
 
 // solution
+
+const golfScore = (code) => (code.match(/\w+|\S/g) || []).length;
