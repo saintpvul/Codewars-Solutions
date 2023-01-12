@@ -11,3 +11,6 @@ This is my first kata, so I hope every one will enjoy it <3
 */
 
 // solution
+
+const f = (x, y, z) =>
+  x + (x + 2) * y * z + y + (y + 2) * x * z + z + (z + 2) * x * y;
