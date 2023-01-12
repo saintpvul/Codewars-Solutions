@@ -30,3 +30,12 @@ null
 */
 
 // solution
+
+function grid($) {
+  const grid = "abcdefghijklmnopqrstuvwxyz".repeat(8);
+  return $ < 0
+    ? null
+    : Array.from({ length: $ }, (_, i) =>
+        [...grid.substr(i, $)].join(" ")
+      ).join("\n");
+}
