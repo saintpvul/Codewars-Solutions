@@ -18,3 +18,8 @@ Translations are welcome!
 */
 
 // solution
+
+function direction(facing, turn) {
+  const dir = "N NE E SE S SW W NW".split(" ");
+  return dir[(dir.indexOf(facing) + Math.floor(turn / 45) + 1080) % 8];
+}
