@@ -5,3 +5,5 @@ You have to write a function f which takes in an octal number in string format a
 */
 
 // solution
+
+f = (x) => +`0o${x}`;
