@@ -16,3 +16,10 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
 */
 
 // solution
+
+const counter = (x) => {
+  let count = 1;
+  return function () {
+    return count++;
+  };
+};
