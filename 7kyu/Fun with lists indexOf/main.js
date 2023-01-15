@@ -17,3 +17,13 @@ Good luck!
 */
 
 // solution
+
+function indexOf(head, value) {
+  let i = 0;
+  while (head) {
+    if (head.data === value) return i;
+    head = head.next;
+    i++;
+  }
+  return -1;
+}
