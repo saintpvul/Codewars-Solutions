@@ -13,3 +13,10 @@ In this program you are given an array of people who have all guessed on a door 
 */
 
 // solution
+
+const montyHall = (correctDoorNumber, participantGuesses) =>
+  Math.round(
+    (participantGuesses.filter((guess) => guess != correctDoorNumber).length /
+      participantGuesses.length) *
+      100
+  );
