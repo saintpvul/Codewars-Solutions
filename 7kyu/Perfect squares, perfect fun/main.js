@@ -22,3 +22,22 @@ Note: 9 digits so 3 squared (3x3 perfect square). 3 digits on each line.
 */
 
 // solution
+
+function squareIt(int) {
+  int = int.toString();
+  let pSq = [
+      1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289,
+      324, 361, 400, 441, 484, 529, 576, 625, 676, 729, 784, 841, 900, 961,
+    ],
+    length = int.length,
+    res = [];
+  if (pSq.indexOf(length) != -1) {
+    while (int.length) {
+      res.push(int.slice(0, Math.sqrt(length)));
+      int = int.slice(Math.sqrt(length));
+    }
+  } else {
+    return "Not a perfect square!";
+  }
+  return res.length > 1 ? res.join("\n") : res.join("");
+}
