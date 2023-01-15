@@ -45,3 +45,15 @@ I have created other katas. Have a look if you like coding and challenges.
 */
 
 // solution
+
+function addingShifted(arrayOfArrays, shift) {
+  let res = [],
+    start = 0;
+  for (let array of arrayOfArrays) {
+    for (let i = 0; i < array.length; i++) {
+      res[start + i] = (res[start + i] || 0) + array[i];
+    }
+    start += shift;
+  }
+  return res;
+}
