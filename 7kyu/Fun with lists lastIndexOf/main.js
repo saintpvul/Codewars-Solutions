@@ -17,3 +17,14 @@ Good luck!
 */
 
 // solution
+
+function lastIndexOf(head, value) {
+  let i = 0,
+    res = -1;
+  while (head) {
+    if (head.data === value) res = i;
+    head = head.next;
+    i++;
+  }
+  return res;
+}
