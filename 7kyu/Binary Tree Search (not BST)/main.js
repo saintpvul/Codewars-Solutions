@@ -17,3 +17,6 @@ class Node {
 */
 
 // solution
+
+const search = (n, root) =>
+  !!root && (root.value === n || search(n, root.left) || search(n, root.right));
