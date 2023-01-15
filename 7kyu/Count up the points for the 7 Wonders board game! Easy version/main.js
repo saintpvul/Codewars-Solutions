@@ -38,3 +38,15 @@ You will be given 3 inputs corresponding to the amount of each glyph you have ac
 */
 
 // solution
+
+function solve(compasses, gears, tablets) {
+  let squares = [compasses ** 2, gears ** 2, tablets ** 2],
+    distinct = 0;
+  while (compasses > 0 && gears > 0 && tablets > 0) {
+    distinct += 7;
+    compasses--;
+    gears--;
+    tablets--;
+  }
+  return distinct + squares.reduce((s, v) => s + v, 0);
+}
