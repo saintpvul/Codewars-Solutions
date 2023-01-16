@@ -18,3 +18,14 @@ The decryption should reverse this:
 */
 
 // solution
+
+const asciiEncrypt = (plaintext) =>
+  plaintext
+    .split("")
+    .map((c, i) => String.fromCharCode(c.charCodeAt(0) + i))
+    .join("");
+const asciiDecrypt = (ciphertext) =>
+  ciphertext
+    .split("")
+    .map((c, i) => String.fromCharCode(c.charCodeAt(0) - i))
+    .join("");
