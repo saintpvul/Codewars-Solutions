@@ -202,3 +202,16 @@ const CWRunnerExample = new TooGameCWR(n);
 */
 
 // solution
+
+function AI(game) {
+  game.status();
+  game.inspectTG();
+  game.press("←1" + "→1" + "X1");
+
+  let m, d;
+
+  while (game.press(m + "X1") !== "All Cleared!") {
+    d = game.inspectTG().objects[0].location[0] / 10;
+    m = d >= 0 ? ">" + d : "<" + Math.abs(d);
+  }
+}
