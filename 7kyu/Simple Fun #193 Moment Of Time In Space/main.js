@@ -36,3 +36,13 @@ Array of three elements, two of which are false, and one is true. The true value
 */
 
 // solution
+
+function momentOfTimeInSpace(moment) {
+  let time = moment
+      .match(/\d/g)
+      .map((e) => +e)
+      .reduce((s, v) => (s += v), 0),
+    space = moment.match(/\D|0/g).length;
+
+  return [space > time, space === time, space < time];
+}
