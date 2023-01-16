@@ -60,3 +60,9 @@ Happy Coding ^_^
 */
 
 // solution
+
+function bulbMaze(maze) {
+  return [...maze]
+    .map((e, i) => e === " " || e === "xo"[i & 1])
+    .every((e) => e);
+}
