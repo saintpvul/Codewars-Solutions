@@ -7,3 +7,5 @@ The inputs x and y are always greater or equal to 1, so the greatest common divi
 */
 
 // solution
+
+const mygcd = (x, y) => (!y ? x : mygcd(y, x % y));
