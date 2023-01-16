@@ -16,3 +16,5 @@ This kata might be simpler than you expect, but good luck!
 */
 
 // solution
+
+const squareAreaToCircle = (size) => (size * Math.PI) / 4;
