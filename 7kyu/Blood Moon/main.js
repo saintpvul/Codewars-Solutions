@@ -11,3 +11,5 @@ Given the radius of the semicircle ADBCA, find out the area of the lune AGFHA (t
 */
 
 // solution
+
+const bloodMoon = (r) => (r * r) / 4;
