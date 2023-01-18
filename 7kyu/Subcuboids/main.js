@@ -12,3 +12,7 @@ subcuboids(2,2,2)
 */
 
 // solution
+
+function subcuboids(x, y, z) {
+  return (z * y * x * (z + 1n) * (y + 1n) * (x + 1n)) / 8n;
+}
