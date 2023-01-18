@@ -17,3 +17,8 @@ e.g. trim("Code Wars is pretty rad", 50) should return "Code Wars is pretty rad"
 */
 
 // solution
+
+const trim = (str, size) =>
+  str.length > size
+    ? `${str.slice(0, str.length > 3 ? size - 3 : size)}...`
+    : str;
