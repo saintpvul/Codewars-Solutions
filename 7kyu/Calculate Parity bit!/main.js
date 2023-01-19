@@ -18,3 +18,7 @@ For more information: https://en.wikipedia.org/wiki/Parity_bit
 */
 
 // solution
+
+function checkParity(parity, bin) {
+  return Number(parity === (bin.split("1").length % 2 ? "odd" : "even"));
+}
