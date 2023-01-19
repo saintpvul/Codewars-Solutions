@@ -15,3 +15,9 @@ the minimum year number that is strictly larger than the input number year and a
 */
 
 // solution
+function distinctDigitYear(year) {
+  do {
+    ++year;
+  } while (new Set(year.toString()).size < 4);
+  return year;
+}
