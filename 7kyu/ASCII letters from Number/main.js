@@ -17,3 +17,11 @@ Good Luck!
 */
 
 // solution
+
+function convert(number) {
+  let table = [];
+  for (let i = 0; i < number.length; i += 2) {
+    table.push(number.slice(i, i + 2));
+  }
+  return table.map((n) => String.fromCharCode(n)).join("");
+}
