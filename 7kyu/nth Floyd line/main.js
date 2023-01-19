@@ -22,3 +22,13 @@ Constraints
 */
 
 // solution
+
+function nthFloyd(n) {
+  let count = 1,
+    line = 1;
+  do {
+    line++;
+    count += line;
+  } while (count < n);
+  return line;
+}
