@@ -14,3 +14,9 @@ The year is also evenly divisible by 400. Then it is a leap year.
 */
 
 // solution
+
+function toDayOfYear(arr) {
+  let days = arr[0];
+  for (let i = 1; i < arr[1]; i++) days += new Date(arr[2], i, 0).getDate();
+  return days;
+}
