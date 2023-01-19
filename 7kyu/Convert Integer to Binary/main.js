@@ -15,3 +15,7 @@ Be Ready for Large Numbers. Happy Coding ^_^
 */
 
 // solution
+
+function toBinary(n) {
+  return (n >>> 0).toString(2);
+}
