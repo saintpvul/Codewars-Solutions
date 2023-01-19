@@ -13,3 +13,15 @@ If I can't afford to pay up, return "I'll pay you back later" instead ;)
 */
 
 // solution
+
+function doubleOrNothing(cash, wager, losses) {
+  for (let i = 1; i < losses; i++) {
+    wager *= 2;
+  }
+
+  if (wager > cash) {
+    return "I'll pay you back later";
+  } else {
+    return cash - wager;
+  }
+}
