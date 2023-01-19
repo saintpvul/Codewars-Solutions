@@ -43,3 +43,30 @@ triangle('RBRGBRBGGRRRBGBBBGG') == 'G'
 */
 
 // solution
+
+const pal = {
+    BB: "B",
+    BG: "R",
+    BR: "G",
+    GB: "R",
+    GG: "G",
+    GR: "B",
+    RB: "G",
+    RG: "B",
+    RR: "R",
+  },
+  GET_COLOR = (col) => pal[col];
+
+function triangle(row) {
+  while (row.length > 1) {
+    let counter = 1,
+      nextLine = "";
+
+    while (row.length % (3 * counter) === 1) counter *= 3;
+    for (let i = 0; i < row.length - 1; i += counter) {
+      nextLine += GET_COLOR(row[i] + row[i + counter]);
+    }
+    row = nextLine;
+  }
+  return row;
+}
