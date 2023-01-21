@@ -14,3 +14,7 @@ Python: your solution need to work with huge numbers (about a milion digits), co
 */
 
 // solution
+
+function sumStrings(a, b) {
+  return String(BigInt(a) + BigInt(b));
+}
