@@ -14,3 +14,14 @@ findNb(91716553919377) --> -1
 */
 
 // solution
+
+function findNb(m) {
+  let cube = 0,
+    n = 0;
+
+  while (cube < m) {
+    n += 1;
+    cube += n ** 3;
+  }
+  return cube === m ? n : -1;
+}
