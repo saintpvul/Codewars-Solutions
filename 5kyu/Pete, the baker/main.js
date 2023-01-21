@@ -30,7 +30,7 @@ function cakes(recipe, available) {
 function cakes(recipe, available) {
   let counter = [];
 
-  for (let [name, mass] of Object.entries(recipe)) {
+  for (let name of Object.keys(recipe)) {
     counter.push(Math.floor(available[name] / recipe[name]));
   }
 
