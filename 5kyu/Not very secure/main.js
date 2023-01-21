@@ -11,3 +11,6 @@ No whitespaces / underscore
 */
 
 // solution
+
+const alphanumeric = (string) =>
+  !!string.length && string.replace(/[^a-z0-9]/gi, "").length === string.length;
