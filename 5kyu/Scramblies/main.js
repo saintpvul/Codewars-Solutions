@@ -14,3 +14,27 @@ scramble('katas', 'steak') ==> False
 */
 
 // solution
+
+function scramble(str1, str2) {
+  str1 = str1.split("");
+  let chars = {};
+  for (let char of str1) {
+    if (chars[char]) {
+      chars[char] += 1;
+    } else {
+      chars[char] = 1;
+    }
+  }
+  str2 = str2.split("");
+
+  for (let char of str2) {
+    if (chars[char]) {
+      chars[char] -= 1;
+    } else {
+      return false;
+    }
+  }
+
+  return true;
+}
+// slow solution
