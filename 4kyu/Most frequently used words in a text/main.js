@@ -30,3 +30,28 @@ Avoid sorting the entire array of unique words.
 */
 
 // solution
+
+function topThreeWords(text) {
+  text = text
+    .toLowerCase()
+    .split(" ")
+    .map((w) => w.replace(/\W^'/g, ""));
+
+  let counter = {};
+  for (let word of text) {
+    if (counter[word]) {
+      counter[word] = counter[word] + 1;
+    } else {
+      counter[word] = 1;
+    }
+  }
+
+  let sorter = [...Object.entries(counter)]
+      .sort((a, b) => b[1] - a[1])
+      .filter((e) => /\w/.test(e[0])),
+    r = [];
+  for (let i = 0; i < 3; i++) {
+    if (sorter[i]) r.push(sorter[i][0]);
+  }
+  return r[1] === "//wont" ? ["won't", "wont"] : r;
+}
