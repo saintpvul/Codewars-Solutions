@@ -15,3 +15,24 @@ cakes({apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100}, {sugar: 500, flo
 */
 
 // solution
+
+function cakes(recipe, available) {
+  for (let ingr of Object.keys(recipe)) {
+    if (!available.hasOwnProperty(ingr)) return 0;
+  }
+  let counter = [];
+  for (let [name, mass] of Object.entries(recipe)) {
+    counter.push(Math.floor(available[name] / recipe[name]));
+  }
+  return Math.min(...counter);
+}
+
+function cakes(recipe, available) {
+  let counter = [];
+
+  for (let [name, mass] of Object.entries(recipe)) {
+    counter.push(Math.floor(available[name] / recipe[name]));
+  }
+
+  return Math.min(...counter) || 0;
+}
