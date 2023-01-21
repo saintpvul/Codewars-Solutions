@@ -15,9 +15,7 @@ rgb(148, 0, 211) // returns 9400D3
 
 // solution
 
-function rgb(r, g, b) {
-  return (GET_HEX(r) + GET_HEX(g) + GET_HEX(b)).toUpperCase();
-}
+const rgb = (r, g, b) => (GET_HEX(r) + GET_HEX(g) + GET_HEX(b)).toUpperCase();
 
 const GET_HEX = (c) =>
   c > 255
