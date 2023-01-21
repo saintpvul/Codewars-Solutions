@@ -14,3 +14,16 @@ rgb(148, 0, 211) // returns 9400D3
 */
 
 // solution
+
+function rgb(r, g, b) {
+  return (GET_HEX(r) + GET_HEX(g) + GET_HEX(b)).toUpperCase();
+}
+
+const GET_HEX = (c) =>
+  c > 255
+    ? "FF"
+    : c < 0
+    ? "00"
+    : c.toString(16).length === 1
+    ? "0" + c.toString(16)
+    : c.toString(16);
