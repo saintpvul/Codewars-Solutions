@@ -17,3 +17,15 @@ Examples
 */
 
 // solution
+
+const generateHashtag = (str) =>
+  str.replace(/\s/gi, "").length > 0 &&
+  str.split(" ").join("").length + 1 <= 140
+    ? "#" +
+      str
+        .split(" ")
+        .map((e) =>
+          e != "" ? e[0].toUpperCase() + e.slice(1).toLowerCase() : ""
+        )
+        .join("")
+    : false;
