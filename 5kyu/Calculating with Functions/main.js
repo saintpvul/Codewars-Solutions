@@ -18,3 +18,24 @@ eight(dividedBy(three()));
 */
 
 // solution
+
+const calc = (num, math) => (!math ? num : math(num));
+
+const zero = (math) => calc(0, math);
+const one = (math) => calc(1, math);
+const two = (math) => calc(2, math);
+const three = (math) => calc(3, math);
+const four = (math) => calc(4, math);
+const five = (math) => calc(5, math);
+const six = (math) => calc(6, math);
+const seven = (math) => calc(7, math);
+const eight = (math) => calc(8, math);
+const nine = (math) => calc(9, math);
+
+const plus = (n) => (x) => x + n;
+
+const minus = (n) => (x) => x - n;
+
+const times = (n) => (x) => x * n;
+
+const dividedBy = (n) => (x) => Math.floor(x / n);
