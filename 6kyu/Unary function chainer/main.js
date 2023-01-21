@@ -10,3 +10,20 @@ d(c(b(a(input))))
 */
 
 // solution
+
+function chained(functions) {
+  return function (a) {
+    for (let b = 0; b < functions.length; b++) {
+      a = functions[b](a);
+    }
+    return a;
+  };
+}
+
+function chained(functions) {
+  return function (chain) {
+    return functions.reduce(function (chain, f) {
+      return f(chain);
+    }, chain);
+  };
+}
