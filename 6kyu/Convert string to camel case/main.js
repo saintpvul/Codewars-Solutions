@@ -9,3 +9,11 @@ Examples
 */
 
 // solution
+
+function toCamelCase(str) {
+  str = str.replace(/[-_]/gi, " ");
+  return str
+    .split(" ")
+    .map((w, i) => (i > 0 ? w[0].toUpperCase() + w.slice(1).toLowerCase() : w))
+    .join("");
+}
