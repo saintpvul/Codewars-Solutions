@@ -24,3 +24,13 @@ Beware: In some languages r must be without duplicates.
 */
 
 // solution
+
+function inArray(a1, a2) {
+  let r = [];
+
+  for (let i = 0; i < a1.length; i++) {
+    if (a2.filter((w) => w.includes(a1[i])).length) r.push(a1[i]);
+  }
+
+  return r.sort();
+}
