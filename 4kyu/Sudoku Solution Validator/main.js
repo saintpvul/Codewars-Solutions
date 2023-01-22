@@ -36,3 +36,49 @@ validSolution([
 */
 
 // solution
+
+function validSolution(board){
+  const checkRow = b => {
+    for(let i = 0; i < b.length; i++){
+      for(let j = 1; j < b[i].length; j++){
+        if(b[i][j]){
+          if(b[i][j] === b[i][j - 1]) return false
+        }
+      }
+    }
+    return true
+  }
+  const checkCol = b => {
+   for(let i = 0; i < b.length; i++){
+     for(let j = 1; j < b[i].length; j++){
+       if(b[j][i]){
+         if(b[j][i] === b[j - 1][i]) return false
+       }
+     }
+   }
+   return true
+ } 
+  const checkDiagonal = b => {
+    let res = []
+    for(let i = 0; i < b.length; i++){
+      for(let j = 0; j < b[i].length; j++){
+        res.push(b[i][j])
+      }
+    }
+    res = res.sort()
+    for(let k = 1; k < res.length; k++){
+      if(res[k]){
+        if(res[k] === res[k - 1]) return false
+      }
+    }
+    return true
+  }
+  const checkGrid = (r, c) => {
+    let b = []
+    b.push([board[r][c], board[r][c+1]], board[r][c+2]);
+    b.push([board[r+1][c], board[r+1][c+1], board[r+1][c+2]]);
+    b.push([board[r+2][c], board[r+2][c+1], board[r+2][c+2]])
+    return checkRow(b) && checkCol(b) && checkDiagonal(b)
+  }
+  return checkCol(board) && checkRow(board) && checkGrid(0,0) && checkGrid(0, 3) && checkGrid(0, 6) && checkGrid(3,0) && checkGrid(3,3) && checkGrid(3,6) && checkGrid(6,0) && checkGrid(6,3) && checkGrid(6,6)
+}
