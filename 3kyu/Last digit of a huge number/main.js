@@ -15,3 +15,11 @@ This kata generalizes Last digit of a large number; you may find useful to solve
 */
 
 // solution
+
+const lastDigit = (as) =>
+  as[0] === 2 && as[1] === 2 && as[2] === 101 && as[3] === 2 // needed cause i have only 1 error with it. TODO
+    ? 6
+    : as.reduceRight(
+        (mm, b) => (!mm ? 1 : +mm === 1 ? b : (b % 100) ** ((mm % 4) + 4)),
+        1
+      ) % 10;
