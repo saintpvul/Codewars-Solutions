@@ -30,3 +30,30 @@ Thanks to kazk for assisting with the translation.
 */
 
 // solution
+
+function fibDigits(n) {
+  let n1 = 0,
+    n2 = 1,
+    next;
+
+  for (let i = 1; i <= n; i++) {
+    next = BigInt(n1 + n2);
+    n1 = BigInt(n2);
+    n2 = BigInt(next);
+  }
+  let arr = n1.toString().split(""),
+    list = {};
+
+  for (let e of arr) {
+    if (list[e]) list[e] += 1;
+    else list[e] = 1;
+  }
+
+  let res = Object.entries(list).map((e) => {
+    return [e[1], parseInt(e[0])];
+  });
+  res.sort(function (a, b) {
+    return b[0] - a[0] || b[1] - a[1];
+  });
+  return res;
+}
