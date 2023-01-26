@@ -13,3 +13,9 @@ Happy Coding!
 */
 
 // solution
+
+const squareDigits = (num) =>
+  +num
+    .toString()
+    .split("")
+    .reduce((s, n) => s + n ** 2, "");
