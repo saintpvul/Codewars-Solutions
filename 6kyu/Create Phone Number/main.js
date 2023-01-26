@@ -11,3 +11,8 @@ Don't forget the space after the closing parentheses!
 */
 
 // solution
+
+const createPhoneNumber = (numbers) =>
+  `(${numbers.slice(0, 3).join("")}) ${numbers.splice(3, 3).join("")}-${numbers
+    .slice(-4)
+    .join("")}`;
