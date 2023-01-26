@@ -10,3 +10,6 @@ solution('abc', 'd') // returns false
 */
 
 // solution
+
+const solution = (str, ending) =>
+  str.slice(str.length - ending.length) === ending;
