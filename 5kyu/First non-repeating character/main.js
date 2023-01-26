@@ -11,13 +11,11 @@ If a string contains all repeating characters, it should return an empty string 
 */
 
 // solution
-
 function firstNonRepeatingLetter(s) {
   let str = s.toLowerCase();
   for (let char of str) {
     if (str.indexOf(char) === str.lastIndexOf(char)) {
       return s[str.indexOf(char)];
-      break;
     }
   }
   return "";
