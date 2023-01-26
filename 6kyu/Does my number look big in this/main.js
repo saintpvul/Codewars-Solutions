@@ -17,3 +17,9 @@ Error checking for text strings or other invalid inputs is not required, only va
 */
 
 // solution
+
+const narcissistic = (value) =>
+  value
+    .toString()
+    .split("")
+    .reduce((s, v) => s + v ** value.toString().length, 0) === value;
