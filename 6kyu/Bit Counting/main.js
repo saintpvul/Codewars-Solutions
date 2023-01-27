@@ -7,3 +7,10 @@ Example: The binary representation of 1234 is 10011010010, so the function shoul
 */
 
 // solution
+
+var countBits = (n) =>
+  n
+    .toString(2)
+    .split("")
+    .filter((e) => e == 1)
+    .reduce((s, v) => s + +v, 0);
