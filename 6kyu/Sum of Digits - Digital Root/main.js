@@ -14,3 +14,16 @@ Examples
 */
 
 // solution
+
+function digitalRoot(n) {
+  let res = n;
+
+  while (res.toString().length > 1) {
+    res = res
+      .toString()
+      .split("")
+      .reduce((sum, digit) => sum + +digit, 0);
+  }
+
+  return res;
+}
