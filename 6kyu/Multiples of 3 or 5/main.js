@@ -11,3 +11,11 @@ Courtesy of projecteuler.net (Problem 1)
 */
 
 // solution
+
+function solution(number) {
+  let res = [];
+  for (let i = 0; i < number; i++) {
+    if (!(i % 5) || !(i % 3)) res.push(i);
+  }
+  return res.reduce((s, n) => s + n, 0);
+}
