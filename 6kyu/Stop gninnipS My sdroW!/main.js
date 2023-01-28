@@ -11,3 +11,13 @@ spinWords( "This is another test" )=> returns "This is rehtona test"
 */
 
 // solution
+
+const spinWords = (string) =>
+  string.length > 0
+    ? string
+        .split(" ")
+        .map((word) =>
+          word.length > 4 ? word.split("").reverse().join("") : word
+        )
+        .join(" ")
+    : "";
