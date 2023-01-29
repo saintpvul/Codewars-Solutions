@@ -46,3 +46,5 @@ Happy Coding ^_^
 */
 
 // solution
+
+const fewestNumbers = (n) => Math.ceil(Math.log(n + n) / Math.log(3));
