@@ -32,3 +32,16 @@ If you are given an array with multiple answers, return the lowest correct index
 */
 
 // solution
+
+function findEvenIndex(arr) {
+  let res = -1;
+  for (let i = 0; i < arr.length; i++) {
+    let left = arr.slice(0, i).reduce((s, v) => s + v, 0),
+      right = arr.slice(i + 1).reduce((s, v) => s + v, 0);
+    if (left === right) {
+      res = i;
+      break;
+    }
+  }
+  return res;
+}
