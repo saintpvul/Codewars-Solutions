@@ -27,3 +27,15 @@ consecutive strings : follow one after another without an interruption
 */
 
 // solution
+
+function longestConsec(strarr, k) {
+  if (k <= 0 || k > strarr.length || !strarr.length) return "";
+
+  let l = "",
+    c = "";
+  for (let i = 0; i < strarr.length; i++) {
+    c = strarr.slice(i, i + k).join("");
+    if (l.length < c.length) l = c;
+  }
+  return l;
+}
