@@ -27,3 +27,16 @@ notPerfect = "..,\n..\n...";
 */
 
 // solution
+
+function perfectSquare(string) {
+  string = string.split("\n");
+  for (let sub of string) {
+    let dot = ".".repeat(string.length);
+    if (sub.length != string.length) {
+      return false;
+    } else if (sub != dot) {
+      return false;
+    }
+  }
+  return true;
+}
