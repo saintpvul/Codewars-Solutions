@@ -27,3 +27,18 @@ digPow(46288, 3) should return 51 since 4³ + 6⁴+ 2⁵ + 8⁶ + 8⁷ = 2360688
 */
 
 // solution
+
+function digPow(n, p) {
+  let pow = [];
+  n = n.toString().split("");
+  for (let i = 0; i < n.length; i++) {
+    pow.push((+n[i]) ** (p + i));
+  }
+  pow = pow.reduce((s, num) => (s += num), 0);
+  n = parseInt(n.join(""));
+  if (!(pow % n)) {
+    return pow / n;
+  } else {
+    return -1;
+  }
+}
