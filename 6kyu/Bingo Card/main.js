@@ -25,3 +25,53 @@ a bingo card
 */
 
 // solution
+
+function getCard() {
+  let r = [];
+  for (let j = 0; j < 5; j++) {
+    let b = `B${Math.floor(Math.random() * 15) + 1}`;
+    if (r.indexOf(b) === -1) {
+      r.push(b);
+    } else {
+      j--;
+    }
+  }
+
+  for (let j = 0; j < 5; j++) {
+    let i = `I${Math.floor(Math.random() * 15) + 16}`;
+    if (r.indexOf(i) === -1) {
+      r.push(i);
+    } else {
+      j--;
+    }
+  }
+
+  for (let j = 0; j < 4; j++) {
+    let n = `N${Math.floor(Math.random() * 15) + 31}`;
+    if (r.indexOf(n) === -1) {
+      r.push(n);
+    } else {
+      j--;
+    }
+  }
+
+  for (let j = 0; j < 5; j++) {
+    let g = `G${Math.floor(Math.random() * 15) + 46}`;
+    if (r.indexOf(g) === -1) {
+      r.push(g);
+    } else {
+      j--;
+    }
+  }
+
+  for (let j = 0; j < 5; j++) {
+    let o = `O${Math.floor(Math.random() * 15) + 61}`;
+    if (r.indexOf(o) === -1) {
+      r.push(o);
+    } else {
+      j--;
+    }
+  }
+
+  return r;
+}
