@@ -21,3 +21,21 @@ mergesorted([1],[2, 3]) //should: [1,2,3]
 */
 
 // solution
+
+function mergesorted(a, b) {
+  let res = [],
+    aIdx = 0,
+    bIdx = 0;
+
+  while (aIdx < a.length && bIdx < b.length) {
+    if (a[aIdx] < b[bIdx]) {
+      res.push(a[aIdx]);
+      aIdx++;
+    } else {
+      res.push(b[bIdx]);
+      bIdx++;
+    }
+  }
+
+  return res.concat(a.slice(aIdx)).concat(b.slice(bIdx));
+}
