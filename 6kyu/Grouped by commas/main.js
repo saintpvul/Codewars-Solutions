@@ -17,3 +17,5 @@ Examples
 */
 
 // solution
+
+const groupByCommas = (n) => n.toLocaleString();
