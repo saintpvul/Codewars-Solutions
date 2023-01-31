@@ -25,3 +25,16 @@ For C: The result is freed.
 */
 
 // solution
+
+function orderWeight(str) {
+  return str
+    .split(" ")
+    .sort((a, b) =>
+      a.split("").reduce((s, v) => s + +v, 0) ===
+      b.split("").reduce((s, v) => s + +v, 0)
+        ? a.localeCompare(b)
+        : a.split("").reduce((s, v) => s + +v, 0) -
+          b.split("").reduce((s, v) => s + +v, 0)
+    )
+    .join(" ");
+}
