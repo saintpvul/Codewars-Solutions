@@ -19,3 +19,14 @@ Don't miss dmitry's article in the discussion after you pass the Kata !!
 */
 
 // solution
+
+function loop_size(node) {
+  let nodeList = new Map();
+
+  while (!nodeList.has(node)) {
+    nodeList.set(node, nodeList.size);
+    node = node.next;
+  }
+
+  return nodeList.size - nodeList.get(node);
+}
