@@ -24,3 +24,33 @@ NOTE 2: The 0x0 (empty matrix) is represented as en empty array inside an array 
 */
 
 // solution
+
+snail = function (array) {
+  let r = [];
+
+  while (array[0]) {
+    if (!array[0]) break;
+    for (let i = 0; i < array[0].length; i++) {
+      r.push(array[0][i]);
+    }
+    array.splice(0, 1);
+
+    if (!array[0]) break;
+    for (let i = 0; i < array.length; i++) {
+      r.push(array[i][array[i].length - 1]);
+      array[i].splice(array[i].length - 1);
+    }
+
+    if (!array[0]) break;
+    array[array.length - 1].reverse().forEach((n) => r.push(n));
+    array.splice(array.length - 1, 1);
+
+    if (!array[0]) break;
+    array.reverse().forEach((e, i) => {
+      r.push(e[0]);
+      array[i].splice(0, 1);
+    });
+    array.reverse();
+  }
+  return r;
+};
