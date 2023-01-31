@@ -12,3 +12,21 @@ You can find some examples in the test fixtures.
 */
 
 // solution
+
+function humanReadable(seconds) {
+  let h = Math.floor(seconds / 3600),
+    m = Math.floor((seconds - h * 3600) / 60),
+    s = seconds - m * 60;
+  return `${("00" + h).slice(-2)}:${("00" + m).slice(-2)}:${("00" + s).slice(
+    -2
+  )}`;
+}
+
+const humanReadable = (seconds) =>
+  `${("00" + Math.floor(seconds / 3600)).slice(-2)}:${(
+    "00" + Math.floor((seconds - Math.floor(seconds / 3600) * 3600) / 60)
+  ).slice(-2)}:${(
+    "00" +
+    (seconds -
+      Math.floor((seconds - Math.floor(seconds / 3600) * 3600) / 60) * 60)
+  ).slice(-2)}`;
