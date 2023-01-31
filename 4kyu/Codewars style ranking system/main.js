@@ -38,3 +38,47 @@ Note: Codewars no longer uses this algorithm for its own ranking system. It uses
 */
 
 // solution
+
+class User {
+  constructor() {
+    this.rank = -8;
+    this.progress = 0;
+    this.H = 100;
+    this.hR = 8;
+  }
+}
+
+User.prototype.incProgress = function (rank) {
+  if (rank === 0 || rank > this.hR || rank < -this.hR)
+    throw new RangeError("rank input out of range");
+  if (this.rank === this.hR) return;
+
+  let curr =
+    (rank > 0 && this.rank < 0) || (rank < 0 && this.rank > 0)
+      ? Math.abs(this.rank) + Math.abs(rank)
+      : rank - this.rank;
+  if (rank > 0 && this.rank < 0) curr--;
+  if (rank < 0 && this.rank > 0) curr = -curr;
+  if (curr > 0) {
+    if (rank === 1 && this.rank === -1) {
+      this.progress += 10;
+    } else {
+      this.progress += 10 * curr * curr;
+    }
+  } else {
+    if (curr === 0) {
+      this.progress += 3;
+    } else {
+      this.progress += 1;
+    }
+  }
+
+  if (this.progress > this.H && this.rank < this.hR) {
+    this.rank += Math.floor(this.progress / this.H);
+    if (this.rank === 0) this.rank++;
+    this.progress %= this.H;
+  }
+  if (this.rank === this.hR) this.progress = 0;
+
+  return curr;
+};
