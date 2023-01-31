@@ -21,3 +21,16 @@ If you enjoyed this kata more advanced and generalized version of it can be foun
 */
 
 // solution
+
+function tribonacci(signature, n) {
+  if (n <= signature.length) return signature.slice(0, n);
+  let r = signature,
+    i = 0;
+  n = n - signature.length;
+  while (n) {
+    r.push(signature.slice(i, i + 3).reduce((s, v) => (s += v), 0));
+    i++;
+    n--;
+  }
+  return r;
+}
