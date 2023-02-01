@@ -17,3 +17,17 @@ Good luck and enjoy!
 */
 
 // solution
+
+const wave = (str) =>
+  Array(str.length)
+    .fill(str)
+    .map((e, i) =>
+      e[i] != " " && i != 0 && i != e.length - 1
+        ? e.slice(0, i) + e[i].toUpperCase() + e.slice(i + 1).toLowerCase()
+        : e[i] != " " && i === 0
+        ? e[i].toUpperCase() + e.slice(i + 1)
+        : e[i] != " "
+        ? e.slice(0, -1) + e[i].toUpperCase()
+        : ""
+    )
+    .filter((e) => e != "");
