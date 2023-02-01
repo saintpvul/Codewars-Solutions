@@ -11,3 +11,15 @@ Empty list is considered to have zero greatest sum. Note that the empty list or 
 */
 
 // solution
+
+var maxSequence = function (arr) {
+  let curr = arr[0],
+    max = arr[0];
+  for (let i = 1; i < arr.length; i++) {
+    curr = Math.max(arr[i], curr + arr[i]);
+    if (curr > max) {
+      max = curr;
+    }
+  }
+  return !curr ? 0 : max > 0 ? max : 0;
+};
