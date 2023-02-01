@@ -13,3 +13,22 @@ Constraints
 */
 
 // solution
+
+function validParentheses(parens) {
+  let open = [];
+  parens = parens.split("");
+  for (let p of parens) {
+    if (p === "(") {
+      open.push(p);
+    } else {
+      if (!open.length) return false;
+      let last = open[open.length - 1];
+      if (p === ")" && last === "(") {
+        open.pop();
+      } else {
+        break;
+      }
+    }
+  }
+  return open.length === 0;
+}
