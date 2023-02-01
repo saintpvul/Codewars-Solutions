@@ -19,3 +19,26 @@ I have also created other katas. Take a look if you enjoyed this kata!
 */
 
 // solution
+
+function findMissingLetter(array) {
+  let alph = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    s = 0,
+    e = 0;
+  for (let char of array) {
+    if (alph.indexOf(char) >= e) {
+      e = alph.indexOf(char);
+    }
+  }
+  s = e;
+  for (let char of array) {
+    if (alph.indexOf(char) < s) {
+      s = alph.indexOf(char);
+    }
+  }
+
+  return alph
+    .split("")
+    .slice(s, e)
+    .filter((e) => array.indexOf(e) === -1)
+    .join("");
+}
