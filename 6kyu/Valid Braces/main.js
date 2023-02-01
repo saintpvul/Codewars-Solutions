@@ -20,24 +20,21 @@ Examples
 
 // solution
 
-function validBraces(braces) {
-  let ob = [];
-  for (let i = 0; i < braces.length; i++) {
-    if (braces[i] === "(" || braces[i] === "[" || braces[i] === "{") {
-      ob.push(braces[i]);
+function validParentheses(parens) {
+  let open = [];
+  parens = parens.split("");
+  for (let p of parens) {
+    if (p === "(") {
+      open.push(p);
     } else {
-      if (!ob.length) return false;
-      let last = ob[ob.length - 1];
-      if (
-        (braces[i] === ")" && last === "(") ||
-        (braces[i] === "]" && last === "[") ||
-        (braces[i] === "}" && last === "{")
-      ) {
-        ob.pop();
+      if (!open.length) return false;
+      let last = open[open.length - 1];
+      if (p === ")" && last === "(") {
+        open.pop();
       } else {
         break;
       }
     }
   }
-  return ob.length === 0;
+  return open.length === 0;
 }
