@@ -29,3 +29,12 @@ Please ask before translating.
 */
 
 // solution
+
+function partsSums(ls) {
+  if (!ls.length) return [0];
+  let res = [ls.reduce((s, v) => s + v, 0)];
+  for (let i = 0; i < ls.length; i++) {
+    res.push(res[res.length - 1] - ls[i]);
+  }
+  return res;
+}
