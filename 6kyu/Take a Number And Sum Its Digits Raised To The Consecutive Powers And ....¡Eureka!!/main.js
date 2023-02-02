@@ -71,3 +71,18 @@ Enjoy it!!
 */
 
 // solution
+
+function sumDigPow(a, b) {
+  let res = [];
+  for (let i = a; i < b; i++) {
+    if (
+      i
+        .toString()
+        .split("")
+        .reduce((s, v, i) => s + (+v) ** (i + 1), 0) === i
+    ) {
+      res.push(i);
+    }
+  }
+  return res;
+}
