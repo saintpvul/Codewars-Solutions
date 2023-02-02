@@ -29,3 +29,21 @@ A size 5 diamond:
 */
 
 // solution
+
+function diamond(n) {
+  if (n === 1) return "*\n";
+
+  if (n <= 2 || !(n % 2)) {
+    return null;
+  }
+
+  let m = Math.floor((n + 1) / 2),
+    res = "";
+  for (let i = 1; i <= n; i++) {
+    let row = i <= m ? i : n - i + 1;
+
+    res += " ".repeat(m - row) + "*".repeat(2 * row - 1) + "\n";
+  }
+
+  return res;
+}
