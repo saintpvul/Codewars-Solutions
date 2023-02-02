@@ -18,3 +18,22 @@ titleCase('the quick brown fox') // should return: 'The Quick Brown Fox'
 */
 
 // solution
+
+function titleCase(title, minorWords) {
+  if (typeof minorWords != "undefined") {
+    minorWords = minorWords.toLowerCase().split(" ");
+  } else {
+    minorWords = [];
+  }
+
+  return title
+    .toLowerCase()
+    .split(" ")
+    .map((word) =>
+      word != "" &&
+      (minorWords.indexOf(word) === -1 || title.indexOf(word) === 0)
+        ? word.charAt(0).toUpperCase() + word.slice(1)
+        : word
+    )
+    .join(" ");
+}
