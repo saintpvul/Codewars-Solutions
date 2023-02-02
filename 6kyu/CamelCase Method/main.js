@@ -11,3 +11,12 @@ Don't forget to rate this kata! Thanks :)
 */
 
 // solution
+
+String.prototype.camelCase = function () {
+  return !this.length
+    ? ""
+    : this.trim()
+        .split(" ")
+        .map((e, i) => e[0].toUpperCase() + e.slice(1))
+        .join("");
+};
