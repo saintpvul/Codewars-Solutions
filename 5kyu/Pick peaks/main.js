@@ -19,3 +19,30 @@ Have fun!
 */
 
 // solution
+
+function pickPeaks(arr) {
+  let p = {
+    pos: [],
+    peaks: [],
+  };
+
+  if (!arr.length || !arr.filter((e) => e != arr[0]).length) return p;
+
+  let index;
+
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] > arr[i - 1]) {
+      index = i;
+    }
+    if (
+      arr[i] < arr[i - 1] &&
+      arr[i - 1] === arr[index] &&
+      (index != 0 || index != arr.length - 1)
+    ) {
+      p.pos.push(index);
+      p.peaks.push(arr[index]);
+    }
+  }
+
+  return p;
+}
