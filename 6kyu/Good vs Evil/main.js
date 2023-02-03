@@ -39,3 +39,28 @@ Return "Battle Result: Good triumphs over Evil" if good wins, "Battle Result: Ev
 */
 
 // solution
+
+function goodVsEvil(good, evil) {
+  good = good.split(" ");
+  evil = evil.split(" ");
+
+  let gScore = [1, 2, 3, 3, 4, 10],
+    eScore = [1, 2, 2, 2, 3, 5, 10];
+
+  for (let i = 0; i < gScore.length; i++) {
+    gScore[i] *= +good[i];
+  }
+
+  for (let i = 0; i < eScore.length; i++) {
+    eScore[i] *= +evil[i];
+  }
+
+  gScore = gScore.reduce((force, soldier) => force + soldier, 0);
+  eScore = eScore.reduce((force, soldier) => force + soldier, 0);
+
+  return gScore > eScore
+    ? "Battle Result: Good triumphs over Evil"
+    : eScore > gScore
+    ? "Battle Result: Evil eradicates all trace of Good"
+    : "Battle Result: No victor on this battle field";
+}
