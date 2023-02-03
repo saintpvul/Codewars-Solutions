@@ -24,3 +24,16 @@ s = "123456" gives "234561".
 */
 
 // solution
+
+function revrot(str, sz) {
+  if (sz < 1 || str.length < sz || !str.length) return "";
+
+  return str
+    .match(new RegExp(".{" + sz + "}", "g"))
+    .map((c) =>
+      c.split("").reduce((a, b) => (a += b ** 3), 0) % 2
+        ? c.slice(1) + c.slice(0, 1)
+        : c.split("").reverse().join("")
+    )
+    .join("");
+}
