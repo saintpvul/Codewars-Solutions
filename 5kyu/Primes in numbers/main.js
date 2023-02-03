@@ -30,6 +30,8 @@ function primeFactors(n) {
     }
   };
 
+  calc(n);
+
   temp.map((x) => (map[x] ? map[x]++ : (map[x] = 1)));
   for (let num in map) {
     if (map[num] === 1) res += `(${num})`;
