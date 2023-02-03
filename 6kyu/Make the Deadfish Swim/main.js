@@ -15,3 +15,29 @@ parse("iiisdoso") => [ 8, 64 ]
 */
 
 // solution
+
+function parse(data) {
+  data = data.toLowerCase().split("");
+
+  let output = [],
+    number = 0;
+
+  for (let command of data) {
+    switch (command) {
+      case "i":
+        number += 1;
+        break;
+      case "d":
+        number -= 1;
+        break;
+      case "s":
+        number **= 2;
+        break;
+      case "o":
+        output.push(number);
+        break;
+    }
+  }
+
+  return output;
+}
