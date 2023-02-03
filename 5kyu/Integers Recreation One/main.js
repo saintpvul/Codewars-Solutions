@@ -18,3 +18,28 @@ In Fortran - as in any other language - the returned string is not permitted to 
 */
 
 // solution
+
+function listSquared(m, n) {
+  let squares = [];
+
+  for (let i = m; i <= n; ++i) {
+    let curr = getDiv(i).reduce((sum, n) => (sum += n ** 2), 0);
+
+    if (Number.isInteger(Math.sqrt(curr))) {
+      squares.push([i, curr]);
+    }
+  }
+
+  return squares;
+}
+
+function getDiv(n) {
+  let div = [];
+
+  for (let i = 1; i <= n / 2; ++i) {
+    if (!(n % i)) {
+      div.push(i);
+    }
+  }
+  return div.concat([n]);
+}
