@@ -20,3 +20,12 @@ tripledouble(666789, 12345667) == 1
 */
 
 // solution
+
+function tripledouble(num1, num2) {
+  for (let i = 0; i < 10; i++) {
+    let t = new RegExp(`${i}{3}`),
+      d = new RegExp(`${i}{2}`);
+    if (t.test(num1) && d.test(num2)) return 1;
+  }
+  return 0;
+}
