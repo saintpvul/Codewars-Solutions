@@ -19,3 +19,25 @@ Note that brackets may be round, square or curly and can also be nested. Index a
 */
 
 // solution
+
+function parseMolecule(formula) {
+  const atoms = {};
+
+  let group = /[A-Z][a-z]?\d*|\([^\)]+\)\d*|\[[^\]]+\]\d*|{[^}]+}\d*/g,
+    brackets = /\[|\]|\(|\)|{|}/g,
+    split = /^(\[|\()|((\]|\)|{|})\d*)$/g,
+    digits = /\d*$/g;
+
+  (function reduce(molecule, times) {
+    molecule.match(group).forEach(function (atom) {
+      if (atom.match(brackets)) {
+        reduce(atom.replace(split, ""), times * atom.match(digits)[0] || 1);
+      } else {
+        const element = atom.replace(digits, "");
+        atoms[element] =
+          (atoms[element] || 0) + (atom.replace(/[A-Za-z]/g, "") || 1) * times;
+      }
+    });
+  })(formula, 1);
+  return atoms;
+}
