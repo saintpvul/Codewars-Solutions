@@ -13,3 +13,24 @@ Examples
 */
 
 // solution
+
+function cleanString(s) {
+  s = s.split("");
+
+  let i = 0,
+    res = [];
+
+  while (s.length && i < s.length) {
+    if (s[i] != "#" && s[i + 1] === "#") {
+      i += 2;
+      continue;
+    } else if (s[i] === "#") {
+      i++;
+      res.pop();
+    } else {
+      res.push(s[i]);
+      i++;
+    }
+  }
+  return res.join("");
+}
