@@ -12,3 +12,7 @@ Examples
 */
 
 // solution
+
+const ipsBetween = (start, end) =>
+  (end.split(".").reduce((s, v) => (s << 8) | v, 0) >>> 0) -
+  (start.split(".").reduce((s, v) => (s << 8) | v, 0) >>> 0);
