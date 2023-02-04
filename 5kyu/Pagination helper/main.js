@@ -22,3 +22,30 @@ helper.pageIndex(-10); //should == -1
 */
 
 // solution
+
+class PaginationHelper {
+  constructor(collection, itemsPerPage) {
+    this.collection = collection;
+    this.itemsPerPage = itemsPerPage;
+  }
+  itemCount() {
+    return this.collection.length;
+  }
+  pageCount() {
+    return Math.ceil(this.itemCount() / this.itemsPerPage);
+  }
+  pageItemCount(pageIndex) {
+    return pageIndex < 0
+      ? -1
+      : pageIndex < this.pageCount()
+      ? (pageIndex + 1) * this.itemsPerPage <= this.itemCount()
+        ? this.itemsPerPage
+        : this.itemCount() % this.itemsPerPage
+      : -1;
+  }
+  pageIndex(itemIndex) {
+    return itemIndex < 0 || itemIndex >= this.itemCount()
+      ? -1
+      : (itemIndex / this.itemsPerPage) | 0;
+  }
+}
