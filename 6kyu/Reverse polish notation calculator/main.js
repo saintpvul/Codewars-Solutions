@@ -15,3 +15,27 @@ You may assume that there won't be exceptional situations (like stack underflow 
 */
 
 // solution
+
+function calc(expr) {
+  let result = [],
+    atoms = expr.split(/\s+/);
+  for (let i = 0; i < atoms.length; i++) {
+    switch (atoms[i]) {
+      case "+":
+        result.push(result.pop() + result.pop());
+        break;
+      case "-":
+        result.push(-result.pop() + result.pop());
+        break;
+      case "*":
+        result.push(result.pop() * result.pop());
+        break;
+      case "/":
+        result.push(1 / (result.pop() / result.pop()));
+        break;
+      default:
+        result.push(parseFloat(atoms[i]));
+    }
+  }
+  return result.pop() || 0;
+}
