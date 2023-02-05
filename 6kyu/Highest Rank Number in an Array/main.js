@@ -12,3 +12,22 @@ Examples
 */
 
 // solution
+
+function highestRank(arr) {
+  let counter = {};
+  for (let n of arr) {
+    counter[n] ? (counter[n] += 1) : (counter[n] = 1);
+  }
+  let h = 0,
+    res = 0;
+  for (let [n, c] of Object.entries(counter)) {
+    if (c > h) {
+      h = c;
+      res = n;
+    }
+    if (c === h && n > res) {
+      res = n;
+    }
+  }
+  return +res;
+}
