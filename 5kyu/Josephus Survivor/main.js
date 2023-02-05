@@ -20,3 +20,24 @@ Notes and tips: using the solution to the other kata to check your function may 
 */
 
 // solution
+
+function josephusSurvivor(n, k) {
+  let d = k > n ? (k % n) - 1 : k - 1;
+  if (d === -1) {
+    d = n - 1;
+  }
+
+  let res = new Array(n);
+  for (let i = 0; i < res.length; i++) {
+    res[i] = i + 1;
+  }
+
+  while (res.length > 1) {
+    res.splice(d, 1);
+    d += k - 1;
+    while (d >= res.length) {
+      d -= res.length;
+    }
+  }
+  return res[0];
+}
