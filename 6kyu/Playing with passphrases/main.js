@@ -25,3 +25,26 @@ https://en.wikipedia.org/wiki/Passphrase
 */
 
 // solution
+
+function playPass(s, n) {
+  s = s.toLowerCase().split("");
+
+  let res = [];
+
+  for (let i = 0; i < s.length; i++) {
+    res.push(
+      s[i].charCodeAt() > 95 && s[i].charCodeAt() < 123
+        ? s[i].charCodeAt() + n > 122
+          ? String.fromCharCode(s[i].charCodeAt() - 26 + n)
+          : String.fromCharCode(s[i].charCodeAt() + n)
+        : s[i].charCodeAt() > 47 && s[i].charCodeAt() < 58
+        ? 9 - +s[i]
+        : s[i]
+    );
+  }
+
+  return res
+    .map((e, i) => (!(i % 2) && /[a-z]/.test(e) ? e.toUpperCase() : e))
+    .reverse()
+    .join("");
+}
