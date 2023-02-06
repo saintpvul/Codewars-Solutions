@@ -30,3 +30,28 @@ The menu items are fairly simple, there is no overlap in the names of the items:
 */
 
 // solution
+
+function getOrder(input) {
+  let menu = [
+      "burger",
+      "fries",
+      "chicken",
+      "pizza",
+      "sandwich",
+      "onionrings",
+      "milkshake",
+      "coke",
+    ],
+    res = [];
+
+  input = input.toLowerCase();
+
+  for (let item of menu) {
+    res.push(input.match(new RegExp(`${item}`, "g")));
+  }
+  return res
+    .flat()
+    .filter((e) => e)
+    .map((e) => e[0].toUpperCase() + e.slice(1))
+    .join(" ");
+}
