@@ -11,3 +11,10 @@ the returned string should only contain lowercase letters
 */
 
 // solution
+
+const kebabize = (str) =>
+  str
+    .replace(/([A-Z])/g, "-$1")
+    .toLowerCase()
+    .replace(/\d/g, "")
+    .replace(/^-/, "");
