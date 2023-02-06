@@ -14,3 +14,14 @@ xbonacci {1,1} produces the Fibonacci sequence
 */
 
 // solution
+
+function Xbonacci(signature, n) {
+  let res = [...signature];
+
+  if (res.length > n) return res.slice(0, n);
+
+  for (let i = 0; n > res.length; i++) {
+    res.push(res.slice(i, res.length).reduce((s, v) => (s += v), 0));
+  }
+  return res;
+}
