@@ -11,3 +11,7 @@ PS: This is a sample question of the facebook engineer challenge on interviewstr
 */
 
 // solution
+
+const findMissing = (list) =>
+  ((list[0] + list[list.length - 1]) * (list.length + 1)) / 2 -
+  list.reduce((s, v) => (s += v), 0);
