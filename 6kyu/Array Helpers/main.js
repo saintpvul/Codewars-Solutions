@@ -25,3 +25,22 @@ numbers.odd();     // must return [1, 3, 5]
 */
 
 // solution
+
+Array.prototype.square = function () {
+  return this.map((e) => e ** 2);
+};
+Array.prototype.cube = function () {
+  return this.map((e) => e ** 3);
+};
+Array.prototype.sum = function () {
+  return this.reduce((s, v) => (s += v), 0);
+};
+Array.prototype.average = function () {
+  return this.sum() / this.length;
+};
+Array.prototype.even = function () {
+  return this.filter((e) => !(e % 2));
+};
+Array.prototype.odd = function () {
+  return this.filter((e) => e % 2);
+};
