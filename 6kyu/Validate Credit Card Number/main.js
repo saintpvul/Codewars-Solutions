@@ -32,3 +32,15 @@ Finally, take that sum and divide it by 10. If the remainder equals zero, the or
 */
 
 // solution
+
+function validate(n) {
+  return n
+    .toString()
+    .split("")
+    .reverse()
+    .map((n, i) => (!(i % 2) ? +n : n * 2))
+    .map((n, i) => (n > 9 ? n - 9 : n))
+    .reduce((s, v) => s + v, 0) % 10
+    ? false
+    : true;
+}
