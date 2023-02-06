@@ -31,3 +31,14 @@ Return the string "nil" with Bash, PowerShell, Pascal and Fortran.
 */
 
 // solution
+
+function sqInRect(lng, wdth) {
+  if (lng === wdth) return null;
+  let res = [];
+  while (lng > 0 && wdth > 0) {
+    res.push(lng < wdth ? lng : wdth);
+    lng < wdth ? (wdth -= lng) : (lng -= wdth);
+  }
+
+  return res;
+}
