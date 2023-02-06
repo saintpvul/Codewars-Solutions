@@ -27,3 +27,11 @@ There should be no trailing whitespace
 */
 
 // solution
+
+const to_nato = (words) =>
+  words
+    .replace(/\s/g, "")
+    .toLowerCase()
+    .split("")
+    .map((w) => (NATO[w] ? NATO[w] : w))
+    .join(" ");
