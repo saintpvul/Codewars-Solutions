@@ -7,3 +7,5 @@ All inputs will be valid.
 */
 
 // solution
+
+const digits = (n) => String(n).length;
