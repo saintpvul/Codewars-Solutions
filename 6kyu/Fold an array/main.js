@@ -33,3 +33,12 @@ I have created other katas. Have a look if you like coding and challenges.
 */
 
 // solution
+
+function foldArray(array, runs) {
+  let res = [],
+    arr = [...array];
+  while (arr.length) {
+    res.push(arr.pop() + (arr.shift() || 0));
+  }
+  return runs - 1 ? foldArray(res, runs - 1) : res;
+}
