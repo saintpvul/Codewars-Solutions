@@ -11,3 +11,6 @@ Note: the subarrays should be filled with 1s
 */
 
 // solution
+
+const pyramid = (n) =>
+  Array.from({ length: n }, (_, idx) => Array(idx + 1).fill(1));
