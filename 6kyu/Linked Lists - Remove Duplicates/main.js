@@ -15,3 +15,17 @@ The push() and buildOneTwoThree() functions need not be redefined.
 */
 
 // solution
+
+function Node(data) {
+  this.data = data;
+  this.next = null;
+}
+
+function removeDuplicates(head) {
+  for (let n = head; n; n = n.next) {
+    while (n.next && n.data === n.next.data) {
+      n.next = n.next.next;
+    }
+  }
+  return head;
+}
