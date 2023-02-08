@@ -12,3 +12,17 @@ The push() and buildOneTwoThree() functions do not need to be redefined.
 */
 
 // solution
+
+function Node(data, next) {
+  this.data = data;
+  this.next = next;
+}
+
+function sortedInsert(head, data) {
+  if (head && data > head.data) {
+    head.next = sortedInsert(head.next, data);
+    return head;
+  } else {
+    return new Node(data, head);
+  }
+}
