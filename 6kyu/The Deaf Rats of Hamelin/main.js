@@ -25,3 +25,14 @@ The deaf rats of Hamelin (2D)
 */
 
 // solution
+
+var countDeafRats = function (town) {
+  if (!town) {
+    return 0;
+  } else {
+    [l, r] = town.split("P");
+    return ((l + r.split("").reverse().join("")).match(/O~|~O/g) || []).filter(
+      (e) => e === "O~"
+    ).length;
+  }
+};
