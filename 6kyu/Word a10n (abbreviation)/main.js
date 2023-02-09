@@ -21,3 +21,9 @@ abbreviate("elephant-rides are really fun!")
 */
 
 // solution
+
+const abbreviate = (s) =>
+  s.replace(
+    /\w{4,}/g,
+    (word) => word[0] + (word.length - 2) + word[word.length - 1]
+  );
