@@ -21,3 +21,19 @@ Vowel consonant lexicon
 */
 
 // solution
+
+function dup(s) {
+  let res = [],
+    temp = "";
+  for (let word of s) {
+    for (let i = 0; i < word.length; i++) {
+      if (temp[temp.length - 1] != word[i]) {
+        temp += word[i];
+      }
+      continue;
+    }
+    res.push(temp);
+    temp = "";
+  }
+  return res;
+}
