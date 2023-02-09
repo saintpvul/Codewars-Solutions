@@ -22,3 +22,34 @@ Ruby Don't use Ruby Prime class, it's disabled.
 */
 
 // solution
+
+function backwardsPrime(start, stop) {
+  const isP = (num) => {
+    if (num === 2 || num === 3) return true;
+    if (!(num % 2) || !(num % 3) || num < 2) return false;
+
+    let n = 5,
+      sq = Math.sqrt(num);
+    while (n <= sq) {
+      if (!(num % n)) return false;
+      n++;
+    }
+    return true;
+  };
+
+  let res = [];
+  for (let i = start; i <= stop; i++) {
+    if (isP(i)) {
+      if (res.indexOf(i) != -1) {
+        continue;
+      }
+      if (
+        String(i).split("").reverse().join("") != i &&
+        isP(String(i).split("").reverse().join(""))
+      ) {
+        res.push(i);
+      }
+    }
+  }
+  return res.filter((v) => v >= start && v <= stop).sort((a, b) => a - b);
+}
