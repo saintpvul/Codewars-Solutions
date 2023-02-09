@@ -14,7 +14,7 @@ Examples
 
 // solution
 
-function whatc(year) {
+function whatCentury(year) {
   let c = Math.ceil(year / 100);
   if (c > 10 && c < 20) return `${c}th`;
   switch (c % 10) {
