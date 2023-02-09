@@ -27,3 +27,13 @@ The recommended way to solve it is using RegEx and specifically groups.
 */
 
 // solution
+
+class FileNameExtractor {
+  static extractFileName(dirtyFileName) {
+    return /\d+_.+\..+\./
+      .exec(dirtyFileName)
+      .join("")
+      .replace(/^\d+_/, "")
+      .replace(/\.$/, "");
+  }
+}
