@@ -1,6 +1,6 @@
 /*
 
-Return the century of the input year. The input will always be a 4 digit string, so there is no need for validation.
+Return the c of the input year. The input will always be a 4 digit string, so there is no need for validation.
 
 Examples
 "1999" --> "20th"
@@ -13,3 +13,18 @@ Examples
 */
 
 // solution
+
+function whatc(year) {
+  let c = Math.ceil(year / 100);
+  if (c > 10 && c < 20) return `${c}th`;
+  switch (c % 10) {
+    case 1:
+      return `${c}st`;
+    case 2:
+      return `${c}nd`;
+    case 3:
+      return `${c}rd`;
+    default:
+      return `${c}th`;
+  }
+}
