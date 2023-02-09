@@ -23,3 +23,14 @@ consecutives 3 is 6 ..."""
 */
 
 // solution
+
+function sumConsecutives(s) {
+  return s.reduce((s, v, i, a) => {
+    if (v != a[i - 1]) {
+      s.push(v);
+    } else {
+      s[s.length - 1] += v;
+    }
+    return s;
+  }, []);
+}
