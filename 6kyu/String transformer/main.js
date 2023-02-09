@@ -14,3 +14,17 @@ You may assume the input only contain English alphabet and spaces.
 */
 
 // solution
+
+const stringTransformer = (str) =>
+  str
+    .split(" ")
+    .reverse()
+    .map((w) =>
+      w
+        .split("")
+        .map((c) =>
+          c === c.toLowerCase() ? (c = c.toUpperCase()) : c.toLowerCase()
+        )
+        .join("")
+    )
+    .join(" ");
