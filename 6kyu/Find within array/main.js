@@ -14,3 +14,5 @@ findInArray([1,3,5,6,7], trueIfEven) // should === 3
 */
 
 // solution
+
+const findInArray = (a, i) => a.map((val, idx) => i(val, idx)).indexOf(true);
