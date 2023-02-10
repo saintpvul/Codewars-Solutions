@@ -26,3 +26,30 @@ If you liked this kata, you may also enjoy a much harder Whitespace-related kata
 */
 
 // solution
+
+function whitespaceNumber(n) {
+  let toStr = n.toString(2);
+  if (n === 0) return " \n";
+  if (n < 0) {
+    let res = "\t";
+    for (let i = 1; i < toStr.length; i++) {
+      if (+toStr[i] === 1) {
+        res += "\t";
+      } else {
+        res += " ";
+      }
+    }
+    return res + "\n";
+  }
+  if (n >= 0) {
+    let res = " ";
+    for (let i = 0; i < toStr.length; i++) {
+      if (+toStr[i] === 1) {
+        res += "\t";
+      } else {
+        res += " ";
+      }
+    }
+    return res + "\n";
+  }
+}
