@@ -46,3 +46,12 @@ Constraints: 1 ≤ a0 ≤ 650.
 */
 
 // solution
+
+function squareDigitsSequence(n) {
+  let u = new Set();
+  while (!u.has(n)) {
+    u.add(n);
+    n = +[...("" + n)].reduce((n, d) => n + d * d, 0);
+  }
+  return u.size + 1;
+}
