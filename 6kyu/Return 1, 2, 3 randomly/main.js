@@ -9,3 +9,11 @@ Do not try to cheat returning repeating non-random sequences. There is a randomn
 */
 
 // solution
+
+function one_two_three() {
+  let random = one_two() - 2 + one_two() * 2;
+  while (![1, 2, 3].some((n) => n === random)) {
+    random = one_two() - 2 + one_two() * 2;
+  }
+  return random;
+}
