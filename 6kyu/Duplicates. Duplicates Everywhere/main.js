@@ -57,3 +57,16 @@ output = {
 */
 
 // solution
+const removeDuplicateIds = (obj) => {
+  let res = {},
+    o = Object.keys(obj).sort((a, b) => b - a),
+    uniq = new Set();
+  for (let num of o) {
+    res[num] = [];
+    for (let char of obj[num]) {
+      if (!uniq.has(char)) res[num].push(char);
+      uniq.add(char);
+    }
+  }
+  return res;
+};
