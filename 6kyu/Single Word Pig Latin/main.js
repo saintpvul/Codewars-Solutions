@@ -21,3 +21,16 @@ For example, the word "spaghetti" becomes "aghettispay" because the first two le
 */
 
 // solution
+
+function pigLatin(string) {
+  string = string.toLowerCase();
+  if (/[0-9]/.exec(string)) return null;
+  if (/[aeiou]/.exec(string[0])) return `${string}way`;
+
+  for (let i = 0; i < string.length; i++) {
+    if (/[aeiou]/.exec(string[0])) return `${string}ay`;
+    let curr = string[0];
+    string = string.substring(1) + curr;
+  }
+  return `${string}ay`;
+}
