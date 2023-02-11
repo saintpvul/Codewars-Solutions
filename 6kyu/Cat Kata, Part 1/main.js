@@ -48,3 +48,25 @@ Have fun!
 */
 
 // solution
+
+function peacefulYard(yard, minDistance) {
+  let res = [];
+  for (let i = 0; i < yard.length; i++) {
+    for (let j = 0; j < yard[0].length; j++) {
+      if (yard[i][j] != "-") {
+        res.push([i, j]);
+      }
+    }
+  }
+  return res.every(
+    (c) =>
+      Math.min(
+        ...res.map(
+          (yd) =>
+            Math.pow(yd[0] - c[0], 2) + Math.pow(c[1] - yd[1], 2) ||
+            minDistance * minDistance
+        )
+      ) >=
+      minDistance * minDistance
+  );
+}
