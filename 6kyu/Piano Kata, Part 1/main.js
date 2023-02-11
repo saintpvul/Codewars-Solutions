@@ -25,3 +25,12 @@ Have fun! And if you enjoy this kata, check out the sequel: Piano Kata, Part 2
 */
 
 // solution
+
+function blackOrWhiteKey(keyPressCount) {
+  let key = ((keyPressCount - 1) % 88) % 12;
+
+  if (key === 1 || key === 4 || key === 6 || key === 9 || key === 11) {
+    return "black";
+  }
+  return "white";
+}
