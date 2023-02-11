@@ -20,3 +20,33 @@ Note: List with non-numbers will be tested as well.
 */
 
 // solution
+
+Array.prototype.even = function () {
+  return this.filter(
+    (e) => !(e % 2) && typeof e === "number" && Number.isInteger(e)
+  );
+};
+
+Array.prototype.odd = function () {
+  return this.filter(
+    (e) => e % 2 && typeof e === "number" && Number.isInteger(e)
+  );
+};
+
+Array.prototype.under = function (x) {
+  return this.filter(
+    (e) => x > e && typeof e === "number" && Number.isInteger(e)
+  );
+};
+
+Array.prototype.over = function (x) {
+  return this.filter(
+    (e) => x < e && typeof e === "number" && Number.isInteger(e)
+  );
+};
+
+Array.prototype.inRange = function (min, max) {
+  return this.filter(
+    (e) => min <= e && max >= e && typeof e === "number" && Number.isInteger(e)
+  );
+};
