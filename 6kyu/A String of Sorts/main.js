@@ -14,3 +14,15 @@ Any character in the first string that does not appear in the second string shou
 */
 
 // solution
+
+const sortString = (string, ordering) =>
+  [...string]
+    .filter((ch) => ordering.split("").includes(ch))
+    .sort(
+      (a, b) => ordering.split("").indexOf(a) - ordering.split("").indexOf(b)
+    )
+    .join("") +
+  string
+    .split("")
+    .filter((ch) => !ordering.split("").includes(ch))
+    .join("");
