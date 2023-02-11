@@ -16,3 +16,15 @@ Examples
 */
 
 // solution
+
+function x(n) {
+  let res = [],
+    fill = "□".repeat(n).split("");
+  for (let i = 0; i < n; i++) {
+    fill[i] = "■";
+    fill[n - i - 1] = "■";
+    res.push(fill.join(""));
+    fill = "□".repeat(n).split("");
+  }
+  return res.join("\n");
+}
