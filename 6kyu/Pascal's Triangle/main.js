@@ -45,3 +45,19 @@ Beware of overflow. Requested terms of a triangle are guaranteed to fit into the
 */
 
 // solution
+
+function pascalsTriangle(n) {
+  let res = [],
+    index = 0;
+  for (let i = 0; i < n; i++) {
+    index = res.length - i;
+    for (let j = 0; j < i + 1; j++) {
+      if (!j || j === i) {
+        res.push(1);
+      } else {
+        res.push(res[index + j] + res[index + j - 1]);
+      }
+    }
+  }
+  return res;
+}
