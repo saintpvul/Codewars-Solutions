@@ -17,3 +17,5 @@ The maximum height recorded by the device is not necessarily the maximum height 
 */
 
 // solution
+
+const maxBall = (v0) => Math.round((v0 * 1000 * 10) / 3600 / 9.81);
