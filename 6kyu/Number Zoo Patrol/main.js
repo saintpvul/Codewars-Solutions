@@ -19,3 +19,10 @@ Examples:
 */
 
 // solution
+
+// return the missing number!
+const findNumber = (array) =>
+  Math.abs(
+    array.reduce((s, v) => (s += v), 0) -
+      (((1 + (array.length + 1)) * (array.length + 1)) / 2) * 1
+  );
