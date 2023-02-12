@@ -14,3 +14,34 @@ loose_change(4.935) ==>  {'Nickels': 0, 'Pennies': 4, 'Dimes': 0, 'Quarters': 0}
 */
 
 // solution
+
+function looseChange(cents) {
+  cents = Math.floor(cents);
+
+  let change = {
+    Nickels: 0,
+    Pennies: 0,
+    Dimes: 0,
+    Quarters: 0,
+  };
+
+  while (cents > 24) {
+    cents -= 25;
+    change.Quarters++;
+  }
+
+  while (cents > 9) {
+    cents -= 10;
+    change.Dimes++;
+  }
+  while (cents > 4) {
+    cents -= 5;
+    change.Nickels++;
+  }
+  while (cents > 0) {
+    cents -= 1;
+    change.Pennies++;
+  }
+
+  return change;
+}
