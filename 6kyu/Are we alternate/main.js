@@ -13,3 +13,26 @@ Arguments consist of only lowercase letters.
 */
 
 // solution
+
+function isAlt(word) {
+  return word.split("").every((c, i) => {
+    if (/[aeiou]/.test(word[0])) {
+      if (!(i % 2) && /[aeiou]/.test(c)) {
+        return true;
+      } else if (i % 2 && !/[aeiou]/.test(c)) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+    if (!/[aeiou]/.test(word[0])) {
+      if (!(i % 2) && !/[aeiou]/.test(c)) {
+        return true;
+      } else if (i % 2 && /[aeiou]/.test(c)) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  });
+}
