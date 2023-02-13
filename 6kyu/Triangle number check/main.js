@@ -27,3 +27,6 @@ Notes:
 */
 
 // solution
+
+const isTriangleNumber = (number) =>
+  Math.sqrt(number * 8 + 1) === Math.sqrt(number * 8 + 1).toFixed(0) * 1;
