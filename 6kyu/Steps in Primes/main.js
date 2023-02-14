@@ -40,3 +40,19 @@ For Go: nil slice is expected when there are no step between m and n. Example: s
 */
 
 // solution
+
+function step(g, m, n) {
+  const isPrime = (num) => {
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+      if (!(num % i)) return false;
+    }
+    return num != 1;
+  };
+
+  for (let i = m; i <= n; i++) {
+    if (isPrime(i) && isPrime(i + g)) {
+      return [i, i + g];
+    }
+  }
+  return null;
+}
