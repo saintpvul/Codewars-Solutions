@@ -33,3 +33,19 @@ Zizou
 */
 
 // solution
+
+function numPrimorial(n) {
+  const isPrime = (n) => {
+    for (let i = 2; i <= Math.sqrt(n); i++) {
+      if (!(n % i)) return false;
+    }
+    return n > 1;
+  };
+
+  let res = [];
+  for (let i = 1; ; i++) {
+    if (n === res.length) break;
+    if (isPrime(i)) res.push(i);
+  }
+  return res.reduce((s, v) => s * v, 1);
+}
