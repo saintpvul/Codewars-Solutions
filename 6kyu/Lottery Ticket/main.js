@@ -16,3 +16,19 @@ All inputs will be in the correct format. Strings on tickets are not always the 
 */
 
 // solution
+
+function bingo(ticket, win) {
+  let minWin = [];
+
+  for (let t of ticket) {
+    t[0] === t[0].split("");
+    for (let i = 0; i < t[0].length; i++) {
+      if (t[0][i].charCodeAt(0) === t[1]) {
+        minWin.push(true);
+        break;
+      }
+      continue;
+    }
+  }
+  return minWin.length >= win ? "Winner!" : "Loser!";
+}
