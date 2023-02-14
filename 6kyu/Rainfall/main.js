@@ -26,3 +26,90 @@ data and data1 (can be named d0 and d1 depending on the language; see "Sample Te
 */
 
 // solution
+
+const towns = [
+  "London",
+  "Rome",
+  "Vancouver",
+  "Sydney",
+  "Bangkok",
+  "Beijing",
+  "Paris",
+  "NY",
+  "Tokyo",
+  "Montevideo",
+  "Caracas",
+  "Madrid",
+  "Lima",
+  "Berlin",
+];
+
+const getDate = (t, s, c) => {
+  if (!towns.some((town) => town === t)) return -1;
+
+  let dateCheck = s.split("\n");
+  for (let date of dateCheck) {
+    if (date.indexOf(t) != 0) continue;
+
+    let getMonth = date
+      .replace(/[a-zA-Z\:\s]+/g, "")
+      .split(",")
+      .map(Number.parseFloat);
+
+    return c(getMonth);
+  }
+  return -1;
+};
+
+function mean(town, strng) {
+  return getDate(
+    town,
+    strng,
+    (date) => date.reduce((x, z) => x + z) / date.length
+  );
+}
+function variance(town, strng) {
+  let a = mean(town, strng);
+
+  return getDate(
+    town,
+    strng,
+    (date) => date.reduce((x, z) => x + Math.pow(z - a, 2), 0) / date.length
+  );
+}
+
+/*
+
+Math.sum = function(arr) {
+  return arr.reduce((a, b) => a + b, 0);
+}
+
+Math.mean = function(arr) {
+  return Math.sum(arr) / arr.length;
+}
+
+Math.variance = function(arr) {
+  let mean = Math.mean(arr)
+  , deltas = arr.map((value) => Math.pow(value - mean, 2));
+  
+  return Math.mean(deltas);
+}
+
+function parse(town, str) {
+  let match = str.match(new RegExp(town + ':.*?(?:\n|$)', 'i'));
+  
+  if (!match) return [];
+  return match.pop().match(/\d+(\.\d+)/g).map(Number);
+}
+
+function mean(town, str) {
+  let history = parse(town, str);
+  return history.length ? Math.mean(history) : -1;
+}
+
+function variance(town, str) {
+  let history = parse(town, str);
+  return history.length ? Math.variance(history) : -1;
+}
+
+*/
