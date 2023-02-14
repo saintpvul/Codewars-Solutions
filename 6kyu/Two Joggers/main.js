@@ -30,3 +30,11 @@ nbrOfLaps(4, 6); // returns [3, 2]
 */
 
 // solution
+
+var nbrOfLaps = function (x, y) {
+  let l = x;
+  while (l % y) {
+    l += x;
+  }
+  return [l / x, l / y];
+};
