@@ -17,3 +17,16 @@ Examples
 */
 
 // solution
+
+function primeFactors(n) {
+  let res = [];
+
+  for (let i = 2; i <= n; i++) {
+    while (!(n % i)) {
+      res.push(i);
+      n /= i;
+    }
+  }
+
+  return res;
+}
