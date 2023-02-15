@@ -28,3 +28,20 @@ You can see other examples in the "Sample tests".
 */
 
 // solution
+
+function posAverage(s) {
+  s = s.split(", ");
+
+  let count = 0,
+    common = 0;
+
+  for (let i = 0; i < s.length - 1; i++) {
+    for (let j = i + 1; j < s.length; j++) {
+      let curr = s[j].split("");
+
+      s[i].split("").map((e, v) => (e === curr[v] ? common++ : count++));
+    }
+  }
+
+  return 100 * (common / (count + common));
+}
