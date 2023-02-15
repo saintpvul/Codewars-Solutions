@@ -20,3 +20,15 @@ Return value as a string: 'Thisi'+'\n'+'sanex'+'\n'+'ample'+'\n'+'strin'+'\n'+'g
 */
 
 // solution
+
+function stringBreakers(n, string) {
+  string = string.split(" ").join("");
+
+  let res = [];
+
+  for (let i = 0; i < string.length; i += n) {
+    res.push(string.slice(i, i + n));
+  }
+
+  return res.join("\n");
+}
