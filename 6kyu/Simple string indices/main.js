@@ -19,3 +19,15 @@ Good luck!
 */
 
 // solution
+
+function solve(str, idx) {
+  if (str[idx] != "(") return -1;
+
+  let b = 1;
+
+  for (let i = idx + 1; i < str.length; i++) {
+    if (str[i] === "(") b++;
+    if (str[i] === ")") b--;
+    if (b === 0) return i;
+  }
+}
