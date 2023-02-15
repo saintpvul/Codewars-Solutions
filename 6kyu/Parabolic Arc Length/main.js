@@ -14,3 +14,20 @@ When you "Attempt" tests are done with a tolerance of 1e-06 (except in PureScrip
 */
 
 // solution
+
+function lenCurve(n) {
+  let res = 0;
+  let hi = 1 / n;
+
+  for (let i = 1; i < n + 1; i++) {
+    let x = i * hi;
+    let a = (i - 1) * hi;
+    let y = x * x - a * a;
+
+    let d = Math.sqrt(hi * hi + y * y);
+
+    res += d;
+  }
+
+  return parseFloat(res.toFixed(9));
+}
