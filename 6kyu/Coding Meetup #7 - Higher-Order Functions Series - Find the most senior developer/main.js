@@ -32,3 +32,15 @@ Here is the full list of the katas in the Coding Meetup series:
 */
 
 // solution
+
+function findSenior(list) {
+  let age = 0;
+
+  for (let dev of list) {
+    if (dev.age >= age) {
+      age = dev.age;
+    }
+  }
+
+  return list.filter((dev) => dev.age === age);
+}
