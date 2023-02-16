@@ -11,3 +11,5 @@ numberFormat(-420902); // return '-420,902'
 */
 
 // solution
+
+let numberFormat = (number) => number.toLocaleString();
