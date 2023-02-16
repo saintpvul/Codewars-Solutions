@@ -11,3 +11,5 @@ Assume the input is always going to be an array of numbers. If the input is an e
 */
 
 // solution
+
+const group = (arr) => [...new Set(arr)].map((n) => arr.filter((v) => v === n));
