@@ -31,3 +31,16 @@ Have fun!
 */
 
 // solution
+
+function bowlingPins(arr) {
+  let bowl = ["7 8 9 10", " 4 5 6 ", "  2 3  ", "   1   "];
+
+  return bowl
+    .map((c) =>
+      c
+        .split(` `)
+        .map((e) => (arr.includes(e * 1) ? " " : e === "" ? "" : "I"))
+        .join(` `)
+    )
+    .join("\n");
+}
