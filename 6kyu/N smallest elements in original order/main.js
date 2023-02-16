@@ -19,3 +19,15 @@ Performance version by FArekkusu also available.
 */
 
 // solution
+
+function firstNSmallest(array, n) {
+  let res = [],
+    sorted = [...array].sort((a, b) => a - b).slice(0, n);
+
+  for (let i = 0; i < array.length; i++) {
+    if (sorted.includes(array[i]))
+      res.push(...sorted.splice(sorted.indexOf(array[i]), 1));
+  }
+
+  return res;
+}
