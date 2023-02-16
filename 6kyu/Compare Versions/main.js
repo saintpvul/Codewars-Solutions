@@ -27,3 +27,15 @@ It can be assumed that version strings are non empty and only contain numeric li
 */
 
 // solution
+
+const compareVersions = (version1, version2) => {
+  const arr1 = version1.split(".");
+  const arr2 = version2.split(".");
+  for (let i = 0; i < Math.max(arr1.length, arr2.length); i++) {
+    let num1 = +arr1[i] || 0,
+      num2 = +arr2[i] || 0;
+    if (num1 === num2) continue;
+    return num1 > num2 ? true : false;
+  }
+  return true;
+};
