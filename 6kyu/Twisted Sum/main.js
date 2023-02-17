@@ -15,3 +15,15 @@ Examples
 */
 
 // solution
+
+function twistedSum(n) {
+  let counter = [];
+  for (let i = 0; i <= n; i++) {
+    counter.push(String(i));
+  }
+  counter = counter
+    .map((e) => (e.length === 1 ? +e : e.split("").reduce((s, v) => s + +v, 0)))
+    .reduce((s, v) => s + +v, 0);
+
+  return counter;
+}
