@@ -23,5 +23,7 @@ function binaryToString(binary) {
     res.push(binary.slice(i, i + 8).join(""));
   }
 
-  return res.map((e) => String.fromCharCode(parseInt(e, 2))).join("");
+  res = res.map((e) => String.fromCharCode(parseInt(e, 2))).join("");
+
+  return res;
 }
