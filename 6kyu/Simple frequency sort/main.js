@@ -14,3 +14,13 @@ Please also try Simple time difference
 */
 
 // solution
+
+function solve(arr) {
+  let counter = {};
+
+  for (let n of arr) {
+    counter[n] ? (counter[n] += 1) : (counter[n] = 1);
+  }
+
+  return arr.sort((a, b) => counter[b] - counter[a] || a - b);
+}
