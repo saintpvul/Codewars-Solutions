@@ -57,3 +57,26 @@ alphabetWar(reinforces, airstrikes); // => codewarsxxxx
 */
 
 // solution
+
+function alphabetWar(reinforces, airstrikes) {
+  let soldiers = reinforces.map((line) => line.split(""));
+  let battlefield = soldiers[0];
+
+  airstrikes.forEach((strike) => {
+    battlefield = battlefield.map((soldier, i) => {
+      if (strike.slice((i || 1) - 1, i + 2).includes("*")) {
+        for (let j = 1; j < soldiers.length; j++) {
+          if (soldiers[j][i]) {
+            let soldierToReturn = soldiers[j][i];
+            soldiers[j][i] = undefined;
+            return soldierToReturn;
+          }
+        }
+        return "_";
+      }
+      return soldier;
+    });
+  });
+
+  return battlefield.join("");
+}
