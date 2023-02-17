@@ -13,3 +13,15 @@ Note: In the case of an empty binary string your function should return an empty
 */
 
 // solution
+
+function binaryToString(binary) {
+  let res = [];
+
+  binary = binary.split("");
+
+  for (let i = 0; i < binary.length; i += 8) {
+    res.push(binary.slice(i, i + 8).join(""));
+  }
+
+  return res.map((e) => String.fromCharCode(parseInt(e, 2))).join("");
+}
