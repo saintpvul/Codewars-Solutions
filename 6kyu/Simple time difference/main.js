@@ -12,3 +12,32 @@ More examples in test cases. Good luck!
 */
 
 // solution
+function solve(times) {
+  const minutes = times
+    .map((time) => {
+      const [hour, minute] = time.split(":").map(Number);
+      return hour * 60 + minute;
+    })
+    .sort((a, b) => a - b);
+
+  let maxInterval = 0;
+  for (let i = 0; i < minutes.length - 1; i++) {
+    const interval = minutes[i + 1] - minutes[i];
+    if (interval > maxInterval) {
+      maxInterval = interval;
+    }
+  }
+
+  const lastInterval = 1440 - minutes[minutes.length - 1] + minutes[0];
+  if (lastInterval > maxInterval) {
+    maxInterval = lastInterval;
+  }
+
+  const maxIntervalMinusOne = maxInterval - 1;
+  const maxIntervalStr = `${Math.floor(maxIntervalMinusOne / 60)
+    .toString()
+    .padStart(2, "0")}:${(maxIntervalMinusOne % 60)
+    .toString()
+    .padStart(2, "0")}`;
+  return maxIntervalStr;
+}
