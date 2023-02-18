@@ -12,3 +12,10 @@ alphabetized("The Holy Bible") // "BbeehHilloTy"
 */
 
 // solution
+
+const alphabetized = (s) =>
+  s
+    .replace(/[^a-z]/gi, "")
+    .split("")
+    .sort((a, b) => a.localeCompare(b, "en", { sensitivity: "base" }))
+    .join("");
