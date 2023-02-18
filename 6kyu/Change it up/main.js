@@ -34,3 +34,22 @@ function changer(str) {
   }
   return res.join("");
 }
+
+const changer = (str) => {
+  const charCodes = [..."abcdefghijklmnopqrstuvwxyza"].map((c) =>
+    c.charCodeAt(0)
+  );
+
+  return str
+    .toLowerCase()
+    .split("")
+    .map((c) => {
+      const idx = charCodes.indexOf(c.charCodeAt(0));
+      return idx !== -1
+        ? /[aeiou]/.test(String.fromCharCode(charCodes[idx + 1]))
+          ? String.fromCharCode(charCodes[idx + 1]).toUpperCase()
+          : String.fromCharCode(charCodes[idx + 1]).toLowerCase()
+        : c;
+    })
+    .join("");
+};
