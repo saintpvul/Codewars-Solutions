@@ -14,3 +14,23 @@ So, for example the string "Cat30" would return "dbU30" (Cat30 --> Dbu30 --> dbU
 */
 
 // solution
+
+function changer(str) {
+  str = str.toLowerCase().split("");
+
+  let alph = "abcdefghijklmnopqrstuvwxyza",
+    res = [];
+
+  for (let i = 0; i < str.length; i++) {
+    if (alph.indexOf(str[i]) != -1) {
+      res.push(
+        /[aeiou]/.test(alph[alph.indexOf(str[i]) + 1])
+          ? alph[alph.indexOf(str[i]) + 1].toUpperCase()
+          : alph[alph.indexOf(str[i]) + 1].toLowerCase()
+      );
+    } else {
+      res.push(str[i]);
+    }
+  }
+  return res.join("");
+}
