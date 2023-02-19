@@ -14,3 +14,25 @@ If the message is an empty string, you should return true
 */
 
 // solution
+
+function isAValidMessage(message) {
+  if (!message.length) return true;
+  let i = 0;
+  while (i < message.length) {
+    let num = "";
+    while (!isNaN(parseInt(message[i]))) {
+      num += message[i];
+      i++;
+    }
+    if (num !== "") {
+      let charsToCheck = message.substr(i, parseInt(num));
+      if (charsToCheck.length !== parseInt(num)) {
+        return false;
+      }
+      i += parseInt(num);
+    } else {
+      return false;
+    }
+  }
+  return true;
+}
