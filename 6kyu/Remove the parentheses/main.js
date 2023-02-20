@@ -18,4 +18,7 @@ The parentheses can be nested.
 
 // solution
 
-const removeParentheses = (s) => s.replace(/(?<=\()(\S+)(?=>\))/g, "");
+function removeParentheses(s) {
+  let r = s.replace(/\([^())]*\)/g, "");
+  return s === r ? s : removeParentheses(r);
+}
