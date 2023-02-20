@@ -30,3 +30,18 @@ function oddRow(n) {
   }
   return res;
 }
+
+/*
+
+a bit faster solution
+
+function oddRow(n) {
+  const res = [];
+  const startingValue = n * (n - 1) + 1;
+  for (let i = 0; i < n; i++) {
+    res.push(startingValue + 2 * i);
+  }
+  return res;
+}
+
+*/
