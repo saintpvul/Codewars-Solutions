@@ -16,3 +16,7 @@ Note Real test cases consists of 100 random cases where 1 <= n <= 10000
 */
 
 // solution
+
+const getScore = (n) => {
+  return ((n * (n + 1)) / 2) * 50;
+};
