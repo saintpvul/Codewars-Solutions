@@ -31,3 +31,21 @@ This kata is part of the Coding Meetup series which includes a number of short a
 */
 
 // solution
+
+function findOddNames(list) {
+  const nameCheck = (name) =>
+    name
+      .split("")
+      .map((ch) => ch.charCodeAt(0))
+      .reduce((s, v) => (s += v), 0) % 2;
+
+  let namesList = new Set();
+
+  for (let dev of list) {
+    if (nameCheck(dev.firstName)) {
+      namesList.add(dev);
+    }
+  }
+
+  return Array.from(namesList);
+}
