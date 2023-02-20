@@ -34,3 +34,19 @@ This kata is part of the Coding Meetup series which includes a number of short a
 */
 
 // solution
+
+function addUsername(list) {
+  const uName = (user) => {
+    let n =
+      user.firstName.toLowerCase() +
+      user.lastName[0].toLowerCase() +
+      (new Date().getFullYear() - user.age);
+
+    return n;
+  };
+
+  for (let user of list) {
+    user.username = uName(user);
+  }
+  return list;
+}
