@@ -30,3 +30,23 @@ There is very small chance of random test to fail due to round-off error, in suc
 */
 
 // solution
+
+function triangleType(a, b, c) {
+  if (a + b <= c || a + c <= b || b + c <= a) {
+    return 0;
+  }
+
+  const a2 = a * a;
+  const b2 = b * b;
+  const c2 = c * c;
+
+  if (a2 + b2 === c2 || a2 + c2 === b2 || b2 + c2 === a2) {
+    return 2;
+  }
+
+  if (a2 + b2 < c2 || a2 + c2 < b2 || b2 + c2 < a2) {
+    return 3;
+  }
+
+  return 1;
+}
