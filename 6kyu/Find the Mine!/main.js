@@ -24,3 +24,15 @@ function mineLocation(field) {
     }
   }
 }
+
+/*
+nice solution 
+function mineLocation(field){
+  for(var i = 0, j, length = field.length; i < length; i++){
+     j = field[i].indexOf(1);
+     if(j != -1) {
+       return [i, j];
+     }
+  }
+}
+*/
