@@ -17,3 +17,5 @@ The parentheses can be nested.
 */
 
 // solution
+
+const removeParentheses = (s) => s.replace(/(?<=\()(\S+)(?=>\))/g, "");
