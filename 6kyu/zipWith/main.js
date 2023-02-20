@@ -20,3 +20,14 @@ Assume all input is valid.
 */
 
 // solution
+
+function zipWith(fn, a0, a1) {
+  let res = [];
+  const length = Math.min(a0.length, a1.length);
+
+  for (let i = 0; i < length; i++) {
+    res.push(fn(a0[i], a1[i]));
+  }
+
+  return res;
+}
