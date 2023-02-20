@@ -18,3 +18,6 @@ While second 'a' appears before second 't', the first 't' is before the first 'a
 */
 
 // solution
+
+const firstDup = (s) =>
+  s.split("").filter((e) => s.indexOf(e) != s.lastIndexOf(e))[0];
