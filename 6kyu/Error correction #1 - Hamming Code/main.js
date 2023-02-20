@@ -49,3 +49,38 @@ input: "100111111000111001000010000111111000000111001111000111110110111000010111
 */
 
 // solution
+
+function encode(text) {
+  let asciiText = text.split("").map((c) => c.charCodeAt());
+  console.log(asciiText);
+  let binText = asciiText.map((v) =>
+    v.toString(2).length < 8
+      ? ("00000000" + v.toString(2)).slice(-8)
+      : v.toString(2)
+  );
+  let prepared = binText.join("").split("");
+  let res = [];
+
+  for (let i = 0; i < prepared.length; i++) {
+    res.push(prepared[i].repeat(3));
+  }
+  return res.join("");
+}
+
+function decode(bits) {
+  let groups = bits.match(/.{3}/g);
+
+  let correctBits = groups.map((e) => {
+    let ones = (e.match(/1/g) ?? []).length;
+    let zeros = (e.match(/0/g) ?? []).length;
+
+    return ones > zeros ? "1" : "0";
+  });
+
+  let bytes = correctBits
+    .join("")
+    .match(/.{8}/g)
+    .map((e) => parseInt(e, 2));
+
+  return bytes.map((a) => String.fromCharCode(a)).join("");
+}
