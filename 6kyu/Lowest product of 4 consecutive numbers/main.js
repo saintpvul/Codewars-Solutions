@@ -11,3 +11,21 @@ lowestProduct("35") --> "Number is too small"
 */
 
 // solution
+
+function lowestProduct(input) {
+  input = input.split("");
+
+  if (input.length < 4) {
+    return "Number is too small";
+  }
+
+  let lowest = Infinity;
+
+  for (let i = 0; i <= input.length - 4; i++) {
+    let product = input.slice(i, i + 4).reduce((p, v) => p * +v, 1);
+    if (lowest > product) {
+      lowest = product;
+    }
+  }
+  return lowest;
+}
