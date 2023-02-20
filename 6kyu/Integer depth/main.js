@@ -21,3 +21,18 @@ Looking at the above table under digits column you can find all the digits from 
 */
 
 // solution
+
+function computeDepth(x) {
+  let digits = new Set();
+  let depth = 0;
+
+  while (digits.size < 10) {
+    depth++;
+    let times = x * depth;
+    while (times > 0) {
+      digits.add(times % 10);
+      times = Math.floor(times / 10);
+    }
+  }
+  return depth;
+}
