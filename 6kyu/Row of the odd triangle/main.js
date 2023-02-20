@@ -18,3 +18,15 @@ Note: your code should be optimized to handle big inputs.
 */
 
 // solution
+
+function oddRow(n) {
+  let res = [],
+    count = n,
+    startingValue = n * (n - 1) + 1;
+  while (count) {
+    res.push(startingValue);
+    startingValue += 2;
+    count--;
+  }
+  return res;
+}
