@@ -25,3 +25,31 @@ parseHTMLColor('LimeGreen');  // => { r: 50,  g: 205, b: 50  }
 */
 
 // solution
+
+function parseHTMLColor(color) {
+  color = color.toLowerCase();
+
+  if (PRESET_COLORS[color]) {
+    color = PRESET_COLORS[color];
+  }
+
+  if (color[0] === "#") {
+    if (color.length === 7) {
+      return {
+        r: parseInt(color.slice(1, 3), 16),
+        g: parseInt(color.slice(3, 5), 16),
+        b: parseInt(color.slice(5, 7), 16),
+      };
+    }
+
+    if (color.length === 4) {
+      return {
+        r: parseInt(color[1] + color[1], 16),
+        g: parseInt(color[2] + color[2], 16),
+        b: parseInt(color[3] + color[3], 16),
+      };
+    }
+  }
+
+  return null;
+}
