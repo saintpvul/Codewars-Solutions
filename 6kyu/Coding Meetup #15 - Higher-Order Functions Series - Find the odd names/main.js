@@ -39,13 +39,13 @@ function findOddNames(list) {
       .map((ch) => ch.charCodeAt(0))
       .reduce((s, v) => (s += v), 0) % 2;
 
-  let namesList = new Set();
+  let devsList = new Set();
 
   for (let dev of list) {
     if (nameCheck(dev.firstName)) {
-      namesList.add(dev);
+      devsList.add(dev);
     }
   }
 
-  return Array.from(namesList);
+  return Array.from(devsList);
 }
