@@ -16,3 +16,17 @@ The input to your function will be an array of matrix rows. You can assume that 
 */
 
 // solution
+
+function transpose(matrix) {
+  let rows = matrix.length;
+  let cols = matrix[0].length;
+  let res = [];
+  for (let i = 0; i < cols; i++) {
+    let newRow = [];
+    for (let j = 0; j < rows; j++) {
+      newRow.push(matrix[j][i]);
+    }
+    res.push(newRow);
+  }
+  return res;
+}
