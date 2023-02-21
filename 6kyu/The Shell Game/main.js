@@ -18,3 +18,19 @@ There aren't necessarily only three cups in this game, but there will be at leas
 */
 
 // solution
+
+function findTheBall(start, swaps) {
+  let currentPosition = start;
+
+  for (let i = 0; i < swaps.length; i++) {
+    let currentSwap = swaps[i];
+
+    if (currentSwap[0] === currentPosition) {
+      currentPosition = currentSwap[1];
+    } else if (currentSwap[1] === currentPosition) {
+      currentPosition = currentSwap[0];
+    }
+  }
+
+  return currentPosition;
+}
