@@ -13,3 +13,21 @@ Good luck!
 */
 
 // solution
+
+function solve(arr) {
+  const uniqueArrays = new Set();
+
+  function generateCombinations(currentCombination, index) {
+    if (index >= arr.length) {
+      uniqueArrays.add(JSON.stringify(currentCombination));
+      return;
+    }
+    for (let element of arr[index]) {
+      generateCombinations(currentCombination.concat(element), index + 1);
+    }
+  }
+
+  generateCombinations([], 0);
+
+  return uniqueArrays.size;
+}
