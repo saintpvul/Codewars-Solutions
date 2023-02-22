@@ -16,3 +16,25 @@ Hope you have fun! :-)
 */
 
 // solution
+
+function nextHigher(n) {
+  let bitCount = 0;
+  for (let i = 0; i < 31; i++) {
+    if (n & (1 << i)) {
+      bitCount++;
+    }
+  }
+
+  while (true) {
+    n++;
+    let newBitCount = 0;
+    for (let i = 0; i < 31; i++) {
+      if (n & (1 << i)) {
+        newBitCount++;
+      }
+    }
+    if (newBitCount === bitCount) {
+      return n;
+    }
+  }
+}
