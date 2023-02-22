@@ -29,3 +29,20 @@ each ranges-list : 10000 elements
 */
 
 // solution
+
+function maxSum(arr, range) {
+  const partial_sums = [0];
+  for (let i = 1; i <= arr.length; i++) {
+    partial_sums[i] = partial_sums[i - 1] + arr[i - 1];
+  }
+
+  let max_sum = -Infinity;
+  for (let [first, last] of range) {
+    let sum = partial_sums[last + 1] - partial_sums[first];
+    if (sum > max_sum) {
+      max_sum = sum;
+    }
+  }
+
+  return max_sum;
+}
