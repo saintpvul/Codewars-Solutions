@@ -15,3 +15,37 @@ Good luck!
 */
 
 // solution
+
+function isPrime(n) {
+  if (n < 2) {
+    return false;
+  }
+  if (n === 2 || n === 3) {
+    return true;
+  }
+  if (n % 2 === 0 || n % 3 === 0) {
+    return false;
+  }
+  for (let i = 5; i <= Math.sqrt(n); i += 6) {
+    if (n % i === 0 || n % (i + 2) === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function solve(a, b) {
+  let i = 0;
+  let n = 2;
+  let sum = 0;
+  while (n <= b) {
+    if (isPrime(n)) {
+      i++;
+      if (isPrime(i) && n >= a) {
+        sum += n;
+      }
+    }
+    n++;
+  }
+  return sum;
+}
