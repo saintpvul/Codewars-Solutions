@@ -29,3 +29,15 @@ Some Examples
 */
 
 // solution
+
+function maxSum(arr, range) {
+  let maxSum = -Infinity;
+  for (let i = 0; i < range.length; i++) {
+    let sum = 0;
+    for (let j = range[i][0]; j <= range[i][1]; j++) {
+      sum += arr[j];
+    }
+    maxSum = Math.max(maxSum, sum);
+  }
+  return maxSum;
+}
