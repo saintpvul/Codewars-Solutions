@@ -13,3 +13,8 @@ solution('1', '2', '3', '2')  -->  true
 */
 
 // solution
+
+function solution() {
+  let noDup = new Set(arguments).size;
+  return arguments.length != noDup;
+}
