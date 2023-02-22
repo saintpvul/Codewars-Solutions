@@ -11,3 +11,29 @@ An example should clarify:
 */
 
 // solution
+
+function insideOut(x) {
+  // Split the input string into an array of words
+  const words = x.split(" ");
+
+  const transformedWords = words.map((word) => {
+    const letters = word.split("");
+    const midIndex = Math.floor(word.length / 2);
+
+    if (word.length % 2 === 0) {
+      const firstHalf = letters.slice(0, midIndex).reverse().join("");
+      const secondHalf = letters.slice(midIndex).reverse().join("");
+      return firstHalf + secondHalf;
+    } else {
+      const firstHalf = letters.slice(0, midIndex).reverse().join("");
+      const middleLetter = letters[midIndex];
+      const secondHalf = letters
+        .slice(midIndex + 1)
+        .reverse()
+        .join("");
+      return firstHalf + middleLetter + secondHalf;
+    }
+  });
+
+  return transformedWords.join(" ");
+}
