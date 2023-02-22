@@ -20,3 +20,35 @@ var TreeNode = function(value, left, right) {
 */
 
 // solution
+
+function arrayToTree(array) {
+  if (!array.length) {
+    return undefined;
+  }
+
+  const root = new TreeNode(array[0]);
+  const queue = [root];
+  let i = 1;
+
+  while (i < array.length) {
+    const current = queue.shift();
+
+    if (i < array.length) {
+      const left = array[i++];
+      if (left !== null) {
+        current.left = new TreeNode(left);
+        queue.push(current.left);
+      }
+    }
+
+    if (i < array.length) {
+      const right = array[i++];
+      if (right !== null) {
+        current.right = new TreeNode(right);
+        queue.push(current.right);
+      }
+    }
+  }
+
+  return root;
+}
