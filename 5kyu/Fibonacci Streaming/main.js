@@ -11,3 +11,14 @@ A fibonacci sequence starts with two 1s. Every element afterwards is the sum of 
 */
 
 // solution
+
+//using generator
+
+function* fibonacciSequence() {
+  let a = 1n,
+    b = 1n;
+  while (true) {
+    yield a;
+    [a, b] = [b, a + b];
+  }
+}
