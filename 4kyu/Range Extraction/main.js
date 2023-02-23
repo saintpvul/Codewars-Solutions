@@ -15,3 +15,23 @@ Courtesy of rosettacode.org
 */
 
 // solution
+
+function solution(list) {
+  let r = "",
+    i = 0;
+  while (i < list.length) {
+    let j = i;
+    while (j < list.length - 1 && list[j + 1] === list[j] + 1) {
+      j++;
+    }
+    if (j > i + 1) {
+      r += list[i] + "-" + list[j] + ",";
+    } else if (j === i + 1) {
+      r += list[i] + "," + list[j] + ",";
+    } else {
+      r += list[i] + ",";
+    }
+    i = j + 1;
+  }
+  return r.slice(0, -1);
+}
