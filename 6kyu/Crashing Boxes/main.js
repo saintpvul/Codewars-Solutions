@@ -27,3 +27,20 @@ Weights will always be integers. The matrix (array of arrays) may have any heigh
 */
 
 // solution
+
+function crashingWeights(grid) {
+  let finaleCase = [];
+  let numToCompare = 0;
+  for (let i = 0; i < grid[0].length; i++) {
+    numToCompare = 0;
+    for (let j = 0; j < grid.length; j++) {
+      if (numToCompare > grid[j][i]) {
+        numToCompare += grid[j][i];
+      } else {
+        numToCompare = grid[j][i];
+      }
+    }
+    finaleCase.push(numToCompare);
+  }
+  return finaleCase;
+}
