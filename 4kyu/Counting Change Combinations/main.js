@@ -17,3 +17,29 @@ Your function should take an amount to change and an array of unique denominatio
 */
 
 // solution
+
+function countChange(money, coins) {
+  const memo = {};
+
+  function count(amount, index) {
+    if (amount === 0) {
+      return 1;
+    }
+    if (amount < 0 || index === coins.length) {
+      return 0;
+    }
+
+    const key = amount + "-" + index;
+    if (key in memo) {
+      return memo[key];
+    }
+
+    const withoutCoin = count(amount, index + 1);
+    const withCoin = count(amount - coins[index], index);
+
+    memo[key] = withoutCoin + withCoin;
+    return memo[key];
+  }
+
+  return count(money, 0);
+}
