@@ -11,3 +11,12 @@ items.containsAll([1, 5, 13]);  =>  false // because 13 is not in the items arra
 */
 
 // solution
+
+Array.prototype.containsAll = function (arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (!this.includes(arr[i])) {
+      return false;
+    }
+  }
+  return true;
+};
