@@ -8,3 +8,13 @@ You are tasked to writting a function to_brainfuck/toBrainfuck that converts a g
 */
 
 // solution
+
+function toBrainfuck(str) {
+  let result = "";
+
+  for (let i = 0; i < str.length; i++) {
+    let code = str.charCodeAt(i);
+    result += "+".repeat(code) + ".>";
+  }
+  return result.slice(0, -1);
+}
