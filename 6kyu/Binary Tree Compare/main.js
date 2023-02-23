@@ -31,3 +31,15 @@ Examples:
 */
 
 // solution
+
+function compare(a, b) {
+  if (!a && !b) {
+    return true;
+  } else if (!a || !b) {
+    return false;
+  } else if (a.val !== b.val) {
+    return false;
+  } else {
+    return compare(a.left, b.left) && compare(a.right, b.right);
+  }
+}
