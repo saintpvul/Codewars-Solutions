@@ -18,3 +18,83 @@ May the binary force be with you!
 */
 
 // solution
+
+function vm(version = "0.0.1") {
+  function parsePart(part) {
+    if (part === undefined) {
+      return undefined;
+    }
+
+    const value = parseInt(part, 10);
+    if (isNaN(value)) {
+      throw new Error("Error occured while parsing version!");
+    }
+    return value;
+  }
+
+  if (version.length === 0) {
+    version = "0.0.1";
+  }
+
+  const parts = version.split(".");
+  const major = parsePart(parts[0]);
+  const minor = parsePart(parts[1]);
+  const patch = parsePart(parts[2]);
+
+  return new Version(major, minor, patch);
+}
+
+class Version {
+  constructor(major = 0, minor = 0, patch = 0) {
+    this._history = [];
+    this._major = major;
+    this._minor = minor;
+    this._patch = patch;
+  }
+
+  _save() {
+    this._history.push({
+      major: this._major,
+      minor: this._minor,
+      patch: this._patch,
+    });
+  }
+
+  major() {
+    this._save();
+    this._major += 1;
+    this._minor = 0;
+    this._patch = 0;
+    return this;
+  }
+
+  minor() {
+    this._save();
+    this._minor += 1;
+    this._patch = 0;
+    return this;
+  }
+
+  patch() {
+    this._save();
+    this._patch += 1;
+    return this;
+  }
+
+  rollback() {
+    const value = this._history.pop();
+    if (value === undefined) {
+      throw new Error("Cannot rollback!");
+    }
+
+    this._major = value.major;
+    this._minor = value.minor;
+    this._patch = value.patch;
+
+    return this;
+  }
+
+  release() {
+    return `${this._major}.${this._minor}.${this._patch}`;
+  }
+}
