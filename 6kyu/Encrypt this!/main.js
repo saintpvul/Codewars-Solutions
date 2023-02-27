@@ -21,3 +21,10 @@ encryptThis("hello world") === "104olle 119drlo"
 */
 
 // solution
+
+var encryptThis = function (text) {
+  return text.replace(
+    /\b\w(\w?)(\w*?)(\w?)\b/g,
+    (word, a, mid, b) => word.charCodeAt(0) + b + mid + a
+  );
+};
