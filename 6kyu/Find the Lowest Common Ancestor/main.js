@@ -65,3 +65,19 @@ LCA(node3, node4) = 1
 */
 
 // solution
+
+function LCA(node1, node2) {
+  let ancestorsNode1 = getAncestors(node1);
+  let ancestorsNode2 = getAncestors(node2);
+
+  while (ancestorsNode1.length > 0) {
+    let commonAncestor = ancestorsNode1.shift();
+    if (ancestorsNode2.includes(commonAncestor)) {
+      return commonAncestor.id;
+    }
+  }
+}
+
+function getAncestors(node) {
+  return node ? [node].concat(getAncestors(node.up)) : [];
+}
