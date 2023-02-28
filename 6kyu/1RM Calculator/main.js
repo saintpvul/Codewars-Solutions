@@ -45,3 +45,17 @@ Your function will receive a weight w and a number of repetitions r and must ret
 */
 
 // solution
+
+function calculate1RM(w, r) {
+  if (r === 0) {
+    return 0;
+  } else if (r === 1) {
+    return w;
+  } else {
+    const epley = w * (1 + r / 30);
+    const mcglothin = (100 * w) / (101.3 - 2.67123 * r);
+    const lombardi = w * Math.pow(r, 0.1);
+    const max = Math.max(epley, mcglothin, lombardi);
+    return Math.round(max);
+  }
+}
