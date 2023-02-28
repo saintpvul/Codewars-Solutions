@@ -34,3 +34,44 @@ ASCII Fun #4: Build a pyramid
 */
 
 // solution
+
+function puzzleTiles(width, height) {
+  let res = "";
+  for (let i = 1; i <= height; i++) {
+    if (i == 1)
+      res +=
+        width == 1 && height == 1
+          ? "   _( )__\n"
+          : "   _( )__" + " _( )__".repeat(width - 1) + "\n";
+    if (i % 2 == 1) {
+      res +=
+        width == 1 && height == 1
+          ? " _|     _|\n"
+          : " _|     _|" + "     _|".repeat(width - 1) + "\n";
+    } else {
+      res +=
+        width == 1 && height == 1
+          ? " _|     _|\n"
+          : " |_     |_" + "     |_".repeat(width - 1) + "\n";
+    }
+    if (i % 2 == 1) {
+      res +=
+        width == 1 && height == 1
+          ? "(_   _ (_\n"
+          : "(_   _ (_" + "   _ (_".repeat(width - 1) + "\n";
+    } else {
+      res +=
+        width == 1 && height == 1
+          ? "(_   _ (_\n"
+          : "  _) _   _)" + " _   _)".repeat(width - 1) + "\n";
+    }
+    res +=
+      width == 1 && height == 1
+        ? " |__( )_|"
+        : " |__( )_|" + "__( )_|".repeat(width - 1);
+    if (i != height) {
+      res += "\n";
+    }
+  }
+  return res;
+}
