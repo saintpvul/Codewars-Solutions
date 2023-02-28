@@ -26,7 +26,6 @@ More about roman numerals - http://en.wikipedia.org/wiki/Roman_numerals
 // solution
 
 function solution(number) {
-  // Define the Roman numeral symbols and their values
   const romanSymbols = [
     "M",
     "CM",
@@ -46,13 +45,9 @@ function solution(number) {
 
   let romanNumeral = "";
 
-  // Loop through the Roman numeral symbols and their values
   for (let i = 0; i < romanSymbols.length; i++) {
-    // While the number is greater than or equal to the current symbol value
     while (number >= romanValues[i]) {
-      // Add the current symbol to the Roman numeral string
       romanNumeral += romanSymbols[i];
-      // Subtract the current symbol value from the number
       number -= romanValues[i];
     }
   }
