@@ -24,3 +24,15 @@ ASCII Fun #4: Build a pyramid
 */
 
 // solution
+
+function buildPyramid(str, n) {
+  const a = str.match(/(.)\1*/g),
+    r = [];
+
+  for (let i = 1; i <= n; i++) {
+    r.push(a.map((s) => s.repeat(i)).join(""));
+  }
+  let width = r.slice(-1)[0].length;
+
+  return r.map((s) => " ".repeat((width - s.length) >> 1) + s).join("\n");
+}
