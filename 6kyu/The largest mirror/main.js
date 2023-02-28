@@ -18,4 +18,22 @@ maxMirror([1]) → 0
 
 */
 
-// solutio
+// solution
+
+const maxMirror = (array) => {
+  let maxLength = 0;
+  for (let i = 0; i < array.length; i++) {
+    for (let j = array.length - 1; j >= 0; j--) {
+      let k = 0;
+      while (
+        i + k < array.length &&
+        j - k >= 0 &&
+        array[i + k] === array[j - k]
+      ) {
+        k++;
+      }
+      maxLength = Math.max(maxLength, k);
+    }
+  }
+  return maxLength < 2 ? 0 : maxLength;
+};
