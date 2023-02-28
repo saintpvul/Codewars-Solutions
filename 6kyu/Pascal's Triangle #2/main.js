@@ -16,3 +16,20 @@ To build the triangle, start with a single 1 at the top, for each number in the 
 */
 
 // solution
+
+function pascal(depth) {
+  const triangle = [];
+
+  for (let i = 0; i < depth; i++) {
+    const row = new Array(i + 1);
+
+    row[0] = 1;
+    row[row.length - 1] = 1;
+    for (let j = 1; j < row.length - 1; j++) {
+      row[j] = triangle[i - 1][j - 1] + triangle[i - 1][j];
+    }
+    triangle.push(row);
+  }
+
+  return triangle;
+}
