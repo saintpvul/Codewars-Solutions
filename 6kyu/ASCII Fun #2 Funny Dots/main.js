@@ -22,3 +22,28 @@ ASCII Fun #4: Build a pyramid
 */
 
 // solution
+
+function dot(n, m) {
+  let result = "";
+
+  for (let i = 0; i < m; i++) {
+    result += "+";
+    for (let j = 0; j < n; j++) {
+      result += "---+";
+    }
+    result += "\n";
+
+    result += "|";
+    for (let j = 0; j < n; j++) {
+      result += " o |";
+    }
+    result += "\n";
+  }
+
+  result += "+";
+  for (let j = 0; j < n; j++) {
+    result += "---+";
+  }
+
+  return result;
+}
