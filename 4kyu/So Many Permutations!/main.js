@@ -24,3 +24,23 @@ Good luck!
 */
 
 // solution
+
+function permutations(string) {
+  const res = [];
+
+  if (string.length === 1) {
+    res.push(string);
+    return res;
+  }
+
+  for (let i = 0; i < string.length; i++) {
+    const firstChar = string[i],
+      charsLeft = string.substring(0, i) + string.substring(i + 1),
+      innerPermutations = permutations(charsLeft);
+    for (let j = 0; j < innerPermutations.length; j++) {
+      res.push(firstChar + innerPermutations[j]);
+    }
+  }
+
+  return Array.from(new Set(res));
+}
