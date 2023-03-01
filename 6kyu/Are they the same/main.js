@@ -32,3 +32,15 @@ The two arrays have the same size (> 0) given as parameter in function comp.
 */
 
 // solution
+
+function comp(array1, array2) {
+  if (array1 === [] || array2 === [] || !array1 || !array2) return false;
+
+  for (let i = 0; i < array2.length; i++) {
+    if (!array1.includes(Math.sqrt(array2[i]))) return false;
+    else {
+      array1.splice(array1.indexOf(Math.sqrt(array2[i])), 1);
+    }
+  }
+  return true;
+}
