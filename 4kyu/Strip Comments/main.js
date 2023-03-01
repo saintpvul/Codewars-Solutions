@@ -23,3 +23,18 @@ var result = solution("apples, pears # and bananas\ngrapes\nbananas !apples", ["
 */
 
 // solution
+
+function solution(input, markers) {
+  const lines = input.split("\n");
+
+  for (let i = 0; i < lines.length; i++) {
+    for (let j = 0; j < markers.length; j++) {
+      const index = lines[i].indexOf(markers[j]);
+      if (index !== -1) {
+        lines[i] = lines[i].substring(0, index).trim();
+      }
+    }
+  }
+
+  return lines.join("\n");
+}
