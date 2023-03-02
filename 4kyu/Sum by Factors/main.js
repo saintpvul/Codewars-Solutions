@@ -25,3 +25,22 @@ In Fortran - as in any other language - the returned string is not permitted to 
 */
 
 // solution
+
+function sumOfDivided(lst) {
+  const max = Math.max(...lst.map((x) => Math.abs(x)));
+  const isPrime = (x) => {
+    for (let i = 2; i * i <= x; i++) {
+      if (x % i === 0) return false;
+    }
+    return true;
+  };
+  const sums = {};
+  for (let i = 2; i <= max; i++) {
+    if (isPrime(i)) {
+      lst.forEach((x) => {
+        if (x % i === 0) sums[i] = x + (sums[i] || 0);
+      });
+    }
+  }
+  return Object.keys(sums).map((i) => [+i, sums[i]]);
+}
