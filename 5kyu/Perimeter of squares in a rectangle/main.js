@@ -20,3 +20,22 @@ perimeter(7)  should return 216
 */
 
 // solution
+
+function perimeter(n) {
+  let a = 0,
+    b = 1;
+
+  let totalPerimeter = 0;
+
+  for (let i = 0; i <= n; i++) {
+    let perimeter = 4 * b;
+
+    totalPerimeter += perimeter;
+
+    let temp = a;
+    a = b;
+    b = temp + b;
+  }
+
+  return totalPerimeter;
+}
