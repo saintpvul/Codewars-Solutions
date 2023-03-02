@@ -21,3 +21,27 @@ Focus attention on efficiency
 */
 
 // solution
+
+function dblLinear(n) {
+  let sequence = [1];
+  let xIndex = 0,
+    yIndex = 0;
+
+  for (let i = 1; i <= n; i++) {
+    let y = 2 * sequence[xIndex] + 1;
+    let z = 3 * sequence[yIndex] + 1;
+
+    if (y <= z) {
+      sequence.push(y);
+      xIndex++;
+      if (y === z) {
+        yIndex++;
+      }
+    } else {
+      sequence.push(z);
+      yIndex++;
+    }
+  }
+
+  return sequence[n];
+}
