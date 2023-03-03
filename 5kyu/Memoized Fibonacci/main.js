@@ -21,3 +21,16 @@ Refactor the function into a recursive Fibonacci function that using a memoized 
 */
 
 // solution
+
+function fibonacci(n) {
+  let cache = {};
+
+  const fib = (num) => {
+    if (num < 2) return num;
+    if (cache[num]) return cache[num];
+    cache[num] = fib(num - 1) + fib(num - 2);
+    return cache[num];
+  };
+
+  return fib(n);
+}
