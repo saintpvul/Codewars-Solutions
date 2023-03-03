@@ -35,3 +35,26 @@ det(M) = a * det(a_minor) - b * det(b_minor) + c * det(c_minor) - d * det(d_mino
 */
 
 // solution
+
+function determinant(m) {
+  if (m.length === 1) {
+    return m[0][0];
+  }
+  if (m.length === 2) {
+    return m[0][0] * m[1][1] - m[0][1] * m[1][0];
+  }
+  let det = 0;
+
+  for (let i = 0; i < m.length; i++) {
+    let subM = [];
+
+    for (let j = 1; j < m.length; j++) {
+      subM.push(m[j].filter((_, idx) => idx != i));
+    }
+    let subD = determinant(subM);
+
+    det += m[0][i] * subD * Math.pow(-1, i);
+  }
+
+  return det;
+}
