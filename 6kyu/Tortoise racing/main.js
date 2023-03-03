@@ -29,3 +29,15 @@ or Google: "convert decimal time to hours minutes seconds"
 */
 
 // solution
+
+function race(v1, v2, g) {
+  if (v1 > v2) return null;
+
+  let totalTime = Math.floor((g / (v2 - v1)) * 3600);
+
+  return [
+    Math.floor(totalTime / 3600),
+    Math.floor((totalTime % 3600) / 60),
+    Math.floor(totalTime % 60),
+  ];
+}
