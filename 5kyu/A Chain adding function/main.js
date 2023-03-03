@@ -25,3 +25,11 @@ We can assume any number being passed in will be valid whole number.
 */
 
 // solution
+
+function add(n) {
+  const fn = (x) => add(n + x);
+
+  fn.valueOf = () => n;
+
+  return fn;
+}
