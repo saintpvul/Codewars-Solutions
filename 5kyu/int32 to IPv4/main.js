@@ -22,3 +22,16 @@ Examples
 */
 
 // solution
+
+function int32ToIp(int32) {
+  let bin = (int32 >>> 0).toString(2).padStart(32, "0");
+
+  let ipv4 = [
+    bin.slice(0, 8),
+    bin.slice(8, 16),
+    bin.slice(16, 24),
+    bin.slice(24),
+  ];
+
+  return ipv4.map((ip) => parseInt(ip, 2)).join(".");
+}
