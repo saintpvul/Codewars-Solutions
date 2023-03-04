@@ -34,3 +34,14 @@ Very often xk will be n-1.
 */
 
 // solution
+
+function decompose(n, n2 = n * n, i = n, prev) {
+  while (n2 > 0 && i-- > 1) {
+    let diff = n2 - i * i;
+    prev = decompose(n, diff, i);
+    if (prev !== null) {
+      return prev.concat([i]);
+    }
+  }
+  return n2 === 0 ? [] : null;
+}
