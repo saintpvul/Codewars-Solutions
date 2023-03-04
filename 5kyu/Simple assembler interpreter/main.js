@@ -42,3 +42,40 @@ This kata is based on the Advent of Code 2016 - day 12
 */
 
 // solution
+
+function simple_assembler(program) {
+  let registers = {};
+  let i = 0;
+
+  const getVal = (val) => {
+    if (isNaN(val)) return registers[val] || 0;
+    return parseInt(val);
+  };
+
+  while (i < program.length) {
+    let [instruction, x, y] = program[i].split(" ");
+
+    switch (instruction) {
+      case "mov":
+        registers[x] = getVal(y);
+        break;
+      case "inc":
+        registers[x]++;
+        break;
+      case "dec":
+        registers[x]--;
+        break;
+      case "jnz":
+        if (getVal(x) !== 0) {
+          i += getVal(y) - 1;
+        }
+        break;
+      default:
+        break;
+    }
+
+    i++;
+  }
+
+  return registers;
+}
