@@ -37,3 +37,28 @@ input is a string, e.g "2,4,2,6,2,8" output is then "6 12 4 12 3 12"
 */
 
 // solution
+
+function convertFrac(lst) {
+  const lcm = lst.reduce((acc, [_, denom]) => {
+    return (acc * denom) / gcd(acc, denom);
+  }, 1);
+
+  const result = lst.map(([numer, denom]) => {
+    const newNumer = (numer * lcm) / denom;
+    return [newNumer, lcm];
+  });
+
+  return result
+    .map(([numer, denom]) => {
+      return `(${numer},${denom})`;
+    })
+    .join("");
+}
+
+function gcd(a, b) {
+  if (b === 0) {
+    return a;
+  } else {
+    return gcd(b, a % b);
+  }
+}
