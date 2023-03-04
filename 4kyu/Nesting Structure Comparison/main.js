@@ -22,3 +22,15 @@ For your convenience, there is already a function 'isArray(o)' declared and defi
 */
 
 // solution
+
+Array.prototype.sameStructureAs = function (other) {
+  if (this.length != other.length) return false;
+  for (let i = 0; i < this.length; i++) {
+    const isThisArray = Array.isArray(this[i]),
+      isOtherArray = Array.isArray(other[i]);
+    if (isThisArray !== isOtherArray) return false;
+    if (isThisArray && isOtherArray && !this[i].sameStructureAs(other[i]))
+      return false;
+  }
+  return true;
+};
