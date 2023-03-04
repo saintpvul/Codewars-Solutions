@@ -28,3 +28,71 @@ Error-handling, e.g. unmatched square brackets and/or memory pointer going past 
 */
 
 // solution
+
+function brainLuck(code, input = "") {
+  const tape = new Uint8Array(3000);
+  let pointer = 0;
+  let output = "";
+
+  let inputIndex = 0;
+
+  for (let i = 0; i < code.length; i++) {
+    switch (code[i]) {
+      case ">":
+        pointer++;
+        break;
+      case "<":
+        pointer--;
+        break;
+      case "+":
+        tape[pointer]++;
+        break;
+      case "-":
+        tape[pointer] = tape[pointer] === 0 ? 255 : tape[pointer] - 1;
+        break;
+      case ".":
+        output += String.fromCharCode(tape[pointer]);
+        break;
+      case ",":
+        tape[pointer] = input.charCodeAt(inputIndex) || 0;
+        inputIndex++;
+        break;
+      case "[":
+        if (tape[pointer] === 0) {
+          let loopCount = 1;
+          while (loopCount > 0) {
+            i++;
+            if (code[i] === "[") {
+              loopCount++;
+            } else if (code[i] === "]") {
+              loopCount--;
+            }
+          }
+        }
+        break;
+      case "]":
+        if (tape[pointer] !== 0) {
+          let loopCount = 1;
+          while (loopCount > 0) {
+            i--;
+            if (code[i] === "]") {
+              loopCount++;
+            } else if (code[i] === "[") {
+              loopCount--;
+            }
+          }
+        }
+        break;
+      default:
+        break;
+    }
+
+    if (pointer < 0) {
+      pointer = tape.length - 1;
+    } else if (pointer >= tape.length) {
+      pointer = 0;
+    }
+  }
+
+  return output;
+}
