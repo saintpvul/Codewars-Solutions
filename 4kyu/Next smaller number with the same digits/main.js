@@ -20,3 +20,25 @@ The function you write for this challenge is the inverse of this kata: "Next big
 */
 
 // solution
+
+function nextSmaller(n) {
+  const digits = n.toString().split("");
+  let i = digits.length - 2;
+  while (i >= 0 && digits[i] <= digits[i + 1]) {
+    i--;
+  }
+  if (i < 0) return -1;
+  let j = i + 1;
+  let max = j;
+  while (j < digits.length) {
+    if (digits[j] < digits[i] && digits[j] > digits[max]) {
+      max = j;
+    }
+    j++;
+  }
+  [digits[i], digits[max]] = [digits[max], digits[i]];
+  const left = digits.slice(0, i + 1);
+  const right = digits.slice(i + 1).sort((a, b) => b - a);
+  if (left[0] === "0") return -1;
+  return parseInt(left.concat(right).join(""), 10);
+}
