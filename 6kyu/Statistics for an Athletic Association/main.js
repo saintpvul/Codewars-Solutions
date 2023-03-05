@@ -29,3 +29,46 @@ if the given string is "" you will return ""
 */
 
 // solution
+
+function stat(str) {
+  if (!str) {
+    return "";
+  }
+
+  const addZero = (num) => ("0" + num).slice(-2);
+
+  const secondsToTimeString = (seconds) => {
+    const hours = Math.floor(seconds / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+    const secs = seconds % 60;
+    return addZero(hours) + "|" + addZero(minutes) + "|" + addZero(secs);
+  };
+
+  const timesInSeconds = str
+    .split(", ")
+    .map((timeStr) => {
+      const [hours, minutes, seconds] = timeStr.split("|").map(Number);
+      return hours * 3600 + minutes * 60 + seconds;
+    })
+    .sort((a, b) => a - b);
+
+  const numOfTimes = timesInSeconds.length;
+  const rangeInSeconds = timesInSeconds[numOfTimes - 1] - timesInSeconds[0];
+  const averageInSeconds = Math.floor(
+    timesInSeconds.reduce((sum, time) => sum + time, 0) / numOfTimes
+  );
+  const medianInSeconds =
+    numOfTimes % 2 === 1
+      ? timesInSeconds[(numOfTimes - 1) / 2]
+      : Math.floor(
+          (timesInSeconds[numOfTimes / 2] +
+            timesInSeconds[numOfTimes / 2 - 1]) /
+            2
+        );
+
+  const range = secondsToTimeString(rangeInSeconds);
+  const average = secondsToTimeString(averageInSeconds);
+  const median = secondsToTimeString(medianInSeconds);
+
+  return `Range: ${range} Average: ${average} Median: ${median}`;
+}
