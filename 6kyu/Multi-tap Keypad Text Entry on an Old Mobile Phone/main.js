@@ -31,3 +31,30 @@ Hint: While it wouldn't take too long to hard code the amount of keypresses for 
 */
 
 // solution
+
+function presses(phrase) {
+  phrase = phrase.toLowerCase().split("");
+
+  const keyboard = {
+    1: "_1",
+    2: "_abc2",
+    3: "_def3",
+    4: "_ghi4",
+    5: "_jkl5",
+    6: "_mno6",
+    7: "_pqrs7",
+    8: "_tuv8",
+    9: "_wxyz9",
+    0: "_ 0",
+  };
+
+  let total = 0;
+
+  for (let i = 0; i < phrase.length; i++) {
+    for (let key of Object.values(keyboard)) {
+      if (key.includes(phrase[i])) total += key.indexOf(phrase[i]);
+    }
+  }
+
+  return total;
+}
