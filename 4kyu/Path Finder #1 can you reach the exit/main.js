@@ -16,3 +16,47 @@ Path Finder Series:
 */
 
 // solution
+
+function pathFinder(maze) {
+  const table = maze.split("\n").map((row) => row.split(""));
+  const maxLen = table[0].length - 1;
+  const stack = [[0, 0]];
+
+  while (stack.length > 0) {
+    const element = stack.pop();
+    const x = element[1];
+    const y = element[0];
+
+    if (element[0] === maxLen && element[1] === maxLen) {
+      return true;
+    }
+
+    if (table[y][x] === "#") {
+      continue;
+    }
+
+    // Check right
+    if (x + 1 <= maxLen && table[y][x + 1] === "." && table[y][x + 1] !== "#") {
+      stack.push([y, x + 1]);
+    }
+
+    // Check down
+    if (y + 1 <= maxLen && table[y + 1][x] === "." && table[y + 1][x] !== "#") {
+      stack.push([y + 1, x]);
+    }
+
+    // Check up
+    if (y - 1 >= 0 && table[y - 1][x] === "." && table[y - 1][x] !== "#") {
+      stack.push([y - 1, x]);
+    }
+
+    // Check left
+    if (x - 1 >= 0 && table[y][x - 1] === "." && table[y][x - 1] !== "#") {
+      stack.push([y, x - 1]);
+    }
+
+    table[y][x] = "#";
+  }
+
+  return false;
+}
