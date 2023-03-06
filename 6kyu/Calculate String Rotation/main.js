@@ -16,3 +16,19 @@ Examples:
 */
 
 // solution
+
+function shiftedDiff(first, second) {
+  let count = 0;
+
+  if (first === second) return count;
+
+  const len = first.length;
+  for (let i = 0; i < len; i++) {
+    if (first === second) {
+      return count;
+    }
+    first = first[len - 1] + first.substring(0, len - 1);
+    count++;
+  }
+  return -1;
+}
