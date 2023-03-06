@@ -39,3 +39,33 @@ See Examples Test Cases for more examples.
 */
 
 // solution
+
+function rank(st, we, n) {
+  const names = st.split(",");
+
+  if (names.length === 1 && names[0] === "") {
+    return "No participants";
+  }
+  if (n > names.length) {
+    return "Not enough participants";
+  }
+
+  const win = names.map((name, idx) => {
+    const s =
+      name.split("").reduce((s, l) => {
+        return s + l.toLowerCase().charCodeAt() - 96;
+      }, 0) + name.length;
+
+    return s * we[idx];
+  });
+
+  const sortIdx = win
+    .map((v, i) => [v, i])
+    .sort((a, b) => {
+      if (a[0] != b[0]) return b[0] - a[0];
+      else return names[a[1]].localeCompare(names[b[1]]);
+    })
+    .map((i) => i[1]);
+
+  return names[sortIdx[n - 1]];
+}
