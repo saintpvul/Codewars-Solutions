@@ -35,3 +35,23 @@ You don't have to consider negative numbers
 */
 
 // solution
+
+function convert(input, source, target) {
+  let decimal = 0;
+  for (let i = 0; i < input.length; i++) {
+    decimal +=
+      source.indexOf(input[i]) * Math.pow(source.length, input.length - i - 1);
+  }
+
+  let output = "";
+  while (decimal > 0) {
+    output = target[decimal % target.length] + output;
+    decimal = Math.floor(decimal / target.length);
+  }
+
+  if (input === "0") {
+    output = target[0];
+  }
+
+  return output;
+}
