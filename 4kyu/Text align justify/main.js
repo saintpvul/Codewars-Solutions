@@ -51,3 +51,24 @@ Have fun :)
 */
 
 // solution
+
+const justify = function (text, width) {
+  const words = text.split(" ");
+  const output = [];
+
+  while (words.length) {
+    let lineWords = [];
+    while (words.length > 0 && (lineWords + "," + words[0]).length <= width)
+      lineWords.push(words.shift());
+
+    if (words.length) {
+      const spaces = width - ("" + lineWords).length;
+      for (let i = 0; i < spaces; i++)
+        lineWords[i % (lineWords.length - 1)] += " ";
+    }
+
+    output.push(lineWords.join(" "));
+  }
+
+  return output.join("\n");
+};
