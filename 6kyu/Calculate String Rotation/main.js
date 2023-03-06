@@ -20,9 +20,8 @@ Examples:
 function shiftedDiff(first, second) {
   let count = 0;
 
-  if (first === second) return count;
-
   const len = first.length;
+
   for (let i = 0; i < len; i++) {
     if (first === second) {
       return count;
