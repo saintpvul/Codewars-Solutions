@@ -11,3 +11,35 @@ Math.floor()
 */
 
 // solution
+
+Math.round = function (number) {
+  let roundedNum = 0;
+  let remainder = number % 1;
+
+  if (remainder >= 0.5) {
+    roundedNum = number + (1 - remainder);
+  } else {
+    roundedNum = number - remainder;
+  }
+
+  return roundedNum;
+};
+
+Math.ceil = function (number) {
+  let intPart = number - (number % 1);
+  let ceilNum = 0;
+
+  if (number > intPart) {
+    ceilNum = intPart + 1;
+  } else {
+    ceilNum = number;
+  }
+
+  return ceilNum;
+};
+
+Math.floor = function (number) {
+  let intPart = number - (number % 1);
+
+  return intPart;
+};
