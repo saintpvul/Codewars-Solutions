@@ -18,3 +18,13 @@ Constraints: 10 ≤ n ≤ 1000000.
 */
 
 // solution
+
+function deleteDigit(n) {
+  n = n.toString();
+  let possibilities = [];
+
+  for (let i = 0; i < n.length; i++) {
+    possibilities.push(+(n.slice(0, i) + n.slice(i + 1)));
+  }
+  return Math.max(...possibilities);
+}
