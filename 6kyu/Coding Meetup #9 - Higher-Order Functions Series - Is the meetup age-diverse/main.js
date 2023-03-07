@@ -30,3 +30,32 @@ Age is represented by a number which can be any positive integer up to 199.
 */
 
 // solution
+
+function isAgeDiverse(list) {
+  const ages = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+  for (let dev of list) {
+    if (dev.age < 20) {
+      ages[0]++;
+    } else if (dev.age >= 20 && dev.age < 30) {
+      ages[1]++;
+    } else if (dev.age >= 30 && dev.age < 40) {
+      ages[2]++;
+    } else if (dev.age >= 40 && dev.age < 50) {
+      ages[3]++;
+    } else if (dev.age >= 50 && dev.age < 60) {
+      ages[4]++;
+    } else if (dev.age >= 60 && dev.age < 70) {
+      ages[5]++;
+    } else if (dev.age >= 70 && dev.age < 80) {
+      ages[6]++;
+    } else if (dev.age >= 80 && dev.age < 90) {
+      ages[7]++;
+    } else if (dev.age >= 90 && dev.age < 100) {
+      ages[8]++;
+    } else if (dev.age >= 100) {
+      ages[9]++;
+    }
+  }
+  return ages.every((age) => age >= 1);
+}
