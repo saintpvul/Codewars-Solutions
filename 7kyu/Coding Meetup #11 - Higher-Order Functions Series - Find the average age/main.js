@@ -23,3 +23,10 @@ This kata is part of the Coding Meetup series which includes a number of short a
 */
 
 // solution
+
+function getAverageAge(list) {
+  return Math.round(
+    list.map((dev) => dev.age).reduce((sum, age) => (sum += age), 0) /
+      list.length
+  );
+}
