@@ -14,3 +14,11 @@ Examples
 */
 
 // solution
+
+var solution = function (firstArray, secondArray) {
+  let res = [];
+  for (let i = 0; i < firstArray.length; i++) {
+    res.push(Math.abs(firstArray[i] - secondArray[i]) ** 2);
+  }
+  return res.reduce((s, v) => (s += v), 0) / res.length;
+};
