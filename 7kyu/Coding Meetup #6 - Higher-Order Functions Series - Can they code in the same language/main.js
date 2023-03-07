@@ -23,3 +23,7 @@ The input array will always be valid and formatted as in the example above.
 */
 
 // solution
+
+function isSameLanguage(list) {
+  return list.every((dev) => dev.language === list[0].language);
+}
