@@ -27,3 +27,10 @@ Code Examples
 */
 
 // solution
+
+function prefill(n, v) {
+  if (parseInt(n) !== parseFloat(n) || n < 0) {
+    throw new TypeError(`${n} is invalid`);
+  }
+  return n > 0 ? Array.from(Array(n).fill(v)) : [];
+}
