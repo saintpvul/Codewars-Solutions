@@ -11,3 +11,17 @@ Examples
 */
 
 // solution
+
+function toUnderscore(string) {
+  if (typeof string === "number") return String(string);
+
+  let res = "";
+
+  for (let char of string) {
+    if (char === char.toUpperCase() && char != Number(char)) {
+      res += "_";
+    }
+    res += char.toLowerCase();
+  }
+  return res[0] === "_" ? res.slice(1) : res;
+}
