@@ -13,8 +13,19 @@ Given an expression, figure out the value of the rune represented by the questio
 
 Complete the method to solve the expression to find the value of the unknown rune. The method takes a string as a paramater repressenting the expression and will return an int value representing the unknown rune or -1 if no such rune exists.
 
-
-
 */
 
 // solution
+
+function solveExpression(exp) {
+  exp = exp.replace("=", "==").replace("--", "+");
+  for (let i = 0; i < 10; i++) {
+    const tempExp = exp.replace(/\?/g, i);
+    if (eval(tempExp) && !exp.includes(i)) {
+      if (!/^00+$/.test(tempExp.split("==")[1])) {
+        return i;
+      }
+    }
+  }
+  return -1;
+}
