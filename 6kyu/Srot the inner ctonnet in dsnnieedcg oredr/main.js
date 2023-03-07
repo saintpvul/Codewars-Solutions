@@ -20,3 +20,20 @@ I have also created other katas. Take a look if you enjoyed this kata!
 */
 
 // solution
+
+function sortTheInnerContent(words) {
+  return words
+    .split(" ")
+    .map((word) =>
+      word.length <= 2
+        ? word
+        : word[0] +
+          word
+            .slice(1, word.length - 1)
+            .split("")
+            .sort((a, b) => b.localeCompare(a))
+            .join("") +
+          word[word.length - 1]
+    )
+    .join(" ");
+}
