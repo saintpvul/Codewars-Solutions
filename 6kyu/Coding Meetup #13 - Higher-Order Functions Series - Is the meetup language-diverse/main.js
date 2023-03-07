@@ -27,3 +27,14 @@ Each of the 3 programming languages will always be represented.
 */
 
 // solution
+
+function isLanguageDiverse(list) {
+  let lang = {};
+  for (let dev of list) {
+    lang[dev.language] ? (lang[dev.language] += 1) : (lang[dev.language] = 1);
+  }
+  let languagesCount = Object.values(lang),
+    minVal = Math.min(...languagesCount),
+    maxVal = Math.max(...languagesCount);
+  return maxVal <= minVal * 2;
+}
