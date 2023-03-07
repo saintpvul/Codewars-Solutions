@@ -30,3 +30,12 @@ This kata is part of the Coding Meetup series which includes a number of short a
 */
 
 // solution
+
+function allContinents(list) {
+  let continentCounter = {};
+
+  for (let dev of list) {
+    continentCounter[dev.continent] = 1;
+  }
+  return Object.keys(continentCounter).length >= 5;
+}
