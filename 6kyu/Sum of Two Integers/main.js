@@ -19,3 +19,12 @@ Input >> Output Examples
 */
 
 // solution
+
+function add(x, y) {
+  while (y != 0) {
+    let c = x & y;
+    x = x ^ y;
+    y = c << 1;
+  }
+  return x;
+}
