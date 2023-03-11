@@ -23,3 +23,13 @@ Hamming Distance
 */
 
 // solution
+
+function hammingDistance(a, b) {
+    let xorResult = a ^ b;
+    let count = 0;
+    while (xorResult !== 0) {
+        count++;
+        xorResult &= xorResult - 1;
+    }
+    return count;
+}
