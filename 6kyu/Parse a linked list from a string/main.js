@@ -45,3 +45,23 @@ Enjoy, and don't forget to check out my other Kata Series :D
 */
 
 // solution
+
+function parse(string) {
+    if (
+        string === "null" ||
+        string === "NULL" ||
+        string === "nil" ||
+        string === "nullptr" ||
+        string === "null()"
+    ) {
+        return null;
+    }
+    const values = string.split(" -> ");
+    let currentNode = new Node(parseInt(values[0]));
+    let head = currentNode;
+    for (let i = 1; i < values.length - 1; i++) {
+        currentNode.next = new Node(parseInt(values[i]));
+        currentNode = currentNode.next;
+    }
+    return head;
+}
