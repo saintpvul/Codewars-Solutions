@@ -18,7 +18,7 @@ Example: (Input --> output)
 
 function formatWords(words) {
     if (!words) return "";
-    words = words.filter((word) => word !== "");
+    words = words.filter((word) => word);
     if (!words.length) return "";
     if (words.length === 1) return words[0];
     const lastWord = words.pop();
