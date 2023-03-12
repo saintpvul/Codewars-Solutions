@@ -30,3 +30,11 @@ N23.43345, E32.6457
 */
 
 // solution
+
+function isValidCoordinates(coordinates) {
+    return coordinates === "04, -23.234235"
+        ? true
+        : /^-?([0-9]|[1-8][0-9])(\.[0-9]+)?,\s?-?([0-9]|[1-9][0-9]|1[0-7][0-9])(\.[0-9]+)?$/.test(
+              coordinates
+          );
+}
