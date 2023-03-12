@@ -35,3 +35,17 @@ See "Sample Tests" to know the format of the return.
 */
 
 // solution
+
+function howMuch(m, n) {
+    let result = [];
+    let lower = Math.min(m, n);
+    let higher = Math.max(m, n);
+    for (let i = lower; i <= higher; i++) {
+        if (i % 9 === 1 && i % 7 === 2) {
+            let cars = Math.floor(i / 9);
+            let boats = Math.floor(i / 7);
+            result.push(["M: " + i, "B: " + boats, "C: " + cars]);
+        }
+    }
+    return result;
+}
