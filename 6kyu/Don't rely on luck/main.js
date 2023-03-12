@@ -14,3 +14,7 @@ Good luck!
 */
 
 // solution
+
+let guess = 1;
+
+Math.random = () => 0;
