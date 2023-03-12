@@ -18,3 +18,17 @@ Good luck!
 */
 
 // solution
+
+function grabscrab(anagram, dictionary) {
+    let matches = [];
+    anagram = anagram.split("").sort().join("");
+    for (let i = 0; i < dictionary.length; i++) {
+        if (
+            dictionary[i].length == anagram.length &&
+            anagram === dictionary[i].split("").sort().join("")
+        ) {
+            matches.push(dictionary[i]);
+        }
+    }
+    return matches;
+}
