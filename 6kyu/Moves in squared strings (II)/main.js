@@ -46,3 +46,28 @@ The input strings are separated by , instead of \n. The ouput strings should be 
 */
 
 // solution
+
+function rot(strng) {
+    return strng
+        .split("\n")
+        .reverse()
+        .map((line) => line.split("").reverse().join(""))
+        .join("\n");
+}
+
+function selfieAndRot(strng) {
+    const dots = ".".repeat(strng.indexOf("\n"));
+    return strng
+        .split("\n")
+        .map((line) => line + dots)
+        .concat(
+            rot(strng)
+                .split("\n")
+                .map((line) => dots + line)
+        )
+        .join("\n");
+}
+
+function oper(fct, s) {
+    return fct(s);
+}
