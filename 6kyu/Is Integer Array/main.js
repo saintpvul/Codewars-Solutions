@@ -12,3 +12,16 @@ returns false / False for every other input.
 */
 
 // solution
+
+function isIntArray(arr) {
+    if (!arr) {
+        return false;
+    }
+    for (let i = 0; i < arr.length; i++) {
+        const element = arr[i];
+        if (!Number.isInteger(element) || !Number.isSafeInteger(element)) {
+            return false;
+        }
+    }
+    return true;
+}
