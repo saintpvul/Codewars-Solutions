@@ -14,3 +14,8 @@ This kata is not available in haskell; that would be too easy!
 */
 
 // solution
+
+const compose =
+    (f, g) =>
+    (...args) =>
+        f(g(...args));
