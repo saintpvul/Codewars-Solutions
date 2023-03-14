@@ -25,3 +25,11 @@ Examples:
 */
 
 // solution
+
+function sumTheTreeValues(root) {
+    return root === null
+        ? 0
+        : root.value +
+              sumTheTreeValues(root.left) +
+              sumTheTreeValues(root.right);
+}
