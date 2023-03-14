@@ -17,3 +17,20 @@ Take note of performance
 */
 
 // solution
+
+function numericals(s) {
+    const charCounts = {};
+    let result = "";
+
+    for (let i = 0; i < s.length; i++) {
+        const char = s[i];
+        if (charCounts[char]) {
+            charCounts[char]++;
+        } else {
+            charCounts[char] = 1;
+        }
+        result += charCounts[char];
+    }
+
+    return result;
+}
