@@ -45,3 +45,8 @@ In Fortran - as in any other language - the returned string is not permitted to 
 */
 
 // solution
+
+function game(n) {
+    let a = n * n;
+    return !(a % 2) ? [a / 2] : [a, 2];
+}
