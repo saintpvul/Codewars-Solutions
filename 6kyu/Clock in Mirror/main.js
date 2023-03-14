@@ -51,3 +51,36 @@ There is no 13:20, instead it is 01:20.
 */
 
 // solution
+
+function WhatIsTheTime(timeInMirror) {
+    timeInMirror = timeInMirror.split(":");
+    let hour = +timeInMirror[0],
+        minute = +timeInMirror[1];
+
+    let hour1, minute1;
+    if (hour < 11) {
+        hour1 = 11 - hour;
+    } else {
+        hour1 = 23 - hour;
+    }
+    minute1 = 60 - minute;
+    if (minute1 == 60) {
+        minute1 -= 60;
+        hour1 += 1;
+    }
+    if (hour1 > 12) {
+        hour1 -= 12;
+    }
+    let ans = "";
+    if (hour1 > 9) {
+        ans = hour1 + ":";
+    } else {
+        ans = "0" + hour1 + ":";
+    }
+    if (minute1 > 9) {
+        ans += minute1;
+    } else {
+        ans += "0" + minute1;
+    }
+    return ans;
+}
