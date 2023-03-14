@@ -51,3 +51,17 @@ Don't worry about invalid input. Arguments passed into the function are guarante
 */
 
 // solution
+
+function collatz(n) {
+    let col = n,
+        out = [col];
+    while (col != 1) {
+        if (col % 2) {
+            col = 3 * col + 1;
+        } else {
+            col /= 2;
+        }
+        out.push(col);
+    }
+    return out.join("->");
+}
