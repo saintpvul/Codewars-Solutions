@@ -45,3 +45,16 @@ In Fortran - as in any other language - the returned string is not permitted to 
 */
 
 // solution
+
+function isIntArray(arr) {
+    if (!arr) {
+        return false;
+    }
+    for (let i = 0; i < arr.length; i++) {
+        const element = arr[i];
+        if (!Number.isInteger(element) || !Number.isSafeInteger(element)) {
+            return false;
+        }
+    }
+    return true;
+}
