@@ -16,3 +16,19 @@ In some cases, there will be an array containing a negative number as the first 
 */
 
 // solution
+
+function addArrays(array1, array2) {
+    const num1 = parseInt(array1.join("")) || 0;
+    const num2 = parseInt(array2.join("")) || 0;
+    const sum = num1 + num2;
+    const result = Array.from(sum.toString()).map(Number);
+
+    if (!sum) return [];
+
+    if (sum < 0) {
+        result[1] = +("-" + result[1]);
+        result.shift();
+    }
+
+    return result;
+}
