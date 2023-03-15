@@ -28,3 +28,20 @@ About PI : http://www.geom.uiuc.edu/~huberty/math5337/groupe/expresspi.html
 */
 
 // solution
+
+function iterPi(epsilon) {
+    const pi = Math.PI;
+    let precision = 0,
+        odd = 1,
+        sign = 1,
+        i = 0;
+
+    while (Math.abs(precision * 4 - pi) > epsilon) {
+        precision += 1.0 / (odd * sign);
+        odd += 2;
+        sign *= -1;
+        i++;
+    }
+
+    return [i, parseFloat((precision * 4).toFixed(10))];
+}
