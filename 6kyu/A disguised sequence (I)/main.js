@@ -17,3 +17,22 @@ the second one - not at all mandatory, but as a complement - is to get a bit you
 */
 
 // solution
+
+function fcn(n) {
+    let u0 = 1;
+    let u1 = 2;
+
+    if (n === 0) {
+        return u0;
+    } else if (n === 1) {
+        return u1;
+    }
+
+    for (let i = 2; i <= n; i++) {
+        let u = (6 * u0 * u1) / (5 * u0 - u1);
+        u0 = u1;
+        u1 = u;
+    }
+
+    return u1;
+}
