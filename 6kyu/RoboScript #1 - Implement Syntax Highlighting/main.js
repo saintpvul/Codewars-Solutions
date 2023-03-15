@@ -29,3 +29,24 @@ Note that the use of <span> tags must be exactly the same format as demonstrated
 */
 
 // solution
+
+function highlight(code) {
+    return code.replace(/F+|L+|R+|\d+/g, (match) => {
+        let color;
+        switch (match[0]) {
+            case "F":
+                color = "pink";
+                break;
+            case "L":
+                color = "red";
+                break;
+            case "R":
+                color = "green";
+                break;
+            default:
+                color = "orange";
+                break;
+        }
+        return `<span style=\"color: ${color}\">${match}</span>`;
+    });
+}
