@@ -40,3 +40,17 @@ We end in q3 which is not our accept state, so we return false
 */
 
 // solution
+
+function Automaton() {
+    this.states = [];
+}
+
+Automaton.prototype.readCommands = function (commands) {
+    // Return true if we end in our accept state, false otherwise.
+
+    return /^0*1(1|00|01)*$/.test(commands.join(""));
+};
+
+var myAutomaton = new Automaton();
+
+// Do anything necessaryto set up your automaton's states, q1, q2, and q3.
