@@ -11,3 +11,11 @@ Example:
 */
 
 // solution
+
+function uniq(a) {
+    let uniq = [];
+    for (let i = 1; i <= a.length; i++) {
+        if (a[i] != a[i - 1]) uniq.push(a[i - 1]);
+    }
+    return uniq;
+}
