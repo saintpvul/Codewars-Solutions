@@ -14,3 +14,16 @@ write a function called isOddHeavy or is_odd_heavy that accepts an integer array
 */
 
 // solution
+
+function isOddHeavy(n) {
+    let odd = [],
+        even = [];
+
+    for (let i = 0; i < n.length; i++) {
+        n[i] % 2 ? odd.push(n[i]) : even.push(n[i]);
+    }
+
+    if (!odd.length) return false;
+
+    return odd.every((o) => even.every((e) => o > e));
+}
