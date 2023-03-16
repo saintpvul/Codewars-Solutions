@@ -22,3 +22,14 @@ obj.hash('person.animal.pet.needNoseAntEater'); // undefined
 */
 
 // solution
+
+// return the nested property value if it exists,
+// otherwise return undefined
+Object.prototype.hash = function (string) {
+    return string.split(".").reduce((obj, key) => {
+        if (obj === undefined) {
+            return undefined;
+        }
+        return obj[key];
+    }, this);
+};
