@@ -16,3 +16,14 @@ tankvol(80,120,3500) should return 2478 (calculation gives about: 2478.73007973)
 */
 
 // solution
+
+function tankvol(h, d, vt) {
+    const r = d / 2;
+    const l = vt / (Math.PI * r * r);
+    const filledDepth = r - h;
+    const segmentArea =
+        r * r * Math.acos(filledDepth / r) -
+        filledDepth * Math.sqrt(r * r - filledDepth * filledDepth);
+    const filledVolume = l * segmentArea;
+    return Math.floor(filledVolume);
+}
