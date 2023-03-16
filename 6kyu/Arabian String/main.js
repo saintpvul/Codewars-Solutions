@@ -13,3 +13,13 @@ For example: (Input --> Output)
 */
 
 // solution
+
+const camelize = (string) =>
+    string
+        .split(/([^a-zA-Z0-9])/g)
+        .map((x) =>
+            /^[a-zA-Z0-9]+$/.test(x)
+                ? x.charAt(0).toUpperCase() + x.slice(1).toLowerCase()
+                : ""
+        )
+        .join("");
