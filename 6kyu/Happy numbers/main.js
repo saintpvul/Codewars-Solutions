@@ -16,3 +16,19 @@ Happy coding!
 */
 
 // solution
+
+function isHappy(n) {
+    const seen = new Set();
+
+    while (!seen.has(n)) {
+        seen.add(n);
+        n = String(n)
+            .split("")
+            .reduce((sum, digit) => sum + digit * digit, 0);
+        if (n === 1) {
+            return true;
+        }
+    }
+
+    return false;
+}
