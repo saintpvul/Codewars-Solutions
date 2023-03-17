@@ -42,3 +42,25 @@ Please could you ask before translating.
 */
 
 // solution
+
+const code = (strng) => {
+    return strng
+        .split("")
+        .map((n) => {
+            let str = "1" + Number(n).toString(2);
+            while ((n >>= 1)) str = "0" + str;
+            return str;
+        })
+        .join("");
+};
+
+const decode = (str) => {
+    const regex = /0*1/g;
+    let strng = "";
+    let matches;
+    while ((matches = regex.exec(str))) {
+        strng += parseInt(str.substr(regex.lastIndex, matches[0].length), 2);
+        regex.lastIndex += matches[0].length;
+    }
+    return strng;
+};
