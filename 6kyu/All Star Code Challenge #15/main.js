@@ -16,3 +16,15 @@ Note: The original string should be included in the output array The order matte
 */
 
 // solution
+
+function rotate(str) {
+    if (str.length === 0) {
+        return [];
+    }
+    const result = [];
+    for (let i = 1; i <= str.length; i++) {
+        const rotated = str.slice(i) + str.slice(0, i);
+        result.push(rotated);
+    }
+    return result;
+}
