@@ -18,3 +18,16 @@ Your code should be able to work for both lower and capital case letters.
 */
 
 // solution
+
+function stringExpansion(s) {
+    let res = [];
+    let multiplier = 1;
+    for (let i = 0; i < s.length; i++) {
+        if (!isNaN(parseInt(s[i]))) {
+            multiplier = parseInt(s[i]);
+        } else {
+            res.push(s[i].repeat(multiplier));
+        }
+    }
+    return res.join("");
+}
