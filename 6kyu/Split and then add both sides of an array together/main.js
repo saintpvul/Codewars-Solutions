@@ -50,3 +50,34 @@ Result: [10, 18]
 */
 
 // solution
+
+function divideList(numbers) {
+    const half = Math.floor(numbers.length / 2);
+    return [numbers.slice(0, half), numbers.slice(half)];
+}
+
+function addLists(listA, listB) {
+    if (listA.length < listB.length) {
+        listA.unshift(0);
+    }
+
+    const results = [];
+    for (let i = 0; i < listA.length; i++) {
+        results.push(listA[i] + listB[i]);
+    }
+
+    return results;
+}
+
+function splitAndAdd(numbers, n) {
+    if (numbers.length === 1) {
+        return numbers;
+    }
+
+    for (let i = 0; i < n; i++) {
+        const [a, b] = divideList(numbers);
+        numbers = addLists(a, b);
+    }
+
+    return numbers;
+}
