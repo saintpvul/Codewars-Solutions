@@ -42,3 +42,18 @@ the opponent's defense
 */
 
 // solution
+
+const matrix = [
+    [0.5, 2.0, 0.5, 1.0],
+    [0.5, 0.5, 2.0, 1.0],
+    [2.0, 0.5, 0.5, 0.5],
+    [1.0, 1.0, 2.0, 0.5],
+];
+
+const index = { fire: 0, grass: 1, water: 2, electric: 3 };
+
+function calculateDamage(yourType, opponentType, attack, defense) {
+    return (
+        (matrix[index[yourType]][index[opponentType]] * 50 * attack) / defense
+    );
+}
