@@ -17,3 +17,7 @@ For the purposes of this kata, here's what you need to support:
 */
 
 // solution
+
+function autocorrect(input) {
+    return input.replace(/(\byou+\b|\bu\b)/gi, "your sister");
+}
