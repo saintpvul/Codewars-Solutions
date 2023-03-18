@@ -37,3 +37,14 @@ Do not make any AM or PM assumptions for the HH:MM result. They are indistinguis
 */
 
 // solution
+
+const whatTimeIsIt = (angle) => {
+    let hour = Math.floor(angle / 30) % 12,
+        minute = Math.floor((angle % 30) * 2);
+    if (hour === 0) {
+        hour = 12;
+    }
+    return `${hour.toString().padStart(2, "0")}:${minute
+        .toString()
+        .padStart(2, "0")}`;
+};
