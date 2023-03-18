@@ -49,3 +49,20 @@ See sample tests for more examples and form of results.
 */
 
 // solution
+
+function sumFracts(lst) {
+    if (lst.length === 0) return null;
+    let lcm = lst.reduce((acc, curr) => {
+        return (acc * curr[1]) / gcd(acc, curr[1]);
+    }, 1);
+    let sum = lst.reduce((acc, curr) => {
+        return acc + curr[0] * (lcm / curr[1]);
+    }, 0);
+    let gcdSumLcm = gcd(sum, lcm);
+    if (lcm / gcdSumLcm === 1) return sum / gcdSumLcm;
+    return [sum / gcdSumLcm, lcm / gcdSumLcm];
+}
+
+function gcd(a, b) {
+    return b === 0 ? a : gcd(b, a % b);
+}
