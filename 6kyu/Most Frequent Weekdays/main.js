@@ -21,3 +21,43 @@ Examples (input -> output):
 */
 
 // solution
+
+function getWeek(day) {
+    if (day === 1) {
+        return "Monday";
+    } else if (day === 2) {
+        return "Tuesday";
+    } else if (day === 3) {
+        return "Wednesday";
+    } else if (day === 4) {
+        return "Thursday";
+    } else if (day === 5) {
+        return "Friday";
+    } else if (day === 6) {
+        return "Saturday";
+    } else {
+        return "Sunday";
+    }
+}
+
+function mostFrequentDays(year) {
+    let days = [];
+    let first = new Date(year, 0, 1);
+    let end = new Date(year, 11, 31);
+    let f = first.getDay() === 0 ? 7 : first.getDay();
+    let e = end.getDay() === 0 ? 7 : end.getDay();
+
+    if (f === e) {
+        days.push(getWeek(f));
+    } else {
+        if (f > e) {
+            let tmp = f;
+            f = e;
+            e = tmp;
+        }
+        days.push(getWeek(f));
+        days.push(getWeek(e));
+    }
+
+    return days;
+}
