@@ -14,3 +14,18 @@ Good luck and happy coding!
 */
 
 // solution
+
+function createMessage(initialMessage) {
+    let message = initialMessage;
+
+    function addWord(newWord) {
+        if (!newWord) {
+            return message;
+        } else {
+            message += " " + newWord;
+            return addWord;
+        }
+    }
+
+    return addWord;
+}
