@@ -17,3 +17,15 @@ Good luck.
 */
 
 // solution
+
+function encrypt(text, rule) {
+    let res = "";
+    for (let i = 0; i < text.length; i++) {
+        let cipher = text[i].charCodeAt() + rule;
+        if (cipher > 255) {
+            cipher = cipher % 256;
+        }
+        res += String.fromCharCode(cipher);
+    }
+    return res;
+}
