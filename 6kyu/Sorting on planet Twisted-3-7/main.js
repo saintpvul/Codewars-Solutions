@@ -22,3 +22,12 @@ I have also created other katas. Take a look if you enjoyed this kata!
 */
 
 // solution
+
+function sortTwisted37(array) {
+    function twist(num) {
+        return Number(
+            String(num).replace(/[37]/g, (digit) => (digit === "3" ? "7" : "3"))
+        );
+    }
+    return [...array].sort((a, b) => twist(a) - twist(b));
+}
