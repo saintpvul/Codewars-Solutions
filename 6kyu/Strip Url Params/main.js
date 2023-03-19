@@ -11,3 +11,28 @@ stripUrlParams('www.codewars.com', ['b']) === 'www.codewars.com'
 */
 
 // solution
+
+function stripUrlParams(url, paramsToStrip = []) {
+    const [baseUrl, queryString] = url.split("?");
+    if (!queryString) return url;
+
+    const queryParams = queryString.split("&");
+    const paramPairs = new Map();
+
+    for (const param of queryParams) {
+        const [key, value] = param.split("=");
+        if (!paramPairs.has(key)) {
+            paramPairs.set(key, value);
+        }
+    }
+
+    for (const param of paramsToStrip) {
+        paramPairs.delete(param);
+    }
+
+    const newParams = [...paramPairs.entries()].map(
+        ([key, value]) => `${key}=${value}`
+    );
+    const newQueryString = newParams.length ? `?${newParams.join("&")}` : "";
+    return `${baseUrl}${newQueryString}`;
+}
