@@ -16,3 +16,12 @@ Here's the opposite kata, which is more complex (Paginating a huge book)
 */
 
 // solution
+
+function amountOfPages(summary) {
+    if (summary <= 9) return summary;
+    let count = 0;
+    for (let i = 1; i < summary; i++) {
+        count += i.toString().length;
+        if (count == summary) return i;
+    }
+}
