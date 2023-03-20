@@ -37,3 +37,22 @@ For the first fixed tests the needed number of moves to get property (P) is give
 */
 
 // solution
+
+function arrange(strng) {
+    strng = strng.split(" ");
+    for (let i = 0; i < strng.length - 1; i++) {
+        if (
+            (i % 2 == 0 && strng[i].length > strng[i + 1].length) ||
+            (i % 2 != 0 && strng[i].length < strng[i + 1].length)
+        ) {
+            [strng[i], strng[i + 1]] = [strng[i + 1], strng[i]];
+        }
+    }
+
+    return strng
+        .map((e, indx) => {
+            if (indx % 2 == 0) return e.toLowerCase();
+            else return e.toUpperCase();
+        })
+        .join(" ");
+}
