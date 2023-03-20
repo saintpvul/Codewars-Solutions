@@ -39,3 +39,24 @@ R substrings (separated by "\n") must be in alphabetic order.
 */
 
 // solution
+
+function catalog(s, article) {
+    s = s.split("</prod>");
+    let res = [];
+
+    for (let i = 0; i < s.length; i++) {
+        if (s[i].includes(article)) {
+            let name = s[i].match(/(?<=<name>).*?(?=<\/name>)/)[0];
+            let price = s[i].match(/(?<=<prx>)\d+(\.\d+)?(?=<\/prx>)/)[0];
+            let quantity = s[i].match(/(?<=<qty>)\d+(?=<\/qty>)/)[0];
+            let line = `${name} > prx: $${price} qty: ${quantity}`;
+            res.push(line);
+        }
+    }
+
+    if (res.length === 0) {
+        return "Nothing";
+    } else {
+        return res.join("\r\n");
+    }
+}
