@@ -31,3 +31,17 @@ Output:
 */
 
 // solution
+
+const frame = (text, char) => {
+    let maxLen = Math.max(...text.map((e) => e.length));
+    let sides = char.repeat(maxLen + 4);
+    let res = [];
+    for (let i = 0; i < text.length; i++) {
+        res.push(
+            `${char} ${text[i]}${" ".repeat(
+                maxLen - text[i].length + 1
+            )}${char}`
+        );
+    }
+    return `${sides}\n${res.join("\n")}\n${sides}`;
+};
