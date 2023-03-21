@@ -43,3 +43,20 @@ Examples
 */
 
 // solution
+
+function nameInStr(str, name) {
+    str = str.toLowerCase();
+    name = name.toLowerCase();
+
+    let i = 0;
+    let j = 0;
+
+    while (i < str.length && j < name.length) {
+        if (str[i] === name[j]) {
+            j++;
+        }
+        i++;
+    }
+
+    return j === name.length;
+}
