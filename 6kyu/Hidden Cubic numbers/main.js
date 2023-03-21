@@ -35,3 +35,30 @@ e.g "0785" becomes 2 strings comprising "078" and "5".
 */
 
 // solution
+
+function isSumOfCubes(s) {
+    let numArr = s.match(/\d{1,3}/g);
+    let cubArr = [];
+    let sum = 0;
+
+    const cubic = (n) => {
+        let digits = n.toString().split("").map(Number);
+        let sumOfCubes = digits.reduce((s, v) => s + v ** 3, 0);
+        return sumOfCubes === n;
+    };
+
+    for (let num of numArr) {
+        if (cubic(+num)) {
+            cubArr.push(+num);
+            sum += +num;
+        }
+    }
+
+    if (cubArr.length === 0) {
+        return "Unlucky";
+    } else {
+        let cubArrStr = cubArr.join(" ");
+        let sumStr = sum.toString();
+        return `${cubArrStr} ${sumStr} Lucky`;
+    }
+}
