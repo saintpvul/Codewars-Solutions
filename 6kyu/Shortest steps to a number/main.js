@@ -40,3 +40,18 @@ num == 16 would return 4 steps:
 */
 
 // solution
+
+function shortestStepsToNum(num) {
+    let steps = 0;
+
+    while (num > 1) {
+        if (num % 2 === 0) {
+            num /= 2;
+        } else {
+            num--;
+        }
+        steps++;
+    }
+
+    return steps;
+}
