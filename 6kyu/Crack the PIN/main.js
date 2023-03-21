@@ -26,3 +26,13 @@ Decode the QR-Code
 */
 
 // solution
+
+function crack(hash) {
+    const crypto = require("crypto");
+    for (let i = 0; i < 100000; i++) {
+        let password = i.toString().padStart(5, "0");
+        if (crypto.createHash("md5").update(password).digest("hex") === hash) {
+            return password;
+        }
+    }
+}
