@@ -15,3 +15,25 @@ Good luck :)
 */
 
 // solution
+
+function longest(str) {
+    let longestSubstr = "";
+    let currentSubstr = str[0];
+
+    for (let i = 1; i < str.length; i++) {
+        if (str[i] >= str[i - 1]) {
+            currentSubstr += str[i];
+        } else {
+            if (currentSubstr.length > longestSubstr.length) {
+                longestSubstr = currentSubstr;
+            }
+            currentSubstr = str[i];
+        }
+    }
+
+    if (currentSubstr.length > longestSubstr.length) {
+        longestSubstr = currentSubstr;
+    }
+
+    return longestSubstr;
+}
