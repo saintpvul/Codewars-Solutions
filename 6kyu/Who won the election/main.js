@@ -39,13 +39,13 @@ Good luck and have fun.
 
 function getWinner(listOfBallots) {
     let counter = {};
-    let votes = listOfBallots.length;
+    let votes = listOfBallots.length / 2;
     for (let ballot of listOfBallots) {
         counter[ballot] ? counter[ballot]++ : (counter[ballot] = 1);
     }
     const maxVal = Math.max(...Object.values(counter));
     const result = Object.keys(counter).filter(
-        (key) => counter[key] === maxVal && maxVal > votes / 2
+        (key) => counter[key] === maxVal && maxVal > votes
     );
-    return result.length ? result[0] : null;
+    return result[0] || null;
 }
