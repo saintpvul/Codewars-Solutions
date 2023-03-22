@@ -19,3 +19,30 @@ Please also try the performance version of this kata at Upside down numbers - Ch
 */
 
 // solution
+
+function isStrobogrammatic(num) {
+    const lookup = {
+        0: "0",
+        1: "1",
+        6: "9",
+        8: "8",
+        9: "6",
+    };
+
+    const digits = String(num).split("");
+
+    let strobogrammatic = "";
+    for (let i = digits.length - 1; i >= 0; i--) {
+        if (!lookup[digits[i]]) return false;
+        strobogrammatic += lookup[digits[i]];
+    }
+    return strobogrammatic === num.toString();
+}
+
+function solve(x, y) {
+    let count = 0;
+    for (let i = x; i < y; i++) {
+        if (isStrobogrammatic(i)) count++;
+    }
+    return count;
+}
