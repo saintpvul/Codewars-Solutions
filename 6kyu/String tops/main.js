@@ -21,3 +21,15 @@ Check the test cases for more samples.
 */
 
 // solution
+
+function tops(msg) {
+    if (!msg.length) return "";
+    msg = msg.split("");
+    let res = [];
+    for (let i = 1, m = 4; i < msg.length; i++) {
+        res.push(msg[i]);
+        i += m;
+        m += 4;
+    }
+    return res.reverse().join("");
+}
