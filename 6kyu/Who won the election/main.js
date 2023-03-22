@@ -36,3 +36,16 @@ Good luck and have fun.
 */
 
 // solution
+
+function getWinner(listOfBallots) {
+    let counter = {};
+    let votes = listOfBallots.length;
+    for (let ballot of listOfBallots) {
+        counter[ballot] ? counter[ballot]++ : (counter[ballot] = 1);
+    }
+    const maxVal = Math.max(...Object.values(counter));
+    const result = Object.keys(counter).filter(
+        (key) => counter[key] === maxVal && maxVal > votes / 2
+    );
+    return result.length ? result[0] : null;
+}
