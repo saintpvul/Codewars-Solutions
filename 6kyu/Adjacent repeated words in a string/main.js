@@ -20,3 +20,21 @@ Examples
 */
 
 // solution
+
+function countAdjacentPairs(searchString) {
+    searchString = searchString.toLowerCase().split(" ");
+    let count = 0;
+    let prevWord = "";
+    for (let i = 0; i < searchString.length; i++) {
+        let currentWord = searchString[i];
+        if (currentWord === prevWord) {
+            continue;
+        } else {
+            prevWord = currentWord;
+            if (searchString[i + 1] === currentWord) {
+                count++;
+            }
+        }
+    }
+    return count;
+}
