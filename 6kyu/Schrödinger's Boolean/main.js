@@ -7,8 +7,11 @@ Define omniBool so that it returns true for the following:
 omniBool == true && omniBool == false
 If you enjoyed this kata, be sure to check out my other katas.
 
-
-
 */
 
 // solution
+
+const omnibool = {
+    value: true,
+    valueOf: () => (this.n = !this.n),
+};
