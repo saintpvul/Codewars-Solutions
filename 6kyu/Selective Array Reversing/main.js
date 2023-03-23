@@ -19,3 +19,13 @@ Note : if the length argument exceeds the array length, reverse all of them, if 
 */
 
 // solution
+
+function selReverse(array, length) {
+    if (length > array.length) return array.reverse();
+    if (length === 0) return array;
+    let res = [];
+    for (let i = 0; i < array.length; i += length) {
+        res.push(array.slice(i, i + length).reverse());
+    }
+    return res.flat();
+}
