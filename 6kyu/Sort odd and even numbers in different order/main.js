@@ -14,3 +14,17 @@ even numbers descending: [      8, 4,    2]
 */
 
 // solution
+
+function sortArray(array) {
+    let odd = [...array].filter((e) => e % 2).sort((a, b) => a - b);
+    let even = [...array].filter((e) => !(e % 2)).sort((a, b) => b - a);
+    let res = [];
+    for (let num of array) {
+        if (num % 2) {
+            res.push(odd.shift());
+        } else {
+            res.push(even.shift());
+        }
+    }
+    return res;
+}
