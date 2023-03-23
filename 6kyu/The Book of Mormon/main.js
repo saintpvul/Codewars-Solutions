@@ -23,3 +23,32 @@ starting_number = 20_000, reach = 2, target = 7_000_000_000  -->  12
 */
 
 // solution
+
+//not recursive
+/*
+function Mormons(startingNumber, reach, target) {
+    if (startingNumber >= target) {
+        return 0;
+    }
+    let count = 0;
+
+    while (startingNumber < target) {
+        startingNumber += startingNumber * reach;
+        count++;
+    }
+    return count;
+}
+*/
+
+//recursive
+
+function Mormons(startingNumber, reach, target, count = 0) {
+    return startingNumber < target
+        ? Mormons(
+              (startingNumber += startingNumber * reach),
+              reach,
+              target,
+              ++count
+          )
+        : count;
+}
