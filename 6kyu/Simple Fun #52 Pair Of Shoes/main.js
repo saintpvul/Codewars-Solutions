@@ -37,3 +37,31 @@ true if it is possible to pair the shoes, false otherwise.
 */
 
 // solution
+
+function pairOfShoes(shoes) {
+    let leftShoes = {};
+    let rightShoes = {};
+
+    for (let shoe of shoes) {
+        let [type, size] = shoe;
+        if (type === 0) {
+            leftShoes[size] ? leftShoes[size]++ : (leftShoes[size] = 1);
+        } else {
+            rightShoes[size] ? rightShoes[size]++ : (rightShoes[size] = 1);
+        }
+    }
+
+    for (let size in leftShoes) {
+        if (leftShoes[size] === rightShoes[size]) {
+            delete leftShoes[size];
+            delete rightShoes[size];
+        } else {
+            return false;
+        }
+    }
+
+    return (
+        Object.keys(leftShoes).length === 0 &&
+        Object.keys(rightShoes).length === 0
+    );
+}
