@@ -17,3 +17,16 @@ Good luck!
 */
 
 // solution
+
+function countIf(head, p) {
+    let count = 0;
+    let current = head;
+
+    while (current !== null) {
+        if (p(current.data)) {
+            count++;
+        }
+        current = current.next;
+    }
+    return count;
+}
