@@ -15,3 +15,14 @@ redarr(arr) // returns {"0":"BBC1", "1":"BBC2", "2":"MTV"}
 */
 
 // solution
+
+function redarr(arr) {
+    let uniqChannels = new Set(arr.sort());
+    let channels = {};
+    let i = 0;
+    for (let channel of uniqChannels) {
+        channels[i] = channel;
+        i++;
+    }
+    return channels;
+}
