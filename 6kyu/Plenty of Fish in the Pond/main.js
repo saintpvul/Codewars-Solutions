@@ -81,3 +81,20 @@ Good luck and enjoy!
 */
 
 // solution
+function fish(shoal) {
+    let amount = 0;
+    let size = 1;
+    let nextSize = 4;
+    shoal = shoal.split("").sort().join("");
+    for (let i = 0; i < shoal.length; i++) {
+        if (shoal[i] <= size) {
+            amount += shoal[i] * 1;
+        }
+        if (amount >= nextSize) {
+            amount -= size * 4;
+            size++;
+            nextSize = size * 4;
+        }
+    }
+    return size;
+}
