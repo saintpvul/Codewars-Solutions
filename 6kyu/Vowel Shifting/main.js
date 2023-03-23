@@ -28,3 +28,18 @@ I have created other katas. Have a look if you like coding and challenges.
 */
 
 // solution
+
+function vowelShift(text, n) {
+    if (!text) return text;
+    let vowels = text.match(/[aeiou]/gi);
+    if (!vowels) return "";
+    n = n % vowels.length;
+    vowels = [...vowels.slice(-n), ...vowels.slice(0, -n)];
+    text = text.split("");
+    for (let i = 0; i < text.length; i++) {
+        if (/[aeiou]/i.test(text[i])) {
+            text[i] = vowels.shift();
+        }
+    }
+    return text.join("");
+}
