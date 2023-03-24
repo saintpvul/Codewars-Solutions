@@ -16,3 +16,22 @@ If you liked it, go for the next kata of the series!
 */
 
 // solution
+
+function hasSubpattern(string) {
+    for (let len = 1; len <= Math.floor(string.length / 2); len++) {
+        if (string.length % len === 0) {
+            const pattern = string.slice(0, len);
+            let isPattern = true;
+            for (let i = len; i < string.length; i += len) {
+                if (string.slice(i, i + len) !== pattern) {
+                    isPattern = false;
+                    break;
+                }
+            }
+            if (isPattern) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
