@@ -41,3 +41,20 @@ rotate(data, 12478) // => [3, 4, 5, 1, 2]
 */
 
 // solution
+
+function rotate(array, n) {
+    let res = [...array];
+    let shift = n % array.length;
+    if (shift >= 0) {
+        while (shift > 0) {
+            res = res.slice(-1).concat(res.slice(0, -1));
+            shift--;
+        }
+    } else {
+        while (shift < 0) {
+            res = res.slice(1).concat(res.slice(0, 1));
+            shift++;
+        }
+    }
+    return res;
+}
