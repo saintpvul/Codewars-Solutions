@@ -13,3 +13,12 @@ If null is passed, the method should return null. If an empty list is passed, it
 */
 
 // solution
+
+function sortAnimal(animal) {
+    if (!animal) return null;
+    return [...animal].sort((a, b) =>
+        a.numberOfLegs === b.numberOfLegs
+            ? a.name.localeCompare(b.name)
+            : a.numberOfLegs - b.numberOfLegs
+    );
+}
