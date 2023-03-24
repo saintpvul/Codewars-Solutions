@@ -21,3 +21,27 @@ palindrome(1221,"8") => "Not valid"
 */
 
 // solution
+
+function palindrome(num, s) {
+    if (!Number.isInteger(num) || !Number.isInteger(s) || num < 0 || s < 0) {
+        return "Not valid";
+    }
+
+    const result = [];
+    while (s > 0) {
+        if (isPalindrome(num)) {
+            result.push(num);
+            s--;
+        }
+        num++;
+    }
+    return result;
+}
+
+function isPalindrome(num) {
+    if (num < 10) {
+        return false;
+    }
+    const str = String(num);
+    return str === str.split("").reverse().join("");
+}
