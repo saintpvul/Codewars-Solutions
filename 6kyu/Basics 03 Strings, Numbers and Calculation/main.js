@@ -15,3 +15,7 @@ Hope you have fun! :-)
 */
 
 // solution
+
+function calculateString(st) {
+    return Math.round(eval(st.replace(/[^0-9\.\+\-\*\/]/gi, ""))).toString();
+}
