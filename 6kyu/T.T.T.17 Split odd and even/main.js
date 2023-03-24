@@ -21,3 +21,16 @@ splitOddAndEven(123456)  ===  [1,2,3,4,5,6]
 */
 
 // solution
+
+function splitOddAndEven(n) {
+    n = n.toString().split("");
+    for (let i = 0; i < n.length - 1; i++) {
+        if (
+            (+n[i] % 2 && !(+n[i + 1] % 2)) ||
+            (!(+n[i] % 2) && +n[i + 1] % 2)
+        ) {
+            n[i] += "s";
+        }
+    }
+    return n.join("").split("s").map(Number);
+}
