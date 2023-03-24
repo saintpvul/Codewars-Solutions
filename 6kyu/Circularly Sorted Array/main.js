@@ -23,3 +23,18 @@ While these are not (false):
 */
 
 // solution
+
+function isCircleSorted(arr) {
+    if (!arr.length) return true;
+    let current = [...arr];
+    let sorted = [...arr].sort((a, b) => a - b);
+    let len = arr.length;
+    while (len > 0) {
+        if (current.join("") === sorted.join("")) {
+            return true;
+        }
+        current = current.slice(-1).concat(current.slice(0, -1));
+        len--;
+    }
+    return false;
+}
