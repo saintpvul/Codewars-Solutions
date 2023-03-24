@@ -17,3 +17,20 @@ Good luck!
 */
 
 // solution
+
+function map(head, f) {
+    let newHead = null;
+    let lastNode = null;
+    while (head !== null) {
+        const mapped = f(head.data);
+        const noded = new Node(mapped);
+        if (newHead === null) {
+            newHead = noded;
+        } else {
+            lastNode.next = noded;
+        }
+        lastNode = noded;
+        head = head.next;
+    }
+    return newHead;
+}
