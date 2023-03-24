@@ -20,3 +20,33 @@ The router should also handle modifying existing routes. See the example tests f
 */
 
 // solution
+
+class Router {
+    constructor() {
+        this.routes = [];
+    }
+
+    bind(url, method, action) {
+        let existingRoute = this.routes.find(
+            (r) => r.url === url && r.method === method
+        );
+        if (existingRoute) {
+            existingRoute.action = action;
+            return "Modified binding.";
+        } else {
+            this.routes.push({ url, method, action });
+            return "First binding.";
+        }
+    }
+
+    runRequest(url, method) {
+        const route = this.routes.find(
+            (r) => r.url === url && r.method === method
+        );
+        if (route) {
+            return route.action();
+        } else {
+            return "Error 404: Not Found";
+        }
+    }
+}
