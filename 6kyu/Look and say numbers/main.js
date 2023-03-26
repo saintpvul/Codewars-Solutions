@@ -20,3 +20,22 @@ Write a function that given a starting value as a string, returns the appropriat
 */
 
 // solution
+
+function lookAndSay(data, len) {
+    let result = [];
+    for (let i = 0; i < len; i++) {
+        let count = 1;
+        let current = "";
+        for (let j = 0; j < data.length; j++) {
+            if (data[j] === data[j + 1]) {
+                count++;
+            } else {
+                current += count + data[j];
+                count = 1;
+            }
+        }
+        result.push(current);
+        data = current;
+    }
+    return result;
+}
