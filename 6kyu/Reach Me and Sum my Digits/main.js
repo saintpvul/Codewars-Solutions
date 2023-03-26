@@ -46,3 +46,26 @@ Enjoy it and happy coding!!
 */
 
 // solution
+
+function sumDigNthTerm(initval, patternl, nthterm) {
+    const patternLength = patternl.length;
+    let sum = 0;
+
+    for (let i = 0; i < patternLength; i++) {
+        sum += patternl[i];
+    }
+
+    const cycleSum = sum;
+    const cycleCount = Math.floor((nthterm - 1) / patternLength);
+    const remainder = (nthterm - 1) % patternLength;
+
+    initval += cycleCount * cycleSum;
+
+    for (let i = 0; i < remainder; i++) {
+        initval += patternl[i];
+    }
+
+    return String(initval)
+        .split("")
+        .reduce((acc, val) => acc + parseInt(val), 0);
+}
