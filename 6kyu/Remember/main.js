@@ -19,3 +19,17 @@ remember('Pippi') => returns ["p","i"]   // "p" is repeated first
 */
 
 // solution
+
+function remember(str) {
+    const charSet = new Set();
+    const repeatChars = [];
+    for (let i = 0; i < str.length; i++) {
+        const char = str[i];
+        if (charSet.has(char) && !repeatChars.includes(char)) {
+            repeatChars.push(char);
+        } else {
+            charSet.add(char);
+        }
+    }
+    return repeatChars;
+}
