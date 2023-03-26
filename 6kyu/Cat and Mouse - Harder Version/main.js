@@ -25,3 +25,26 @@ Finally, if all three animals are not present, return 'boring without all three'
 */
 
 // solution
+
+function catMouse(x, j) {
+    const index = {
+        C: -1,
+        D: -1,
+        m: -1,
+    };
+    for (let i = 0; i < x.length; i++) {
+        if (x[i] in index) {
+            index[x[i]] = i;
+        }
+    }
+    if (Object.values(index).some((val) => val === -1)) {
+        return "boring without all three";
+    }
+    const { C, D, m } = index;
+    if (Math.abs(m - C) <= j) {
+        return D > Math.min(C, m) && D < Math.max(C, m)
+            ? "Protected!"
+            : "Caught!";
+    }
+    return "Escaped!";
+}
