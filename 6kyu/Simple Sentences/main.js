@@ -19,3 +19,15 @@ makeSentence(['hello', ',', 'my', 'dear']) // returns 'hello, my dear.'
 */
 
 // solution
+
+function makeSentence(parts) {
+    let sentence = "";
+    for (let i = 0; i < parts.length; i++) {
+        if (parts[i] != "," && parts[i] != ".") {
+            sentence += ` ${parts[i]}`;
+        } else if (parts[i] === ",") {
+            sentence += parts[i];
+        }
+    }
+    return sentence.trim() + ".";
+}
