@@ -21,3 +21,12 @@ You can assume all tests inputs to be valid.
 */
 
 // solution
+
+const nextVersion = (version) => {
+    const arr = version.split(".").map(Number);
+    for (let i = arr.length - 1; i >= 0; i--) {
+        arr[i] = arr[i] === 9 && i !== 0 ? 0 : arr[i] + 1;
+        if (arr[i] !== 0) break;
+    }
+    return arr.join(".");
+};
