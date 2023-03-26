@@ -40,3 +40,56 @@ plugboard.process(".") ==> "."
 */
 
 // solution
+
+class Plugboard {
+    constructor(wirePairs = "") {
+        this.validLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        this.wirePairs = wirePairs;
+        this.wires = {};
+        this.validateWirePairs();
+        this.createWires();
+    }
+
+    validateWirePairs() {
+        if (this.wirePairs.length > 20) {
+            throw new Error("Too many wires defined");
+        }
+        const usedLetters = [];
+        for (let i = 0; i < this.wirePairs.length; i += 2) {
+            const letter1 = this.wirePairs[i];
+            const letter2 = this.wirePairs[i + 1];
+            if (
+                !this.validLetters.includes(letter1) ||
+                !this.validLetters.includes(letter2)
+            ) {
+                throw new Error("Invalid wire pairings");
+            }
+            if (
+                usedLetters.includes(letter1) ||
+                usedLetters.includes(letter2)
+            ) {
+                throw new Error("Duplicate letters in wire pairings");
+            }
+            usedLetters.push(letter1, letter2);
+        }
+    }
+
+    createWires() {
+        for (let i = 0; i < this.validLetters.length; i++) {
+            this.wires[this.validLetters[i]] = this.validLetters[i];
+        }
+        for (let i = 0; i < this.wirePairs.length; i += 2) {
+            const letter1 = this.wirePairs[i];
+            const letter2 = this.wirePairs[i + 1];
+            this.wires[letter1] = letter2;
+            this.wires[letter2] = letter1;
+        }
+    }
+
+    process(letter) {
+        if (!this.validLetters.includes(letter)) {
+            return letter;
+        }
+        return this.wires[letter];
+    }
+}
