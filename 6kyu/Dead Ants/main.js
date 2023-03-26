@@ -20,3 +20,19 @@ When in doubt, assume that the scattered bits are from the same ant. e.g. 2 head
 */
 
 // solution
+
+deadAntCount = function (ants) {
+    if (!ants) return 0;
+    ants = ants.split("ant").join("");
+    let count = [0, 0, 0];
+    for (let i = 0; i < ants.length; i++) {
+        if (ants[i] === "a") {
+            count[0]++;
+        } else if (ants[i] === "n") {
+            count[1]++;
+        } else if (ants[i] === "t") {
+            count[2]++;
+        }
+    }
+    return Math.max(...count);
+};
