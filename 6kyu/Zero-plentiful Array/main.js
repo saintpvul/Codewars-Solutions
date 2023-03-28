@@ -27,3 +27,29 @@ Examples
 */
 
 // solution
+
+function zeroPlentiful(arr) {
+    let count = 0;
+    let currentSequence = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === 0) {
+            currentSequence++;
+        } else {
+            if (currentSequence > 0 && currentSequence < 4) {
+                return 0;
+            } else if (currentSequence >= 4) {
+                count++;
+            }
+            currentSequence = 0;
+        }
+    }
+
+    if (currentSequence > 0 && currentSequence < 4) {
+        return 0;
+    } else if (currentSequence >= 4) {
+        count++;
+    }
+
+    return count;
+}
