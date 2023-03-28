@@ -18,3 +18,19 @@ Return an array containing a string of the valid mating pairs available (empty s
 */
 
 // solution
+
+function bears(x, s) {
+    let res = [[], false];
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] === "B" && s[i + 1] === "8") {
+            res[0].push("B8");
+            i++;
+        } else if (s[i] === "8" && s[i + 1] === "B") {
+            res[0].push("8B");
+            i++;
+        }
+    }
+    res[0].length >= x ? (res[1] = true) : (res[1] = false);
+    res[0] = res[0].join("");
+    return res;
+}
