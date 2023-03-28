@@ -29,3 +29,21 @@ See other examples in the "Sample tests".
 */
 
 // solution
+
+function hist(s) {
+    const letters = ["u", "w", "x", "z"];
+    const results = [];
+
+    for (let letter of letters) {
+        const matches = s.match(new RegExp(letter, "g")) || [];
+        if (matches.length) {
+            results.push(
+                `${letter} ${matches.length
+                    .toString()
+                    .padStart(2)}     ${"*".repeat(matches.length)}`
+            );
+        }
+    }
+
+    return results.join(`\r`);
+}
