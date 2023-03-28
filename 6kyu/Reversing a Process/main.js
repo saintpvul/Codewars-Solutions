@@ -29,3 +29,32 @@ decode "5057aan" -> "Impossible to decode"
 */
 
 // solution
+
+function decode(r) {
+    const firstDigit = /[a-zA-Z]/.exec(r);
+    if (!firstDigit) {
+        return "Impossible to decode";
+    } else {
+        const decodeNum = parseInt(r.slice(0, firstDigit.index));
+        const text = r.slice(firstDigit.index);
+        let resultStr = "";
+        for (let i = 0; i < text.length; i++) {
+            const index = text.charCodeAt(i) - "a".charCodeAt(0);
+            let found = false;
+            for (let j = 0; j < 26; j++) {
+                if ((j * decodeNum) % 26 === index) {
+                    if (found) {
+                        return "Impossible to decode";
+                    } else {
+                        resultStr += String.fromCharCode("a".charCodeAt(0) + j);
+                        found = true;
+                    }
+                }
+            }
+            if (!found) {
+                return "Impossible to decode";
+            }
+        }
+        return resultStr;
+    }
+}
