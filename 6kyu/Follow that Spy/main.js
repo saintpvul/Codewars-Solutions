@@ -21,3 +21,21 @@ There will be at least one (1) route (from one waypoint to another).
 */
 
 // solution
+
+function findRoutes(routes) {
+    const trace = [];
+
+    const startingPoint = routes.find(
+        (pair) => !routes.some((p) => p[1] === pair[0])
+    );
+    trace.push(startingPoint[0], startingPoint[1]);
+
+    while (trace.length < routes.length + 1) {
+        const nextPoint = routes.find(
+            (pair) => pair[0] === trace[trace.length - 1]
+        );
+        trace.push(nextPoint[1]);
+    }
+
+    return trace.join(", ");
+}
