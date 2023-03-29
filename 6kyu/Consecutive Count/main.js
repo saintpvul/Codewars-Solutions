@@ -14,3 +14,20 @@ Examples
 */
 
 // solution
+
+function getConsectiveItems(items, key) {
+    let count = 0,
+        current = 0;
+    items = items.toString();
+    for (let i = 0; i < items.length; i++) {
+        if (items[i] == key) {
+            current++;
+            if (current > count) {
+                count = current;
+            }
+        } else {
+            current = 0;
+        }
+    }
+    return count;
+}
