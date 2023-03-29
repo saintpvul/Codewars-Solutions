@@ -22,3 +22,30 @@ ABAB CD
 */
 
 // solution
+
+function isomorph(a, b) {
+    if (a.length !== b.length) {
+        return false;
+    }
+
+    const map = {};
+    const usedPositions = {};
+
+    for (let i = 0; i < a.length; i++) {
+        const charA = a[i];
+        const charB = b[i];
+
+        if (!map[charA]) {
+            if (usedPositions[charB]) {
+                return false;
+            }
+
+            map[charA] = charB;
+            usedPositions[charB] = true;
+        } else if (map[charA] !== charB) {
+            return false;
+        }
+    }
+
+    return true;
+}
