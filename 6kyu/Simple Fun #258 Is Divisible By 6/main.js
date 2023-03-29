@@ -33,3 +33,15 @@ As you can see, the masked number may be very large ;-)
 */
 
 // solution
+
+function isDivisibleBy6(s) {
+    let bySix = [];
+    let asterisk = s.indexOf("*");
+    for (let i = 0; i <= 9; i++) {
+        let temp = s.slice(0, asterisk) + i + s.slice(asterisk + 1);
+        if (BigInt(temp) % 6n === 0n) {
+            bySix.push(temp);
+        }
+    }
+    return bySix;
+}
