@@ -16,3 +16,25 @@ makeChange(91)  //-->  {"H":1, "Q":1, "D":1, "N":1, "P":1}
 */
 
 // solution
+
+const makeChange = (amount) => {
+    const coinValues = {
+        H: 50,
+        Q: 25,
+        D: 10,
+        N: 5,
+        P: 1,
+    };
+    const coinsUsed = {};
+
+    Object.keys(coinValues).forEach((coin) => {
+        const coinValue = coinValues[coin];
+        const coinsNeeded = Math.floor(amount / coinValue);
+        if (coinsNeeded > 0) {
+            coinsUsed[coin] = coinsNeeded;
+            amount -= coinsNeeded * coinValue;
+        }
+    });
+
+    return coinsUsed;
+};
