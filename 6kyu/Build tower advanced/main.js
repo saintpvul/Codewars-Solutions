@@ -45,3 +45,21 @@ Go take a look at Build Tower which is a more basic version :)
 */
 
 // solution
+
+function towerBuilder(nFloors, [width, height]) {
+    const tower = [];
+    const block = "*".repeat(width);
+
+    for (let i = 1; i <= nFloors; i++) {
+        const spaces = " ".repeat((nFloors - i) * width);
+        const floor = [];
+
+        for (let j = 1; j <= height; j++) {
+            floor.push(spaces + block.repeat(i * 2 - 1) + spaces);
+        }
+
+        tower.push(...floor);
+    }
+
+    return tower;
+}
