@@ -17,3 +17,23 @@ bitsWar([7,-3,-2,6]) => "tie" //111-11 vs -1+110, 3-2 vs -1+2
 */
 
 // solution
+
+function bitsWar(numbers) {
+    const odd = numbers
+        .filter((v) => v % 2 !== 0)
+        .map(
+            (v) =>
+                Math.abs(v).toString(2).replace(/0/g, "").length *
+                (v < 0 ? -1 : 1)
+        )
+        .reduce((a, b) => a + b, 0);
+    const even = numbers
+        .filter((v) => v % 2 === 0)
+        .map(
+            (v) =>
+                Math.abs(v).toString(2).replace(/0/g, "").length *
+                (v < 0 ? -1 : 1)
+        )
+        .reduce((a, b) => a + b, 0);
+    return odd > even ? "odds win" : odd === even ? "tie" : "evens win";
+}
