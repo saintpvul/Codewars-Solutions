@@ -27,7 +27,7 @@ Task
 Write these functions diag_2_sym, rot_90_counter, selfie_diag2_counterclock
 and
 
-high-order function oper(fct, s) where fct is the function of one variable f to apply to the string s (fct will be one of diag_2_sym, rot_90_counter, selfie_diag2_counterclock)
+high-order function oper(fct, s) where fct is the function of one letiable f to apply to the string s (fct will be one of diag_2_sym, rot_90_counter, selfie_diag2_counterclock)
 Examples
 s = "abcd\nefgh\nijkl\nmnop"
 oper(diag_2_sym, s) => "plhd\nokgc\nnjfb\nmiea"
@@ -41,3 +41,45 @@ Bash Note: The ouput strings should be separated by \r instead of \n. See "Sampl
 */
 
 // solution
+
+function rot90Counter(strng) {
+    let a = strng
+        .split("\n")
+        .map(function (x) {
+            return [...x].reverse().join("");
+        })
+        .map(function (x) {
+            return x.split("");
+        });
+    let b = a[0].map(function (_, c) {
+        return a.map(function (r) {
+            return r[c];
+        });
+    });
+    return b
+        .map(function (x) {
+            return x.join("");
+        })
+        .join("\n");
+}
+function diag2Sym(strng) {
+    return rot90Counter(strng)
+        .split("\n")
+        .map(function (x) {
+            return [...x].reverse().join("");
+        })
+        .join("\n");
+}
+function selfieDiag2Counterclock(strng) {
+    let newstr2 = diag2Sym(strng).split("\n");
+    let newstr3 = rot90Counter(strng).split("\n");
+    return strng
+        .split("\n")
+        .map(function (x, i) {
+            return x + "|" + newstr2[i] + "|" + newstr3[i];
+        })
+        .join("\n");
+}
+function oper(fct, s) {
+    return fct(s);
+}
