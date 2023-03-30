@@ -40,3 +40,24 @@ Find the letters contained in each alphabet but not in the string(s). Output the
 */
 
 // solution
+
+function missingAlphabets(s) {
+    const freq = new Array(26).fill(0);
+    for (const char of s) {
+        freq[char.charCodeAt(0) - 97]++;
+    }
+
+    const maxFreq = Math.max(...freq);
+
+    const res = [];
+    for (let i = 0; i < 26; i++) {
+        const numMissing = maxFreq - freq[i];
+        if (numMissing > 0) {
+            const char = String.fromCharCode(i + 97);
+            const missingChars = char.repeat(numMissing);
+            res.push(missingChars);
+        }
+    }
+
+    return res.join("");
+}
