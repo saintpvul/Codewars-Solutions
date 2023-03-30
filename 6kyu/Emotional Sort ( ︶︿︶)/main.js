@@ -34,3 +34,19 @@ Enjoy! (づ｡◕‿‿◕｡)づ
 */
 
 // solution
+
+function sortEmotions(arr, order, emotions = ["T_T", ":(", ":|", ":)", ":D"]) {
+    if (!arr.length) return [];
+
+    const sortedEmotions = order ? emotions.reverse() : emotions;
+    const result = [];
+
+    for (const emotion of sortedEmotions) {
+        while (arr.includes(emotion)) {
+            result.push(emotion);
+            arr.splice(arr.indexOf(emotion), 1);
+        }
+    }
+
+    return result;
+}
