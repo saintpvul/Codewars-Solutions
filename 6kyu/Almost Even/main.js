@@ -12,3 +12,18 @@ Complete the function so that it returns an array of integer representing the pa
 */
 
 // solution
+
+function splitInteger(num, parts) {
+    let quotient = Math.floor(num / parts);
+    let remainder = num % parts;
+    let res = [];
+
+    for (let i = 0; i < parts; i++) {
+        res.push(quotient);
+        if (i < remainder) {
+            rest[i]++;
+        }
+    }
+
+    return res;
+}
