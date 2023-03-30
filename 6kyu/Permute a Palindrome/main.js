@@ -17,9 +17,9 @@ The brute force approach would be to generate all the permutations of the string
 //solution
 
 function permuteAPalindrome(input) {
-  let set = new Set();
-  for (let char of input) {
-    set[set.has(char) ? "delete" : "add"](char);
-  }
-  return set.size < 2;
+    let set = new Set();
+    for (const char of input) {
+        set[set.has(char) ? "delete" : "add"](char);
+    }
+    return set.size < 2;
 }
