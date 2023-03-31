@@ -25,19 +25,19 @@ Invalid arrays
 // solution
 
 function upArray(arr) {
-  if (
-    !arr.length ||
-    arr.some(function (v) {
-      return v < 0 || v > 9;
-    })
-  )
-    return null;
-  let i = 1,
-    len = arr.length,
-    v;
-  while ((v = arr[--len] + i)) {
-    arr[len] = v % 10;
-    i = ~~(v / 10);
-  }
-  return i ? [i].concat(arr) : arr;
+    if (
+        !arr.length ||
+        arr.some(function (v) {
+            return v < 0 || v > 9;
+        })
+    )
+        return null;
+    let i = 1,
+        len = arr.length,
+        v;
+    while ((v = arr[--len] + i)) {
+        arr[len] = v % 10;
+        i = ~~(v / 10);
+    }
+    return i ? [i].concat(arr) : arr;
 }
