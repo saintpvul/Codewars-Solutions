@@ -9,3 +9,35 @@ Your task is to write a RLE encoder and decoder using this technique. The texts 
 */
 
 // solution
+
+function encode(input) {
+    let count = 1;
+    let res = "";
+    for (let i = 0; i < input.length; i++) {
+        if (input[i + 1] != input[i]) {
+            res += count + input[i];
+            count = 1;
+        } else {
+            count++;
+        }
+    }
+    return res;
+}
+
+function decode(input) {
+    let amount = input
+        .replace(/[^0-9]/g, " ")
+        .trim()
+        .split(" ")
+        .filter((n) => n);
+    let chars = input
+        .replace(/[0-9]/g, " ")
+        .trim()
+        .split(" ")
+        .filter((c) => c);
+    let res = "";
+    for (let i = 0; i < chars.length; i++) {
+        res += chars[i].repeat(amount[i] * 1);
+    }
+    return res;
+}
