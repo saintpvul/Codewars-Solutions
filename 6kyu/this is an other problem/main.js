@@ -53,3 +53,21 @@ Can you change our function to create such a NamedOne object ?
 */
 
 // solution
+
+function NamedOne(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+
+    Object.defineProperty(this, "fullName", {
+        get: function () {
+            return this.firstName + " " + this.lastName;
+        },
+        set: function (value) {
+            let names = value.split(" ");
+            if (names.length === 2) {
+                this.firstName = names[0];
+                this.lastName = names[1];
+            }
+        },
+    });
+}
