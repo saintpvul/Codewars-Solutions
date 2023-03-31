@@ -26,3 +26,9 @@ Good luck !!
 */
 
 // solution
+
+function countOddPentaFib(n) {
+    const x = Math.floor((n - 1) / 6);
+    const y = Math.floor((n - 2) / 6);
+    return x + y + 1;
+}
