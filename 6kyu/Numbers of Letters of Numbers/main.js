@@ -13,3 +13,33 @@ numbersOfLetters(1) --> ["one", "three", "five", "four"]
 */
 
 // solution
+
+function numberToWord(num) {
+    const int = [
+        "zero",
+        "one",
+        "two",
+        "three",
+        "four",
+        "five",
+        "six",
+        "seven",
+        "eight",
+        "nine",
+    ];
+    return num
+        .toString()
+        .split("")
+        .map((i) => int[+i])
+        .join("");
+}
+
+function numbersOfLetters(integer) {
+    let res = [numberToWord(integer)];
+    let current = numberToWord(res[0].length);
+    while (res[res.length - 1] !== current) {
+        res.push(current);
+        current = numberToWord(current.length);
+    }
+    return res;
+}
