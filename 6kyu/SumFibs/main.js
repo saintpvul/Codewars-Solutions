@@ -13,3 +13,13 @@ sumFibs(9) === 44; // (0, 1, 1, 2, 3, 5, 8, 13, 21, 34)
 */
 
 // solution
+
+function sumFibs(n) {
+    let fibs = [0, 1];
+    let i = 2;
+    while (fibs.length <= n) {
+        fibs[i] = fibs[i - 1] + fibs[i - 2];
+        i++;
+    }
+    return fibs.reduce((s, v) => (!(v % 2) ? (s += v) : s), 0);
+}
