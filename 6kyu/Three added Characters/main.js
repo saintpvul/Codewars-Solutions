@@ -29,3 +29,18 @@ Write the function addedChar() that takes two strings and return the added chara
 */
 
 // solution
+
+function addedChar(s1, s2) {
+    let counter = {};
+    s1 = s1.split("");
+    s2 = s2.split("");
+    for (let char of s1) {
+        counter[char] ? counter[char]++ : (counter[char] = 1);
+    }
+    for (let char of s2) {
+        counter[char] ? counter[char]-- : (counter[char] = 1);
+    }
+    return Object.keys(counter).reduce((a, b) =>
+        counter[a] > counter[b] ? a : b
+    );
+}
