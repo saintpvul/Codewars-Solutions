@@ -25,8 +25,8 @@ A message 'Caesar Cipher' and a key of -1 returns 'Bzdrzq Bhogdq'.
 function encryptor(key, message) {
     key = ((key % 26) + 26) % 26;
     return message.replace(/[a-zA-Z]/g, function (x) {
-        var baseChar = /[a-z]/.test(x) ? "a" : "A";
-        var charCode = x.charCodeAt(0) + key - baseChar.charCodeAt(0);
+        let baseChar = /[a-z]/.test(x) ? "a" : "A";
+        let charCode = x.charCodeAt(0) + key - baseChar.charCodeAt(0);
         return String.fromCharCode((charCode % 26) + baseChar.charCodeAt(0));
     });
 }
