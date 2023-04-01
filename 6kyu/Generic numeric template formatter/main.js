@@ -17,3 +17,8 @@ numericFormatter("xxxx yyyy zzzz") === "1234 5678 9012"
 */
 
 // solution
+
+function numericFormatter(template, str = "1234567890") {
+    let i = 0;
+    return template.replace(/[a-z]/gi, () => str[i++ % str.length]);
+}
