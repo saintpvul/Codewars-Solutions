@@ -28,3 +28,20 @@ result = "a#cd#"
 */
 
 // solution
+
+function assembleString(array) {
+    if (array.length === 0) {
+        return "";
+    }
+
+    let str = Array(array[0].length).fill("#");
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array[i].length; j++) {
+            if (str[j] === "#" && array[i][j] !== "*") {
+                str[j] = array[i][j];
+            }
+        }
+    }
+    str = str.join("");
+    return str;
+}
