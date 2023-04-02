@@ -18,3 +18,20 @@ users = {  1  =>  93,
 */
 
 // solution
+
+function nexus(users) {
+    let closestDiff = Infinity;
+    let nexusRank = null;
+
+    for (let rank in users) {
+        let honor = users[rank];
+        let diff = Math.abs(honor - rank);
+
+        if (diff < closestDiff || (diff === closestDiff && rank < nexusRank)) {
+            closestDiff = diff;
+            nexusRank = rank;
+        }
+    }
+
+    return parseInt(nexusRank);
+}
