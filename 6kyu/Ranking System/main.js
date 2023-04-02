@@ -15,3 +15,8 @@ rankings([22, 33, 18, 9, 110, 4, 1, 88, 6, 50]) // [5, 4, 6, 7, 1, 9, 10, 2, 8, 
 */
 
 // solution
+
+function rankings(arr) {
+    const sorted = [...arr].sort((a, b) => b - a);
+    return arr.map((num) => sorted.indexOf(num) + 1);
+}
