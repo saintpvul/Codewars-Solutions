@@ -11,3 +11,8 @@ because there is one 1st place value, a five-way tie for 2nd place, and one in 7
 */
 
 // solution
+
+function ranks(a) {
+    const sorted = [...a].sort((a, b) => b - a);
+    return a.map((r) => sorted.indexOf(r) + 1);
+}
