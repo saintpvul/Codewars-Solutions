@@ -14,3 +14,24 @@ Note: "randomness" is checked by counting the characters used in the generated p
 */
 
 // solution
+
+function passwordGen() {
+    const allChars =
+        "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let password = "";
+
+    for (let i = 0; i < Math.floor(Math.random() * 19) + 6; i++) {
+        password += allChars.charAt(
+            Math.floor(Math.random() * allChars.length)
+        );
+    }
+
+    const isStrongPassword =
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{6,20}$/.test(password);
+
+    if (isStrongPassword) {
+        return password;
+    } else {
+        return passwordGen();
+    }
+}
