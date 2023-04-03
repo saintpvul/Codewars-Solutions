@@ -60,3 +60,12 @@ lights[5] changed to  on, because its left side (lights[4]) is on at the previou
 */
 
 // solution
+
+function lightBulbs(lights, n) {
+    for (let i = 0; i < n; i++) {
+        lights = lights.map((state, index, arr) => {
+            return state ^ arr[(index + arr.length - 1) % arr.length];
+        });
+    }
+    return lights;
+}
