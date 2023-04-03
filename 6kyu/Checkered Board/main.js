@@ -24,3 +24,24 @@ Do not use HTML entities for the squares (e.g. □ for white square) as the code
 */
 
 // solution
+
+function checkeredBoard(dimensions) {
+    const dark = "□";
+    const light = "■";
+    let board = [];
+    let isDark = dimensions % 2 === 0 ? true : false;
+
+    for (let i = 0; i < dimensions; i++) {
+        let row = [];
+        for (let j = 0; j < dimensions; j++) {
+            row.push(isDark ? dark : light);
+            isDark = !isDark;
+        }
+        board.push(row);
+        if (dimensions % 2 === 0) {
+            isDark = !isDark;
+        }
+    }
+
+    return board.map((row) => row.join(" ")).join("\n");
+}
