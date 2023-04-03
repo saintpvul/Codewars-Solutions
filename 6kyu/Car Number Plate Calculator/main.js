@@ -68,3 +68,18 @@ Good luck!
 */
 
 // solution
+
+function findTheNumberPlate(customerID) {
+    const seriesIndex = customerID / 999;
+
+    const serialNumber = (customerID % 999) + 1;
+    const serialNumberString = serialNumber.toString().padStart(3, "0");
+
+    const seriesLetters = [
+        String.fromCharCode((seriesIndex % 26) + 97),
+        String.fromCharCode(((seriesIndex / 26) % 26) + 97),
+        String.fromCharCode(((seriesIndex / 26 / 26) % 26) + 97),
+    ];
+
+    return seriesLetters.join("") + serialNumberString;
+}
