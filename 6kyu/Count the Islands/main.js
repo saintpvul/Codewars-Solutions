@@ -24,3 +24,35 @@ Your task is to implement a function which accepts a matrix containing the numbe
 */
 
 // solution
+
+function countIslands(image) {
+    let result = 0;
+    for (let y = 0; y < image.length; y++) {
+        for (let x = 0; x < image[y].length; x++) {
+            if (image[y]?.[x]) {
+                result++;
+                flood(image, x, y);
+            }
+        }
+    }
+    return result;
+}
+
+function flood(image, x, y) {
+    if (image[y]?.[x]) {
+        image[y][x] = 0;
+        const directions = [
+            [-1, 0],
+            [1, 0],
+            [0, -1],
+            [0, 1],
+            [-1, -1],
+            [-1, 1],
+            [1, -1],
+            [1, 1],
+        ];
+        for (const [dx, dy] of directions) {
+            flood(image, x + dx, y + dy);
+        }
+    }
+}
