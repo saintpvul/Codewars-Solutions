@@ -8,3 +8,15 @@ smartSum(1,2,[[3,4],5],6); // returns 21
 */
 
 // solution
+
+function smartSum(...args) {
+    let sum = 0;
+    for (const arg of args) {
+        if (Array.isArray(arg)) {
+            sum += smartSum(...arg);
+        } else {
+            sum += arg;
+        }
+    }
+    return sum;
+}
