@@ -28,3 +28,13 @@ Should return
 */
 
 // solution
+
+function doors(n) {
+    let opened = 0;
+    for (let i = 1; i <= n; i++) {
+        if (!(Math.sqrt(i) % 1)) {
+            opened++;
+        }
+    }
+    return opened;
+}
