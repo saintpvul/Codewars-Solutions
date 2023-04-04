@@ -29,3 +29,40 @@ Happy coding!!
 */
 
 // solution
+
+function primeBefAft(num) {
+    let prev = num - 1;
+    let next = num + 1;
+
+    function isPrime(n) {
+        if (n < 2) {
+            return false;
+        }
+        if (n === 2) {
+            return true;
+        }
+        if (n % 2 === 0) {
+            return false;
+        }
+        for (let i = 3; i <= Math.sqrt(n); i += 2) {
+            if (!(n % i)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    while (prev >= 2) {
+        if (isPrime(prev)) {
+            break;
+        }
+        prev--;
+    }
+    while (true) {
+        if (isPrime(next)) {
+            break;
+        }
+        next++;
+    }
+    return [prev, next];
+}
