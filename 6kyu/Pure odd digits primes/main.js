@@ -21,3 +21,44 @@ Happy coding!!
 */
 
 // solution
+
+function onlyOddDigPrimes(n) {
+    let next = n + 1;
+    while (
+        !next
+            .toString()
+            .split("")
+            .every((e) => Number(e) % 2) ||
+        !isPrime(next)
+    ) {
+        next++;
+    }
+
+    const primesBelow = [];
+    for (let i = n; i > 2; i--) {
+        if (
+            isPrime(i) &&
+            i
+                .toString()
+                .split("")
+                .every((e) => Number(e) % 2)
+        ) {
+            primesBelow.push(i);
+        }
+    }
+
+    const largestPrimeBelow = primesBelow[0];
+    const smallestPrimeAbove = next;
+
+    return [primesBelow.length, largestPrimeBelow, smallestPrimeAbove];
+}
+
+function isPrime(num) {
+    if (num < 2) return false;
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (!(num % i)) {
+            return false;
+        }
+    }
+    return true;
+}
