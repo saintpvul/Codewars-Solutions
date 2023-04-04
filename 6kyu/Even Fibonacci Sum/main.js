@@ -15,3 +15,16 @@ fibonacci(25997544)==19544084
 */
 
 // solution
+
+function fibonacci(max) {
+    let sum = 0;
+    let prev = 0;
+    let curr = 2;
+    while (curr < max) {
+        sum += curr;
+        const next = prev + 4 * curr;
+        prev = curr;
+        curr = next;
+    }
+    return sum;
+}
