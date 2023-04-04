@@ -18,35 +18,11 @@ Happy coding!!
 // solution
 
 function countSpecMult(n, mxval) {
-    let prime = [];
-    for (let i = 2; prime.length < n; i++) {
-        if (isPrime(i)) {
-            prime.push(i);
-        }
-    }
-    function isPrime(n) {
-        if (n < 2) {
-            return false;
-        }
-        for (let i = 2; i <= Math.sqrt(n); i++) {
-            if (n % i === 0) {
-                return false;
-            }
-        }
-        return true;
-    }
-    let count = 0;
-    for (let i = 1; i < mxval; i++) {
-        let divisible = true;
-        for (let j = 0; j < n; j++) {
-            if (i % prime[j] !== 0) {
-                divisible = false;
-                break;
-            }
-        }
-        if (divisible) {
-            count++;
-        }
-    }
-    return count;
+    let primes = [
+        2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67,
+        71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139,
+        149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199,
+    ];
+    primes = primes.slice(0, n).reduce((c, n) => c * n, 1);
+    return Math.floor(mxval / primes);
 }
