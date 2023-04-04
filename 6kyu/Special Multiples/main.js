@@ -16,3 +16,37 @@ Happy coding!!
 */
 
 // solution
+
+function countSpecMult(n, mxval) {
+    let prime = [];
+    for (let i = 2; prime.length < n; i++) {
+        if (isPrime(i)) {
+            prime.push(i);
+        }
+    }
+    function isPrime(n) {
+        if (n < 2) {
+            return false;
+        }
+        for (let i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+    let count = 0;
+    for (let i = 1; i < mxval; i++) {
+        let divisible = true;
+        for (let j = 0; j < n; j++) {
+            if (i % prime[j] !== 0) {
+                divisible = false;
+                break;
+            }
+        }
+        if (divisible) {
+            count++;
+        }
+    }
+    return count;
+}
