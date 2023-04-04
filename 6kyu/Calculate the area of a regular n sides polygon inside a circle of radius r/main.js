@@ -19,3 +19,11 @@ Note: if you need to use Pi in your code, use the native value of your language 
 */
 
 // solution
+
+function areaOfPolygonInsideCircle(circleRadius, numberOfSides) {
+    const angle = (2 * Math.PI) / numberOfSides;
+    const apothem = circleRadius * Math.cos(angle / 2);
+    const sideLength = 2 * circleRadius * Math.sin(angle / 2);
+    const area = 0.5 * apothem * numberOfSides * sideLength;
+    return Math.round(area * 1000) / 1000;
+}
