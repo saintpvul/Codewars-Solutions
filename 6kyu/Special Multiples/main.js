@@ -26,3 +26,5 @@ function countSpecMult(n, mxval) {
     primes = primes.slice(0, n).reduce((c, n) => c * n, 1);
     return Math.floor(mxval / primes);
 }
+
+// faster solution
