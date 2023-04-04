@@ -23,3 +23,15 @@ amount of duplicates variable, according to the length of the array
 */
 
 // solution
+
+function findDupsMiss(arr) {
+    let dups = [],
+        miss;
+    let sorted = arr.sort((a, b) => a - b);
+    for (let i = 0; i < sorted.length - 1; i++) {
+        if (sorted[i] == sorted[i + 1]) dups.push(sorted[i]);
+        if (sorted[i] != sorted[i + 1] && sorted[i] != sorted[i + 1] - 1)
+            miss = sorted[i] + 1;
+    }
+    return [miss, dups.sort((a, b) => a - b)];
+}
