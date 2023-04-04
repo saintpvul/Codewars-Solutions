@@ -19,3 +19,24 @@ Ideally, your solution should not use extra space except the one provided by the
 */
 
 // solution
+
+function solution(array) {
+    let missing = 0,
+        duplicate = 0;
+    let n = array.length;
+    for (let i = 0; i < n; i++) {
+        let index = Math.abs(array[i]) - 1;
+        if (array[index] > 0) {
+            array[index] = -array[index];
+        } else {
+            duplicate = Math.abs(array[i]);
+        }
+    }
+    for (let i = 0; i < n; i++) {
+        if (array[i] > 0) {
+            missing = i + 1;
+            break;
+        }
+    }
+    return [missing, duplicate];
+}
