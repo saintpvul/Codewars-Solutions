@@ -13,3 +13,35 @@ Note for the random tests: If a player that has already been sent off receives a
 */
 
 // solution
+
+function menStillStanding(cards) {
+    let yellowCards = new Set();
+    let redCards = new Set();
+    let redCardCount = {
+        A: 0,
+        B: 0,
+    };
+
+    for (let num of cards) {
+        if (redCardCount["A"] === 5 || redCardCount["B"] === 5) {
+            break;
+        }
+        let player = num.slice(0, -1);
+        let card = num.slice(-1);
+        if (card === "R") {
+            if (!redCards.has(player)) {
+                redCardCount[num[0]] += 1;
+                redCards.add(player);
+            }
+        } else if (card === "Y") {
+            if (yellowCards.has(player) && !redCards.has(player)) {
+                redCardCount[num[0]] += 1;
+                redCards.add(player);
+            } else {
+                yellowCards.add(player);
+            }
+        }
+    }
+
+    return [11 - redCardCount["A"], 11 - redCardCount["B"]];
+}
