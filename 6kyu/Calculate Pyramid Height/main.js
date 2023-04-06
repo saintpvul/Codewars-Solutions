@@ -20,3 +20,14 @@ Examples
 */
 
 // solution
+
+function pyramidHeight(n) {
+    let layer = 0,
+        count = -1;
+
+    for (let i = 1; layer <= n; i++) {
+        layer += i * i;
+        count++;
+    }
+    return count;
+}
