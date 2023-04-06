@@ -82,3 +82,31 @@ Interactive Circuit Builder (used to create the images above)
 */
 
 // solution
+
+function calculateResistance(circuit) {
+    const resistance = calculateComponent(circuit);
+    if (resistance === 0) {
+        throw new Error("Short Circuit!");
+    }
+    if (!isFinite(resistance)) {
+        throw new Error("Broken Circuit!");
+    }
+    return resistance;
+}
+
+function calculateComponent(component) {
+    if (typeof component === "number") {
+        return component;
+    }
+    const isSeries = component[0];
+    const resistors = component.slice(1);
+    if (isSeries) {
+        return resistors.reduce((acc, r) => acc + calculateComponent(r), 0);
+    } else {
+        const inverseTotal = resistors.reduce(
+            (acc, r) => acc + 1 / calculateComponent(r),
+            0
+        );
+        return 1 / inverseTotal;
+    }
+}
