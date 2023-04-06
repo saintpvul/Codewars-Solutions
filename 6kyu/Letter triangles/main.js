@@ -54,3 +54,20 @@ Input will always be lowercase letters. Random tests contains strings up to 30 l
 */
 
 // solution
+
+function triangle(row) {
+    let output = row;
+
+    while (output.length > 1) {
+        let newOutput = "";
+        for (let i = 0; i < output.length - 1; i++) {
+            let sum =
+                output.charCodeAt(i) - 96 + (output.charCodeAt(i + 1) - 96);
+            if (sum > 26) sum -= 26;
+            newOutput += String.fromCharCode(sum + 96);
+        }
+        output = newOutput;
+    }
+
+    return output;
+}
