@@ -9,3 +9,19 @@ Try several times if you had such experience.
 */
 
 // solution
+
+async function getLeaderboardHonor() {
+    const response = await fetch("https://www.codewars.com/users/leaderboard");
+    const body = await response.text();
+
+    const regex = /<td class="honor">(\d+,{0,1}\d*)<\/td>/g;
+    const honorList = [];
+
+    let match = regex.exec(body);
+    while (match !== null) {
+        honorList.push(parseInt(match[1].replace(",", ""), 10));
+        match = regex.exec(body);
+    }
+
+    return honorList;
+}
