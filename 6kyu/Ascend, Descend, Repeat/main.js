@@ -25,3 +25,15 @@ minimum and maximum can equal one another and result in a single number repeated
 */
 
 // solution
+
+function ascendDescend(length, minimum, maximum) {
+    let out = "";
+    if (maximum < minimum || length == 0) return out;
+    for (let i = minimum; i <= maximum; i++) {
+        out += i;
+    }
+    for (let i = maximum - 1; i > minimum; i--) {
+        out += i;
+    }
+    return out.repeat(length).substring(0, length);
+}
