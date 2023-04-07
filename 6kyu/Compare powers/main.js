@@ -18,3 +18,11 @@ Only positive integers will be tested, including bigger numbers - you are warned
 */
 
 // solution
+
+function comparePowers([a, b], [c, d]) {
+    return b * Math.log2(a) > d * Math.log2(c)
+        ? -1
+        : b * Math.log2(a) < d * Math.log2(c)
+        ? 1
+        : 0;
+}
