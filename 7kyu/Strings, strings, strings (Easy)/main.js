@@ -38,3 +38,24 @@ Your recovered toString() methods should only return the stringified version of 
 */
 
 // solution
+
+// Recover toString() for booleans
+Boolean.prototype.toString = function () {
+    return this.valueOf() ? "true" : "false";
+};
+
+// Recover toString() for numbers
+Number.prototype.toString = function () {
+    return "" + this;
+};
+
+// Recover toString() for arrays
+Array.prototype.toString = function () {
+    return (
+        "[" +
+        this.map(function (item) {
+            return typeof item === "number" ? item : JSON.stringify(item);
+        }).join(",") +
+        "]"
+    );
+};
