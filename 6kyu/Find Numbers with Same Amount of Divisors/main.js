@@ -29,3 +29,27 @@ Happy coding!!!
 */
 
 // solution
+
+function countPairsInt(diff, nMax) {
+    let count = 0;
+    for (let i = 2; i + diff < nMax; i++) {
+        if (getDivisors(i) === getDivisors(i + diff)) {
+            count++;
+        }
+    }
+    return count;
+}
+
+function getDivisors(n) {
+    let count = 0;
+    for (let i = 1; i <= Math.sqrt(n); i++) {
+        if (n % i === 0) {
+            if (n / i === i) {
+                count++;
+            } else {
+                count += 2;
+            }
+        }
+    }
+    return count;
+}
