@@ -19,3 +19,11 @@ Have a good time!
 */
 
 // solution
+
+function trackSum(arr) {
+    let a = arr;
+    let b = [...new Set(a)].sort((x, y) => y - x);
+    let c = b.slice(1).map((x, i) => b[i] - x);
+    let d = [...new Set(c)].sort((x, y) => c.indexOf(x) - c.indexOf(y));
+    return [[a, b, c, d].map((x) => x.reduce((s, i) => (s += i))), d];
+}
