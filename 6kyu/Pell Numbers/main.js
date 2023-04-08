@@ -15,3 +15,17 @@ Your task is to write a method that returns nth Pell number
 */
 
 // solution
+
+function pell(n) {
+    if (!n) {
+        return 0n;
+    }
+    let prevPrev = 0n,
+        prev = 1n;
+    for (let i = 2; i <= n; i++) {
+        let current = 2n * prev + prevPrev;
+        prevPrev = prev;
+        prev = current;
+    }
+    return prev;
+}
