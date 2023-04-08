@@ -40,3 +40,22 @@ Strings, strings, strings (Hard) - this Kata
 */
 
 // solution
+
+Array.prototype.toString = function () {
+    let result = "[";
+    for (let i = 0; i < this.length; i++) {
+        const value = this[i];
+        if (Array.isArray(value)) {
+            result += value.toString();
+        } else if (typeof value === "string") {
+            result += `'${value}'`;
+        } else {
+            result += value;
+        }
+        if (i < this.length - 1) {
+            result += ",";
+        }
+    }
+    result += "]";
+    return result;
+};
