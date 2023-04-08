@@ -22,3 +22,24 @@ This kata is part of the Collection "Date fundamentals":
 */
 
 // solution
+
+function countDays(d) {
+    const today = new Date();
+    const time = new Date(d);
+    const todayCheck = time.toDateString() === today.toDateString();
+
+    if (todayCheck) {
+        return "Today is the day!";
+    }
+
+    const past = today.getTime() > time.getTime();
+
+    if (past) {
+        return "The day is in the past!";
+    }
+
+    const diffInMs = time.getTime() - today.getTime();
+    const diffInDays = Math.round(diffInMs / (1000 * 60 * 60 * 24));
+
+    return `${diffInDays} days`;
+}
