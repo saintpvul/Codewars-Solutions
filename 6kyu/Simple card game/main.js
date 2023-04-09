@@ -23,3 +23,34 @@ So you should return: "Steve wins 2 to 1"
 */
 
 // solution
+
+function winner(deckSteve, deckJosh) {
+    let cards = [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "T",
+        "J",
+        "Q",
+        "K",
+        "A",
+    ];
+    let points = [0, 0];
+    for (let i = 0; i < deckSteve.length; i++) {
+        if (cards.indexOf(deckSteve[i]) > cards.indexOf(deckJosh[i])) {
+            points[0]++;
+        } else if (cards.indexOf(deckSteve[i]) < cards.indexOf(deckJosh[i])) {
+            points[1]++;
+        }
+    }
+    return points[0] > points[1]
+        ? `Steve wins ${points[0]} to ${points[1]}`
+        : points[0] < points[1]
+        ? `Josh wins ${points[1]} to ${points[0]}`
+        : "Tie";
+}
