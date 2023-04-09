@@ -17,3 +17,17 @@ Example:
 */
 
 // solution
+
+function getMostProfitFromStockQuotes(quotes) {
+    let gain = 0;
+    let top = -Infinity;
+    for (let i = quotes.length - 1; i >= 0; i--) {
+        const v = quotes[i];
+        if (top < v) {
+            top = v;
+        } else {
+            gain += top - v;
+        }
+    }
+    return gain;
+}
