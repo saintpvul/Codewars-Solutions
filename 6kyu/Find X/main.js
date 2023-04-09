@@ -30,6 +30,10 @@ Input Range
 
 Note: This problem is more about logical reasoning than it is about finding a mathematicial formula, infact there are no complex math formula involved
 
-/*
+*/
 
 // solution
+
+function findX(n) {
+    return n * n * (3 * n - 2);
+}
