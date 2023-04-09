@@ -29,3 +29,24 @@ Do not mutate the Input.
 */
 
 // solution
+
+function arrange(s) {
+    let i = 0,
+        j = s.length - 1;
+
+    let t = [];
+    while (i <= j) {
+        if (i === j) {
+            t.push(s[i]);
+        } else {
+            if (i % 2) {
+                t.push(s[j], s[i]);
+            } else {
+                t.push(s[i], s[j]);
+            }
+        }
+        i++;
+        j--;
+    }
+    return t;
+}
