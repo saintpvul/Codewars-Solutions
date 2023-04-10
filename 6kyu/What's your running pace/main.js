@@ -17,3 +17,17 @@ Note: The pace should always return only the number of minutes and seconds. You 
 */
 
 // solution
+
+function runningPace(distance, time) {
+    if (distance === 1) return time;
+
+    const totalSec =
+        parseInt(time.split(":")[0], 10) * 60 +
+        parseInt(time.split(":")[1], 10);
+    const paceInSec = totalSec / distance;
+
+    const mins = Math.floor(paceInSec / 60);
+    const sec = Math.floor(paceInSec % 60);
+
+    return `${mins}:${sec < 10 ? `0${sec}` : sec}`;
+}
