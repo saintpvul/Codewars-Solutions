@@ -41,3 +41,19 @@ Check out my other 80's Kids Katas:
 */
 
 // solution
+
+function totalLicks(env) {
+    let licks = 252;
+    let toughest = 0,
+        reason = "";
+    for (item in env) {
+        licks += env[item];
+        if (env[item] > toughest) {
+            toughest = env[item];
+            reason = item;
+        }
+    }
+    return `It took ${licks} licks to get to the tootsie roll center of a tootsie pop${
+        toughest <= 0 ? "." : `. The toughest challenge was ${reason}.`
+    }`;
+}
