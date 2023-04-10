@@ -20,3 +20,7 @@ Don't round or truncate your results. See the testing function in Sample Tests:.
 */
 
 // solution
+
+function f(x) {
+    return x / (Math.sqrt(1 + x) + 1);
+}
