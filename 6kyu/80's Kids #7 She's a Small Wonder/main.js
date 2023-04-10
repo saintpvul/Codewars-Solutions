@@ -38,3 +38,37 @@ Check out my other 80's Kids Katas:
 */
 
 // solution
+
+class Robot {
+    constructor() {
+        this.words = new Set([
+            "thank",
+            "you",
+            "for",
+            "teaching",
+            "me",
+            "i",
+            "already",
+            "know",
+            "the",
+            "word",
+            "do",
+            "not",
+            "understand",
+            "input",
+        ]);
+    }
+
+    learnWord(word) {
+        if (!/^[a-z]+$/i.test(word)) {
+            return "I do not understand the input";
+        }
+
+        if (this.words.has(word.toLowerCase())) {
+            return `I already know the word ${word}`;
+        }
+
+        this.words.add(word.toLowerCase());
+        return `Thank you for teaching me ${word}`;
+    }
+}
