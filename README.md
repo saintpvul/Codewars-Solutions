@@ -1,4 +1,4 @@
-<h1 align="center"> Codewars <img width="500" src="https://www.codewars.com/users/saintpvul/badges/large" alt="badge"> </h1>
+<h1 align="center"> Codewars <img width="350" src="https://www.codewars.com/users/saintpvul/badges/large" alt="badge"> </h1>
 <h4 align="center"> This repo contains my codewars kata solutions </h4>
 
 <ul>
