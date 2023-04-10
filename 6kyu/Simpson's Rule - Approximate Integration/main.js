@@ -122,3 +122,22 @@ Complement: you can see: https://www.codewars.com/kata/5562ab5d6dca8009f7000050/
 */
 
 // solution
+
+function simpson(n) {
+    const a = 0;
+    const b = Math.PI;
+    const h = (b - a) / n;
+    let sum1 = 0;
+    let sum2 = 0;
+    for (let i = 1; i <= n / 2; i++) {
+        sum1 += f(a + (2 * i - 1) * h);
+    }
+    for (let i = 1; i < n / 2; i++) {
+        sum2 += f(a + 2 * i * h);
+    }
+    return ((b - a) / (3 * n)) * (f(a) + f(b) + 4 * sum1 + 2 * sum2);
+}
+
+function f(x) {
+    return (3 / 2) * Math.sin(x) ** 3;
+}
