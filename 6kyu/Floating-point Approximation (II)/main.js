@@ -38,3 +38,16 @@ To avoid discussions, please round the result with something analogous to printf
 */
 
 // solution
+
+function interp(f, l, u, n) {
+    const d = (u - l) / n;
+    const res = [];
+
+    for (let i = 0; i < n; i++) {
+        const x = l + i * d;
+        const y = f(x);
+        res.push(Math.floor(y * 100) / 100);
+    }
+
+    return res;
+}
