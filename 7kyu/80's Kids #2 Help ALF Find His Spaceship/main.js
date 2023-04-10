@@ -45,3 +45,13 @@ Check out my other 80's Kids Katas:
 */
 
 // solution
+
+function findSpaceship(map) {
+    if (!map || map.indexOf("X") === -1) return "Spaceship lost forever.";
+    map = map.split("\n").reverse();
+    for (let i = 0; i < map.length; i++) {
+        if (map[i].includes("X")) {
+            return [map[i].indexOf("X"), i];
+        }
+    }
+}
