@@ -64,3 +64,77 @@ Check out my other 80's Kids Katas:
 */
 
 // solution
+
+//too slow
+
+// function fight(robot1, robot2, tactics) {
+//     let winner = "";
+//     let firstMove = -1;
+
+//     if (robot1.speed < robot2.speed) {
+//         firstMove = 1;
+//     }
+
+//     while (robot1.health > 0 && robot2.health > 0) {
+//         if (firstMove) {
+//             for (let i = 0; i < robot2.tactics.length; i++) {
+//                 robot1.health -= tactics[robot2.tactics[i]];
+//                 robot2.health -= tactics[robot1.tactics[i]];
+//                 if (robot1.health <= 0 || robot2.health <= 0) {
+//                     break;
+//                 }
+//             }
+//             firstMove = 0;
+//         } else {
+//             for (let i = 0; i < robot1.tactics.length; i++) {
+//                 robot2.health -= tactics[robot1.tactics[i]];
+//                 robot1.health -= tactics[robot2.tactics[i]];
+//                 if (robot1.health <= 0 || robot2.health <= 0) {
+//                     break;
+//                 }
+//             }
+//             firstMove = 1;
+//         }
+//     }
+
+//     if (robot1.health <= 0 && robot2.health <= 0) {
+//         winner = "The fight was a draw.";
+//     } else if (robot1.health <= 0) {
+//         winner = robot2.name + " has won the fight.";
+//     } else {
+//         winner = robot1.name + " has won the fight.";
+//     }
+
+//     return winner;
+// }
+
+function fight(robot1, robot2, tactics) {
+    const robots =
+        robot1.speed >= robot2.speed ? [robot1, robot2] : [robot2, robot1];
+    let tactic = 0;
+
+    let index = 0;
+    while (
+        robot1.health > 0 &&
+        robot2.health > 0 &&
+        (robot1.tactics.length > tactic || robot2.tactics.length > tactic)
+    ) {
+        let [attacking, defending] = [robots[index], robots[1 - index]];
+
+        if (attacking.tactics.length > tactic) {
+            defending.health -= tactics[attacking.tactics[tactic]];
+        }
+
+        if (index === 1) {
+            ++tactic;
+        }
+
+        index = 1 - index;
+    }
+
+    return robot1.health > robot2.health
+        ? `${robot1.name} has won the fight.`
+        : robot2.health > robot1.health
+        ? `${robot2.name} has won the fight.`
+        : "The fight was a draw.";
+}
