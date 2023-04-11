@@ -34,3 +34,27 @@ Check out my other 80's Kids Katas:
 */
 
 // solution
+
+function getSocks(person, socks) {
+    const socksMap = {};
+    for (const sock of socks) {
+        socksMap[sock] = socksMap[sock] ? socksMap[sock] + 1 : 1;
+    }
+
+    if (person === "Punky") {
+        for (const sock of socks) {
+            const otherSock = socks.find((s) => s !== sock);
+            if (otherSock && socksMap[sock] && socksMap[otherSock]) {
+                return [sock, otherSock];
+            }
+        }
+    } else if (person === "Henry") {
+        for (const sock in socksMap) {
+            if (socksMap[sock] > 1) {
+                return [sock, sock];
+            }
+        }
+    }
+
+    return [];
+}
