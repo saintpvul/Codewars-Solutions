@@ -53,3 +53,26 @@ Check out my other 80's Kids Katas:
 */
 
 // solution
+
+function markSpot(n) {
+    if (n === 1) {
+        return "X\n";
+    }
+
+    if (n % 2 === 0 || isNaN(n) || n < 1) {
+        return "?";
+    }
+
+    let result = [" ".repeat(n - 1) + "X"];
+    let spaceStart = n - 3;
+    let spaceMid = 3;
+
+    while (result.length !== n) {
+        let line = " ".repeat(spaceStart) + "X" + " ".repeat(spaceMid) + "X";
+        result.push(line);
+        result.unshift(line);
+        spaceMid += 4;
+        spaceStart -= 2;
+    }
+    return result.join("\n") + "\n";
+}
