@@ -104,7 +104,6 @@ Check out my other 80's Kids Katas:
 //     } else {
 //         winner = robot1.name + " has won the fight.";
 //     }
-
 //     return winner;
 // }
 
