@@ -26,3 +26,25 @@ for 4 columns.
 */
 
 // solution
+
+function columnize(items, n) {
+    const elements = new Array(n).fill(0);
+    const rows = items.reduce((acc, cur, i) => {
+        const j = i % n;
+
+        if (j === 0) {
+            acc.push([]);
+        }
+
+        acc[acc.length - 1].push(cur);
+        elements[j] = Math.max(cur.length, elements[j]);
+
+        return acc;
+    }, []);
+
+    return rows
+        .map((row) =>
+            row.map((col, i) => col.padEnd(elements[i], " ")).join(" | ")
+        )
+        .join("\n");
+}
